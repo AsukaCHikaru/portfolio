@@ -1,11 +1,19 @@
 {
   "name": "portfolio",
-  "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun run dev/index.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
