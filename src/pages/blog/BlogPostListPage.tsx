@@ -2,6 +2,7 @@ import type { FC } from "react";
 import type { BlogPostMeta } from "../../types";
 import { useApi } from "../../services/apiCore";
 import { getBlogList } from "../../services/markdownService";
+import styles from "./BlogPostListPage.module.css";
 
 export const BlogPostListPage = () => {
   const blogPostList = useApi({
@@ -10,7 +11,7 @@ export const BlogPostListPage = () => {
 
   return (
     <>
-      <div>
+      <div className={styles["link-container"]}>
         {blogPostList?.map((post) => (
           <BlogPostLink key={post.pathname} post={post} />
         ))}
