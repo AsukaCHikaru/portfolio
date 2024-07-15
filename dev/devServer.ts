@@ -16,7 +16,8 @@ await Bun.build({
   naming: "main.js",
 });
 
-watch(srcPath, async (event, filename) => {
+watch(srcPath, { recursive: true }, async (event, filename) => {
+  console.log(event, filename);
   await Bun.build({
     entrypoints: ["./src/index.tsx"],
     outdir: "./build",
