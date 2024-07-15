@@ -5,15 +5,20 @@ export const request = async (pathname: string) => {
   return response.json();
 };
 
-export const useApi = <T>(api: () => Promise<T>) => {
+type UseApiOption<T> = {
+  queryFn: () => Promise<T>;
+  enabled?: boolean;
+};
+
+export const useApi = <T>({ queryFn, enabled = true }: UseApiOption<T>) => {
   const [data, setData] = useState<T>();
 
   useEffect(() => {
-    if (data !== undefined) {
+    if (data !== undefined || !enabled) {
       return;
     }
-    api().then((res) => setData(res));
-  }, [data]);
+    queryFn().then((res) => setData(res));
+  }, [data, enabled]);
 
   return data;
 };

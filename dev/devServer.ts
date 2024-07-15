@@ -1,7 +1,7 @@
 import type { Server } from "bun";
 import { watch } from "fs";
 import { resolve } from "path";
-import { getBlogList } from "./markdownApi";
+import { getBlogList, getBlogPost } from "./markdownApi";
 
 const PORT = 3000;
 
@@ -58,11 +58,13 @@ export const resolveMarkdownFile: Server["fetch"] = (request: Request) => {
     /^https?:\/\/localhost:\d+(.+)$/,
     "$1",
   );
-  switch (requestPath) {
-    case "/api/blogList":
-      return new Response(getBlogList());
-    default:
-      throw new Error("invalid api path");
+  if (requestPath.startsWith("/api/blogList")) {
+    return new Response(getBlogList());
   }
+  if (requestPath.startsWith("/api/blog/")) {
+    const postTitle = requestPath.replace(/\/api\/blog\/(.+)$/, "$1");
+    return new Response(getBlogPost(postTitle));
+  }
+  throw new Error("invalid api path");
 };
 console.log(`Dev server listening on port`, PORT);

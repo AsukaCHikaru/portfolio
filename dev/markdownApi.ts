@@ -17,3 +17,14 @@ export const getBlogList = () => {
   });
   return JSON.stringify(list);
 };
+
+export const getBlogPost = (postTitle: string) => {
+  try {
+    const file = readFileSync(
+      resolve(markdownFolderPath, `${decodeURI(postTitle)} (blog).md`),
+    );
+    return file.toString("utf-8");
+  } catch (error) {
+    console.error(error);
+  }
+};

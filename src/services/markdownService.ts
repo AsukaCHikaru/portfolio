@@ -6,3 +6,8 @@ export const getBlogList = async (): Promise<BlogPostMeta[]> => {
   const data = await request("/api/blogList");
   return data.map(parseBlogPostMeta);
 };
+
+export const getBlogPost = async (postPath: string): Promise<unknown> => {
+  const data = await request(`/api/blog/${postPath}`);
+  return data;
+};
