@@ -5,9 +5,8 @@ published: 2020-02-18
 language: zh-TW
 pathname: s9-recap
 category: League of Legends
-tags: esports, TSM
-filename: S9 Recap (blog)
 ---
+
 # Esports
 
 在 S8 參戰 worlds 第一次現場觀看 LOL 的線下賽之後，S9 我看了兩場比賽：
@@ -105,3 +104,4 @@ S6 我爬上了人生最佳的白金五，當時是充滿動力要拼鑽，結�
 但今年幾乎每路都走過了，雖然抱著部分「這一路好像比較好爬」的想法，同時也確實是有單純想玩的英雄。玩了九年，我還是很喜歡很喜歡這個遊戲。
 
 S10，如果能重回白金就好了啊。
+

@@ -5,9 +5,8 @@ published: 2018-05-28
 language: zh-TW
 pathname: dev-diary-aura
 category: Game Development
-tags:
-filename: Dev Diary - Aura (blog)
 ---
+
 在最近進行的 side project 中刻了一個靈氣(aura)輪子。比我想像中的麻煩，決定動筆記錄一下。
 
 首先，這是個規模很小的回合制遊戲，所有角色算攻防加權的動作可以塞在一個迴圈裡面。概念很簡單，我打算先算加權，然後再用加權套進攻防公式，而靈氣的部分就塞在加權裡一起處理。
@@ -25,3 +24,4 @@ filename: Dev Diary - Aura (blog)
 簡單地說，如果不是很花巧思的靈氣，你往往會覺得他很無聊。但這樣無聊的東西事實上花了比我想像還多的功夫，僅此紀錄一筆。
 
 至於我把靈氣寫完之後發現太強所以拔掉就又是另一個故事了。
+

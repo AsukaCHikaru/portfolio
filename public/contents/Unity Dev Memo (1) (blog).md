@@ -5,9 +5,8 @@ published: 2020-03-08
 language: zh-TW
 pathname: unity-dev-memo-1
 category: Game Development
-tags: Unity3D
-filename: Unity Dev Memo (1) (blog)
 ---
+
 在數年的醞釀以及一時的心血來潮以後，我開始第一次真正投入時間學習 Unity 。至今一週，最大的感想是過往兩年自學程式的經驗惠我良多，但並不是因為程式的概念等，而是在尋找資源，搜尋關鍵字，看文件的速度上，比起兩三年前另一次摸 Unity 的時候有效率太多了。以下是這一週學到的我覺得值得筆記的部分。
 
 # Object movement
@@ -103,12 +102,12 @@ public class AttackController : MonoBehaviour
 		public Collider Hitbox;
 		public int ATK;
 		private List<GameObject> hitEnemies = new List<GameObject>();
-			
+
 		void Update()
 		{
         DetectAttack(Hitbox);
 		}
-		
+
 		public void ClearHitEnemyList()
 		{
 		    hitEnemies.Clear();
@@ -122,7 +121,7 @@ public class AttackController : MonoBehaviour
 		        hitbox.transform.rotation, // 三維角度
 		        LayerMask.GetMask("{INSERT LAYER NAME}") // 指定對象 layer
 		    );
-		    
+
 				// hurtboxed 就是這次攻擊所有被註冊的受攻擊碰撞體
 		    foreach (Collider hurtbox in hurtboxes)
 		    {
@@ -140,3 +139,4 @@ public class AttackController : MonoBehaviour
 我在這邊已經加入了對同一目標的重複判斷，因為 hitbox 與 hurtbox 在同一次攻擊內也可能重合複數次，使用一個 List 記錄目標並比對每次擊中的目標是否已在本次攻擊的目標列表裡。開始攻擊時呼叫 `ClearHitEnemyList` 清空列表即可。
 
 最後的 `enemy` 是受到攻擊的 collider 的父物件本身，如果該物件在受到攻擊時呼叫的腳本在該物件身上，等於要從攻擊角色的 hitbox 腳本呼叫另一個物件的腳本，可以使用 `.SendMessageUpwards("{INSERT FUNC NAME}", {INSERT FUNC PARAM})` 。這個函數可以向上呼叫該腳本父物件的其他函數。
+

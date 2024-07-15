@@ -5,10 +5,8 @@ published: 2018-07-17
 language: zh-TW
 pathname: so-fedc
 category: Life
-tags:
-  - Front-end
-filename: 所以，FEDC (blog)
 ---
+
 大約是今年 3、4 月的時候，我在 Front-End Developers Taiwan 社團看到了 FEDC2018 Taiwan(以下簡稱 FEDC)的廣告。講座的部分，幾乎是當下就決定要去了。但這將會是我第一次參加 Conference 以及 Workshop(很明顯地於公於私都不會有人揪我一起去)，我對兩者會是怎樣的形式都沒有明確的概念。Conference 比較單純，在我的想像中就是人手一台 laptop(87%是 macbook)聽台上發表一些神奇新技術，但 workshop？會是小組合作嗎？有個主題？有個時限？我曾在 Medium 看過"Why you should attend workshop"之類的文章，內容不外乎作者並非高手，但經過一連串的洗禮之後得到了許多實戰經驗，非常建議大家也參加，下略五千字。嗯，我很確定那些人與會當時的程設程度都比我好(應該啦)，我是個基礎沒打好的非本科生，更何況 Workshop 的介紹可寫著「建議具備 React 基本知識」啊。事實上，這句話就是一切的出發點。
 
 我知道 React 是現在的熱門框架，許多職缺都指定需要 React 能力。不會 React 並不是我猶豫的地方；不會 React 學就是了，學到一個程度可以參加 workshop，之後求職還會有不小的機率派上用場，這不是很棒嗎？但這就是我的問題。我甚至不知道在這個時間點，我該不該學 React。原因也很單純，新手(特別是沒基礎的新手)忌諱直接開始碰框架而忽略了基礎，這是一個很常見，而我也非常理解與接受的論點。由於 workshop 翌日還有其他行程，如果我想要參加兩場 workshop 就得搭早上八點的飛機回家，在這個情況下我有了四個選擇：
@@ -44,3 +42,4 @@ FEDC 第一天的部分，除了 PureScript 的部分幾乎全都聽得懂。當
 所以，FEDC？
 
 Fucking worth it.
+

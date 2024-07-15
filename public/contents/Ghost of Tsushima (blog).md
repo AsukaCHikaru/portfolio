@@ -5,8 +5,6 @@ published: 2022-01-07
 language: en-US
 pathname: ghost-of-tsushima
 category: Gaming
-tags: Review
-filename: Ghost of Tsushima (blog)
 ---
 
 # Gameplay
@@ -37,3 +35,4 @@ It became a dilemma whether to play in English for more fluency or to play in Ja
 ---
 
 Overall, a great game. Looking forward to 100% completion.
+

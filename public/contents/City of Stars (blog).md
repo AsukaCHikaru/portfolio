@@ -5,12 +5,8 @@ published: 2019-09-12
 language: zh-TW
 pathname: city-of-stars
 category: Life
-tags:
-  - Travel
-  - Movies
-  - UnitedStates
-filename: City of Stars (blog)
 ---
+
 去了一趟 LA。
 
 住的是 Hollywood ，那個影視娛樂產業代名詞的地區。旅館也很有 Hollywood 風格，就叫做 Hollywood Historic Hotel ，1927年開業，房子古色古香，室內擺滿了各樣 Hollywood 早期風景或演員的黑白照片。一樓是大廳與一間叫做 "The Edmon" 的酒吧共用，菜單與 happy hour 的宣傳就擺在旅館的櫃檯上，不想注意到都難。
@@ -46,3 +42,4 @@ La La Land 再度浮現。"When you get this... you got to give it everything yo
 是否每個追夢者都曾在夜裡輕問："City of stars, are you shinning just for me?"
 
 我不禁這麼想。
+

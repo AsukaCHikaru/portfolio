@@ -5,12 +5,8 @@ published: 2020-04-20
 language: en-US
 pathname: use-npm-package-commands-in-fish-shell
 category: Programming
-tags:
-  - fish
-  - shell
-  - Terminal
-filename: Use npm package commands in fish shell (blog)
 ---
+
 # TL;DR:
 
 Add `set -x PATH {your npm path} node_modules/.bin $PATH` to `~/.config/fish/config.fish`.
@@ -22,3 +18,4 @@ To use globally installed npm packages' commands, you have to add .bin directory
 # Local package
 
 The above fix only works for globally installed packages. Binary files for local packages exist in every project folders, but it seems hugely inefficient to add EVERY folder to the path. Fortunately, the path variable supports relative entries, so we only have to add one path, which is `node_modules/.bin`. The command will be like `set -x PATH node_modules/.bin $PATH`.
+

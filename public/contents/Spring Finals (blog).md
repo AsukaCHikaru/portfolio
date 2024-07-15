@@ -5,9 +5,8 @@ published: 2017-04-24
 language: zh-TW
 pathname: spring-finals
 category: League of Legends
-tags: esports, TSM
-filename: Spring Finals (blog)
 ---
+
 寫在 TSM 擊敗 C9，第五度贏得 NALCS Championship 之後。
 
 我想我對 TSM 算是蠻嚴格的，我對他們抱著非常高的期待，當他們贏的時候我會覺得理所當然，當他們失誤、逆風或是戰敗之後我會覺得 ── 你們不應該這樣的 ── 即使對手可能也是支勁旅。對 Fly Quest 的四強以 3-0 作收，但其實我不太滿意其內容，他們有執行極為果斷的部分，但也有被 Fly Quest 反咬的部分。當然能打到四強的都不能小覷，而且他們有 Hai 耶，但我當時心裡想：我的天啊，你們不應該犯這種失誤，不應該給 Fly Quest 任何的機會。
@@ -31,3 +30,4 @@ Biodaddy。兩個賽季，兩次冠軍。命中了一些極為關鍵的 CC，對
 TSM。
 
 ![[spring-finals_1.png]]
+

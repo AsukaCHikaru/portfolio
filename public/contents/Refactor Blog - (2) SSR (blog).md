@@ -5,13 +5,8 @@ published: 2021-03-26
 language: en-US
 pathname: refactor-blog-2-ssr
 category: Meta
-tags:
-  - React.js
-  - HTML
-  - TypeScript
-  - Express.js
-filename: Refactor Blog - (2) SSR (blog)
 ---
+
 One of the reasons I choose Gatsby last time I wrote my blog site is to have SSR. SEO matters, isn't it?
 
 I gained experience setting up SSR in my job, and this is how I apply that experience in my project.
@@ -42,8 +37,8 @@ import * as Express from "express";
 const APP_PORT = process.env.PORT || 3000;
 const app = Express();
 const renderer = () => {
-	app.get("*", (req: Express.Request, res: Express.Response) => {
-		res.send(`
+  app.get("*", (req: Express.Request, res: Express.Response) => {
+    res.send(`
 			<!DOCTYPE HTML>
 			<html>
 				<head>
@@ -54,12 +49,12 @@ const renderer = () => {
 				</body>
 			</html>
 		`);
-	});
+  });
 };
 
 app.use(renderer);
 app.listen(APP_PORT, () => {
-	console.log(`Server is listening on ${APP_PORT}`);
+  console.log(`Server is listening on ${APP_PORT}`);
 });
 ```
 
@@ -184,10 +179,10 @@ app.get("*", (req: Express.Request, res: Express.Response) => {
 	const preloadedStore: RootState = {
 		// your store state
 	};
-	
+
 	let htmlBody = "";
 	const store = createStore(rootReducer, preloadedState);
-	
+
 	try {
 		htmlBody = ReactDOMServer.renderToString(
 			<Provider store={store}>
@@ -197,7 +192,7 @@ app.get("*", (req: Express.Request, res: Express.Response) => {
 	} catch (error) {
 		console.error(error);
 	}
-	
+
 	// store.getState() returns object so we have to manually stringify it
 	const initialState = JSON.stringify(store.getState());
 };
@@ -212,7 +207,7 @@ const getFullHTML = (
   htmlBody: string,
   styleTags: string,
   initialState: string,
-  helmet?: HelmetData
+  helmet?: HelmetData,
 ) => {
   return `
     <!DOCTYPE html>
@@ -264,14 +259,14 @@ export const renderer = (
 	app.get("*", (req: Express.Request, res: Express.Response) => {
 	const yourStore = yourStoreInitiator(req);
 	const preloadedStore: RootState = { /* your state */ };
-	
+
 	let htmlBody = "";
 	const context = {};
   const sheet = new ServerStyleSheet();
   let styleTags = "";
 	const store = createStore(rootReducer, preloadedState);
 	let helmet;
-	
+
 	try {
 	  htmlBody = ReactDOMServer.renderToString(
       sheet.collectStyles(
@@ -297,3 +292,4 @@ export const renderer = (
 ```
 
 You can use `curl -X GET localhost:3000` to check if the express server is returning the whole app in the first easily.
+

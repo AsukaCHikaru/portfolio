@@ -5,10 +5,8 @@ published: 2021-02-11
 language: en-US
 pathname: full-screen-scroll
 category: Web Development
-tags:
-  - React.js
-filename: Full-Screen Scroll (blog)
 ---
+
 ## TL;DR:
 
 - `overflow-y: hidden` for html and body, and `overflow-y: scroll` for the scroller element
@@ -19,7 +17,6 @@ In my latest project [CHIKA Music Awards 2020](https://2020.musicawards.asukach
 First, let's talk about the definition of full-screen scrolling. In short, it looks like this:
 
 ![[full-screen-scroll_1.gif]]
-#nullcaption
 
 And the literal definition of full-screen scrolling includes the below specs:
 
@@ -38,7 +35,7 @@ The concept of detecting the scrolling direction is simple: when the event fires
 
 ```js
 // Add event listener. Or you can bind them to the component directly in Vue or React
-document.querySelector('.scroll').addEventListener('scroll', handleScroll);
+document.querySelector(".scroll").addEventListener("scroll", handleScroll);
 
 // Necessary variables for the event callback.
 // I placed them here for clarity.
@@ -56,7 +53,7 @@ const handleScroll = (e) => {
   if (!scroller) {
     return;
   }
-  
+
   currentY = scroller.scrollTop;
   // currentY = e.touches[0].screenY; for touchmove
 
@@ -70,7 +67,7 @@ const handleScroll = (e) => {
     isScrolling = true;
     window.requestAnimationFrame(scrollTo);
   }
-}
+};
 ```
 
 ## Get scroll height
@@ -158,3 +155,4 @@ When the scroll starts (calling `window.requestAnimationFrame` for the first tim
 ---
 
 I finished the full-screen scroll effect with the above approach. It works fine in macOS, win, and mobile platforms. I believe there are other ways to do this, but I'm quite happy with the result I came up with.
+

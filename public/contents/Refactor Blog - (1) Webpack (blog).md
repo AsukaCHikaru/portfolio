@@ -5,12 +5,8 @@ published: 2021-03-09
 language: en-US
 pathname: refactor-blog-1-webpack
 category: Meta
-tags:
-  - React.js
-  - TypeScript
-  - Webpack
-filename: Refactor Blog - (1) Webpack (blog)
 ---
+
 Recently, I rewrote my [blog](https://asukachikaru.com/blog) for the second time. Every time, I rewrite to solve particular problems.
 
 The previous version's problems are the architecture: I used [Gatsby](https://www.gatsbyjs.com/) for v2, and I didn't enjoy it. There are many plugins that I don't fully understand, and they handle a lot of things. I don't know what's under the hood of my blog while building it.
@@ -38,19 +34,19 @@ Some of the syntaxes or features that React development needs are not supported 
 
 ```json
 {
-	"presets": [
-		"@babel/preset-react",
-		// tell babel it has to compile React
-		"@babel/preset-typescript"
-		// tell babel it has to compile Typescript
-	],
-	"plugins": [
-		"@babel/proposal-class-properties",
-		"@babel/proposal-object-rest-spread",
-		// enables above features of JavaScript in development
-		"babel-plugin-styled-components"
-		// I used styled-components in this project, this is the plugin to help babel process it
-	]
+  "presets": [
+    "@babel/preset-react",
+    // tell babel it has to compile React
+    "@babel/preset-typescript"
+    // tell babel it has to compile Typescript
+  ],
+  "plugins": [
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    // enables above features of JavaScript in development
+    "babel-plugin-styled-components"
+    // I used styled-components in this project, this is the plugin to help babel process it
+  ]
 }
 ```
 
@@ -161,7 +157,7 @@ const config: webpack.Configuration = {
       "process.env": {
         CONTENTFUL_TOKEN: JSON.stringify(process.env.CONTENTFUL_TOKEN || ""),
         CONTENTFUL_SPACE_ID: JSON.stringify(
-          process.env.CONTENTFUL_SPACE_ID || ""
+          process.env.CONTENTFUL_SPACE_ID || "",
         ),
       },
     }),
@@ -268,7 +264,7 @@ const config: webpack.Configuration = {
       "process.env": {
         CONTENTFUL_TOKEN: JSON.stringify(process.env.CONTENTFUL_TOKEN || ""),
         CONTENTFUL_SPACE_ID: JSON.stringify(
-          process.env.CONTENTFUL_SPACE_ID || ""
+          process.env.CONTENTFUL_SPACE_ID || "",
         ),
         PORT: JSON.stringify(process.env.PORT) || 3000,
       },
@@ -290,3 +286,4 @@ Excludes modules that are expected to be provided in the running environment. I 
 ## node
 
 Configurations for the node-related parts in the source. I set `__dirname` and `__filename` so these two's behaviors are not changed during building.
+

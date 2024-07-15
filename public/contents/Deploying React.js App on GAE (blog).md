@@ -5,11 +5,8 @@ published: 2019-09-19
 language: en-US
 pathname: deploying-react-app-on-gae
 category: Web Development
-tags:
-  - GAE
-  - React.js
-filename: Deploying React.js App on GAE (blog)
 ---
+
 For people like me who have only used a static host like Amazon S3 before, deploying React app on Google App Engine is a challenge. For all the references I found it looks straightforward and easy to deploy a React app, yet I still struggled for 2 days. Here is how I did it, with the things I realized by logs and tries and errors.
 
 ## GAE is not a static host; it's a virtual machine
@@ -20,11 +17,11 @@ So you can't just push the build. You have to serve it, like starting a developm
 
 They are `npm install` and `npm start`.
 
-Like I mentioned before, for merely starting a server for React, these two seems enough. Then I found out it's not, because default `npm start` provided by Create-React-App, which equals to `node scripts/start.js` if you check out `package.json`, takes much time, and it's long enough to make the app not working. So we need a faster way to _serve_ it.
+Like I mentioned before, for merely starting a server for React, these two seems enough. Then I found out it's not, because default `npm start` provided by Create-React-App, which equals to `node scripts/start.js` if you check out `package.json`, takes much time, and it's long enough to make the app not working. So we need a faster way to *serve* it.
 
 ## Serve can do the trick
 
-Literally, [serve](notion://www.notion.so/asukachikaru/%5B%3Chttps://github.com/zeit/serve%3E%5D(%3Chttps://github.com/zeit/serve%3E)).
+Literally, [serve](<notion://www.notion.so/asukachikaru/%5B%3Chttps://github.com/zeit/serve%3E%5D(%3Chttps://github.com/zeit/serve%3E)>).
 
 Notice serve needs static files to run, so we need to build it first. Since GAE only runs two scripts, and building takes some time too, so I bound it to `postinstall` instead of `prestart` . By this way, GAE automatically builds right after it installs dependencies.
 
@@ -46,3 +43,4 @@ The scripts in `package.json` I used when finally successfully deployed looks li
 You need to configure app.yaml too, but I think many resources is talking about how to do it.
 
 I hope this helps!
+

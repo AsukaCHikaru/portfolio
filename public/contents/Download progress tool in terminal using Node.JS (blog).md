@@ -5,15 +5,12 @@ published: 2019-06-07
 language: en-US
 pathname: download-progress-tool-in-terminal-using-nodejs
 category: Programming
-tags:
-  - Node.js
-  - Terminal
-filename: Download progress tool in terminal using Node.JS (blog)
 ---
+
 # TL;DR:
 
 - `fs.stat`
-	for getting file size
+  for getting file size
 - `readline.clearLine`
 - `readline.cursorTo(0)`
 - `process.stdout.write`
@@ -30,8 +27,8 @@ Inside of the object, there is `size` property, which is obviously the size of
 
 ```js
 let fileSize = 0;
-fs.stat('url/to/your/file', (stats)=>{
-	fileSize = stats.size;
+fs.stat("url/to/your/file", (stats) => {
+  fileSize = stats.size;
 });
 ```
 
@@ -47,12 +44,14 @@ By combine `readline.clearLine` and `readline.cursorTo(0)`, terminal will era
 
 ```js
 let progress = 0;
-let req = https.get('url/to/your/file', (res, err)=>{
-	res.on('data', (chunk)=>{
-		progress += chunk.length;
-		const dlPercentage = ((progress/fileSize)*100).toFixed(2);
-		readline.clearLine(); readline.cursorTo(0);
-		process.stdout.write(`Downloading... ${dlPercentage}%`);
-	});
+let req = https.get("url/to/your/file", (res, err) => {
+  res.on("data", (chunk) => {
+    progress += chunk.length;
+    const dlPercentage = ((progress / fileSize) * 100).toFixed(2);
+    readline.clearLine();
+    readline.cursorTo(0);
+    process.stdout.write(`Downloading... ${dlPercentage}%`);
+  });
 });
 ```
+

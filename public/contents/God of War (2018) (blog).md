@@ -5,8 +5,6 @@ published: 2022-01-06
 language: en-US
 pathname: god-of-war-2018
 category: Gaming
-tags: Review
-filename: God of War (2018) (blog)
 ---
 
 # Narrative
@@ -34,3 +32,4 @@ Unfortunately, the gameplay did not impress me. To maintain the game’s flow, m
 Overall, a fantastic game. Best narrative in a game I’ve ever seen.
 
 If I ever have kids or pets, I’ll definitely call them boys.
+

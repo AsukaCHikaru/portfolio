@@ -5,8 +5,6 @@ published: 2020-10-04
 language: zh-TW
 pathname: unity-dev-memo-2
 category: Game Development
-tags: Unity3D
-filename: Unity Dev Memo (2) (blog)
 ---
 
 ## Raycast
@@ -51,7 +49,7 @@ Plane plane = new Plane (Vector3.up, 0);
 
 從官方文件 [https://docs.unity3d.com/ScriptReference/Plane-ctor.html](https://docs.unity3d.com/ScriptReference/Plane-ctor.html) 可以查到 Plane 的 constructor 是長這樣： `Plane (Vector3 inNormal, float distance)` 。
 
-以三維座標 (0, 0, 0) 為基準點，基於法線方向 `inNormal` 在距離基準點 `distance` 的位置創造一個平面。 `Vector3.up` 就等於 `Vector3 (0, 1, 0)` ，也就是筆直朝向 Y 軸上方的向量。這個 plane 不會顯示在遊戲中，如果想要用視覺理解 plane 的概念，可以直接在 Editor 中新增一個 rotation 與 position 都為 (0, 0, 0) 的 Plane，這兩個平面基本上相同。
+以三維座標 (0, 0, 0) 為基準點，基於法線方向 `inNormal` 在距離基準點 `distance` 的位置創造一個平面。 `Vector3.up` 就等於 `Vector3 (0, 1, 0)` ，也就是筆直朝向 Y軸上方的向量。這個 plane 不會顯示在遊戲中，如果想要用視覺理解 plane 的概念，可以直接在 Editor 中新增一個 rotation 與 position 都為 (0, 0, 0) 的 Plane，這兩個平面基本上相同。
 
 ```csharp
    Camera camera;
@@ -75,12 +73,10 @@ void Update () {
 攝影機的顯示範圍是一個上窄下寬的梯形，頂部距離攝影機較近且面積較小的平面就是 near clipping plane，底部較遠較大的平面就是 far clipping plane。玩家所謂的遊戲視窗大小基本上就等於 near clipping plane， `Camera.ScreenPointToRay` 也就是從 near clipping plane 射向 far clipping plane。
 
 ![[unity-dev-memo-1_1.png]]
-#nullcaption
 
 這兩個數值都可以從 camera 的 inspector 調整。
 
 ![[unity-dev-memo-1_2.png]]
-#nullcaption
 
 ```csharp
 		...
@@ -97,7 +93,6 @@ void Update () {
 這個函數的型別是 bool ，回傳引數 ray 是否與該 plane 相交。然而，部分函數提供額外的回傳值，取得值時必須提供一個空變數與 `out` 關鍵字一起作為引數輸入。 `plane.Raycast` 就是有提供 `out` 回傳值的函數之一，提供的是當相交發生時從 ray 起點至相交點的距離 `distance` 。因此這一段程式碼的作用是，判斷平面 plane 與 ray 是否有相交發生，如果有的話將距離儲存進 distance。現在射線起點，相交距離都知道了，就能計算出滑鼠位置便是從該射線上從起點開始距離 distance 的地方。
 
 ![[unity-dev-memo-2_3.gif]]
-#nullcaption
 
 以上就是在射線上增加元素使其可視化之後的展示，紅色點是射線起點 (`ray.GetPoint(0)` )，藍色點是與平面相交點（ `ray.GetPoint(distance)` ）。可以看見起點不是攝影機本身，而是在 near clipping plane 上。
 
@@ -130,10 +125,9 @@ public class GetMousePos : MonoBehaviour {
 }
 ```
 
-內容大致相同，只是這次判斷相交點的元素不是平面，而是地形碰撞體 `terrainCollider` ，而這個函數所提供的 out 相交資料也更豐富，不只有距離，而是一整個資料形態 RaycastHit [https://docs.unity3d.com/ScriptReference/RaycastHit.html](https://docs.unity3d.com/ScriptReference/RaycastHit.html) ，包含 point, distance ,collider 等，point 即為射線與 `terrainCollider` 相交點。
+內容大致相同，只是這次判斷相交點的元素不是平面，而是地形碰撞體 `terrainCollider` ，而這個函數所提供的 out 相交資料也更豐富，不只有距離，而是一整個資料形態 RaycastHit [https://docs.unity3d.com/ScriptReference/RaycastHit.html](https://docs.unity3d.com/ScriptReference/RaycastHit.html) ，包含 point, distance ,collider等，point 即為射線與 `terrainCollider` 相交點。
 
 ![[unity-dev-memo-2_4.gif]]
-#nullcaption
 
 上圖就是在不規則地形使用 `terrainCollider.Raycast` 追蹤游標位置的展示，可以看見在右側遊戲畫面中游標移至山脈可見的南側時，左側的編輯器畫面也顯示游標位置的藍點直接跳過山脈北側，同時隨著地形一同起伏。
 
@@ -168,7 +162,6 @@ public class GetMousePos : MonoBehaviour {
 `Physics.Raycast` 的提供距離引數做為判斷相交的最大距離，可以依照自己需求設定。
 
 ![[unity-dev-memo-2_5 1.gif]]
-#nullcaption
 
 上圖為使用 `Physics.Raycast` 追蹤游標互動物件的展示，使用 `RaycastHit.collider.transform.GameObject` 判斷射線的碰撞體的原物件之後就可以進行互動。
 
@@ -206,6 +199,6 @@ public class HighlightRayOrigin : MonoBehaviour {
 請注意，雖然這個引數的型別是 int，但其實是二進制的 int，所以直接輸入在編輯器中顯示的圖層編號是不會正常運作的，必須以 `<<` 運算子將指定編號以二進制方式儲存在變數中再傳遞給 `Physics.Raycast` 函數。
 
 ![[unity-dev-memo-2_6.gif]]
-#nullcaption
 
 上圖是使用 LayerMask 過濾可互動物件的展示，只有上層物件位於可互動的圖層中，因此游標在地形或是下層物件時藍點都不會隨之移動。
+

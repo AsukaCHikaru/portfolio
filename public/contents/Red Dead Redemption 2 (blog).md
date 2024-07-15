@@ -5,16 +5,15 @@ published: 2020-04-01
 language: zh-TW
 pathname: red-dead-redemption-2
 category: Gaming
-tags: Review
-filename: Red Dead Redemption 2 (blog)
 ---
+
 終於打完了 RDR2 的劇情模式。線上模式只玩過一次，收集完成度還沒開始，不敢說足夠體驗了這個遊戲，但劇情後段直到結局累積起來的餘韻實在強烈，不得不記錄以宣洩一番。
 
 前陣子才開始認真玩，大約兩週打了70%的劇情，而在那之前的30%花了大約一年半。為了讓玩家上手這個豐富而複雜的系統，以及認識 van der Linde 幫的眾多角色們，遊戲前期多在以簡單的跑腿或移動之後看對話與過場的方式教學，而這部分對我來說實在算不上有趣。甚至就算在我記得所有主要角色，一行人移動至 Shady Balle 的大宅作為據點，與 Saint Denis 的富豪 Angelo Bronte 交手為止，劇情也不特別使我沉浸。是在 van der Linde 幫一而再再而三的失手後，Dutch 的手段愈發激進卻又只帶來更多鮮血，整個幫派分崩離析的景色被赤裸裸的放在玩家面前，我才感受到這趟旅途的重量，宛如《桃花扇》寫的「眼看他起高樓，眼看他宴賓客，眼看他樓塌了」，只是連那起高樓宴賓客都已經是許久以前，遊戲沒演出的部分，只能靠著眾人的對話想像了。
 
 # Arthur Morgan
 
-> You know, all that ever mattered to me was loyalty. 
+> You know, all that ever mattered to me was loyalty.
 > It was all I knew. It was all I ever believed in...
 > but not anymore, John. Soon... you gotta go. Go... don't look back.
 
@@ -63,3 +62,4 @@ Abigail 剛提到貸款買地時，John 的第一個反應是質疑。但 Abigai
 Arthur 與 John 的故事，沒有哪一幕讓我感到極端的情緒（也許只有求婚那一段），但 van der Linde 幫步向無可避免的敗亡，Arthur 緩慢卻穩定地走向犧牲自己拯救別人的路線，以及 John 終於為家人帶來幸福生活，這每一幕的感動以及無奈，一筆一筆為這個故事添上重量。
 
 Red Dead Redemption。
+

@@ -5,9 +5,8 @@ published: 2021-03-28
 language: en-US
 pathname: refactor-blog-3-headless-cms
 category: Meta
-tags: 
-filename: Refactor Blog - (3) Headless CMS (blog)
 ---
+
 Building my blog from scratch means dealing with content management by myself: the APIs, the server, and the databases. Each task would be a new challenge for me and likely cost more time than the whole blog building.
 
 In the old versions of my blog, I put all the contents in the source. Every time I wrote new posts, I had to commit and deploy again. In this way, I avoided the backend, but it also lowered my motivation to write blogs, because I had to commit and deploy for every new post.
@@ -41,3 +40,4 @@ I've published several posts since then, and I'm pretty happy so far. Usually, I
 There is one concern over Contentful: the price. I have not met the limit of free usage yet, and I don't think I would meet it soon, but even the cheapest plan hardly surpasses my budget. If that day comes, I will be very likely migrating to other services.
 
 One of the potential alternatives I'm interested in is the notion API. I write all of my posts on notion, and I enjoy using it a lot. If the notion API is capable of being the headless CMS, I would consider it very seriously.
+

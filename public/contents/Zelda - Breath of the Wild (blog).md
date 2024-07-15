@@ -5,9 +5,8 @@ published: 2018-12-16
 language: zh-TW
 pathname: zelda-botw
 category: Gaming
-tags: Review
-filename: Zelda - Breath of the Wild (blog)
 ---
+
 先說結論，我並不享受這個遊戲。
 
 BOTW 是我玩過最有意思的開放世界之一。 它真正地貫徹了「開放世界」這四個字，營造了一個玩家可以自由互動、體驗與生活的世界。
@@ -23,3 +22,4 @@ BOTW 是我玩過最有意思的開放世界之一。 它真正地貫徹了「�
 這個遊戲有太多部分為了荒野而存在，可惜那並不是我最享受的一部分。
 
 BOTW 是款好遊戲，但它不是我的遊戲。
+

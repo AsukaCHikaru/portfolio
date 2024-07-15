@@ -5,8 +5,6 @@ published: 2017-01-10
 language: zh-TW
 pathname: ghibli
 category: Movie
-tags: 
-filename: ジブリ (blog)
 description:
 ---
 
@@ -67,3 +65,4 @@ description:
 吉卜力之旅結束了，我認識了很多好作品，我感到很高興。
 
 btw 我不會去看 Disney 或是 Pixar 的。
+

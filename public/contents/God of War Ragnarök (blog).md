@@ -5,12 +5,10 @@ published: 2022-11-19
 language: en-US
 pathname: god-of-war-ragnarok
 category: Gaming
-tags:
-  - Review
-filename: God of War Ragnarök (blog)
 description: As a successor of a game with solid gameplay and extraordinary narrative, God of War Ragnarök made attempts to be something better on many aspects. Some of them were great, some others were not.
 updated: 2024-05-03
 ---
+
 God of War Ragnarök feels like a bigger [God of War 2018](https://asukachikaru.com/blog/god-of-war-2018) — more weapons, more companions, more characters, and a longer story. Gameplay-wise, I am happy with these added contents. Narrative-wise, not so much
 
 God of War 2018 was an incredible journey. The story was focused on the relationship between Kratos and Atreus. The best moments were all about them. Players were right alongside them thanks to the single-take camera approach, so when the characters met their arc, it felt close.
@@ -36,3 +34,4 @@ To be fair, this game still has content that worth more than 50 hours of playtim
 But this game certainly made me appreciate God of War 2018 more. Narrative-wise, it has one of the best execution I’ve ever experienced.
 
 It is a shame the aftertaste of God of War Ragnarök for me is a bit bitter, but the memory of God of War 2018 definitely becomes sweeter. I wouldn't say it’s the worst outcome for its successor.
+

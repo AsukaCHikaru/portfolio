@@ -5,11 +5,10 @@ published: 2024-03-17
 language: en-US
 pathname: improving-greatness
 category: Gaming
-tags: 
-filename: Improving Greatness (blog)
 description: Breath of the Wild is one of the most impactful game in last decade. Yet for its successor, Nintendo built an even more polished version on an already magnificent fundamental.
 updated: 2024-05-03
 ---
+
 I did not enjoy Breath of the Wild.
 
 It's a great game. The most freedom I've ever had in a game with a story. I appreciate its great design; I just did not crave playing it.
@@ -17,7 +16,7 @@ However, that was exactly what happened to me with Tears of the Kingdom.
 
 And the reason why I love TOTK is what it was not enough to me in BOTW.
 
-The open world in BOTW is magnificent. Every bit of the terrain in the game is traversable. No game had ever granted such freedom to players. 
+The open world in BOTW is magnificent. Every bit of the terrain in the game is traversable. No game had ever granted such freedom to players.
 
 With such an advantage, the exploration and interaction with the Kingdom of Hyrule became the main content; other components in game, including the main quest, shrines, hidden treasures' purpose, was to facilitate the open world.
 
@@ -46,3 +45,4 @@ With these connections and organic guidances, players have the tools to form the
 These two feedback loops are the backbone of Tears of the Kingdom's open world gameplay.
 
 Nintendo found the answer to the open world feedback loop issue in BOTW. I think they nailed it in this game, and for that, TOTK is a better game to me. It is an improved version of an already exceptional foundation. An improved greatness.
+

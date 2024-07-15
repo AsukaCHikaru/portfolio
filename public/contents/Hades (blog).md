@@ -5,9 +5,8 @@ published: 2022-01-05
 language: en-US
 pathname: hades
 category: Gaming
-tags: Review, Game Design
-filename: Hades (blog)
 ---
+
 For the film industry, there is a “Best Picture” award.
 
 Video games, which are also a commercial and artistic medium, have an equivalent known as “Game of the Year”.
@@ -139,3 +138,4 @@ And I was deeply impressed by the game when playing this game from the beginning
 I’ve been recommending Hades to folks whenever we’re talking about games for the past six months. This game is so well-polished, it’s almost flawless. To me, it is the one and only Game of the Year.
 
 Hades is the best game I’ve played in years, and I believe it will stay there for a long time.
+

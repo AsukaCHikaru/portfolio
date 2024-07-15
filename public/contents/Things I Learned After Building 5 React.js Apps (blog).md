@@ -5,11 +5,8 @@ published: 2019-08-08
 language: en-US
 pathname: things-i-learned-after-building-5-react-apps
 category: Web Development
-tags:
-  - JavaScript
-  - React.js
-filename: Things I Learned After Building 5 React.js Apps (blog)
 ---
+
 # TLDR:
 
 - Use [Create-React-App](https://create-react-app.dev/)
@@ -41,3 +38,4 @@ Your React app will work just fine with itself only. Then when you start to brin
 - [prop-types](https://github.com/facebook/prop-types)
 - [defaultProps](https://reactjs.org/docs/typechecking-with-proptypes.html#default-prop-values)
 - [redux](https://redux.js.org/)
+

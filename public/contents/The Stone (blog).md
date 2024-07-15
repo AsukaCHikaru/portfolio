@@ -5,9 +5,8 @@ published: 2017-05-01
 language: zh-TW
 pathname: the-stone
 category: League of Legends
-tags: 坂本真綾
-filename: The Stone (blog)
 ---
+
 我還記得第一次玩 Taliyah 的時候。
 
 中路被選走了，所以我只能走上路。
@@ -56,6 +55,6 @@ filename: The Stone (blog)
 該說我內心早就猜到了嗎？
 
 ![[the-stone_1.png]]
-#nullcaption
 
 我的下一隻 main 就是 Taliyah。
+

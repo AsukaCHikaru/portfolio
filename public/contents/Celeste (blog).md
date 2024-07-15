@@ -5,9 +5,8 @@ published: 2020-05-31
 language: zh-TW
 pathname: celeste
 category: Gaming
-tags: Review
-filename: Celeste (blog)
 ---
+
 我在摸索 Unity3D 時，第一個想做的遊戲是 platformer。做著做著覺得沒什麼手感才想起：我根本不太玩 platformer。想做不是因為自己想玩，是因為這個類型給我一種獨立遊戲感。所以，雖然對 platformer 不是特別有熱情，我仍然玩了兩款名作來體驗與研究。
 
 第一款是〈Ori and the Blind Forest〉，過去幾年談到 platformer 不會錯過的經典作品。優秀的美術與音樂，良好的操作性與關卡設計，很不錯的遊戲。遊戲中有不少劇情鋪陳與敘述的橋段，佐以其傑出美術所營造的世界觀，我當時猜想主要可以從 Ori 學習的部分是文本方面。不是說它的動作性與遊戲性不好，而是劇情與世界觀更為印象深刻。
@@ -110,10 +109,8 @@ Madeline 在這段對話看來無比自信與樂觀，相信可以拋棄不完�
 在這一刻，持續在背景咆哮的風暴終於平息，一切都安靜了下來。
 
 ![[celeste_1.png]]
-#nullcaption
 
 ![[celeste_2.png]]
-#nullcaption
 
 接納了另一部分自己的 Badeline 回到 Madeline 體內，然後角色能力成長，現在 Madeline 可以衝刺兩次也就是三段跳，原本無法前往的地區都變得有可能了。
 
@@ -164,7 +161,6 @@ Madeline 在這段對話看來無比自信與樂觀，相信可以拋棄不完�
 終於，Madeline 迎來了編號 1 號的告示牌以及最後一段天堂路，踏上了 Mt. Celeste 的山頂。Madeline 與 Badeline 兩人一起享受著山頂的美景，以及彼此努力的成果。
 
 ![[celeste_3.png]]
-#nullcaption
 
 Credit roll 結束後，所有登場人物都集結在 Old woman 在山腳的家，Madeline 用旅途上收集到的草莓烤了草莓派給大家吃。這是她第一次作草莓派，開動前還給 Theo 打了預防針說不要太期待。Mr. Oshiro 用一句話為這個故事劃上了完美的句點：
 
@@ -205,3 +201,4 @@ Celestial Resort Hotel 是一個很明顯的例子。Mr. Oshiro 忽視旅館骯�
 所以，我真的很希望每個人都玩玩看 Celeste。事實上，如果要我選出一個「十款所有人都該玩玩看的遊戲」清單，Celeste 一定會被我放在裡面。它也許不是最「好玩」的遊戲，但作為一個使用遊戲這個藝術載體的文本，Celeste 是極為優秀的作品，而這個作品想傳達的價值，我相信每個人在生活中都會遭遇到。遊玩過程中你可能會失敗上百上千次，你可能會很挫折，但重要的不是你是否成功，而是——
 
 你是否盡力嘗試過了。
+

@@ -5,9 +5,8 @@ published: 2021-01-08
 language: en-US
 pathname: s10-recap
 category: League of Legends
-tags: TSM
-filename: S10 Recap (blog)
 ---
+
 # TSM
 
 A year with massive changes. Kobbe and Dardoch were both members of this spring, but they are already giving me a "down past years" vibes like MikeYeung or Grig. Based on hints from aftermath interviews, it was almost feeling like a miracle that we gave C9 their first loss.
@@ -136,7 +135,6 @@ I like to use the ult to help skirmish, dish out damage when I'm still rotating.
 Caitlyn's attack speed scale is relatively low, so her playstyle is not orbwalk and crazy damages like Xayah or Ashe. She actually has good burst potential, but it depends on if you have headshots on the intended target. Getting used to such "One shot, one kill" playstyle is a path you can't avoid when trying to be good at Caitlyn. When you know how to use your W and E properly, alone side the long-range, you can toy your enemies.
 
 ![[s10-recap_1.gif]]
-#nullcaption
 
 # 1 games, 10 years
 
@@ -149,3 +147,4 @@ I finally had a taste of competitive gaming. I had victories, I had defeats. Hel
 I'm very happy, and very appreciated, for after I started working for so many years, I still get to be obsessed with a particular game.
 
 I hope there are a lot of things waiting for me in season 11 as well.
+

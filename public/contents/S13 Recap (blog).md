@@ -4,16 +4,17 @@ title: S13 Recap
 published: 2024-01-23
 pathname: s13-recap
 category: League of Legends
-tags: 
-filename: S13 Recap (blog)
 description: After a three years gap, I'm back to league.
 updated: 2024-05-03
 language: en-US
 ---
+
 The last time I wrote a recap for my League of Legends season was 3 years ago. The reason is simple: I haven't been playing much.
 
 Playing League solo takes a toll on your mental, and it became unbearable in recent years. The saddest part to me is that gameplay-wise I still love this game so much, but the player interaction part makes playing it painful.
+
 # League still has great gameplay
+
 I played some Heroes of the Storm with my buddies last year.
 
 All of us agreed that Heroes was not fun.
@@ -23,13 +24,17 @@ Based on the design and the idea, it should be fun, but it really isn't. Every m
 League, on the other hand, feels great to play. When the player does something right, be it last-hitting, kill, or smite win, the game makes sure to make the player know it by providing awesome feedback.
 
 After playing it for more than a decade, it is easy to focus on the part that stands out when talking about League contents, like the collective 200 years of design experience. But I felt it is necessary and important to appreciate the parts Leagues are doing great and not take it for granted. It is the most popular game in the world for a reason.
+
 # Taiwan Server
+
 Taiwan server left Garena and becomes almost directly managed by Riot this year. This is the second biggest event in the history of Taiwan server. The biggest one was the start of the old server ten years ago.
 
 Me and my buddies who played ranked 5v5 in season 2 all were excited, and we assembled again after eleven years. A bunch of adults in their 30s gather at night or weekend to practice and talk about a game seriously, and we had a blast.
 
 People are still dumb and toxic, but at least it is easier to cope with each other. League really is meant to be played with friends.
+
 # Switching to mid lane
+
 Lately I started playing mid lane again. It started with Akali.
 
 I fell in love with Akali, not lore wise, but gameplay wise. It is a mechanic-demanding champion, but when played right she is the most bad ass champion in the game.
@@ -50,16 +55,8 @@ I don't usually win lane and snowball to win, but with my buddies I can play a m
 
 Then after we got our first win of the day I can int with Akali.
 
-# About Akali
-## Pros
-- Extremely high mobility, good chasing and escaping capability
-- Shroud creates confusion and space in fight
-- 
-## Cons
-- mechanically demanding
-- not the best side lane champion
-
 # Esports
+
 After the announcement of TSM selling their LCS spot, I stopped caring about LCS. To be honest I haven't for a while, I was just waiting for the last straw.
 
 Instead I was rooting for Dplus KIA, or more precisely, ShowMaker. I love someone with a personality. DK official YouTube channel contents being hilarious also helped. I recognised the jewel of the famous K'Sante monologue before it was viral.
@@ -71,3 +68,4 @@ Last worlds had good narrative though, with the T1 storyline. Though I have grea
 Faker is unarguably the GOAT of League, but he hasn't won a championship for six years. It's about time.
 
 And for those young prodigies, it would be such a tragedy if they fall short again, and such a catastrophe waste for such talents to be labeled chokers. I loved the redemption story, for all of them.
+
