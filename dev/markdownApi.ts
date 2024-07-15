@@ -7,10 +7,13 @@ const markdownFolderPath = resolve(import.meta.dir, "..", "public", "contents");
 export const getBlogList = () => {
   const filePaths = readdirSync(markdownFolderPath);
 
+  const list: Record<string, string>[] = [];
+
   filePaths.forEach((filePath) => {
     const frontmatter = parseMarkdownFrontmatter(
       readFileSync(resolve(markdownFolderPath, filePath)),
     );
+    list.push(frontmatter);
   });
-  return JSON.stringify({ foo: "bar" });
+  return JSON.stringify(list);
 };
