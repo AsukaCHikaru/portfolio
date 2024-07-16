@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/GentiumBookPlus-Regular.ttf");
+}
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("/fonts/AbrilFatface-Regular.ttf");
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/fonts/Alegreya-Regular.ttf");
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans_Condensed-ExtraLight.ttf"),
+    url("/fonts/NotoSans_Condensed-Thin.ttf");
+}
+@font-face {
+  font-family: "Noto Serif JP";
+  src: url("/fonts/NotoSerifJP-Regular.ttf");
+}
