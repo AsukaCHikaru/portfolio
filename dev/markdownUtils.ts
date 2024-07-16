@@ -1,6 +1,6 @@
-import type { BlogPostLanguage, BlogPostMeta } from "../../types";
+import type { BlogPostLanguage, BlogPostMeta } from "../types";
 
-export const parseBlogPostMeta = (
+export const convertFrontmatterToBlogPostMeta = (
   input: Record<string, string>,
 ): BlogPostMeta => {
   return {

@@ -3,6 +3,8 @@ import type { Content, PhrasingContent, Paragraph, List, Yaml } from "mdast";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
+import { convertFrontmatterToBlogPostMeta } from "./markdownUtils";
+import type { BlogPostMeta } from "../types";
 
 export const parseMarkdownFrontmatter = (buf: Buffer) => {
   const string = buf.toString("utf-8");
@@ -29,7 +31,7 @@ export const parseMarkdownFrontmatter = (buf: Buffer) => {
   return Object.fromEntries(map);
 };
 
-const parseFrontmatter = (rawFrontmatter: Yaml) => {
+const parseFrontmatter = (rawFrontmatter: Yaml): BlogPostMeta => {
   const map = new Map();
   rawFrontmatter.value.split("\n").forEach((entry) => {
     const match = /^(\w+):\s["']?(.+?)["']?$/.exec(entry);
@@ -39,7 +41,7 @@ const parseFrontmatter = (rawFrontmatter: Yaml) => {
     const [_, key, value] = match;
     map.set(key, value);
   });
-  return Object.fromEntries(map);
+  return convertFrontmatterToBlogPostMeta(Object.fromEntries(map));
 };
 
 const parseParagraphContent = (content: Paragraph): MarkdownBlock => {
