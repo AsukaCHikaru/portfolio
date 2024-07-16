@@ -6,6 +6,7 @@ import {
   Outlet,
 } from "@tanstack/react-router";
 import { BlogPostListPage } from "./pages/blog/BlogPostListPage";
+import { BlogPostPage } from "./pages/blog/BlogPostPage";
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -25,6 +26,11 @@ const routes = {
     getParentRoute: () => rootRoute,
     path: "/blog",
     component: () => <BlogPostListPage />,
+  }),
+  blog: createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/blog/$postPath",
+    component: () => <BlogPostPage />,
   }),
 };
 
