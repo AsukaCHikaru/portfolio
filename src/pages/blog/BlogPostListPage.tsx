@@ -1,12 +1,12 @@
 import type { FC } from "react";
 import type { BlogPostMeta } from "../../types";
 import { useApi } from "../../services/apiCore";
-import { getBlogList } from "../../services/markdownService";
+import { getBlogPostList } from "../../services/markdownService";
 import styles from "./BlogPostListPage.module.css";
 
 export const BlogPostListPage = () => {
   const blogPostList = useApi({
-    queryFn: () => getBlogList(),
+    queryFn: () => getBlogPostList(),
   });
 
   return (

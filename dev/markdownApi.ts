@@ -4,7 +4,7 @@ import { parseMarkdownFrontmatter } from "./markdownParser";
 
 const markdownFolderPath = resolve(import.meta.dir, "..", "public", "contents");
 
-export const getBlogList = () => {
+export const getBlogPostList = () => {
   const filePaths = readdirSync(markdownFolderPath);
 
   const list: Record<string, string>[] = [];

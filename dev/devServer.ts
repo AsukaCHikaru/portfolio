@@ -1,7 +1,7 @@
 import type { Server } from "bun";
 import { watch } from "fs";
 import { resolve } from "path";
-import { getBlogList, getBlogPost } from "./markdownApi";
+import { getBlogPostList, getBlogPost } from "./markdownApi";
 
 const PORT = 3000;
 
@@ -59,8 +59,8 @@ export const resolveMarkdownFile: Server["fetch"] = (request: Request) => {
     /^https?:\/\/localhost:\d+(.+)$/,
     "$1",
   );
-  if (requestPath.startsWith("/api/blogList")) {
-    const res = new Response(getBlogList());
+  if (requestPath === "/api/blog") {
+    const res = new Response(getBlogPostList());
     res.headers.set("Access-Control-Allow-Origin", "*");
     res.headers.set("Access-Control-Allow-Methods", "GET");
     return res;
