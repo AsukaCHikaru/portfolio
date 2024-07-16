@@ -7,7 +7,7 @@ interface Props {
 
 export const PostBodyBlock: FC<Props> = ({ block }) => {
   return (
-    <div className="mb-6 font-serif text-lg lg:text-xl lg:leading-8 last:mb-0">
+    <div>
       <BlockContent block={block} />
     </div>
   );
@@ -35,12 +35,9 @@ export const BlockContent: FC<Props> = ({ block }) => {
             alt={block.alt || ""}
             width={600}
             height={400}
-            className="m-auto"
           />
           {block.caption !== "#nullcaption" ? (
-            <span className="flex justify-center text-color-second text-lg">
-              {block.caption}
-            </span>
+            <span>{block.caption}</span>
           ) : null}
         </>
       );
@@ -50,7 +47,6 @@ export const BlockContent: FC<Props> = ({ block }) => {
         case 1:
           return (
             <h2
-              className="mt-8 text-2xl lg:text-4xl font-semibold"
               id={block.children
                 .map((item) => item.text)
                 .join("-")
@@ -64,7 +60,6 @@ export const BlockContent: FC<Props> = ({ block }) => {
         case 2:
           return (
             <h3
-              className="mt-8 text-xl lg:text-3xl font-semibold"
               id={block.children
                 .map((item) => item.text)
                 .join("-")
@@ -78,7 +73,6 @@ export const BlockContent: FC<Props> = ({ block }) => {
         case 3:
           return (
             <h4
-              className="mt-8 text-lg lg:text-2xl font-semibold"
               id={block.children
                 .map((item) => item.text)
                 .join("-")
@@ -96,7 +90,7 @@ export const BlockContent: FC<Props> = ({ block }) => {
     case "list":
       if (block.ordered) {
         return (
-          <ol className="list-decimal list-inside mx-8">
+          <ol>
             {block.children.map((child, i) => (
               <li key={i}>
                 {child.children.map((child) => (
@@ -108,7 +102,7 @@ export const BlockContent: FC<Props> = ({ block }) => {
         );
       } else {
         return (
-          <ul className="list-disc list-inside mx-8">
+          <ul>
             {block.children.map((child, i) => (
               <li key={i}>
                 {child.children.map((child) => (
@@ -127,7 +121,7 @@ export const BlockContent: FC<Props> = ({ block }) => {
       return <div>TODO: quote block</div>;
 
     case "thematicBreak":
-      return <hr className="my-16 w-80 mx-auto border-color" />;
+      return <hr />;
 
     default:
       return null;
@@ -145,12 +139,7 @@ export const RichTextItem: FC<RichTextItemProps> = ({ item }) => {
 
     case "link":
       return (
-        <a
-          href={item.url}
-          className="text-blue-400 underline"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
+        <a href={item.url} rel="noreferrer noopener" target="_blank">
           {item.text}
         </a>
       );
@@ -159,14 +148,10 @@ export const RichTextItem: FC<RichTextItemProps> = ({ item }) => {
       return <strong>{item.text}</strong>;
 
     case "italic":
-      return <span className="italic">{item.text}</span>;
+      return <span>{item.text}</span>;
 
     case "inlineCode":
-      return (
-        <code className="px-1 font-courier text-gray-300 bg-gray-700 rounded-sm">
-          {item.text}
-        </code>
-      );
+      return <code>{item.text}</code>;
 
     // TODO: strikethrough (need remark GFM plugin) default: return <span>FIXME</span>;
   }
