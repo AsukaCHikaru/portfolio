@@ -1,4 +1,4 @@
-import type { BlogPostLanguage, BlogPostMeta } from "../types";
+import type { BlogPostLanguage, BlogPostMeta } from "../../types";
 
 export const parseBlogPostMeta = (
   input: Record<string, string>,

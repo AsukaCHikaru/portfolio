@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { BlogPostMeta } from "../../types";
+import type { BlogPostMeta } from "../../../types";
 import { useApi } from "../../services/apiCore";
 import { getBlogPostList } from "../../services/markdownService";
 import styles from "./BlogPostListPage.module.css";

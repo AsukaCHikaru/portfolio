@@ -1,4 +1,4 @@
-import type { BlogPostMeta } from "../types";
+import type { BlogPostMeta } from "../../types";
 import { parseBlogPostMeta } from "../utils/markdownUtils";
 import { request } from "./apiCore";
 
