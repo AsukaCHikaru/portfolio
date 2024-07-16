@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const request = async (pathname: string) => {
+export const request = async <T>(pathname: string) => {
   const response = await fetch("http://localhost:3000" + pathname);
-  return response.json();
+  return response.json() as T;
 };
 
 type UseApiOption<T> = {
