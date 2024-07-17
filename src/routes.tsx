@@ -7,12 +7,13 @@ import {
 } from "@tanstack/react-router";
 import { BlogPostListPage } from "./pages/blog/BlogPostListPage";
 import { BlogPostPage } from "./pages/blog/BlogPostPage";
+import { Layout } from "./components/Layout";
 
 const rootRoute = createRootRoute({
   component: () => (
-    <div>
+    <Layout>
       <Outlet />
-    </div>
+    </Layout>
   ),
 });
 
