@@ -6,3 +6,8 @@ html {
   background-color: var(--light);
   color: var(--dark);
 }
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+}
