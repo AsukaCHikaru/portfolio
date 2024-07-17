@@ -11,10 +11,10 @@ export const getBlogPostList = () => {
   const list: BlogPostMeta[] = [];
 
   filePaths.forEach((filePath) => {
-    const { frontmatter } = parseMarkdown(
+    const { meta } = parseMarkdown(
       readFileSync(resolve(markdownFolderPath, filePath)).toString("utf-8"),
     );
-    list.push(frontmatter);
+    list.push(meta);
   });
 
   const sortedList = list.sort(
@@ -31,10 +31,10 @@ export const getBlogPost = (postPath: string) => {
   const list: BlogPostMeta[] = [];
 
   filePaths.forEach((filePath) => {
-    const { frontmatter } = parseMarkdown(
+    const { meta } = parseMarkdown(
       readFileSync(resolve(markdownFolderPath, filePath)).toString("utf-8"),
     );
-    list.push(frontmatter);
+    list.push(meta);
   });
 
   const post = list.find((post) => post.pathname === postPath);
@@ -47,7 +47,7 @@ export const getBlogPost = (postPath: string) => {
     const file = readFileSync(
       resolve(markdownFolderPath, `${decodeURI(post.title)} (blog).md`),
     );
-    return JSON.stringify(parseMarkdown(file.toString("utf-8")));
+    return parseMarkdown(file.toString("utf-8"));
   } catch (error) {
     console.error(error);
   }

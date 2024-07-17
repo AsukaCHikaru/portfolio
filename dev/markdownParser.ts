@@ -181,5 +181,5 @@ export const parseMarkdown = (raw: string) => {
   const frontmatter = parseFrontmatter(rawFrontmatter as Yaml);
   const content = parseRawContent(rawContent);
 
-  return { frontmatter, content };
+  return { meta: frontmatter, content };
 };

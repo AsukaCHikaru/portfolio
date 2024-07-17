@@ -67,7 +67,7 @@ export const resolveMarkdownFile: Server["fetch"] = (request: Request) => {
   }
   if (requestPath.startsWith("/api/blog/")) {
     const postTitle = requestPath.replace(/\/api\/blog\/(.+)$/, "$1");
-    const res = new Response(getBlogPost(postTitle));
+    const res = new Response(JSON.stringify(getBlogPost(postTitle)));
     res.headers.set("Access-Control-Allow-Methods", "GET");
     res.headers.set("Access-Control-Allow-Origin", "*");
     return res;

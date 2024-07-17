@@ -9,9 +9,10 @@ export const getBlogPostList = async (): Promise<BlogPostMeta[]> => {
 
 export const getBlogPost = async (
   postPath: string,
-): Promise<{ content: MarkdownBlock[] }> => {
-  const data = await request<{ content: MarkdownBlock[] }>(
-    `/api/blog/${postPath}`,
-  );
+): Promise<{ content: MarkdownBlock[]; meta: BlogPostMeta }> => {
+  const data = await request<{
+    content: MarkdownBlock[];
+    meta: BlogPostMeta;
+  }>(`/api/blog/${postPath}`);
   return data;
 };
