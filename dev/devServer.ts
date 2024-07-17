@@ -1,29 +1,5 @@
 import type { Server } from "bun";
-import { watch } from "fs";
-import { resolve } from "path";
 import { getBlogPostList, getBlogPost } from "./markdownApi";
-
-const PORT = 3000;
-
-const html = Bun.file("./index.html");
-await Bun.write("build/index.html", html);
-
-const srcPath = resolve(import.meta.dir, "..", "src");
-
-await Bun.build({
-  entrypoints: ["./src/index.tsx"],
-  outdir: "./build",
-  naming: "main.js",
-});
-
-watch(srcPath, { recursive: true }, async (event, filename) => {
-  console.log(event, filename);
-  await Bun.build({
-    entrypoints: ["./src/index.tsx"],
-    outdir: "./build",
-    naming: "main.js",
-  });
-});
 
 export const bootServer = (port: number, requestHandler: Server["fetch"]) => {
   const server = Bun.serve({
@@ -33,25 +9,6 @@ export const bootServer = (port: number, requestHandler: Server["fetch"]) => {
   });
 
   return server;
-};
-
-export const resolveWebFile = (request: Request) => {
-  const requestPath = request.url.replace(
-    /^https?:\/\/localhost:\d+(.+)$/,
-    "$1",
-  );
-  if (requestPath.startsWith("/api")) {
-    return fetch("http://localhost:3001" + requestPath);
-  }
-  if (requestPath === "/favicon.ico") {
-    return new Response();
-  }
-  if (requestPath !== "/") {
-    return new Response(
-      Bun.file(resolve("build", requestPath.replace("/", ""))),
-    );
-  }
-  return new Response(Bun.file("./index.html"));
 };
 
 export const resolveMarkdownFile: Server["fetch"] = (request: Request) => {
@@ -74,4 +31,3 @@ export const resolveMarkdownFile: Server["fetch"] = (request: Request) => {
   }
   throw new Error("invalid api path");
 };
-console.log(`Dev server listening on port`, PORT);

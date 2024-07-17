@@ -1,4 +1,4 @@
-import { bootServer, resolveMarkdownFile, resolveWebFile } from "./devServer";
+import { bootServer, resolveMarkdownFile } from "./devServer";
 
 const FILE_PORT = 3001;
 
