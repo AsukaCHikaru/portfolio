@@ -1,6 +1,10 @@
 @font-face {
-  font-family: "Gentium";
+  font-family: "Gentium Book";
   src: url("/fonts/GentiumBookPlus-Regular.ttf");
+}
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/GentiumPlus-Italic.ttf");
 }
 @font-face {
   font-family: "Abril Fatface";
@@ -12,10 +16,21 @@
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("/fonts/NotoSans_Condensed-ExtraLight.ttf"),
-    url("/fonts/NotoSans_Condensed-Thin.ttf");
+  src: url("/fonts/NotoSans-Thin.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-ExtraLight.ttf");
+  font-weight: 200;
 }
 @font-face {
   font-family: "Noto Serif JP";
   src: url("/fonts/NotoSerifJP-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Serif JP";
+  src: url("/fonts/NotoSerifJP-Black.ttf");
+  font-weight: 900;
 }
