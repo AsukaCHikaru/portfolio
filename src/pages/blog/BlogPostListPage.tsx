@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import type { BlogPostMeta } from "../../../types";
 import styles from "./BlogPostListPage.module.css";
+import { getBlogPostList } from "../../services/markdownService";
 
 interface Props {
   blogPostList: BlogPostMeta[];
@@ -30,3 +31,14 @@ const BlogPostLink: FC<BlogPostLinkProps> = ({ post }) => (
     <div className={styles["post-date"]}>{post.published}</div>
   </a>
 );
+
+const getProps = async (): Promise<Props> => {
+  const blogPostList = await getBlogPostList();
+
+  return { blogPostList };
+};
+
+export default {
+  Element: BlogPostListPage,
+  getProps,
+};

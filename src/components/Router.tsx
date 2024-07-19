@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { BlogPostListPage } from "../pages/blog/BlogPostListPage";
-import { getBlogPost, getBlogPostList } from "../services/markdownService";
+import BlogPostListPage from "../pages/blog/BlogPostListPage";
 import { Layout } from "./Layout";
-import { BlogPostPage } from "../pages/blog/BlogPostPage";
+import BlogPostPage from "../pages/blog/BlogPostPage";
 
 type Route = {
   path: string;
@@ -12,16 +11,16 @@ const routes = {
   blogPostList: {
     path: "/blog",
     render: async () => {
-      const list = await getBlogPostList();
-      return <BlogPostListPage blogPostList={list} />;
+      const props = await BlogPostListPage.getProps();
+      return <BlogPostListPage.Element {...props} />;
     },
   },
   blog: {
     path: "/blog/:postPath",
     render: async (postPath: string) => {
       try {
-        const { content, meta } = await getBlogPost(postPath);
-        return <BlogPostPage content={content} meta={meta} />;
+        const props = await BlogPostPage.getProps(postPath);
+        return <BlogPostPage.Element {...props} />;
       } catch (error) {}
       return null;
     },
