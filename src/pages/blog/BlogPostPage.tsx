@@ -1,26 +1,24 @@
-import { useParams } from "@tanstack/react-router";
-import { useApi } from "../../services/apiCore";
-import { getBlogPost } from "../../services/markdownService";
 import { PostBodyBlock } from "../../components/BlogPostBodyBlock";
 import styles from "./BlogPostPage.module.css";
 import type { FC } from "react";
 import type { BlogPostMeta } from "../../../types";
+import type { MarkdownBlock } from "../../../types/markdown";
 
-export const BlogPostPage = () => {
-  const { postPath } = useParams({ from: "/blog/$postPath" });
-  const post = useApi({
-    queryFn: () => getBlogPost(postPath),
-  });
+interface Props {
+  content: MarkdownBlock[];
+  meta: BlogPostMeta;
+}
 
-  return post ? (
-    <>
-      <BlogPostPageHeader postMeta={post?.meta} />
-      <div className={styles["content-container"]}>
-        {post?.content.map((block) => <PostBodyBlock block={block} />)}
-      </div>
-    </>
-  ) : null;
-};
+export const BlogPostPage: FC<Props> = ({ content, meta }) => (
+  <>
+    <BlogPostPageHeader postMeta={meta} />
+    <div className={styles["content-container"]}>
+      {content.map((block) => (
+        <PostBodyBlock block={block} />
+      ))}
+    </div>
+  </>
+);
 
 const BlogPostPageHeader: FC<{ postMeta: BlogPostMeta }> = ({ postMeta }) => (
   <div className={styles.header}>
