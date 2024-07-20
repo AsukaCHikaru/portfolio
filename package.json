@@ -2,7 +2,8 @@
   "name": "portfolio",
   "type": "module",
   "scripts": {
-    "dev": "bun run dev/index.ts"
+    "dev": "bun run dev/index.ts",
+    "build": "rm -rf dist && bun run dev/build.tsx"
   },
   "devDependencies": {
     "@types/bun": "latest",
