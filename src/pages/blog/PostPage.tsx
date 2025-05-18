@@ -1,3 +1,3 @@
-export const Post = () => {
+export const PostPage = () => {
   return <div>post</div>
 }

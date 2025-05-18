@@ -1,3 +1,3 @@
-export const Archive = () => {
+export const ArchivePage = () => {
   return <div>archive</div>
 }

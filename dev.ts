@@ -9,6 +9,8 @@ Bun.serve({
 
     switch (path) {
       case "/":
+      case "/blog":
+      case "/about":
       case "/index.html":
         return new Response(await Bun.file("./index.html").text(), {
           headers: {
@@ -31,6 +33,14 @@ Bun.serve({
           },
         });
       default:
+        if (/\/blog\/\w+/.test(path)) {
+          return new Response(await Bun.file("./index.html").text(), {
+          headers: {
+            "Content-Type": "text/html",
+          },
+        });
+        }
+
         try {
           const filePath = "." + path;
           const file = Bun.file(filePath);
