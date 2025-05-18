@@ -2,6 +2,9 @@
   "name": "portfolio",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun run dev.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^19.1.4",
