@@ -1,6 +1,7 @@
 import type { Block } from "@asukawang/amp";
 import type { PostMetaData } from "../tools/contentServices";
 import { Router } from "./Router";
+import "../node_modules/modern-normalize/modern-normalize.css";
 
 declare global {
   interface Window {
