@@ -18,8 +18,13 @@ export const getBlogPostList = async () => {
 
   return Promise.all(
     files.map(
-      async (file) => (await parsePost(BLOG_FOLDER_PATH + "/" + file)).metadata
-    )
+      async (file) => (await parsePost(BLOG_FOLDER_PATH + "/" + file)).metadata,
+    ),
+  ).then((posts) =>
+    posts.sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    ),
   );
 };
 
