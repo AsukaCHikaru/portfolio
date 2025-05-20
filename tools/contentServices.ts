@@ -17,13 +17,12 @@ export const getBlogPostList = async () => {
   const files = await readdir(BLOG_FOLDER_PATH);
 
   return Promise.all(
-    files.map(
-      async (file) => (await parsePost(BLOG_FOLDER_PATH + "/" + file)).metadata,
-    ),
+    files.map(async (file) => await parsePost(BLOG_FOLDER_PATH + "/" + file)),
   ).then((posts) =>
     posts.sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+        new Date(b.metadata.publishedAt).getTime() -
+        new Date(a.metadata.publishedAt).getTime(),
     ),
   );
 };
@@ -36,5 +35,3 @@ const parsePost = async (filePath: string) => {
     content: blocks,
   };
 };
-
-console.log(await getBlogPostList());
