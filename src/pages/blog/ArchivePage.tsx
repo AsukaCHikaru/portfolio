@@ -1,21 +1,25 @@
-import type { PostMetaData } from "../../../tools/contentServices";
-import { Link } from "../../components/Link";
+import { type PostMetaData } from "../../../tools/contentServices";
+
+export const ArchivePage = () => {
+  const postList = window.__STATIC_PROPS__.postList;
+  return <ArchivePageContent postList={postList} />;
+};
 
 interface Props {
   postList: PostMetaData[];
 }
-
-export const ArchivePage = ({ postList }: Props) => {
+export const ArchivePageContent = ({ postList }: Props) => {
   return (
     <div>
+      <h1>Blog Archive</h1>
       {postList.map((post) => (
-        <Link key={post.pathname} to={`/blog/${post.pathname}`}>
+        <a key={post.pathname} href={`/blog/${post.pathname}`}>
           <h2>{post.title}</h2>
           <p>{post.description}</p>
           <p>Published on: {post.publishedAt}</p>
           <p>Category: {post.category}</p>
           <p>Topic: {post.topic}</p>
-        </Link>
+        </a>
       ))}
     </div>
   );

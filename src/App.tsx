@@ -1,18 +1,28 @@
-import { Link } from "./components/Link";
+import type { Block } from "@asukawang/amp";
+import type { PostMetaData } from "../tools/contentServices";
 import { Router } from "./Router";
+
+declare global {
+  interface Window {
+    __STATIC_PROPS__: {
+      postList: PostMetaData[];
+      post: { metadata: PostMetaData; content: Block[] };
+    };
+  }
+}
 
 export const App = () => (
   <div>
     <nav>
       <ul style={{ display: "flex", listStyle: "none", gap: "1rem" }}>
         <li>
-          <Link to="/">Home</Link>
+          <a href="/">home</a>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <a href="/blog">blog</a>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <a href="/about">about</a>
         </li>
       </ul>
     </nav>

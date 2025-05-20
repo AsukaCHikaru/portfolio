@@ -1,19 +1,21 @@
 import type { Block, Link, TextBody } from "@asukawang/amp";
-import type { PostMetaData } from "../../../tools/contentServices";
+import { type PostMetaData } from "../../../tools/contentServices";
+
+export const PostPage = () => {
+  const post = window.__STATIC_PROPS__.post;
+  return <PostPageContent metadata={post.metadata} content={post.content} />;
+};
 
 interface Props {
-  postMetadata: PostMetaData;
+  metadata: PostMetaData;
   content: Block[];
 }
-
-export const PostPage = ({ postMetadata, content }: Props) => {
+export const PostPageContent = ({ metadata, content }: Props) => {
   return (
     <div>
-      <div>
-        <h1>{postMetadata.title}</h1>
-        <h2>{postMetadata.description}</h2>
-        <p>{postMetadata.publishedAt}</p>
-      </div>
+      <h1>{metadata.title}</h1>
+      <h2>{metadata.description}</h2>
+      <p>{metadata.publishedAt}</p>
       {content.map((block, i) => (
         <ContentBlock block={block} key={i} />
       ))}
