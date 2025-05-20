@@ -2,9 +2,9 @@ import { readFileSync } from "node:fs";
 import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
-import { ArchivePage } from "../src/pages/blog/ArchivePage";
+import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
 import { getBlogPostList } from "./contentServices";
-import { PostPage } from "../src/pages/blog/PostPage";
+import { PostPageContent } from "../src/pages/blog/PostPage";
 
 const writeFile = (element: ReactNode, path: string) => {
   let template = readFileSync(
@@ -25,22 +25,34 @@ const writeFile = (element: ReactNode, path: string) => {
 const buildBlog = async () => {
   const postList = await getBlogPostList();
   writeFile(
-    <ArchivePage postList={postList.map((post) => post.metadata)} />,
+    <ArchivePageContent postList={postList.map((post) => post.metadata)} />,
     "/blog",
   );
 
   postList.forEach((post) => {
     writeFile(
-      <PostPage postMetadata={post.metadata} content={post.content} />,
+      <PostPageContent metadata={post.metadata} content={post.content} />,
       `/blog/${post.metadata.pathname}`,
     );
   });
 };
 
-const build = () => {
-  buildBlog();
+const build = async () => {
+  await buildBlog();
 
-  Bun.build({ entrypoints: ["./src/main.tsx"], outdir: "./dist" });
+  try {
+    await Bun.build({
+      entrypoints: ["./src/index.tsx"],
+      outdir: "./dist",
+      naming: "main.js",
+      target: "browser",
+      minify: false,
+      sourcemap: "inline",
+    });
+  } catch (error) {
+    console.error("Build failed:", error);
+  }
 };
 
-build();
+await Bun.$`rm -rf ./dist`;
+await build();
