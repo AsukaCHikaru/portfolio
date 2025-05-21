@@ -1,8 +1,6 @@
-import styles from "./layout.module.css";
-
 export const SiteHeader = () => (
-  <nav className={styles.siteHeader_gridWrapper}>
-    <div className={styles.siteHeader_container}>
+  <nav className="site-header_grid-wrapper">
+    <div className="site-header_container">
       <div>
         <a href="/blog">blog</a>
         <a href="/about">about</a>
@@ -10,6 +8,6 @@ export const SiteHeader = () => (
       </div>
       <a href="/">ASUKA WANG</a>
     </div>
-    <div className={styles.siteHeader_divider} role="presentation" />
+    <div className="site-header_divider" role="presentation" />
   </nav>
 );
