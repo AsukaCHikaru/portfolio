@@ -63,6 +63,7 @@ const build = async () => {
   await buildBlog();
   await buildFrontPage();
   await buildAboutPage();
+  await Bun.$`cp -r ./public/fonts ./dist/fonts`;
 
   try {
     await Bun.build({
