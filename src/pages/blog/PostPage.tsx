@@ -139,7 +139,7 @@ const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
       }
     case "link":
       return (
-        <a href={body.url}>
+        <a href={body.url} target="_blank" rel="noopener noreferrer">
           {body.body.map((item, i) => (
             <TextBodyBlock body={item} key={i} />
           ))}
