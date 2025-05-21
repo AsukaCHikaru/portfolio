@@ -1,4 +1,5 @@
 import { type PostMetaData } from "../../../tools/contentServices";
+import { Layout } from "../../components/Layout";
 
 export const ArchivePage = () => {
   const postList = window.__STATIC_PROPS__.postList;
@@ -10,7 +11,7 @@ interface Props {
 }
 export const ArchivePageContent = ({ postList }: Props) => {
   return (
-    <div>
+    <Layout>
       <h1>Blog Archive</h1>
       {postList.map((post) => (
         <a key={post.pathname} href={`/blog/${post.pathname}`}>
@@ -21,6 +22,6 @@ export const ArchivePageContent = ({ postList }: Props) => {
           <p>Topic: {post.topic}</p>
         </a>
       ))}
-    </div>
+    </Layout>
   );
 };

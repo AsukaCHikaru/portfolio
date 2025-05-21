@@ -1,6 +1,7 @@
 import type { Block, Link, TextBody } from "@asukawang/amp";
 import { type PostMetaData } from "../../../tools/contentServices";
 import styles from "./post-page.module.css";
+import { Layout } from "../../components/Layout";
 
 export const PostPage = () => {
   const post = window.__STATIC_PROPS__.post;
@@ -13,14 +14,16 @@ interface Props {
 }
 export const PostPageContent = ({ metadata, content }: Props) => {
   return (
-    <div className={styles.container}>
-      <h1>{metadata.title}</h1>
-      <h2>{metadata.description}</h2>
-      <p>{metadata.publishedAt}</p>
-      {content.map((block, i) => (
-        <ContentBlock block={block} key={i} />
-      ))}
-    </div>
+    <Layout>
+      <div className={styles.container}>
+        <h1>{metadata.title}</h1>
+        <h2>{metadata.description}</h2>
+        <p>{metadata.publishedAt}</p>
+        {content.map((block, i) => (
+          <ContentBlock block={block} key={i} />
+        ))}
+      </div>
+    </Layout>
   );
 };
 

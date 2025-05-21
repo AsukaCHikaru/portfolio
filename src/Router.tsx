@@ -3,7 +3,6 @@ import { AboutPage } from "./pages/about/AboutPage";
 import { ArchivePage } from "./pages/blog/ArchivePage";
 import { PostPage } from "./pages/blog/PostPage";
 import { FrontPage } from "./pages/frontpage/FrontPage";
-import { Layout } from "./components/Layout";
 
 const routes = [
   {
@@ -46,12 +45,8 @@ export const Router = () => {
         return route.component();
       }
     }
-    return (
-      <Layout>
-        <div>404</div>;
-      </Layout>
-    );
+    return <div>404</div>;
   }, [path]);
 
-  return <Layout>{renderContent()}</Layout>;
+  return renderContent();
 };
