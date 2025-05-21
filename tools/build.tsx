@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { watch } from "fs/promises";
 import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -79,3 +80,17 @@ const build = async () => {
 
 await Bun.$`rm -rf ./dist`;
 await build();
+
+if (process.argv[2] === "--watch") {
+  const watcher = watch("./src", {
+    recursive: true,
+  });
+  while (true) {
+    for await (const event of watcher) {
+      if (event.eventType === "change") {
+        console.log("File changed:", event.filename);
+        await build();
+      }
+    }
+  }
+}
