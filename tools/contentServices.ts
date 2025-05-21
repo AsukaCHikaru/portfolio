@@ -12,6 +12,7 @@ export type PostMetaData = {
 };
 
 const BLOG_FOLDER_PATH = import.meta.dir + "/../public/contents/blog";
+const ABOUT_PATH = import.meta.dir + "/../public/contents/about/about-page.md";
 
 export const getBlogPostList = async () => {
   const files = await readdir(BLOG_FOLDER_PATH);
@@ -26,6 +27,8 @@ export const getBlogPostList = async () => {
     ),
   );
 };
+
+export const getAbout = async () => parsePost(ABOUT_PATH);
 
 const parsePost = async (filePath: string) => {
   const fileContent = await Bun.file(filePath).text();

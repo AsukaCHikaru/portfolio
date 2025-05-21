@@ -3,7 +3,7 @@ import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
 import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
-import { getBlogPostList } from "./contentServices";
+import { getAbout, getBlogPostList } from "./contentServices";
 import { PostPageContent } from "../src/pages/blog/PostPage";
 
 const writeFile = (element: ReactNode, path: string, staticProps: string) => {
@@ -39,6 +39,15 @@ const buildBlog = async () => {
   });
 };
 
+const buildAboutPage = async () => {
+  const about = await getAbout();
+  writeFile(
+    <PostPageContent metadata={about.metadata} content={about.content} />,
+    "/about",
+    JSON.stringify({ about }),
+  );
+};
+
 const buildFrontPage = async () => {
   const postList = await getBlogPostList();
   const lastPost = postList[0];
@@ -52,6 +61,7 @@ const buildFrontPage = async () => {
 const build = async () => {
   await buildBlog();
   await buildFrontPage();
+  await buildAboutPage();
 
   try {
     await Bun.build({

@@ -11,6 +11,7 @@ declare global {
     __STATIC_PROPS__: {
       postList: PostMetaData[];
       post: { metadata: PostMetaData; content: Block[] };
+      about: { metadata: PostMetaData; content: Block[] };
     };
   }
 }
