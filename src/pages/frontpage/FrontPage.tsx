@@ -1,3 +1,6 @@
+import { PostPageContent } from "../blog/PostPage";
+
 export const FrontPage = () => {
-  return <div>front page</div>
-}
+  const post = window.__STATIC_PROPS__.post;
+  return <PostPageContent metadata={post.metadata} content={post.content} />;
+};

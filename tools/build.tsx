@@ -39,8 +39,19 @@ const buildBlog = async () => {
   });
 };
 
+const buildFrontPage = async () => {
+  const postList = await getBlogPostList();
+  const lastPost = postList[0];
+  writeFile(
+    <PostPageContent metadata={lastPost.metadata} content={lastPost.content} />,
+    "/",
+    JSON.stringify({ post: lastPost }),
+  );
+};
+
 const build = async () => {
   await buildBlog();
+  await buildFrontPage();
 
   try {
     await Bun.build({
