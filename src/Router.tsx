@@ -3,25 +3,26 @@ import { AboutPage } from "./pages/about/AboutPage";
 import { ArchivePage } from "./pages/blog/ArchivePage";
 import { PostPage } from "./pages/blog/PostPage";
 import { FrontPage } from "./pages/frontpage/FrontPage";
+import { Layout } from "./components/Layout";
 
 const routes = [
   {
-    path: '/blog/:slug',
+    path: "/blog/:slug",
     component: PostPage,
   },
   {
-    path: '/blog',
+    path: "/blog",
     component: ArchivePage,
   },
   {
-    path: '/about',
+    path: "/about",
     component: AboutPage,
   },
   {
-    path: '/',
+    path: "/",
     component: FrontPage,
   },
-]
+];
 
 export const Router = () => {
   const [path, setPath] = useState(window.location.pathname);
@@ -40,13 +41,17 @@ export const Router = () => {
 
   const renderContent = useCallback(() => {
     for (const route of routes) {
-      const urlPattern = new RegExp(route.path.replace(/\/:\w+/, '\/\\S+'));
+      const urlPattern = new RegExp(route.path.replace(/\/:\w+/, "\/\\S+"));
       if (urlPattern.test(path)) {
         return route.component();
       }
     }
-    return <div>404</div>
+    return (
+      <Layout>
+        <div>404</div>;
+      </Layout>
+    );
   }, [path]);
 
-  return <div>{renderContent()}</div>
+  return <Layout>{renderContent()}</Layout>;
 };
