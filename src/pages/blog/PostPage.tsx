@@ -1,5 +1,6 @@
 import type { Block, Link, TextBody } from "@asukawang/amp";
 import { type PostMetaData } from "../../../tools/contentServices";
+import styles from "./post-page.module.css";
 
 export const PostPage = () => {
   const post = window.__STATIC_PROPS__.post;
@@ -12,7 +13,7 @@ interface Props {
 }
 export const PostPageContent = ({ metadata, content }: Props) => {
   return (
-    <div>
+    <div className={styles.container}>
       <h1>{metadata.title}</h1>
       <h2>{metadata.description}</h2>
       <p>{metadata.publishedAt}</p>

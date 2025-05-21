@@ -46,7 +46,7 @@ const build = async () => {
     await Bun.build({
       entrypoints: ["./src/index.tsx"],
       outdir: "./dist",
-      naming: { entry: "main.js", asset: "[name].[ext]" },
+      naming: { entry: "[name].[ext]", asset: "[name].[ext]" },
       target: "browser",
       minify: false,
       sourcemap: "inline",
