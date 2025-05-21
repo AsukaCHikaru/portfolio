@@ -32,9 +32,7 @@ const ContentBlock = ({ block }: { block: Block }) => {
     case "paragraph":
       return (
         <p>
-          {block.body.map((item, i) => (
-            <TextBodyBlock body={item} key={i} />
-          ))}
+          <BodyBlocks body={block.body} />
         </p>
       );
     case "heading":
@@ -42,49 +40,37 @@ const ContentBlock = ({ block }: { block: Block }) => {
         case 1:
           return (
             <h1>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h1>
           );
         case 2:
           return (
             <h2>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h2>
           );
         case 3:
           return (
             <h3>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h3>
           );
         case 4:
           return (
             <h4>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h4>
           );
         case 5:
           return (
             <h5>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h5>
           );
         case 6:
           return (
             <h6>
-              {block.body.map((item, i) => (
-                <TextBodyBlock body={item} key={i} />
-              ))}
+              <BodyBlocks body={block.body} />
             </h6>
           );
         default:
@@ -99,10 +85,41 @@ const ContentBlock = ({ block }: { block: Block }) => {
           {block.caption && <figcaption>{block.caption}</figcaption>}
         </figure>
       );
+    case "list":
+      return block.ordered ? (
+        <ol>
+          {block.items.map((li, i) => (
+            <li key={i}>
+              <BodyBlocks body={li.body} />
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ul>
+          {block.items.map((li, i) => (
+            <li key={i}>
+              <BodyBlocks body={li.body} />
+            </li>
+          ))}
+        </ul>
+      );
+    case "quote":
+      return (
+        <blockquote>
+          <BodyBlocks body={block.body} />
+        </blockquote>
+      );
+    case "code":
+      return <pre>TODO</pre>;
+    case "thematicBreak":
+      return <hr />;
     default:
       return null;
   }
 };
+
+const BodyBlocks = ({ body }: { body: (TextBody | Link)[] }) =>
+  body.map((item, i) => <TextBodyBlock body={item} key={i} />);
 
 const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
   switch (body.type) {
