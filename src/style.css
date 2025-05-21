@@ -22,6 +22,7 @@ a {
 .site_container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  column-gap: 12px;;
 
   > main {
     grid-column: 3 / span 8;
@@ -80,4 +81,8 @@ a {
   @media (min-width: 768px) {
     margin: 8px 0 0;
   }
+}
+
+article {
+  font-family: 'Noto Serif JP CJK', 'Gentium Plus Book', 'Noto Serif JP', serif;
 }
