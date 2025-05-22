@@ -61,24 +61,29 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
 </body>`,
     );
     Bun.write(`./dist${path}/index.html`, template);
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error writing file:", error);
+  }
 };
 
 const buildBlog = async () => {
   const postList = await getBlogPostList();
-  writeFile(
-    <ArchivePageContent postList={postList.map((post) => post.metadata)} />,
-    "/blog",
-    JSON.stringify({ postList: postList.map((post) => post.metadata) }),
-  );
-
-  postList.forEach((post) => {
+  try {
     writeFile(
-      <PostPageContent metadata={post.metadata} content={post.content} />,
-      `/blog/${post.metadata.pathname}`,
-      JSON.stringify({ post }),
+      <ArchivePageContent postList={postList.map((post) => post.metadata)} />,
+      "/blog",
+      JSON.stringify({ postList: postList.map((post) => post.metadata) }),
     );
-  });
+    postList.forEach((post) => {
+      writeFile(
+        <PostPageContent metadata={post.metadata} content={post.content} />,
+        `/blog/${post.metadata.pathname}`,
+        JSON.stringify({ post }),
+      );
+    });
+  } catch (error) {
+    console.error("Error building blog:", error);
+  }
 };
 
 const buildAboutPage = async () => {
@@ -109,7 +114,12 @@ export const build = async () => {
 
   try {
     await Bun.build({
-      entrypoints: ["./src/index.tsx"],
+      entrypoints: [
+        "./src/index.tsx",
+        "./src/style.css",
+        "./src/fonts.css",
+        "./node_modules/modern-normalize/modern-normalize.css",
+      ],
       outdir: "./dist",
       naming: { entry: "[name].[ext]", asset: "[name].[ext]" },
       target: "browser",
