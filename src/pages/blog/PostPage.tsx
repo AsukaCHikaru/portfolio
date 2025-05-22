@@ -14,9 +14,11 @@ interface Props {
 export const PostPageContent = ({ metadata, content }: Props) => {
   return (
     <Layout>
-      <h1>{metadata.title}</h1>
-      <h2>{metadata.description}</h2>
-      <p>{metadata.publishedAt}</p>
+      <div className="post-page-header_container">
+        <h1>{metadata.title}</h1>
+        <h2>{metadata.description}</h2>
+        <p>{metadata.publishedAt}</p>
+      </div>
       <article>
         {content.map((block, i) => (
           <ContentBlock block={block} key={i} />
@@ -80,7 +82,18 @@ const ContentBlock = ({ block }: { block: Block }) => {
     case "image":
       return (
         <figure>
-          <img src={block.url} alt={block.altText} />
+          {block.url.endsWith("mp4") ? (
+            <video
+              src={block.url}
+              controls={false}
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
+            />
+          ) : (
+            <img src={block.url} alt={block.altText} />
+          )}
           {block.caption && <figcaption>{block.caption}</figcaption>}
         </figure>
       );
