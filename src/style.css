@@ -39,6 +39,7 @@ a {
   align-items: center;
   margin: 20px 0 0;
   padding: 4px 0 8px;
+  
 
   > div {
     @media (min-width: 768px) {
@@ -51,6 +52,15 @@ a {
       font-family: "Gentium Plus Book", serif;
       font-size: 14px;
       line-height: 24px;
+      color: var(--dark-third);
+
+      &[data-active="true"] {
+        color: var(--dark);
+      }
+
+      &:hover {
+        color: var(--dark);
+      }
 
       @media (min-width: 768px) {
         font-size: 20px;
@@ -64,6 +74,7 @@ a {
     line-height: 24px;
     font-family: "Noto Serif JP", serif;
     font-weight: 800;
+    color: var(--dark);
 
     @media (min-width: 768px) {
       font-size: 20px;
