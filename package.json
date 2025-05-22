@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run dev.ts",
+    "dev": "PHASE=env bun run dev.ts",
     "copy:blog": "bun run tools/copyBlogPosts.ts"
   },
   "devDependencies": {

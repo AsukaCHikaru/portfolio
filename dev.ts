@@ -1,67 +1,145 @@
+import { build } from "./tools/build";
+import { watch } from "fs/promises";
+import { type ServerWebSocket } from "bun";
+
 const PORT = 3000;
-const ENTRY_POINT = "./src/index.tsx";
+const WS_PORT = 3001;
 
-Bun.serve({
-  port: PORT,
-  async fetch(req: Request) {
-    const url = new URL(req.url);
-    const path = url.pathname;
+process.env.PHASE = "dev";
 
-    switch (path) {
-      case "/":
-      case "/blog":
-      case "/about":
-      case "/index.html":
-        return new Response(await Bun.file("./index.html").text(), {
-          headers: {
-            "Content-Type": "text/html",
-          },
-        });
-      case "/main.js":
-        const result = await Bun.build({
-          entrypoints: [ENTRY_POINT],
-          outdir: "node_modules/.tmp",
-          target: "browser",
-          minify: false,
-          sourcemap: "inline",
-        });
-
-        const output = result.outputs[0];
-        return new Response(await output.text(), {
-          headers: {
-            "Content-Type": "application/javascript",
-          },
-        });
-      default:
-        if (/\/blog\/\w+/.test(path)) {
-          return new Response(await Bun.file("./index.html").text(), {
-          headers: {
-            "Content-Type": "text/html",
-          },
-        });
-        }
-
-        try {
-          const filePath = "." + path;
-          const file = Bun.file(filePath);
-          if (await file.exists()) {
+const startHttpServer = async () => {
+  try {
+    Bun.serve({
+      port: PORT,
+      async fetch(req: Request) {
+        const url = new URL(req.url);
+        const path = url.pathname;
+        switch (path) {
+          case "/": {
+            const file = Bun.file("./dist/index.html");
             return new Response(file);
           }
-        } catch (e) {
-          // File doesn't exist or other error, continue to 404
-        }
-    
-        return new Response("Not Found", { status: 404 });
+          case "/blog": {
+            const file = Bun.file("./dist/blog/index.html");
+            return new Response(file);
+          }
+          case "/about":
+            const file = Bun.file("./dist/about/index.html");
+            return new Response(file);
+          default:
+            if (/\/blog\/\w+/.test(path)) {
+              const file = Bun.file(`./dist${path}/index.html`);
+              return new Response(file);
+            }
 
-    }
-  },
-  error(error: Error) {
-    return new Response(`<pre>Error: ${error}\n${error.stack}</pre>`, {
-      headers: {
-        "Content-Type": "text/html",
+            try {
+              const filePath = "./dist" + path;
+              const file = Bun.file(filePath);
+              if (await file.exists()) {
+                return new Response(file);
+              }
+            } catch (e) {
+              // File doesn't exist or other error, continue to 404
+            }
+
+            return new Response("Not Found", { status: 404 });
+        }
+      },
+      error(error: Error) {
+        return new Response(`<pre>Error: ${error}\n${error.stack}</pre>`, {
+          headers: {
+            "Content-Type": "text/html",
+          },
+        });
       },
     });
-  },
-});
 
-console.log(`🚀 Development server running at http://localhost:${PORT}`);
+    console.log(`🚀 Development server running at http://localhost:${PORT}`);
+  } catch (err) {
+    console.error("Error starting server:", err);
+  }
+};
+
+const wsClients = new Set<ServerWebSocket<unknown>>();
+
+const notifyClientsToReload = () => {
+  console.log(`Notifying ${wsClients.size} clients to reload`);
+  for (const client of wsClients) {
+    client.send(JSON.stringify({ type: "reload" }));
+  }
+};
+
+const startWsServer = async () => {
+  try {
+    Bun.serve({
+      port: WS_PORT,
+      fetch(req, server) {
+        if (server.upgrade(req)) {
+          return;
+        }
+        return new Response("Upgrade failed", { status: 400 });
+      },
+      websocket: {
+        open(ws) {
+          wsClients.add(ws);
+          console.log("WebSocket client connected");
+        },
+        close(ws) {
+          wsClients.delete(ws);
+          console.log("WebSocket client disconnected");
+        },
+        message() {
+          // We don't need to handle client messages
+        },
+      },
+    });
+
+    console.log(
+      `🔥 Hot reload WebSocket server running at ws://localhost:${WS_PORT}`,
+    );
+  } catch (err) {
+    console.error("Error starting WebSocket server:", err);
+  }
+};
+
+const watchSrcChange = async () => {
+  const watcher = watch("./src", {
+    recursive: true,
+  });
+
+  while (true) {
+    for await (const event of watcher) {
+      if (event.eventType === "change") {
+        console.log("File changed:", event.filename);
+        await build();
+        notifyClientsToReload();
+      }
+    }
+  }
+};
+
+const watchContentChange = async () => {
+  const watcher = watch("./public", {
+    recursive: true,
+  });
+
+  while (true) {
+    for await (const event of watcher) {
+      if (event.eventType === "change") {
+        console.log("Content changed:", event.filename);
+        await build();
+        notifyClientsToReload();
+      }
+    }
+  }
+};
+
+const start = async () => {
+  await startWsServer();
+  await startHttpServer();
+
+  watchSrcChange();
+  watchContentChange();
+};
+
+start();
