@@ -1,5 +1,5 @@
-import { type PostMetaData } from "../../../tools/contentServices";
 import { Layout } from "../../components/Layout";
+import type { PostMetaData } from "../../types";
 
 export const ArchivePage = () => {
   const postList = window.__STATIC_PROPS__.postList;

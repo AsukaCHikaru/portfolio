@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
 import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
 import { getAbout, getBlogPostList } from "./contentServices";
-import { PostPageContent } from "../src/pages/blog/PostPage";
+import { PostPageContent } from "../src/components/PostPageContent";
 
 const writeFile = (element: ReactNode, path: string, staticProps: string) => {
   let template = readFileSync(

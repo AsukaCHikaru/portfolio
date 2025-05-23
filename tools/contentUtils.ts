@@ -1,5 +1,5 @@
 import { parse } from "@asukawang/amp";
-import type { PostMetaData } from "./contentServices";
+import type { PostMetaData } from "../src/types";
 
 export const convertFrontmatterToPostMetaData = (
   frontmatter: Record<string, string>,

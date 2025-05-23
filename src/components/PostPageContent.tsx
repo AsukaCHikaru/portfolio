@@ -1,6 +1,6 @@
 import type { TextBody, Link, Block } from "@asukawang/amp";
-import type { PostMetaData } from "../../tools/contentServices";
 import { Layout } from "./Layout";
+import type { PostMetaData } from "../types";
 
 interface Props {
   metadata: PostMetaData;

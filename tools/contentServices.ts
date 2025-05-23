@@ -1,15 +1,6 @@
 import { readdir } from "node:fs/promises";
 import { parsePost } from "./contentUtils";
 
-export type PostMetaData = {
-  title: string;
-  description: string;
-  publishedAt: string;
-  pathname: string;
-  category: string;
-  topic: string;
-};
-
 const BLOG_FOLDER_PATH = import.meta.dir + "/../public/contents/blog";
 const ABOUT_PATH = import.meta.dir + "/../public/contents/about/about-page.md";
 
