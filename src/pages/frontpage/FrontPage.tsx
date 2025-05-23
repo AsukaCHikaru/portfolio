@@ -1,4 +1,4 @@
-import { PostPageContent } from "../blog/PostPage";
+import { PostPageContent } from "../../components/PostPageContent";
 
 export const FrontPage = () => {
   const post = window.__STATIC_PROPS__.post;
