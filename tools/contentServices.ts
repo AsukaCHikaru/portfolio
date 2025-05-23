@@ -1,6 +1,5 @@
-import { parse } from "@asukawang/amp";
 import { readdir } from "node:fs/promises";
-import { convertFrontmatterToPostMetaData } from "./contentUtils";
+import { parsePost } from "./contentUtils";
 
 export type PostMetaData = {
   title: string;
@@ -29,12 +28,3 @@ export const getBlogPostList = async () => {
 };
 
 export const getAbout = async () => parsePost(ABOUT_PATH);
-
-const parsePost = async (filePath: string) => {
-  const fileContent = await Bun.file(filePath).text();
-  const { frontmatter, blocks } = parse(fileContent);
-  return {
-    metadata: convertFrontmatterToPostMetaData(frontmatter),
-    content: blocks,
-  };
-};
