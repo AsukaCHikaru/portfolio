@@ -1,4 +1,4 @@
-import { build } from "./tools/build";
+import { build } from "./build";
 import { watch } from "fs/promises";
 import { type ServerWebSocket } from "bun";
 
