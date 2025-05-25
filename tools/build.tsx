@@ -20,9 +20,11 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
       '<div id="root"></div>',
       `<div id="root">${html}</div><script>window.__STATIC_PROPS__ = ${staticProps}</script>`,
     );
-    template = template.replace(
-      "</body>",
-      `
+
+    if (process.env.PHASE === "dev") {
+      template = template.replace(
+        "</body>",
+        `
 <script>
   // Hot reload client script
   (function() {
@@ -60,7 +62,8 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
   })();
 </script>
 </body>`,
-    );
+      );
+    }
     Bun.write(`./dist${path}/index.html`, template);
   } catch (error) {
     console.error("Error writing file:", error);
@@ -132,8 +135,9 @@ export const build = async () => {
       outdir: "./dist",
       naming: { entry: "[name].[ext]", asset: "[name].[ext]" },
       target: "browser",
-      minify: false,
-      sourcemap: "inline",
+      minify: process.env.PHASE === "prod",
+      sourcemap: process.env.PHASE === "prod" ? "none" : "inline",
+      external: ["shiki"],
     });
   } catch (error) {
     console.error("Build failed:", error);

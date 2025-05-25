@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "PHASE=env bun run tools/dev.ts",
+    "build": "PHASE=prod bun run tools/build.tsx",
     "copy:blog": "bun run tools/copyBlogPosts.ts"
   },
   "devDependencies": {
