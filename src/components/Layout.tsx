@@ -1,3 +1,4 @@
+import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -5,6 +6,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="site_container">
       <SiteHeader />
       <main>{children}</main>
+      <SiteFooter />
     </div>
   );
 };
