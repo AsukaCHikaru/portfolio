@@ -7,11 +7,14 @@
     "copy:blog": "bun run tools/copyBlogPosts.ts"
   },
   "devDependencies": {
+    "@shikijs/langs": "^3.4.2",
+    "@shikijs/themes": "^3.4.2",
     "@types/bun": "latest",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "eslint": "^9.27.0",
     "prettier": "^3.5.3",
+    "shiki": "^3.4.2",
     "subfont": "^7.2.1"
   },
   "peerDependencies": {
