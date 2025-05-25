@@ -6,6 +6,7 @@ import ReactDOMServer from "react-dom/server";
 import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
 import { getAbout, getBlogPostList } from "./contentServices";
 import { PostPageContent } from "../src/components/PostPageContent";
+import { ResumePage } from "../src/pages/resume/ResumePage";
 
 const writeFile = (element: ReactNode, path: string, staticProps: string) => {
   let template = readFileSync(
@@ -95,6 +96,10 @@ const buildAboutPage = async () => {
   );
 };
 
+const buildResumePage = async () => {
+  writeFile(<ResumePage />, "/resume", "");
+};
+
 const buildFrontPage = async () => {
   const postList = await getBlogPostList();
   const lastPost = postList[0];
@@ -110,8 +115,11 @@ export const build = async () => {
   await buildBlog();
   await buildFrontPage();
   await buildAboutPage();
+  await buildResumePage();
   await Bun.$`cp -r ./public/fonts ./dist`;
-  await Bun.$`cp -r ./public ./dist`;
+  await Bun.$`mkdir -p ./dist/public`;
+  await Bun.$`cp -r ./public/images ./dist/public`;
+  await Bun.$`cp -r ./public/asuka-wang_resume_ja.pdf ./dist`;
 
   try {
     await Bun.build({
