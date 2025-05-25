@@ -113,7 +113,11 @@ const ContentBlock = ({ block }: { block: Block }) => {
     case "quote":
       return (
         <blockquote>
-          <BodyBlocks body={block.body} />
+          {block.body.map((item, i) => (
+            <span>
+              <TextBodyBlock body={item} key={i} />
+            </span>
+          ))}
         </blockquote>
       );
     case "code":
