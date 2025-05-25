@@ -1,6 +1,7 @@
 import type { TextBody, Link, Block } from "@asukawang/amp";
 import { Layout } from "./Layout";
 import type { PostMetaData } from "../types";
+import { Code } from "./CodeBlock";
 
 interface Props {
   metadata: PostMetaData;
@@ -114,14 +115,14 @@ const ContentBlock = ({ block }: { block: Block }) => {
       return (
         <blockquote>
           {block.body.map((item, i) => (
-            <span>
+            <span key={i}>
               <TextBodyBlock body={item} key={i} />
             </span>
           ))}
         </blockquote>
       );
     case "code":
-      return <pre>TODO</pre>;
+      return <Code block={block} />;
     case "thematicBreak":
       return <hr />;
     default:
