@@ -1,8 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "../node_modules/modern-normalize/modern-normalize.css";
-import "./style.css";
-import "./fonts.css";
 import { Router } from "./Router";
 import type { Block } from "@asukawang/amp";
 import type { PostMetaData } from "./types";

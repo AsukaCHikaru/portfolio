@@ -113,12 +113,19 @@ const buildFrontPage = async () => {
   );
 };
 
+const writeFontCss = async () => {
+  const file = await Bun.file("./src/fonts.css").text();
+  const replaced = file.replace(/\.\.\/public/g, ".");
+  Bun.write("./dist/fonts.css", replaced);
+};
+
 export const build = async () => {
   await Bun.$`rm -rf ./dist`;
   await buildBlog();
   await buildFrontPage();
   await buildAboutPage();
   await buildResumePage();
+  await writeFontCss();
   await Bun.$`cp -r ./public/fonts ./dist`;
   await Bun.$`mkdir -p ./dist/public`;
   await Bun.$`cp -r ./public/images ./dist/public`;
@@ -129,7 +136,6 @@ export const build = async () => {
       entrypoints: [
         "./src/index.tsx",
         "./src/style.css",
-        "./src/fonts.css",
         "./node_modules/modern-normalize/modern-normalize.css",
       ],
       outdir: "./dist",
@@ -137,7 +143,6 @@ export const build = async () => {
       target: "browser",
       minify: process.env.PHASE === "prod",
       sourcemap: process.env.PHASE === "prod" ? "none" : "inline",
-      external: ["shiki"],
     });
   } catch (error) {
     console.error("Build failed:", error);
