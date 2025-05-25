@@ -2,6 +2,7 @@ import type { TextBody, Link, Block } from "@asukawang/amp";
 import { Layout } from "./Layout";
 import type { PostMetaData } from "../types";
 import { Code } from "./CodeBlock";
+import { D2FigureBlock } from "./D2FigureBlock";
 
 interface Props {
   metadata: PostMetaData;
@@ -138,6 +139,9 @@ const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
     case "textBody":
       switch (body.style) {
         case "plain":
+          if (body.value.startsWith("::d2")) {
+            return <D2FigureBlock children={body.value} />;
+          }
           return <>{body.value}</>;
         case "code":
           return <code>{body.value}</code>;
