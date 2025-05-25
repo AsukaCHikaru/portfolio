@@ -11,6 +11,7 @@ export const convertFrontmatterToPostMetaData = (
     pathname: frontmatter.pathname,
     category: frontmatter.category,
     topic: frontmatter.topic,
+    language: frontmatter.language,
   };
 };
 

@@ -119,6 +119,24 @@ const writeFontCss = async () => {
   Bun.write("./dist/fonts.css", replaced);
 };
 
+const runSubfont = async () => {
+  const postList = await getBlogPostList();
+  const cjkPosts = postList.filter(
+    (post) => post.metadata.language !== "en-US",
+  );
+  for (const post of cjkPosts) {
+    const filePath = resolve(
+      import.meta.dir,
+      "..",
+      "dist",
+      "blog",
+      post.metadata.pathname,
+      "index.html",
+    );
+    await Bun.$`subfont ${filePath} -i --root ./dist`;
+  }
+};
+
 export const build = async () => {
   await Bun.$`rm -rf ./dist`;
   await buildBlog();
@@ -147,6 +165,8 @@ export const build = async () => {
   } catch (error) {
     console.error("Build failed:", error);
   }
+
+  await runSubfont();
 };
 
 await build();

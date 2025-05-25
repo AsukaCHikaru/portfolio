@@ -5,4 +5,5 @@ export type PostMetaData = {
   pathname: string;
   category: string;
   topic: string;
+  language: string;
 };
