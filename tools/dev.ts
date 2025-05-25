@@ -27,7 +27,7 @@ const startHttpServer = async () => {
             const file = Bun.file("./dist/about/index.html");
             return new Response(file);
           default:
-            if (/\/blog\/\w+/.test(path)) {
+            if (/^\/blog\/\w+/.test(path)) {
               const file = Bun.file(`./dist${path}/index.html`);
               return new Response(file);
             }

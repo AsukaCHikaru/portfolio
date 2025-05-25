@@ -111,6 +111,7 @@ export const build = async () => {
   await buildFrontPage();
   await buildAboutPage();
   await Bun.$`cp -r ./public/fonts ./dist`;
+  await Bun.$`cp -r ./public ./dist`;
 
   try {
     await Bun.build({

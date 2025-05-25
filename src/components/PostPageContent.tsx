@@ -79,7 +79,7 @@ const ContentBlock = ({ block }: { block: Block }) => {
         <figure>
           {block.url.endsWith("mp4") ? (
             <video
-              src={block.url}
+              src={`/public/images/blog/${block.url}`}
               controls={false}
               autoPlay={true}
               loop={true}
@@ -87,7 +87,7 @@ const ContentBlock = ({ block }: { block: Block }) => {
               playsInline={true}
             />
           ) : (
-            <img src={block.url} alt={block.altText} />
+            <img src={`/public/images/blog/${block.url}`} alt={block.altText} />
           )}
           {block.caption && <figcaption>{block.caption}</figcaption>}
         </figure>
