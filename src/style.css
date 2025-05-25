@@ -175,6 +175,7 @@ article {
       font-size: 14px;
       line-height: 1;
       color: var(--dark-second);
+      text-align: center;
 
       @media (min-width: 768px) {
         font-size: 18px;
