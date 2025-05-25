@@ -251,4 +251,10 @@ article {
       border-radius: 5px;
     }
   }
+
+  hr {
+    width: 50%;
+    margin: 60px auto;
+    border-top: solid 1px var(--dark-third);
+  }
 }
