@@ -11,6 +11,7 @@ export const Router = () => {
   useEffect(() => {
     const handleLocationChange = () => {
       setPath(window.location.pathname);
+      window.scrollTo(0, 0);
     };
 
     window.addEventListener("popstate", handleLocationChange);
