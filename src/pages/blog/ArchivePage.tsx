@@ -1,9 +1,19 @@
+import { useContext } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
 import type { PostMetaData } from "../../types";
+import { DataContext } from "../../components/DataContext";
 
 export const ArchivePage = () => {
-  const postList = window.__STATIC_PROPS__.postList;
+  const context = useContext(DataContext);
+  const postList =
+    window.__STATIC_PROPS__.postList ||
+    context.postList.map((post) => post.metadata);
+
+  if (!context) {
+    return null;
+  }
+
   return <ArchivePageContent postList={postList} />;
 };
 

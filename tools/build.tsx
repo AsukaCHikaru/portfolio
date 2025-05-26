@@ -25,43 +25,43 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
       template = template.replace(
         "</body>",
         `
-<script>
-  // Hot reload client script
-  (function() {
-    console.log("Hot reload client initialized");
-    
-    // First get the WebSocket port from the server
-      const ws = new WebSocket('ws://localhost:3001');
-      
-      ws.onopen = () => {
-        console.log("Hot reload WebSocket connected on port", 3001);
-      };
-      
-      ws.onclose = () => {
-        console.log("Hot reload WebSocket disconnected. Attempting to reconnect in 2s...");
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
-      };
-      
-      ws.onerror = (error) => {
-        console.error("Hot reload WebSocket error:", error);
-      };
-      
-      ws.onmessage = (event) => {
-        try {
-          const data = JSON.parse(event.data);
-          if (data.type === "reload") {
-            console.log("Hot reload triggered, refreshing page...");
-            window.location.reload();
-          }
-        } catch (e) {
-          console.error("Error parsing hot reload message:", e);
-        }
-      };
-  })();
-</script>
-</body>`,
+    <script>
+      // Hot reload client script
+      (function() {
+        console.log("Hot reload client initialized");
+
+        // First get the WebSocket port from the server
+          const ws = new WebSocket('ws://localhost:3001');
+
+          ws.onopen = () => {
+            console.log("Hot reload WebSocket connected on port", 3001);
+          };
+
+          ws.onclose = () => {
+            console.log("Hot reload WebSocket disconnected. Attempting to reconnect in 2s...");
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          };
+
+          ws.onerror = (error) => {
+            console.error("Hot reload WebSocket error:", error);
+          };
+
+          ws.onmessage = (event) => {
+            try {
+              const data = JSON.parse(event.data);
+              if (data.type === "reload") {
+                console.log("Hot reload triggered, refreshing page...");
+                window.location.reload();
+              }
+            } catch (e) {
+              console.error("Error parsing hot reload message:", e);
+            }
+          };
+      })();
+    </script>
+    </body>`,
       );
     }
     Bun.write(`./dist${path}/index.html`, template);
@@ -119,6 +119,22 @@ const writeFontCss = async () => {
   Bun.write("./dist/fonts.css", replaced);
 };
 
+const writeData = async () => {
+  const postList = await getBlogPostList();
+  const about = await getAbout();
+  await Bun.write(
+    "./dist/data.json",
+    JSON.stringify(
+      {
+        postList,
+        about,
+      },
+      null,
+      2,
+    ),
+  );
+};
+
 const runSubfont = async () => {
   const postList = await getBlogPostList();
   const cjkPosts = postList.filter(
@@ -144,6 +160,7 @@ export const build = async () => {
   await buildAboutPage();
   await buildResumePage();
   await writeFontCss();
+  await writeData();
   await Bun.$`cp -r ./public/fonts ./dist`;
   await Bun.$`mkdir -p ./dist/public`;
   await Bun.$`cp -r ./public/images ./dist/public`;
