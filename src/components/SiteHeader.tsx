@@ -1,12 +1,14 @@
+import { Link } from "./Link";
+
 export const SiteHeader = () => (
   <nav className="site-header_grid-wrapper">
     <div className="site-header_container">
       <div>
-        <a href="/blog">blog</a>
-        <a href="/about">about</a>
+        <Link to="/blog">blog</Link>
+        <Link to="/about">about</Link>
         {/* TODO: rss */}
       </div>
-      <a href="/">ASUKA WANG</a>
+      <Link to="/">ASUKA WANG</Link>
     </div>
     <div className="site-header_divider" role="presentation" />
   </nav>

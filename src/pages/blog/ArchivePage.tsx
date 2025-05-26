@@ -1,4 +1,5 @@
 import { Layout } from "../../components/Layout";
+import { Link } from "../../components/Link";
 import type { PostMetaData } from "../../types";
 
 export const ArchivePage = () => {
@@ -14,13 +15,13 @@ export const ArchivePageContent = ({ postList }: Props) => {
     <Layout>
       <h1>Blog Archive</h1>
       {postList.map((post) => (
-        <a key={post.pathname} href={`/blog/${post.pathname}`}>
+        <Link key={post.pathname} to={`/blog/${post.pathname}`}>
           <h2>{post.title}</h2>
           <p>{post.description}</p>
           <p>Published on: {post.publishedAt}</p>
           <p>Category: {post.category}</p>
           <p>Topic: {post.topic}</p>
-        </a>
+        </Link>
       ))}
     </Layout>
   );
