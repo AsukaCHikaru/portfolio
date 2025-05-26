@@ -1,15 +1,18 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { PostPageContent } from "../../components/PostPageContent";
 import { DataContext } from "../../components/DataContext";
 
 export const PostPage = () => {
   const context = useContext(DataContext);
-  const post =
-    window.__STATIC_PROPS__.post ||
-    context.postList.find(
-      (post) =>
-        post.metadata.pathname === window.location.pathname.split("/").pop(),
-    );
+
+  const post = useMemo(() => {
+    const pathname = window.location.pathname.replace("/blog/", "");
+    const staticProp = window.__STATIC_PROPS__;
+    if (staticProp.post?.metadata.pathname === pathname) {
+      return staticProp.post;
+    }
+    return context.postList.find((post) => post.metadata.pathname === pathname);
+  }, []);
 
   if (!post) {
     return null;

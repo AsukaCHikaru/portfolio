@@ -1,15 +1,18 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { DataContext } from "../../components/DataContext";
 import { PostPageContent } from "../../components/PostPageContent";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
-  const post =
-    window.__STATIC_PROPS__.post ||
-    context.postList.find(
-      (post) =>
-        post.metadata.pathname === window.location.pathname.split("/").pop(),
-    );
+  const post = useMemo(
+    () =>
+      context.postList.sort(
+        (a, b) =>
+          new Date(b.metadata.publishedAt).getTime() -
+          new Date(a.metadata.publishedAt).getTime(),
+      )[0],
+    [],
+  );
 
   if (!post) {
     return null;
