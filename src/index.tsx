@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Router } from "./Router";
+import { Router } from "./components/Router";
 import type { Block } from "@asukawang/amp";
 import type { PostMetaData } from "./types";
 

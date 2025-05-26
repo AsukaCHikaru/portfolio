@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { AboutPage } from "./pages/about/AboutPage";
-import { ArchivePage } from "./pages/blog/ArchivePage";
-import { PostPage } from "./pages/blog/PostPage";
-import { FrontPage } from "./pages/frontpage/FrontPage";
-import { ResumePage } from "./pages/resume/ResumePage";
+import { AboutPage } from "../pages/about/AboutPage";
+import { ArchivePage } from "../pages/blog/ArchivePage";
+import { PostPage } from "../pages/blog/PostPage";
+import { FrontPage } from "../pages/frontpage/FrontPage";
+import { ResumePage } from "../pages/resume/ResumePage";
 
 export const Router = () => {
   const [path, setPath] = useState(window.location.pathname);
