@@ -108,13 +108,14 @@ footer {
 
 .frontpage-header {
   grid-column: 1 / span 16;
+  margin: 0 0 24px;
 
   > div:first-child {
     display: flex;
     align-items: center;
 
     > .frontpage-header_slogan {
-      flex: 1 0 15%;
+      width: 15%;
 
       > p {
         width: fit-content;
@@ -136,6 +137,7 @@ footer {
       font-size: 128px;
       font-weight: 400;
       line-height: 1;
+      text-align: center;
 
       > a {
         color: var(--dark);
@@ -170,12 +172,15 @@ footer {
       font-size: 22px;
       line-height: 1;
       color: var(--dark-second);
+
+      &:hover {
+        color: var(--light-accent);
+      }
     }
   }
 }
 
 .frontpage-lead-story_story {
-  margin: 24px 0;
   padding: 0 12px 0 0;
   border-right: solid 1px var(--dark-third);
   grid-column: 1 / span 12;
