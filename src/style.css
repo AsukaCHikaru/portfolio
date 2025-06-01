@@ -104,6 +104,78 @@ footer {
   }
 }
 
+.frontpage-header {
+  grid-column: 3 / span 8;
+
+  > div:first-child {
+    display: flex;
+    align-items: center;
+
+    > .frontpage-header_slogan {
+      flex: 1 0 15%;
+
+      > p {
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 16px;
+        border: solid 1px var(--dark-third);
+        color: var(--dark-second);
+        font-family: "Gentium Plus Book", serif;
+        font-size: 18px;
+        line-height: 1;
+        white-space: pre-wrap;
+      }
+    }
+
+    > h1 {
+      margin: 0;
+      flex: 1 0 auto;
+      font-family: "Cormorant Garamond";
+      font-size: 128px;
+      font-weight: 400;
+      line-height: 1;
+
+      > a {
+        color: var(--dark);
+      }
+    }
+
+    > div {
+      width: 15%;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 100;
+      white-space: pre-wrap;
+      text-align: right;
+
+      > time {
+        font-weight: 400;
+      }
+    }
+  }
+
+  > nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 8px 0;
+    border-top: solid 1px var(--dark);
+    border-bottom: solid 2px var(--dark);
+
+    > a {
+      font-family: "Gentium Plus Book", serif;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--dark-second);
+    }
+  }
+}
+
+.fontpage-lead-story_container {
+  grid-column: 3 / span 8;
+}
+
 .post-page-header_container {
   margin: 0 0 40px;
 
