@@ -22,16 +22,18 @@ a {
 
 .site_container {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   column-gap: 12px;
+  max-width: 1280px;
+  margin: 24px auto;
 
   > main {
-    grid-column: 3 / span 8;
+    grid-column: 1 / span 16;
   }
 }
 
 .site-header_grid-wrapper {
-  grid-column: 3 / span 8;
+  grid-column: 1 / span 16;
   margin: 0 0 8px;
 }
 
@@ -85,7 +87,7 @@ a {
 }
 
 footer {
-  grid-column: 3 / span 8;
+  grid-column: 1 / span 16;
   margin: 40px 0;
   padding: 20px 0 0;
   border-top: solid 1px var(--dark);
@@ -105,7 +107,7 @@ footer {
 }
 
 .frontpage-header {
-  grid-column: 3 / span 8;
+  grid-column: 1 / span 16;
 
   > div:first-child {
     display: flex;
@@ -172,8 +174,42 @@ footer {
   }
 }
 
-.fontpage-lead-story_container {
-  grid-column: 3 / span 8;
+.frontpage-lead-story_story {
+  margin: 24px 0;
+  padding: 0 12px 0 0;
+  border-right: solid 1px var(--dark-third);
+  grid-column: 1 / span 12;
+
+  > .frontpage-lead-story_header {
+    > h2 {
+      margin: 0;
+      font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
+      font-size: 60px;
+      line-height: 1.15;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    > p:first-of-type {
+      font-size: 24px;
+      font-style: italic;
+      font-family: "Gentium Plus", serif;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark-second);
+    }
+
+    > p:last-of-type {
+      font-size: 20px;
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 100;
+      color: var(--dark-second);
+    }
+  }
+}
+
+.frontpage-lead-story-side-column {
+  grid-column: 13 / span 4;
 }
 
 .post-page-header_container {

@@ -2,8 +2,8 @@ import { useContext, useMemo } from "react";
 import { DataContext } from "../../components/DataContext";
 import type { PostMetaData } from "../../types";
 import type { Block } from "@asukawang/amp";
-import { PostPageContent } from "../../components/PostPageContent";
 import { Link } from "../../components/Link";
+import { ContentBlock } from "../../components/ContentBlock";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -73,10 +73,19 @@ const LeadStory = ({
 }: {
   leadStory: { metadata: PostMetaData; content: Block[] };
 }) => (
-  <article className="fontpage-lead-story_container">
-    <PostPageContent
-      metadata={leadStory.metadata}
-      content={leadStory.content}
-    />
-  </article>
+  <>
+    <div className="frontpage-lead-story_story">
+      <div className="frontpage-lead-story_header">
+        <h2>{leadStory.metadata.title}</h2>
+        <p>{leadStory.metadata.description}</p>
+        <p>{leadStory.metadata.publishedAt}</p>
+      </div>
+      <article className="fontpage-lead-story_container">
+        {leadStory.content.map((block, i) => (
+          <ContentBlock block={block} key={i} />
+        ))}
+      </article>
+    </div>
+    <div className="frontpage-lead-story-side-column">side column</div>
+  </>
 );
