@@ -7,7 +7,7 @@ import { DataContext } from "../../components/DataContext";
 export const ArchivePage = () => {
   const context = useContext(DataContext);
   const postList =
-    window.__STATIC_PROPS__.postList ||
+    window.__STATIC_PROPS__.blog?.postList ||
     context.postList.map((post) => post.metadata);
 
   if (!context) {

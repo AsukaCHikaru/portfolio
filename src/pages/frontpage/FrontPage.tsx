@@ -6,15 +6,24 @@ import type { Post } from "../../types";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
-  const post = useMemo(
-    () =>
-      context.postList.sort(
-        (a, b) =>
-          new Date(b.metadata.publishedAt).getTime() -
-          new Date(a.metadata.publishedAt).getTime(),
-      )[0],
-    [],
-  );
+  const post = useMemo(() => {
+    const staticProp = window.__STATIC_PROPS__.frontPage;
+    if (staticProp) {
+      return staticProp.leadStory;
+    }
+    return context.postList.sort(
+      (a, b) =>
+        new Date(b.metadata.publishedAt).getTime() -
+        new Date(a.metadata.publishedAt).getTime(),
+    )[0];
+  }, []);
+
+  const lastUpdated = useMemo(() => {
+    const staticProp = window.__STATIC_PROPS__.frontPage;
+    return staticProp
+      ? staticProp.leadStory.metadata.publishedAt
+      : post.metadata.publishedAt;
+  }, [post]);
 
   if (!post) {
     return null;
@@ -26,7 +35,7 @@ export const FrontPage = () => {
         metadata: post.metadata,
         content: post.content,
       }}
-      lastUpdated={post.metadata.publishedAt}
+      lastUpdated={lastUpdated}
     />
   );
 };

@@ -8,8 +8,8 @@ export const PostPage = () => {
   const post = useMemo(() => {
     const pathname = window.location.pathname.replace("/blog/", "");
     const staticProp = window.__STATIC_PROPS__;
-    if (staticProp.post?.metadata.pathname === pathname) {
-      return staticProp.post;
+    if (staticProp.blog?.post?.metadata.pathname === pathname) {
+      return staticProp.blog.post;
     }
     return context.postList.find((post) => post.metadata.pathname === pathname);
   }, []);

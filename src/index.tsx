@@ -7,9 +7,14 @@ import { DataContext } from "./components/DataContext";
 declare global {
   interface Window {
     __STATIC_PROPS__: {
-      postList: PostMetaData[];
-      post: Post;
+      blog: {
+        postList: PostMetaData[];
+        post: Post;
+      };
       about: Post;
+      frontPage: {
+        leadStory: Post;
+      };
     };
   }
 }

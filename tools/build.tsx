@@ -7,6 +7,7 @@ import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
 import { getAbout, getBlogPostList } from "./contentServices";
 import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
+import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 
 const writeFile = (element: ReactNode, path: string, staticProps: string) => {
   let template = readFileSync(
@@ -40,13 +41,15 @@ const buildBlog = async () => {
     writeFile(
       <ArchivePageContent postList={postList.map((post) => post.metadata)} />,
       "/blog",
-      JSON.stringify({ postList: postList.map((post) => post.metadata) }),
+      JSON.stringify({
+        blog: { postList: postList.map((post) => post.metadata) },
+      }),
     );
     postList.forEach((post) => {
       writeFile(
         <PostPageContent metadata={post.metadata} content={post.content} />,
         `/blog/${post.metadata.pathname}`,
-        JSON.stringify({ post }),
+        JSON.stringify({ blog: { post } }),
       );
     });
   } catch (error) {
@@ -71,9 +74,12 @@ const buildFrontPage = async () => {
   const postList = await getBlogPostList();
   const lastPost = postList[0];
   writeFile(
-    <PostPageContent metadata={lastPost.metadata} content={lastPost.content} />,
+    <FrontPageContent
+      leadStory={lastPost}
+      lastUpdated={lastPost.metadata.publishedAt}
+    />,
     "/",
-    JSON.stringify({ post: lastPost }),
+    JSON.stringify({ frontPage: { leadStory: lastPost } }),
   );
 };
 
