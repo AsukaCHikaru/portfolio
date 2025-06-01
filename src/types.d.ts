@@ -1,3 +1,5 @@
+import type { Block } from "@asukawang/amp";
+
 export type PostMetaData = {
   title: string;
   description: string;
@@ -6,4 +8,9 @@ export type PostMetaData = {
   category: string;
   topic: string;
   language: string;
+};
+
+export type Post = {
+  metadata: PostMetaData;
+  content: Block[];
 };

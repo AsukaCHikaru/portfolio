@@ -1,10 +1,9 @@
 import { createContext } from "react";
-import type { PostMetaData } from "../types";
-import type { Block } from "@asukawang/amp";
+import type { Post } from "../types";
 
 export const DataContext = createContext<{
-  postList: { metadata: PostMetaData; content: Block[] }[];
-  about: { metadata: PostMetaData; content: Block[] } | null;
+  postList: Post[];
+  about: Post | null;
 }>({
   postList: [],
   about: null,

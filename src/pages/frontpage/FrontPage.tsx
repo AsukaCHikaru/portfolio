@@ -1,9 +1,8 @@
 import { useContext, useMemo } from "react";
 import { DataContext } from "../../components/DataContext";
-import type { PostMetaData } from "../../types";
-import type { Block } from "@asukawang/amp";
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
+import type { Post } from "../../types";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -33,7 +32,7 @@ export const FrontPage = () => {
 };
 
 interface Props {
-  leadStory: { metadata: PostMetaData; content: Block[] };
+  leadStory: Post;
   lastUpdated: string;
 }
 
@@ -68,11 +67,7 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
   </header>
 );
 
-const LeadStory = ({
-  leadStory,
-}: {
-  leadStory: { metadata: PostMetaData; content: Block[] };
-}) => (
+const LeadStory = ({ leadStory }: { leadStory: Post }) => (
   <>
     <div className="frontpage-lead-story_story">
       <div className="frontpage-lead-story_header">
