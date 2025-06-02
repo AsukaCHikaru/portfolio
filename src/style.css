@@ -215,6 +215,57 @@ footer {
 
 .frontpage-lead-story-side-column {
   grid-column: 13 / span 4;
+
+  > p {
+    margin: 0 0 24px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 100;
+    color: var(--dark);
+
+    > a {
+      font-family: 'Gentium Plus', serif;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--dark);
+      text-decoration: underline;
+    }
+  }
+
+  > .frontpage-lead-story-side-column-post {
+    display: block;
+    margin: 0 0 12px;
+    padding: 0 0 10px;
+    font-family: 'Noto Serif JP CJK', 'Noto Serif JP', serif;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 200;
+    color: var(--dark);
+    border-bottom: solid 1px var(--dark-third);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    > span:first-of-type {
+      display: block;
+      margin: 10px 0;
+      font-family: 'Gentium Plus', serif;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: var(--dark-second);
+    }
+
+    > span:last-of-type {
+      display: block;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 100;
+      color: var(--dark-second);
+    }
+  }
 }
 
 .post-page-header_container {

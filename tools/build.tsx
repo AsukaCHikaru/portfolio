@@ -73,13 +73,22 @@ const buildResumePage = async () => {
 const buildFrontPage = async () => {
   const postList = await getBlogPostList();
   const lastPost = postList[0];
+  const furtherReading = [
+    ...postList.filter(
+      (post) =>
+        post.metadata.category === lastPost.metadata.category &&
+        post.metadata.pathname !== lastPost.metadata.pathname,
+    ),
+  ].slice(0, 5);
+
   writeFile(
     <FrontPageContent
       leadStory={lastPost}
       lastUpdated={lastPost.metadata.publishedAt}
+      furtherReading={furtherReading}
     />,
     "/",
-    JSON.stringify({ frontPage: { leadStory: lastPost } }),
+    JSON.stringify({ frontPage: { leadStory: lastPost, furtherReading } }),
   );
 };
 

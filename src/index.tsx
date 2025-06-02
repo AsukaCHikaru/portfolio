@@ -14,6 +14,7 @@ declare global {
       about: Post;
       frontPage: {
         leadStory: Post;
+        furtherReading: Post[];
       };
     };
   }

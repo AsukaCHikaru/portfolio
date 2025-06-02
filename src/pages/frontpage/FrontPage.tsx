@@ -25,6 +25,20 @@ export const FrontPage = () => {
       : post.metadata.publishedAt;
   }, [post]);
 
+  const furtherReading = useMemo(() => {
+    const staticProp = window.__STATIC_PROPS__.frontPage;
+    if (staticProp) {
+      return staticProp.furtherReading;
+    }
+    return [
+      ...context.postList.filter(
+        (p) =>
+          p.metadata.category === post.metadata.category &&
+          p.metadata.pathname !== post.metadata.pathname,
+      ),
+    ].slice(0, 5);
+  }, [context, post]);
+
   if (!post) {
     return null;
   }
@@ -35,6 +49,7 @@ export const FrontPage = () => {
         metadata: post.metadata,
         content: post.content,
       }}
+      furtherReading={furtherReading}
       lastUpdated={lastUpdated}
     />
   );
@@ -43,16 +58,19 @@ export const FrontPage = () => {
 interface Props {
   leadStory: Post;
   lastUpdated: string;
+  furtherReading: Post[];
 }
 
-export const FrontPageContent = ({ leadStory, lastUpdated }: Props) => {
-  return (
-    <div className="site_container">
-      <Header lastUpdated={lastUpdated} />
-      <LeadStory leadStory={leadStory} />
-    </div>
-  );
-};
+export const FrontPageContent = ({
+  leadStory,
+  lastUpdated,
+  furtherReading,
+}: Props) => (
+  <div className="site_container">
+    <Header lastUpdated={lastUpdated} />
+    <LeadStory leadStory={leadStory} furtherReading={furtherReading} />
+  </div>
+);
 
 const Header = ({ lastUpdated }: { lastUpdated: string }) => (
   <header className="frontpage-header">
@@ -76,7 +94,13 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
   </header>
 );
 
-const LeadStory = ({ leadStory }: { leadStory: Post }) => (
+const LeadStory = ({
+  leadStory,
+  furtherReading,
+}: {
+  leadStory: Post;
+  furtherReading: Post[];
+}) => (
   <>
     <div className="frontpage-lead-story_story">
       <div className="frontpage-lead-story_header">
@@ -90,6 +114,24 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
         ))}
       </article>
     </div>
-    <div className="frontpage-lead-story-side-column">side column</div>
+    <div className="frontpage-lead-story-side-column">
+      <p>
+        More from{" "}
+        <a href={`/blog?category=${leadStory.metadata.category}`}>
+          {leadStory.metadata.category}
+        </a>
+      </p>
+      {furtherReading.map((post) => (
+        <a
+          className="frontpage-lead-story-side-column-post"
+          key={post.metadata.pathname}
+          href={`/blog/${post.metadata.pathname}`}
+        >
+          {post.metadata.title}
+          <span>{post.metadata.description}</span>
+          <span>{post.metadata.publishedAt}</span>
+        </a>
+      ))}
+    </div>
   </>
 );
