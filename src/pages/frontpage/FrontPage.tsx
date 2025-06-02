@@ -93,11 +93,8 @@ export const FrontPageContent = ({
 }: Props) => (
   <div className="site_container">
     <Header lastUpdated={lastUpdated} />
-    <LeadStory
-      leadStory={leadStory}
-      furtherReading={furtherReading}
-      categories={categories}
-    />
+    <LeadStory leadStory={leadStory} />
+    <SideColumn furtherReading={furtherReading} categories={categories} />
   </div>
 );
 
@@ -123,58 +120,57 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
   </header>
 );
 
-const LeadStory = ({
-  leadStory,
+const LeadStory = ({ leadStory }: { leadStory: Post }) => (
+  <div className="frontpage-lead-story_story">
+    <div className="frontpage-lead-story_header">
+      <h2>{leadStory.metadata.title}</h2>
+      <p>{leadStory.metadata.description}</p>
+      <p>{leadStory.metadata.publishedAt}</p>
+    </div>
+    <article className="fontpage-lead-story_container">
+      {leadStory.content.map((block, i) => (
+        <ContentBlock block={block} key={i} />
+      ))}
+    </article>
+  </div>
+);
+
+const SideColumn = ({
   furtherReading,
   categories,
 }: {
-  leadStory: Post;
   furtherReading: Post[];
   categories: { name: string; count: number }[];
 }) => (
-  <>
-    <div className="frontpage-lead-story_story">
-      <div className="frontpage-lead-story_header">
-        <h2>{leadStory.metadata.title}</h2>
-        <p>{leadStory.metadata.description}</p>
-        <p>{leadStory.metadata.publishedAt}</p>
-      </div>
-      <article className="fontpage-lead-story_container">
-        {leadStory.content.map((block, i) => (
-          <ContentBlock block={block} key={i} />
-        ))}
-      </article>
-    </div>
-    <div className="frontpage-lead-story-side-column">
-      <p>
-        More from{" "}
-        <a href={`/blog?category=${leadStory.metadata.category}`}>
-          {leadStory.metadata.category}
+  <div className="frontpage-side-column">
+    <p>
+      More from{" "}
+      <a href={`/blog?category=${furtherReading[0].metadata.category}`}>
+        {furtherReading[0].metadata.category}
+      </a>
+    </p>
+    <div>
+      {furtherReading.map((post) => (
+        <a
+          className="frontpage-side-column-post"
+          key={post.metadata.pathname}
+          href={`/blog/${post.metadata.pathname}`}
+        >
+          {post.metadata.title}
+          <span>{post.metadata.description}</span>
+          <span>{post.metadata.publishedAt}</span>
         </a>
-      </p>
-      <div>
-        {furtherReading.map((post) => (
-          <a
-            className="frontpage-lead-story-side-column-post"
-            key={post.metadata.pathname}
-            href={`/blog/${post.metadata.pathname}`}
-          >
-            {post.metadata.title}
-            <span>{post.metadata.description}</span>
-            <span>{post.metadata.publishedAt}</span>
-          </a>
-        ))}
-      </div>
-      <div className="frontpage-lead-story-side-column-categories">
-        <p>Categories</p>
-        {categories.map((category) => (
-          <a key={category.name} href={`/blog?category=${category}`}>
-            {category.name}
-            <div />
-            <span>{category.count} posts</span>
-          </a>
-        ))}
-      </div>
+      ))}
     </div>
-  </>
+    <div className="frontpage-side-column-categories">
+      <p>Categories</p>
+      {categories.map((category) => (
+        <a key={category.name} href={`/blog?category=${category}`}>
+          {category.name}
+          <div />
+          <span>{category.count} posts</span>
+        </a>
+      ))}
+    </div>
+  </div>
 );

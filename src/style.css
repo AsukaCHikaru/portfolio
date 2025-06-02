@@ -213,7 +213,7 @@ footer {
   }
 }
 
-.frontpage-lead-story-side-column {
+.frontpage-side-column {
   grid-column: 13 / span 4;
 
   > p {
@@ -233,7 +233,7 @@ footer {
     }
   }
 
-  & .frontpage-lead-story-side-column-post {
+  & .frontpage-side-column-post {
     display: block;
     margin: 0 0 12px;
     padding: 0 0 10px;
@@ -271,7 +271,7 @@ footer {
     }
   }
 
-  & .frontpage-lead-story-side-column-categories {
+  & .frontpage-side-column-categories {
     padding: 12px 0 0;
     margin: 24px 0 0;
     position: relative;
