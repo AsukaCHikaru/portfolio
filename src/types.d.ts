@@ -8,6 +8,8 @@ export type PostMetaData = {
   category: string;
   topic: string;
   language: string;
+  featured: boolean;
+  thumbnail?: string;
 };
 
 export type Post = {

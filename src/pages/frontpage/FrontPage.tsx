@@ -61,6 +61,14 @@ export const FrontPage = () => {
       .sort((a, b) => b.count - a.count);
   }, [context]);
 
+  const featuredReading = useMemo(() => {
+    const staticProp = window.__STATIC_PROPS__.frontPage;
+    if (staticProp) {
+      return staticProp.featuredReading;
+    }
+    return context.postList.find((p) => p.metadata.featured);
+  }, [context]);
+
   if (!post) {
     return null;
   }
@@ -74,6 +82,7 @@ export const FrontPage = () => {
       furtherReading={furtherReading}
       lastUpdated={lastUpdated}
       categories={categories}
+      featuredReading={featuredReading}
     />
   );
 };
@@ -83,6 +92,7 @@ interface Props {
   lastUpdated: string;
   furtherReading: Post[];
   categories: { name: string; count: number }[];
+  featuredReading?: Post;
 }
 
 export const FrontPageContent = ({
@@ -90,11 +100,15 @@ export const FrontPageContent = ({
   lastUpdated,
   furtherReading,
   categories,
+  featuredReading,
 }: Props) => (
   <div className="site_container">
     <Header lastUpdated={lastUpdated} />
     <LeadStory leadStory={leadStory} />
     <SideColumn furtherReading={furtherReading} categories={categories} />
+    {featuredReading ? (
+      <FeaturedReading featuredReading={featuredReading} />
+    ) : null}
   </div>
 );
 
@@ -172,5 +186,19 @@ const SideColumn = ({
         </a>
       ))}
     </div>
+  </div>
+);
+
+const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
+  <div className="frontpage-featured-reading">
+    <h2>Featured Reading</h2>
+    <a href={`/blog/${featuredReading.metadata.pathname}`}>
+      <div>
+        <h3>{featuredReading.metadata.title}</h3>
+        <p>{featuredReading.metadata.description}</p>
+        <p>{featuredReading.metadata.publishedAt}</p>
+      </div>
+      <img src={`/public/images/blog/${featuredReading.metadata.thumbnail}`} />
+    </a>
   </div>
 );

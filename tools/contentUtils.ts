@@ -12,6 +12,8 @@ export const convertFrontmatterToPostMetaData = (
     category: frontmatter.category,
     topic: frontmatter.topic,
     language: frontmatter.language,
+    featured: frontmatter.featured === "true",
+    thumbnail: frontmatter.thumbnail,
   };
 };
 

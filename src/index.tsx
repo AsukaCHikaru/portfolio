@@ -16,6 +16,7 @@ declare global {
         leadStory: Post;
         furtherReading: Post[];
         categories: { name: string; count: number }[];
+        featuredReading: Post;
       };
     };
   }

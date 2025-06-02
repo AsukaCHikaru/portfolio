@@ -8,6 +8,8 @@ language: en-US
 pathname: under-the-hood-diablo-ii-item-generation
 category: research
 topic: game development
+featured: true
+thumbnail: under-the-hood-diablo-ii-item-generation-pinball-machine-fallback-scheme.jpg
 ---
 
 Growing up as a teenager in the 2000s, from _Starcraft_ to _World of Warcraft_, the juggernaut _Blizzard Entertainment_ dominated the computer game industry and countless nights of mine. It would be an understatement to say I _loved_ their games—I almost failed university thanks to WoW, and _Warcraft III_ inspired my game developer dream, thereby directly influenced my chosen profession as a software engineer. Among the games created during their prime, however, **Diablo II** stands in an interesting place. For tens of hours (which was very low for Diablo II), I mindlessly pressed buttons in the dark land where evil roams, and I surely had fun, but I was not _obsessed_ with it, nor did I ever consider to properly know the game. Nonetheless, in that time it was difficult to avoid seeing discussions about Baal runs, cow levels, or treasure classes.

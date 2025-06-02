@@ -95,6 +95,7 @@ const buildFrontPage = async () => {
       [] as { name: string; count: number }[],
     )
     .sort((a, b) => b.count - a.count);
+  const featuredReading = postList.find((p) => p.metadata.featured);
 
   writeFile(
     <FrontPageContent
@@ -102,10 +103,16 @@ const buildFrontPage = async () => {
       lastUpdated={lastPost.metadata.publishedAt}
       furtherReading={furtherReading}
       categories={categories}
+      featuredReading={featuredReading}
     />,
     "/",
     JSON.stringify({
-      frontPage: { leadStory: lastPost, furtherReading, categories },
+      frontPage: {
+        leadStory: lastPost,
+        furtherReading,
+        categories,
+        featuredReading,
+      },
     }),
   );
 };
