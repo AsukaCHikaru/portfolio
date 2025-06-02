@@ -423,6 +423,12 @@ article {
   font-size: 16px;
   line-height: 22px;
 
+  & > p:first-child::first-letter {
+    float: left;
+    padding: 4px 8px 0 0;
+    font-size: 64px;
+    line-height: 40px;
+  }
   & > *:not(blockquote) {
     margin-bottom: 20px;
   }
