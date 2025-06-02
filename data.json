@@ -8,7 +8,8 @@
         "pathname": "observation-on-programming-with-ai",
         "category": "essay",
         "topic": "programming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -250,7 +251,8 @@
         "pathname": "blogging-and-digital-gardening",
         "category": "essay",
         "topic": "life",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -548,7 +550,9 @@
         "pathname": "a-redemption-three-years-later",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "a_redemption_three_years_later_1.webp"
       },
       "content": [
         {
@@ -882,7 +886,9 @@
         "pathname": "s14-recap",
         "category": "retrospective",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "s14_recap_1.webp"
       },
       "content": [
         {
@@ -1093,7 +1099,8 @@
         "pathname": "thoughts-on-building-a-game-with-xstate",
         "category": "note",
         "topic": "game development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -1496,7 +1503,9 @@
         "pathname": "under-the-hood-diablo-ii-item-generation",
         "category": "research",
         "topic": "game development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": true,
+        "thumbnail": "under-the-hood-diablo-ii-item-generation-pinball-machine-fallback-scheme.jpg"
       },
       "content": [
         {
@@ -4763,7 +4772,9 @@
         "pathname": "site-patch-notes-2024-redesign",
         "category": "retrospective",
         "topic": "meta",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "site-patch-notes-2024-redesign_2.jpeg"
       },
       "content": [
         {
@@ -5031,7 +5042,9 @@
         "pathname": "a-peek-of-the-world",
         "category": "essay",
         "topic": "travel",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "a-peek-of-the-world_3.jpeg"
       },
       "content": [
         {
@@ -5384,7 +5397,8 @@
         "pathname": "godot-essentials",
         "category": "note",
         "topic": "game development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -5914,7 +5928,8 @@
         "pathname": "4-years-reflection",
         "category": "retrospective",
         "topic": "career",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -6146,7 +6161,8 @@
         "pathname": "improving-greatness",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -6349,7 +6365,8 @@
         "pathname": "s13-recap",
         "category": "retrospective",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -6666,7 +6683,8 @@
         "pathname": "refactor-blog-2023-markdown-based-content",
         "category": "retrospective",
         "topic": "meta",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -6822,7 +6840,9 @@
         "pathname": "nextjs-app-font-not-loaded-on-remote-machine-issue",
         "category": "research",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "nextjs-app-font-not-loaded-on-remote-machine-issue_2.png"
       },
       "content": [
         {
@@ -7336,7 +7356,8 @@
         "pathname": "first-game-jam-postmortem",
         "category": "retrospective",
         "topic": "game development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -7957,7 +7978,8 @@
         "pathname": "god-of-war-ragnarok",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -8116,7 +8138,8 @@
         "pathname": "dark-souls",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -8279,7 +8302,8 @@
         "pathname": "2-years-reflection",
         "category": "retrospective",
         "topic": "career",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -8435,7 +8459,9 @@
         "pathname": "ghost-of-tsushima",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false,
+        "thumbnail": "ghost-of-tsushima_1.png"
       },
       "content": [
         {
@@ -8579,7 +8605,8 @@
         "pathname": "god-of-war-2018",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -8717,7 +8744,8 @@
         "pathname": "hades",
         "category": "review",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -9398,7 +9426,8 @@
         "pathname": "moriyasumadoka",
         "category": "retrospective",
         "topic": "HKT48",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -9999,7 +10028,8 @@
         "pathname": "refactor-blog-3-headless-cms",
         "category": "retrospective",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -10202,7 +10232,8 @@
         "pathname": "refactor-blog-2-ssr",
         "category": "retrospective",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -10783,7 +10814,9 @@
         "pathname": "immortal",
         "category": "essay",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false,
+        "thumbnail": "immortal_1.png"
       },
       "content": [
         {
@@ -10920,7 +10953,8 @@
         "pathname": "refactor-blog-1-webpack",
         "category": "retrospective",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -12084,7 +12118,8 @@
         "pathname": "full-screen-scroll",
         "category": "research",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -12883,7 +12918,8 @@
         "pathname": "s10-recap",
         "category": "retrospective",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -13657,7 +13693,8 @@
         "pathname": "unity-dev-memo-2",
         "category": "note",
         "topic": "game development",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -14384,7 +14421,8 @@
         "pathname": "celeste",
         "category": "review",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -15357,7 +15395,8 @@
         "pathname": "a-taste-of-competitive-gaming",
         "category": "essay",
         "topic": "gaming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -15439,7 +15478,8 @@
         "pathname": "use-npm-package-commands-in-fish-shell",
         "category": "note",
         "topic": "programming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -15585,7 +15625,8 @@
         "pathname": "frostpunk",
         "category": "review",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -15648,7 +15689,8 @@
         "pathname": "red-dead-redemption-2",
         "category": "review",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -15916,7 +15958,8 @@
         "pathname": "unity-dev-memo-1",
         "category": "note",
         "topic": "game development",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -16490,7 +16533,8 @@
         "pathname": "s9-recap",
         "category": "retrospective",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -17080,7 +17124,8 @@
         "pathname": "deploying-react-app-on-gae",
         "category": "note",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -17358,7 +17403,8 @@
         "pathname": "city-of-stars",
         "category": "essay",
         "topic": "travel",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -17533,7 +17579,8 @@
         "pathname": "things-i-learned-after-building-5-react-apps",
         "category": "note",
         "topic": "web development",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -17831,7 +17878,8 @@
         "pathname": "download-progress-tool-in-terminal-using-nodejs",
         "category": "note",
         "topic": "programming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -18171,7 +18219,8 @@
         "pathname": "a-rather-easy-way-to-implement-quicksort-in-js",
         "category": "note",
         "topic": "programming",
-        "language": "en-US"
+        "language": "en-US",
+        "featured": false
       },
       "content": [
         {
@@ -18279,7 +18328,8 @@
         "pathname": "devotion",
         "category": "review",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -18456,7 +18506,8 @@
         "pathname": "zelda-botw",
         "category": "review",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -18549,7 +18600,8 @@
         "pathname": "hkt-theaters",
         "category": "review",
         "topic": "HKT48",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -18985,7 +19037,8 @@
         "pathname": "so-fedc",
         "category": "essay",
         "topic": "web development",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -19210,7 +19263,8 @@
         "pathname": "dev-diary-aura",
         "category": "retrospective",
         "topic": "game development",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -19313,7 +19367,9 @@
         "pathname": "day-of-destiny",
         "category": "essay",
         "topic": "HKT48",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false,
+        "thumbnail": "day-of-destiny_4.png"
       },
       "content": [
         {
@@ -20505,7 +20561,8 @@
         "pathname": "the-stone",
         "category": "essay",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -20770,7 +20827,9 @@
         "pathname": "spring-finals",
         "category": "essay",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false,
+        "thumbnail": "spring-finals_1.png"
       },
       "content": [
         {
@@ -20899,7 +20958,8 @@
         "pathname": "farewell-battle-net",
         "category": "essay",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -20952,7 +21012,8 @@
         "pathname": "sotsugyo",
         "category": "essay",
         "topic": "life",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -21025,7 +21086,8 @@
         "pathname": "ghibli",
         "category": "review",
         "topic": "movie",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -21356,7 +21418,8 @@
         "pathname": "whisper-of-the-heart",
         "category": "review",
         "topic": "movie",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -21485,7 +21548,9 @@
         "pathname": "this-city-raised-madoka",
         "category": "essay",
         "topic": "HKT48",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false,
+        "thumbnail": "this-city-raised-madoka_1.jpg"
       },
       "content": [
         {
@@ -21594,7 +21659,8 @@
         "pathname": "road-to-plat",
         "category": "retrospective",
         "topic": "gaming",
-        "language": "zh-TW"
+        "language": "zh-TW",
+        "featured": false
       },
       "content": [
         {
@@ -21978,7 +22044,8 @@
   ],
   "about": {
     "metadata": {
-      "category": "[[-043 Side Project Memo]]"
+      "category": "[[-043 Side Project Memo]]",
+      "featured": false
     },
     "content": [
       {
