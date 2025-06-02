@@ -39,6 +39,28 @@ export const FrontPage = () => {
     ].slice(0, 5);
   }, [context, post]);
 
+  const categories = useMemo(() => {
+    const staticProp = window.__STATIC_PROPS__.frontPage;
+    if (staticProp) {
+      return staticProp.categories;
+    }
+    return [...context.postList]
+      .reduce(
+        (acc, post) => {
+          if (acc.some((c) => c.name === post.metadata.category)) {
+            return acc;
+          }
+          const category = post.metadata.category;
+          const count = context.postList.filter(
+            (p) => p.metadata.category === category,
+          ).length;
+          return [...acc, { name: category, count }];
+        },
+        [] as { name: string; count: number }[],
+      )
+      .sort((a, b) => b.count - a.count);
+  }, [context]);
+
   if (!post) {
     return null;
   }
@@ -51,6 +73,7 @@ export const FrontPage = () => {
       }}
       furtherReading={furtherReading}
       lastUpdated={lastUpdated}
+      categories={categories}
     />
   );
 };
@@ -59,16 +82,22 @@ interface Props {
   leadStory: Post;
   lastUpdated: string;
   furtherReading: Post[];
+  categories: { name: string; count: number }[];
 }
 
 export const FrontPageContent = ({
   leadStory,
   lastUpdated,
   furtherReading,
+  categories,
 }: Props) => (
   <div className="site_container">
     <Header lastUpdated={lastUpdated} />
-    <LeadStory leadStory={leadStory} furtherReading={furtherReading} />
+    <LeadStory
+      leadStory={leadStory}
+      furtherReading={furtherReading}
+      categories={categories}
+    />
   </div>
 );
 
@@ -97,9 +126,11 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
 const LeadStory = ({
   leadStory,
   furtherReading,
+  categories,
 }: {
   leadStory: Post;
   furtherReading: Post[];
+  categories: { name: string; count: number }[];
 }) => (
   <>
     <div className="frontpage-lead-story_story">
@@ -121,17 +152,29 @@ const LeadStory = ({
           {leadStory.metadata.category}
         </a>
       </p>
-      {furtherReading.map((post) => (
-        <a
-          className="frontpage-lead-story-side-column-post"
-          key={post.metadata.pathname}
-          href={`/blog/${post.metadata.pathname}`}
-        >
-          {post.metadata.title}
-          <span>{post.metadata.description}</span>
-          <span>{post.metadata.publishedAt}</span>
-        </a>
-      ))}
+      <div>
+        {furtherReading.map((post) => (
+          <a
+            className="frontpage-lead-story-side-column-post"
+            key={post.metadata.pathname}
+            href={`/blog/${post.metadata.pathname}`}
+          >
+            {post.metadata.title}
+            <span>{post.metadata.description}</span>
+            <span>{post.metadata.publishedAt}</span>
+          </a>
+        ))}
+      </div>
+      <div className="frontpage-lead-story-side-column-categories">
+        <p>Categories</p>
+        {categories.map((category) => (
+          <a key={category.name} href={`/blog?category=${category}`}>
+            {category.name}
+            <div />
+            <span>{category.count} posts</span>
+          </a>
+        ))}
+      </div>
     </div>
   </>
 );

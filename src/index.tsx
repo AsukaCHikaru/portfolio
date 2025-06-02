@@ -15,6 +15,7 @@ declare global {
       frontPage: {
         leadStory: Post;
         furtherReading: Post[];
+        categories: { name: string; count: number }[];
       };
     };
   }

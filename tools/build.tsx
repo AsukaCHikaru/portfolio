@@ -80,15 +80,33 @@ const buildFrontPage = async () => {
         post.metadata.pathname !== lastPost.metadata.pathname,
     ),
   ].slice(0, 5);
+  const categories = [...postList]
+    .reduce(
+      (acc, post, _, array) => {
+        if (acc.some((c) => c.name === post.metadata.category)) {
+          return acc;
+        }
+        const category = post.metadata.category;
+        const count = array.filter(
+          (p) => p.metadata.category === category,
+        ).length;
+        return [...acc, { name: category, count }];
+      },
+      [] as { name: string; count: number }[],
+    )
+    .sort((a, b) => b.count - a.count);
 
   writeFile(
     <FrontPageContent
       leadStory={lastPost}
       lastUpdated={lastPost.metadata.publishedAt}
       furtherReading={furtherReading}
+      categories={categories}
     />,
     "/",
-    JSON.stringify({ frontPage: { leadStory: lastPost, furtherReading } }),
+    JSON.stringify({
+      frontPage: { leadStory: lastPost, furtherReading, categories },
+    }),
   );
 };
 

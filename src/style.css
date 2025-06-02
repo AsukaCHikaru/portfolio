@@ -218,14 +218,14 @@ footer {
 
   > p {
     margin: 0 0 24px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 24px;
     line-height: 1.2;
     font-weight: 100;
     color: var(--dark);
 
     > a {
-      font-family: 'Gentium Plus', serif;
+      font-family: "Gentium Plus", serif;
       font-size: 24px;
       line-height: 1;
       color: var(--dark);
@@ -233,16 +233,20 @@ footer {
     }
   }
 
-  > .frontpage-lead-story-side-column-post {
+  & .frontpage-lead-story-side-column-post {
     display: block;
     margin: 0 0 12px;
     padding: 0 0 10px;
-    font-family: 'Noto Serif JP CJK', 'Noto Serif JP', serif;
+    font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
     font-size: 24px;
     line-height: 1.25;
     font-weight: 200;
     color: var(--dark);
     border-bottom: solid 1px var(--dark-third);
+
+    &:last-of-type {
+      border-bottom: none;  
+    }
 
     &:hover {
       text-decoration: underline;
@@ -251,7 +255,7 @@ footer {
     > span:first-of-type {
       display: block;
       margin: 10px 0;
-      font-family: 'Gentium Plus', serif;
+      font-family: "Gentium Plus", serif;
       font-size: 20px;
       line-height: 1.2;
       font-weight: 400;
@@ -260,10 +264,60 @@ footer {
 
     > span:last-of-type {
       display: block;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: "Noto Sans", sans-serif;
       font-size: 16px;
       font-weight: 100;
       color: var(--dark-second);
+    }
+  }
+
+  & .frontpage-lead-story-side-column-categories {
+    padding: 12px 0 0;
+    margin: 24px 0 0;
+    position: relative;
+    border-top: solid 1px var(--dark-third);
+    
+    &::before {
+      content: '';
+      border-top: solid 1px var(--dark-third);
+      position: absolute;
+      top: 1px;
+      width: 100%;
+    }
+
+    > p {
+      margin: 12px 0 24px;
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 100;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    > a {
+      display: flex;
+      margin: 0 0 16px;
+      font-family: "Gentium Plus", serif;
+      font-size: 26px;
+      line-height: 1;
+      color: var(--dark-second);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      > div {
+        flex: 1 0 auto;
+        border-bottom: dashed 1px var(--dark-third);
+        padding: 0 4px;
+      }
+
+      > span {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 100;
+        color: var(--dark);
+      }
     }
   }
 }
