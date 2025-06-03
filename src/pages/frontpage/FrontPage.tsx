@@ -119,7 +119,7 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
         <p>"The Work{"\n"}Goes On"</p>
       </div>
       <h1>
-        <a href="/">ASUKA WANG</a>
+        <Link to="/">ASUKA WANG</Link>
       </h1>
       <div>
         Last Updated{"\n"}
@@ -159,31 +159,31 @@ const SideColumn = ({
   <div className="frontpage-side-column">
     <p>
       More from{" "}
-      <a href={`/blog?category=${furtherReading[0].metadata.category}`}>
+      <Link to={`/blog?category=${furtherReading[0].metadata.category}`}>
         {furtherReading[0].metadata.category}
-      </a>
+      </Link>
     </p>
     <div>
       {furtherReading.map((post) => (
-        <a
+        <Link
           className="frontpage-side-column-post"
           key={post.metadata.pathname}
-          href={`/blog/${post.metadata.pathname}`}
+          to={`/blog/${post.metadata.pathname}`}
         >
           {post.metadata.title}
           <span>{post.metadata.description}</span>
           <span>{post.metadata.publishedAt}</span>
-        </a>
+        </Link>
       ))}
     </div>
     <div className="frontpage-side-column-categories">
       <p>Categories</p>
       {categories.map((category) => (
-        <a key={category.name} href={`/blog?category=${category}`}>
+        <Link key={category.name} to={`/blog?category=${category}`}>
           {category.name}
           <div />
           <span>{category.count} posts</span>
-        </a>
+        </Link>
       ))}
     </div>
   </div>
@@ -192,13 +192,13 @@ const SideColumn = ({
 const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
   <div className="frontpage-featured-reading">
     <h2>Featured Reading</h2>
-    <a href={`/blog/${featuredReading.metadata.pathname}`}>
+    <Link to={`/blog/${featuredReading.metadata.pathname}`}>
       <div>
         <h3>{featuredReading.metadata.title}</h3>
         <p>{featuredReading.metadata.description}</p>
         <p>{featuredReading.metadata.publishedAt}</p>
       </div>
       <img src={`/public/images/blog/${featuredReading.metadata.thumbnail}`} />
-    </a>
+    </Link>
   </div>
 );
