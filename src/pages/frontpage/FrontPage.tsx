@@ -105,11 +105,13 @@ export const FrontPageContent = ({
 }: Props) => (
   <div className="site_container">
     <Header lastUpdated={lastUpdated} />
-    <LeadStory leadStory={leadStory} />
-    <SideColumn furtherReading={furtherReading} categories={categories} />
-    {featuredReading ? (
-      <FeaturedReading featuredReading={featuredReading} />
-    ) : null}
+    <main>
+      <LeadStory leadStory={leadStory} />
+      <SideColumn furtherReading={furtherReading} categories={categories} />
+      {featuredReading ? (
+        <FeaturedReading featuredReading={featuredReading} />
+      ) : null}
+    </main>
   </div>
 );
 

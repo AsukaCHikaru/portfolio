@@ -32,6 +32,12 @@ a {
   }
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 12px;
+}
+
 .site-header_grid-wrapper {
   grid-column: 1 / span 16;
   margin: 0 0 8px;
@@ -340,7 +346,6 @@ footer {
     color: var(--dark);
 
     > div {
-
       & h3 {
         margin: 0;
         font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
@@ -370,18 +375,19 @@ footer {
 
 .post-page-header_container {
   margin: 0 0 40px;
+  grid-column: 1 / span 16;
 
   @media (min-width: 768px) {
     gap: 16px;
-    margin: 24px 0 60px;
+    margin: 24px 0 40px;
   }
 
   > h1 {
     margin: 20px 0;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
     font-size: 32px;
-    font-weight: 200;
-    line-height: 1.2;
+    font-weight: 800;
+    line-height: 1.15;
 
     @media (min-width: 768px) {
       margin: 8px 0 40px;
@@ -416,6 +422,10 @@ footer {
       line-height: 1;
     }
   }
+}
+
+article.post-page-content {
+  grid-column: 3 / span 10;
 }
 
 article {
