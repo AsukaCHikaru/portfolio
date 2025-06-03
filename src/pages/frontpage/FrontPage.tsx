@@ -3,6 +3,7 @@ import { DataContext } from "../../components/DataContext";
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
 import type { Post } from "../../types";
+import { formatDate } from "../../utils/dateTimeUtil";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -123,7 +124,7 @@ const Header = ({ lastUpdated }: { lastUpdated: string }) => (
       </h1>
       <div>
         Last Updated{"\n"}
-        <time dateTime={lastUpdated}>{lastUpdated}</time>
+        <time dateTime={lastUpdated}>{formatDate(lastUpdated)}</time>
       </div>
     </div>
     <nav>
@@ -139,7 +140,7 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
     <div className="frontpage-lead-story_header">
       <h2>{leadStory.metadata.title}</h2>
       <p>{leadStory.metadata.description}</p>
-      <p>{leadStory.metadata.publishedAt}</p>
+      <p>{formatDate(leadStory.metadata.publishedAt)}</p>
     </div>
     <article className="fontpage-lead-story_container">
       {leadStory.content.map((block, i) => (
@@ -172,7 +173,7 @@ const SideColumn = ({
         >
           {post.metadata.title}
           <span>{post.metadata.description}</span>
-          <span>{post.metadata.publishedAt}</span>
+          <span>{formatDate(post.metadata.publishedAt)}</span>
         </Link>
       ))}
     </div>
@@ -196,7 +197,7 @@ const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
       <div>
         <h3>{featuredReading.metadata.title}</h3>
         <p>{featuredReading.metadata.description}</p>
-        <p>{featuredReading.metadata.publishedAt}</p>
+        <p>{formatDate(featuredReading.metadata.publishedAt)}</p>
       </div>
       <img src={`/public/images/blog/${featuredReading.metadata.thumbnail}`} />
     </Link>
