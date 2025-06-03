@@ -1,6 +1,14 @@
 import type { ReactNode } from "react";
 
-export const Link = ({ children, to }: { children: ReactNode; to: string }) => {
+export const Link = ({
+  children,
+  to,
+  className,
+}: {
+  children: ReactNode;
+  to: string;
+  className?: string;
+}) => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.history.pushState({}, "", to);
@@ -12,7 +20,7 @@ export const Link = ({ children, to }: { children: ReactNode; to: string }) => {
   };
 
   return (
-    <a href={to} onClick={handleClick}>
+    <a href={to} onClick={handleClick} className={className}>
       {children}
     </a>
   );
