@@ -4,6 +4,7 @@ import { Link } from "../../components/Link";
 import type { PostMetaData } from "../../types";
 import { DataContext } from "../../components/DataContext";
 import { generateArchiveTileList } from "../../utils/blogUtil";
+import { formatDate } from "../../utils/dateTimeUtil";
 
 export const ArchivePage = () => {
   const context = useContext(DataContext);
@@ -26,17 +27,27 @@ export const ArchivePageContent = ({ postList }: Props) => {
 
   return (
     <Layout>
-      <h1>Blog Archive</h1>
+      <h1 className="post-archive-header">Blog Archive</h1>
       {tileList.map((row, i) => (
         <div key={i} className="post-archive-row">
-          {row.map(({ post, size }, i) => (
+          {row.map(({ post, size, position }, i) => (
             <Link
               key={post.pathname}
               to={`/blog/${post.pathname}`}
-              className={`post-archive-tile tile-size-${size} tile-pos-${i + 1}`}
+              className={`post-archive-tile tile-size-${size} tile-pos-${position}`}
             >
-              <h2>{post.title}</h2>
-              <p>{post.description}</p>
+              <div>
+                <h2>{post.title}</h2>
+                <p>{post.description}</p>
+                <p>{formatDate(post.publishedAt)}</p>
+              </div>
+              {post.thumbnail && (
+                <img
+                  src={`/public/images/blog/${post.thumbnail}`}
+                  alt={post.title}
+                  className="post-thumbnail"
+                />
+              )}
             </Link>
           ))}
         </div>
