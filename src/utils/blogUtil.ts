@@ -83,6 +83,16 @@ export const generateArchiveTileList = (
   ];
 };
 
-const getTileSize = (post: PostMetaData): RowSize => (post.thumbnail ? 8 : 4);
+const getTileSize = (post: PostMetaData): RowSize => {
+  const baseSize = 4;
+  const thumbnailSize = post.thumbnail ? 4 : 0;
+  const titleSize =
+    post.title.length > 40 ||
+    (post.description && post.description.length > 160)
+      ? 4
+      : 0;
+
+  return (baseSize + thumbnailSize + titleSize) as RowSize;
+};
 const getSizeSum = (tiles: PostTile[]): number =>
   tiles.reduce((acc, cur) => acc + cur.size, 0);
