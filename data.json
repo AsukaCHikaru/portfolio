@@ -552,7 +552,8 @@
         "topic": "gaming",
         "language": "en-US",
         "featured": false,
-        "thumbnail": "a_redemption_three_years_later_1.webp"
+        "thumbnail": "a_redemption_three_years_later_1.webp",
+        "thumbnailDirection": "portrait"
       },
       "content": [
         {
@@ -888,7 +889,8 @@
         "topic": "gaming",
         "language": "en-US",
         "featured": false,
-        "thumbnail": "s14_recap_1.webp"
+        "thumbnail": "s14_recap_1.webp",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -1505,7 +1507,8 @@
         "topic": "game development",
         "language": "en-US",
         "featured": true,
-        "thumbnail": "under-the-hood-diablo-ii-item-generation-pinball-machine-fallback-scheme.jpg"
+        "thumbnail": "under-the-hood-diablo-ii-item-generation-pinball-machine-fallback-scheme.jpg",
+        "thumbnailDirection": "portrait"
       },
       "content": [
         {
@@ -4774,7 +4777,8 @@
         "topic": "meta",
         "language": "en-US",
         "featured": false,
-        "thumbnail": "site-patch-notes-2024-redesign_2.jpeg"
+        "thumbnail": "site-patch-notes-2024-redesign_2.jpeg",
+        "thumbnailDirection": "portrait"
       },
       "content": [
         {
@@ -5044,7 +5048,8 @@
         "topic": "travel",
         "language": "en-US",
         "featured": false,
-        "thumbnail": "a-peek-of-the-world_3.jpeg"
+        "thumbnail": "a-peek-of-the-world_3.jpeg",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -6842,7 +6847,8 @@
         "topic": "web development",
         "language": "en-US",
         "featured": false,
-        "thumbnail": "nextjs-app-font-not-loaded-on-remote-machine-issue_2.png"
+        "thumbnail": "nextjs-app-font-not-loaded-on-remote-machine-issue_2.png",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -8460,8 +8466,7 @@
         "category": "review",
         "topic": "gaming",
         "language": "en-US",
-        "featured": false,
-        "thumbnail": "ghost-of-tsushima_1.png"
+        "featured": false
       },
       "content": [
         {
@@ -10816,7 +10821,8 @@
         "topic": "gaming",
         "language": "zh-TW",
         "featured": false,
-        "thumbnail": "immortal_1.png"
+        "thumbnail": "immortal_1.png",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -14422,7 +14428,9 @@
         "category": "review",
         "topic": "gaming",
         "language": "zh-TW",
-        "featured": false
+        "featured": false,
+        "thumbnail": "celeste_3.png",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -19369,7 +19377,8 @@
         "topic": "HKT48",
         "language": "zh-TW",
         "featured": false,
-        "thumbnail": "day-of-destiny_4.png"
+        "thumbnail": "day-of-destiny_4.png",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -20829,7 +20838,8 @@
         "topic": "gaming",
         "language": "zh-TW",
         "featured": false,
-        "thumbnail": "spring-finals_1.png"
+        "thumbnail": "spring-finals_1.png",
+        "thumbnailDirection": "landscape"
       },
       "content": [
         {
@@ -21550,7 +21560,8 @@
         "topic": "HKT48",
         "language": "zh-TW",
         "featured": false,
-        "thumbnail": "this-city-raised-madoka_1.jpg"
+        "thumbnail": "this-city-raised-madoka_1.jpg",
+        "thumbnailDirection": "portrait"
       },
       "content": [
         {
