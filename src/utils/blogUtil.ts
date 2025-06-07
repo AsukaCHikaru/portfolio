@@ -8,6 +8,9 @@ export type PostTile = {
   post: PostMetaData;
 };
 
+const TILE_SIZE_TITLE_WORD_COUNT = 40;
+const TILE_SIZE_DESCRIPTION_WORD_COUNT = 140;
+
 export const generateArchiveTileList = (
   postList: PostMetaData[],
 ): PostTile[][] => {
@@ -87,8 +90,9 @@ const getTileSize = (post: PostMetaData): RowSize => {
   const baseSize = 4;
   const thumbnailSize = post.thumbnail ? 4 : 0;
   const titleSize =
-    post.title.length > 40 ||
-    (post.description && post.description.length > 160)
+    post.title.length > TILE_SIZE_TITLE_WORD_COUNT ||
+    (post.description &&
+      post.description.length > TILE_SIZE_DESCRIPTION_WORD_COUNT)
       ? 4
       : 0;
 
