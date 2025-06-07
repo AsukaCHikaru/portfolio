@@ -10,6 +10,7 @@ export type PostMetaData = {
   language: string;
   featured: boolean;
   thumbnail?: string;
+  thumbnailDirection?: "landscape" | "portrait";
 };
 
 export type Post = {

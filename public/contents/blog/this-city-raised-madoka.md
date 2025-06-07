@@ -8,6 +8,7 @@ description: 一時興起，去了一趟長崎，那個把まどか養育成人�
 category: essay
 topic: HKT48
 thumbnail: this-city-raised-madoka_1.jpg
+thumbnail-direction: portrait
 ---
 
 ![](this-city-raised-madoka_1.jpg)

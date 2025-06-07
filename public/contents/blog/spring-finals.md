@@ -8,6 +8,7 @@ description: TSM第五度奪下NA LCS冠軍，我對他們抱持著高度期待�
 category: essay
 topic: gaming
 thumbnail: spring-finals_1.png
+thumbnail-direction: landscape
 ---
 
 寫在 TSM 擊敗 C9，第五度贏得 NALCS Championship 之後。

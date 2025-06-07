@@ -9,6 +9,7 @@ pathname: a-redemption-three-years-later
 category: review
 topic: gaming
 thumbnail: a_redemption_three_years_later_1.webp
+thumbnail-direction: portrait
 ---
 
 Four years ago, I preordered Cyberpunk 2077: Collector's Edition, which includes the PS4 version of the game, a high quality statue, hardcover art book, and many other goodies, for more than four times of the price of the standard version, eight months earlier than its release. Since I was playing the game on PC, I also bought the game at full price on [GoG.com](https://gog.com).

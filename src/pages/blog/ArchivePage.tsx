@@ -34,7 +34,13 @@ export const ArchivePageContent = ({ postList }: Props) => {
             <Link
               key={post.pathname}
               to={`/blog/${post.pathname}`}
-              className={`post-archive-tile tile-size-${size} tile-pos-${position}`}
+              className={`post-archive-tile tile-size-${size} tile-pos-${position} ${
+                post.thumbnailDirection === "landscape"
+                  ? "tile-landscape"
+                  : post.thumbnailDirection === "portrait"
+                    ? "tile-portrait"
+                    : ""
+              }`}
             >
               <div>
                 <h2>{post.title}</h2>

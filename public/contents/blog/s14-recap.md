@@ -9,6 +9,7 @@ pathname: s14-recap
 category: retrospective
 topic: gaming
 thumbnail: s14_recap_1.webp
+thumbnail-direction: landscape
 ---
 
 There were a few unforgettable moments in the last league season. Most of them were not about my play.

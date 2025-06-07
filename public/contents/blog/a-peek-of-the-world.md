@@ -9,6 +9,7 @@ pathname: a-peek-of-the-world
 category: essay
 topic: travel
 thumbnail: a-peek-of-the-world_3.jpeg
+thumbnail-direction: landscape
 ---
 
 The sunshine shed through the wagon glass when the elevator arose above the surface. Before my eyes was the _Rådhuspladsen_ — city hall square in Danish — which was the name of the subway station too. The city hall itself was in backlight, the sky behind it blinding. It was nine in the morning, we just entered the center part of Copenhagen. We had already spent two hours in this country, changed from the pajamas for a thirteen hours flight to proper clothes, a quick coffee in the airport, then finally a train ride to the city. But it was finally at this moment, I truly felt I arrived in Europe. The ground of the square was paved in stones, speaking foreignness and — matching my imagination — Europe.

@@ -8,6 +8,7 @@ description: 在歷經五年十個月以及一百一十四場公演之後，我�
 category: essay
 topic: HKT48
 thumbnail: day-of-destiny_4.png
+thumbnail-direction: landscape
 ---
 
 ![](day-of-destiny_1.png)(劇場 MVP 的票，不經過票務中心所以沒有名字。不用參加入場抽選所以也沒有整理番號。)

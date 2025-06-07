@@ -14,6 +14,9 @@ export const convertFrontmatterToPostMetaData = (
     language: frontmatter.language,
     featured: frontmatter.featured === "true",
     thumbnail: frontmatter.thumbnail,
+    thumbnailDirection: frontmatter[
+      "thumbnail-direction"
+    ] as PostMetaData["thumbnailDirection"],
   };
 };
 

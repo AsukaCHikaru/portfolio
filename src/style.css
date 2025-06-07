@@ -431,6 +431,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
   & h2 {
     margin: 0 0 20px;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
@@ -486,6 +487,18 @@ footer {
   }
   &.tile-size-16 {
     grid-column-end: span 16;
+  }
+
+  &.tile-landscape {
+    flex-direction: column-reverse;
+
+    &:not(:last-child) {
+      padding: 0 12px 0 0;
+    }
+    > img {
+      width: 100%;
+      margin: 0 0 12px;
+    }
   }
 }
 

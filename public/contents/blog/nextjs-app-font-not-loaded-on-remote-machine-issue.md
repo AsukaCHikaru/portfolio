@@ -9,6 +9,7 @@ updated: 2025-01-11
 category: research
 topic: web development
 thumbnail: nextjs-app-font-not-loaded-on-remote-machine-issue_2.png
+thumbnail-direction: landscape
 ---
 
 # TL;DR
