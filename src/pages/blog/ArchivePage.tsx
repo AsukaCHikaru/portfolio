@@ -30,7 +30,7 @@ export const ArchivePageContent = ({ postList }: Props) => {
       <h1 className="post-archive-header">Archive</h1>
       {tileList.map((row, i) => (
         <div key={i} className="post-archive-row">
-          {row.map(({ post, size, position }, i) => (
+          {row.map(({ post, size, position }) => (
             <Link
               key={post.pathname}
               to={`/blog/${post.pathname}`}
@@ -43,6 +43,7 @@ export const ArchivePageContent = ({ postList }: Props) => {
               }`}
             >
               <div>
+                <p>{post.category}</p>
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
                 <p>{formatDate(post.publishedAt)}</p>
