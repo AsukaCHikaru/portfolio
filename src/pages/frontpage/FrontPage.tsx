@@ -182,7 +182,7 @@ const SideColumn = ({
     <div className="frontpage-side-column-categories">
       <p>Categories</p>
       {categories.map((category) => (
-        <Link key={category.name} to={`/blog?category=${category}`}>
+        <Link key={category.name} to={`/blog?category=${category.name}`}>
           {category.name}
           <div />
           <span>{category.count} posts</span>
