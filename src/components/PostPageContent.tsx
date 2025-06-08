@@ -16,7 +16,7 @@ export const PostPageContent = ({ metadata, content }: Props) => {
         <h2>{metadata.description}</h2>
         <p>{formatDate(metadata.publishedAt)}</p>
       </div>
-      <article className="post-page-content">
+      <article className="post-page-content grid">
         {content.map((block, i) => (
           <ContentBlock block={block} key={i} />
         ))}
