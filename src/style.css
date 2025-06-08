@@ -415,12 +415,12 @@ footer {
     min-width: calc(50% + 6px);
     height: auto;
     object-fit: cover;
-    margin: 0 12px 0 0;
+    padding: 0 12px 0 0;
     filter: grayscale(1) sepia(0.2) contrast(0.9);
   }
 
   &:last-child > img {
-    margin: 0;
+    padding: 0;
   }
 
   > div {
@@ -501,9 +501,6 @@ footer {
   &.tile-landscape {
     flex-direction: column-reverse;
 
-    &:not(:last-child) {
-      padding: 0 12px 0 0;
-    }
     > img {
       width: 100%;
       margin: 0 0 12px;
