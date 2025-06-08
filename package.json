@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "PHASE=env bun run tools/dev.ts",
+    "dev": "PHASE=dev bun run tools/dev.ts",
     "build": "PHASE=prod bun run tools/build.tsx",
     "deploy": "bun run build && touch ./dist/.nojekyll",
     "copy:blog": "bun run tools/copyBlogPosts.ts"

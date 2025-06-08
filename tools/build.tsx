@@ -29,6 +29,50 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
       `<div id="root">${html}</div><script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script>`,
     );
 
+    if (process.env.PHASE === "dev") {
+      template = template.replace(
+        "</body>",
+        `
+<script>
+// Hot reload client script
+(function() {
+  console.log("Hot reload client initialized");
+
+  // First get the WebSocket port from the server
+  const ws = new WebSocket('ws://localhost:3001');
+
+  ws.onopen = () => {
+    console.log("Hot reload WebSocket connected on port", 3001);
+  };
+
+  ws.onclose = () => {
+    console.log("Hot reload WebSocket disconnected. Attempting to reconnect in 2s...");
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  };
+
+  ws.onerror = (error) => {
+    console.error("Hot reload WebSocket error:", error);
+  };
+      
+  ws.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      if (data.type === "reload") {
+        console.log("Hot reload triggered, refreshing page...");
+        window.location.reload();
+      }
+    } catch (e) {
+      console.error("Error parsing hot reload message:", e);
+    }
+  };
+})();
+</script>
+</body>`,
+      );
+    }
+
     Bun.write(`./dist${path}/index.html`, template);
   } catch (error) {
     console.error("Error writing file:", error);
