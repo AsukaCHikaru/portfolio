@@ -20,22 +20,19 @@ a {
   text-decoration: none;
 }
 
-.site_container {
+.grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   column-gap: 12px;
+}
+
+.site_container {
   max-width: 1280px;
   margin: 0 auto;
 
   > main {
     grid-column: 1 / span 16;
   }
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  gap: 12px;
 }
 
 .site-header_grid-wrapper {
@@ -384,10 +381,8 @@ footer {
 }
 
 .post-archive-row {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  gap: 12px;
   grid-column: 1 / span 16;
+  padding: 12px 0;
   border-bottom: solid 1px var(--dark-third);
 
   &:last-child {
@@ -397,7 +392,7 @@ footer {
 
 .post-archive-tile {
   display: flex;
-  margin: 0 0 12px;
+  margin: 0;
   position: relative;
   min-height: 280px;
 
@@ -562,10 +557,6 @@ footer {
   }
 }
 
-article.post-page-content {
-  grid-column: 3 / span 10;
-}
-
 article {
   font-family: "Noto Serif JP CJK", "Gentium Plus Book", "Noto Serif JP", serif;
   font-size: 16px;
@@ -595,7 +586,7 @@ article {
   }
 
   figure {
-    margin: 60px 20px;
+    margin: 48px 0;
 
     figcaption {
       margin: 6px 0 0;
@@ -620,7 +611,7 @@ article {
   }
 
   blockquote {
-    margin: 60px 0;
+    margin: 48px 0;
     white-space: pre-wrap;
     position: relative;
     padding: 0 1.5rem;
@@ -684,6 +675,12 @@ article {
     margin: 60px auto;
     border-top: solid 1px var(--dark-third);
   }
+}
+
+article.post-page-content {
+  grid-column: 1 / span 16
+
+  
 }
 
 .resume-page_container {

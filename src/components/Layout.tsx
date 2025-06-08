@@ -3,9 +3,9 @@ import { SiteHeader } from "./SiteHeader";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="site_container">
+    <div className="site_container grid">
       <SiteHeader />
-      <main>{children}</main>
+      <main className="grid">{children}</main>
       <SiteFooter />
     </div>
   );
