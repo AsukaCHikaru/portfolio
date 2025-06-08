@@ -50,7 +50,7 @@ a {
     @media (min-width: 768px) {
       width: fit-content;
       display: flex;
-      gap: 12px;
+      gap: 20px;
     }
 
     > a {
