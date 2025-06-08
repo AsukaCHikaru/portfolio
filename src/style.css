@@ -720,6 +720,9 @@ article.post-page-content {
 }
 
 .resume-page_container {
+  max-width: 960;
+  margin: 24px auto;
+
   > p {
     margin-bottom: 40px;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
