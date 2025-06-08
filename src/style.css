@@ -571,6 +571,9 @@ article {
   & > p {
     margin: 16px 0;
   }
+  & > ul, ol {
+    margin: 0;
+  }
   & > h1,h2,h3,h4,h5,h6 {
     margin: 30px 0;
   }
@@ -704,7 +707,16 @@ article.post-page-content {
       text-align: left;
     }
   }
-  
+}
+
+.about-page-header {
+  grid-column: 1 / span 16;
+  font-family: "Noto Serif JP", serif;
+  margin: 24px 0 48px;
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark);
 }
 
 .resume-page_container {
