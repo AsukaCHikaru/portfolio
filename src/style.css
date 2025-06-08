@@ -414,8 +414,9 @@ footer {
     width: calc(50% + 6px);
     min-width: calc(50% + 6px);
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     margin: 0 12px 0 0;
+    filter: grayscale(1) sepia(0.2) contrast(0.9);
   }
 
   &:last-child > img {
@@ -466,6 +467,10 @@ footer {
   &:hover {
     text-decoration: underline;
     text-decoration-color: var(--dark-second);
+
+    > img {
+      filter: none;
+    }
   }
 
   &.tile-pos-1 {
