@@ -52,13 +52,16 @@ export const generateArchiveTileList = (
         const smallestItem = acc.tiles.sort((a, b) => a.size - b.size)[0];
         return {
           space: 0,
-          tiles: acc.tiles.reduce((a, c) => {
+          tiles: acc.tiles.reduce((a, c, _, array) => {
             return [
               ...a,
               c.post.pathname === smallestItem.post.pathname
                 ? ({
                     post: smallestItem.post,
-                    size: getTileSize(smallestItem.post) + 4,
+                    size:
+                      array.length === 1
+                        ? 16
+                        : getTileSize(smallestItem.post) + 4,
                     position: getSizeSum(a) + 1,
                   } as PostTile)
                 : ({
@@ -92,7 +95,8 @@ const getTileSize = (post: PostMetaData): RowSize => {
   const titleSize =
     post.title.length > TILE_SIZE_TITLE_WORD_COUNT ||
     (post.description &&
-      post.description.length > TILE_SIZE_DESCRIPTION_WORD_COUNT)
+      post.description.length > TILE_SIZE_DESCRIPTION_WORD_COUNT &&
+      post.thumbnailDirection === "landscape")
       ? 4
       : 0;
 
