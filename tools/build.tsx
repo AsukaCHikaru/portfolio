@@ -45,13 +45,6 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
     console.log("Hot reload WebSocket connected on port", 3001);
   };
 
-  ws.onclose = () => {
-    console.log("Hot reload WebSocket disconnected. Attempting to reconnect in 2s...");
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
-  };
-
   ws.onerror = (error) => {
     console.error("Hot reload WebSocket error:", error);
   };
