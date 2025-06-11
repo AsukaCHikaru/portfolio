@@ -5,6 +5,7 @@ import type { PostMetaData } from "../../types";
 import { DataContext } from "../../components/DataContext";
 import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
+import { Helmet } from "../../components/Helmet";
 
 export const ArchivePage = () => {
   const context = useContext(DataContext);
@@ -16,7 +17,12 @@ export const ArchivePage = () => {
     return null;
   }
 
-  return <ArchivePageContent postList={postList} />;
+  return (
+    <>
+      <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
+      <ArchivePageContent postList={postList} />;
+    </>
+  );
 };
 
 interface Props {

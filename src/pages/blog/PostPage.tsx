@@ -1,6 +1,7 @@
 import { useContext, useMemo } from "react";
 import { PostPageContent } from "../../components/PostPageContent";
 import { DataContext } from "../../components/DataContext";
+import { Helmet } from "../../components/Helmet";
 
 export const PostPage = () => {
   const context = useContext(DataContext);
@@ -18,5 +19,13 @@ export const PostPage = () => {
     return null;
   }
 
-  return <PostPageContent metadata={post.metadata} content={post.content} />;
+  return (
+    <>
+      <Helmet
+        title={post.metadata.title}
+        description={post.metadata.description}
+      />
+      <PostPageContent metadata={post.metadata} content={post.content} />;
+    </>
+  );
 };

@@ -4,6 +4,7 @@ import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
 import type { Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
+import { Helmet } from "../../components/Helmet";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -75,16 +76,19 @@ export const FrontPage = () => {
   }
 
   return (
-    <FrontPageContent
-      leadStory={{
-        metadata: post.metadata,
-        content: post.content,
-      }}
-      furtherReading={furtherReading}
-      lastUpdated={lastUpdated}
-      categories={categories}
-      featuredReading={featuredReading}
-    />
+    <>
+      <Helmet title="Asuka Wang" description="Asuka Wang's personal website" />
+      <FrontPageContent
+        leadStory={{
+          metadata: post.metadata,
+          content: post.content,
+        }}
+        furtherReading={furtherReading}
+        lastUpdated={lastUpdated}
+        categories={categories}
+        featuredReading={featuredReading}
+      />
+    </>
   );
 };
 
