@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <title>Download Progress Tool in Terminal Using Node.JS | Asuka Wang</title>
+    <meta name="description" content="undefined">
+    <meta name="author" content="Asuka Wang">
+    <meta property="og:title" content="Download Progress Tool in Terminal Using Node.JS | Asuka Wang">
+    <meta property="og:description" content="undefined">
+  
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="module" src="/index.js" async></script>
@@ -37,7 +43,7 @@
     />
     <link
       rel="preload"
-      href="/fonts/subset_latin_NotoSans_Thin.woff2"
+      href="/fonts/subset_latin_NotoSans_ExtraLight.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
@@ -65,7 +71,7 @@
     />
   </head>
   <body>
-    <div id="root"><div><div class="site_container grid"><nav class="site-header_grid-wrapper"><div class="site-header_container"><div><a href="/blog">blog</a><a href="/about">about</a></div><a href="/">ASUKA WANG</a></div><div class="site-header_divider" role="presentation"></div></nav><main class="grid"><div class="post-page-header_container"><h1>Download Progress Tool in Terminal Using Node.JS</h1><h2></h2><p>June 7, 2019</p></div><article class="post-page-content grid"><h1>TL;DR:</h1><ul><li><code>fs.stat</code> for getting file size</li><li><code>readline.clearLine</code></li><li><code>readline.cursorTo(0)</code></li><li><code>process.stdout.write</code></li></ul><p>Combine these 3 to update command line instead of printing new line</p><h1>Get file size</h1><p><code>fs.stat</code> returns an object contains several stats of the file from url you&#x27;re downloading.</p><p><a href="https://nodejs.org/api/fs.html#fs_class_fs_stats" target="_blank" rel="noopener noreferrer">Detailed explanation of fs.stat</a>.</p><p>Inside of the object, there is <code>size</code> property, which is obviously the size of file, in bytes.</p><div><pre class="shiki gruvbox-light-soft" style="background-color:#f2e5bc;color:#3c3836" tabindex="0"><code><span class="line"><span style="color:#AF3A03">let</span><span style="color:#076678"> fileSize</span><span style="color:#427B58"> =</span><span style="color:#8F3F71"> 0</span><span style="color:#7C6F64">;</span></span>
+    <div id="root"><div><div class="site_container grid"><nav class="site-header_grid-wrapper"><div class="site-header_container"><div><a href="/blog">blog</a><a href="/about">about</a></div><a href="/">ASUKA WANG</a></div><div class="site-header_divider" role="presentation"></div></nav><main class="grid"><div class="post-page-header_container"><h1>Download Progress Tool in Terminal Using Node.JS</h1><h2></h2><p>June 7, 2019</p></div><article class="post-page-content grid"><h1>TL;DR:</h1><ul><li><code>fs.stat</code> for getting file size</li><li><code>readline.clearLine</code></li><li><code>readline.cursorTo(0)</code></li><li><code>process.stdout.write</code></li></ul><p>Combine these 3 to update command line instead of printing new line</p><h1>Get file size</h1><p><code>fs.stat</code> returns an object contains several stats of the file from url you&#x27;re downloading.</p><p><a href="https://nodejs.org/api/fs.html#fs_class_fs_stats" target="_blank" rel="noopener noreferrer">Detailed explanation of fs.stat</a>.</p><p>Inside of the object, there is <code>size</code> property, which is obviously the size of file, in bytes.</p><div><pre class="shiki gruvbox-light-soft" style="background-color:#f2e5bc;color:#3c3836" tabindex="0"><code><span class="line"><span style="color:#AF3A03">let</span><span style="color:#076678"> fileSize</span><span style="color:#427B58"> =</span><span style="color:#8F3F71"> 0;</span></span>
 <span class="line"><span style="color:#076678">fs</span><span style="color:#7C6F64">.</span><span style="color:#B57614">stat</span><span style="color:#3C3836">(</span><span style="color:#7C6F64">"</span><span style="color:#79740E">url/to/your/file</span><span style="color:#7C6F64">"</span><span style="color:#7C6F64">,</span><span style="color:#7C6F64"> (</span><span style="color:#076678">stats</span><span style="color:#7C6F64">)</span><span style="color:#AF3A03"> =></span><span style="color:#7C6F64"> {</span></span>
 <span class="line"><span style="color:#076678">  fileSize</span><span style="color:#427B58"> =</span><span style="color:#076678"> stats</span><span style="color:#7C6F64">.</span><span style="color:#076678">size</span><span style="color:#7C6F64">;</span></span>
 <span class="line"><span style="color:#7C6F64">}</span><span style="color:#3C3836">)</span><span style="color:#7C6F64">;</span></span></code></pre></div><h1>Get current progression</h1><p>In the response from <code>https.get</code> when downloading, track and add up the total length of chunks piped into <code>fs.writeStream</code>. This total length devided by file size is the download progression we need.</p><h1>Write to terminal, but in same line</h1><p><code>console.log</code> <a href="https://nodejs.org/docs/v0.3.1/api/process.html#process.stdout" target="_blank" rel="noopener noreferrer">implementation</a> in Node is actually based on <code>process.stdout.write</code>. But since there&#x27;s a <code>\\n</code> at end of every <code>console.log</code>, new line is printed everytime instead of being updated. Therefore we can&#x27;t use <code>console.log</code></p><p>By combine <code>readline.clearLine</code> and <code>readline.cursorTo(0)</code>, terminal will erase the last line of currently printed line, then move cursor to the starting position. Then we can use <code>process.stdout.write</code> to print out current progress without <code>\\n</code> in <code>console.log</code> implementation that causes changing line.</p><div><pre class="shiki gruvbox-light-soft" style="background-color:#f2e5bc;color:#3c3836" tabindex="0"><code><span class="line"><span style="color:#AF3A03">let</span><span style="color:#076678"> progress</span><span style="color:#427B58"> =</span><span style="color:#8F3F71"> 0</span><span style="color:#7C6F64">;</span></span>
