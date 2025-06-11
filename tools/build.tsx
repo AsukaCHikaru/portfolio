@@ -9,7 +9,12 @@ import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 
-const writeFile = (element: ReactNode, path: string, staticProps: string) => {
+const writeFile = (
+  element: ReactNode,
+  path: string,
+  staticProps: string,
+  metadata: string,
+) => {
   let template = readFileSync(
     resolve(import.meta.dir, "..", "index.html"),
     "utf-8",
@@ -28,6 +33,8 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
       '<div id="root"></div>',
       `<div id="root">${html}</div><script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script>`,
     );
+
+    template = template.replace("<head>", `<head>${metadata}`);
 
     if (process.env.PHASE === "dev") {
       template = template.replace(
@@ -72,6 +79,16 @@ const writeFile = (element: ReactNode, path: string, staticProps: string) => {
   }
 };
 
+const generateMetadata = (title: string, description: string) => {
+  return `
+    <title>${title}</title>
+    <meta name="description" content="${description}">
+    <meta name="author" content="Asuka Wang">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+  `;
+};
+
 const buildBlog = async () => {
   const postList = await getBlogPostList();
   try {
@@ -81,12 +98,17 @@ const buildBlog = async () => {
       JSON.stringify({
         blog: { postList: postList.map((post) => post.metadata) },
       }),
+      generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
     );
     postList.forEach((post) => {
       writeFile(
         <PostPageContent metadata={post.metadata} content={post.content} />,
         `/blog/${post.metadata.pathname}`,
         JSON.stringify({ blog: { post } }),
+        generateMetadata(
+          `${post.metadata.title} | Asuka Wang`,
+          post.metadata.description,
+        ),
       );
     });
   } catch (error) {
@@ -100,11 +122,17 @@ const buildAboutPage = async () => {
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
     JSON.stringify({ about }),
+    generateMetadata("Asuka Wang", "About Asuka Wang"),
   );
 };
 
 const buildResumePage = async () => {
-  writeFile(<ResumePage />, "/resume", "");
+  writeFile(
+    <ResumePage />,
+    "/resume",
+    "",
+    generateMetadata("Resume | Asuka Wang", "Asuka Wang's resume"),
+  );
 };
 
 const buildFrontPage = async () => {
@@ -151,6 +179,7 @@ const buildFrontPage = async () => {
         featuredReading,
       },
     }),
+    generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
   );
 };
 
