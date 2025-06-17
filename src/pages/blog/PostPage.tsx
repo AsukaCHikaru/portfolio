@@ -25,7 +25,7 @@ export const PostPage = () => {
         title={post.metadata.title}
         description={post.metadata.description}
       />
-      <PostPageContent metadata={post.metadata} content={post.content} />;
+      <PostPageContent metadata={post.metadata} content={post.content} />
     </>
   );
 };

@@ -20,7 +20,7 @@ export const ArchivePage = () => {
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent postList={postList} />;
+      <ArchivePageContent postList={postList} />
     </>
   );
 };
