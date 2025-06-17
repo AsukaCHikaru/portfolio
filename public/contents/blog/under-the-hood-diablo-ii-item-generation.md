@@ -109,9 +109,9 @@ Small TCs contain several base type codes. It looks like this in JSON format:
 ::d2-tc-runes-1|The Runes 1 small TC.
 
 For now, we will ignore the `picks` property. The chance to roll a certain item in a TC is:
-$$\frac{\text{target item weight}}{\text{all item weight sum}}$$
+::d2$$\frac{\text{target item weight}}{\text{all item weight sum}}$$
 So, for above example, the chance for TC `Runes 1` to roll `r01`—the code of the _El_ rune—is
-$$\frac{3}{3+2} = 60\text{\%}$$
+::d2$$\frac{3}{3+2} = 60\text{\%}$$
 Notice that TCs containing weapons and armor are a little different. I'll talk about it later.
 
 ### Medium TC
@@ -142,7 +142,7 @@ Medium TCs contains base types as well as small TCs. It looks like this:
 ::d2-tc-runes-2|The Runes 2 medium TC which includes Runes 1 as its child.
 
 For `Runes 2`, there is a 3/7 chance to roll _Tir_ (rune number 3), 2/7 chance to roll _Nef_ (rune number 4), and a 2/7 chance for the selection to fall back to TC `Runes 1`. In this case the chance to roll _El_ from `Runes 2` is:
-$$\frac{2}{7}\times \frac{3}{5}=\frac{6}{35}\approx17.142\text{\%}$$
+::d2$$\frac{2}{7}\times \frac{3}{5}=\frac{6}{35}\approx17.142\text{\%}$$
 
 ### Large TC
 
@@ -407,7 +407,7 @@ The closer the quality number is to 1024, the higher the chance to pass the chec
 ## Better chance to find magic item
 
 The _X% Better Chance of Getting Magic items_ property gained from items, often called **MF**, is used as a variable during the quality check. The game first fine-tunes **Effective MF** respectively for each quality with the following formula:
-$$EMF = floor(\frac{(MF+100)\times\text{quality factor}}{(MF+100) + \text{quality factor}})$$
+::d2$$EMF = floor(\frac{(MF+100)\times\text{quality factor}}{(MF+100) + \text{quality factor}})$$
 
 The `quality factor` is a series of constants defined individually for each quality:
 
@@ -456,7 +456,7 @@ The affix pool, similar to sockets, is affected by item level and base type. It 
 The item level, on the other hand, plays a bigger role than base type. A _10-20% Enhanced Damage_ affix may be valuable in early game, but in late game you would want something such as _201-300% Enhanced Damage_. If the latter is dropped at level 5, then you wouldn't look at any other items in the same slot for a long time. To avoid that, every affix has a level aligned to its power. When an item drops, the **max eligible affix level** is determined based on its iLvl and base type's qLvl. All affixes in the base type's affix pool under that level are eligible for selection.
 
 The final step works pretty similar to base type selection in a TC. Each affix has a selection probability property like base type, and the chance for a specific affix to be selected is:
-$$\frac{\text{target affix probability}} {\text{all affixes probability sum}}$$
+::d2$$\frac{\text{target affix probability}} {\text{all affixes probability sum}}$$
 
 ### Prefix and suffix
 

@@ -363,7 +363,7 @@ footer {
       > p {
         font-size: 22px;
       }
-  
+
       > a {
         font-size: 22px;
 
@@ -373,7 +373,6 @@ footer {
       }
     }
   }
-  
 }
 
 .frontpage-featured-reading {
@@ -965,6 +964,23 @@ article.post-page-content {
       @media (min-width: 768px) {
         font-size: 18px;
       }
+    }
+  }
+
+  > math {
+    font-size: 30px;
+    font-family: "Gentium Plus", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & mtext,
+    mn, mo {
+      font-family: "Gentium Book", serif;
+    }
+
+    & mo {
+      margin: 0 4px;
     }
   }
 

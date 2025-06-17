@@ -85,6 +85,108 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             <figcaption>{caption}</figcaption>
           </figure>
         );
+      case "::d2$\\frac{\\text{target item weight}}{\\text{all item weight sum}}$":
+        return (
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+              <mrow>
+                <mtext>target item weight</mtext>
+              </mrow>
+              <mrow>
+                <mtext>all item weight sum</mtext>
+              </mrow>
+            </mfrac>
+          </math>
+        );
+      case "::d2$\\frac{3}{3+2} = 60\\text{\\%}$":
+        return (
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+              <mn>3</mn>
+              <mrow>
+                <mn>3</mn>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>60</mn>
+            <mtext>%</mtext>
+          </math>
+        );
+      case "::d2$\\frac{2}{7}\\times \\frac{3}{5}=\\frac{6}{35}\\approx17.142\\text{\\%}$":
+        return (
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mn>7</mn>
+              </mrow>
+            </mfrac>
+            <mo>&times;</mo>
+            <mfrac>
+              <mrow>
+                <mn>3</mn>
+              </mrow>
+              <mrow>
+                <mn>5</mn>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mn>6</mn>
+              <mn>35</mn>
+            </mfrac>
+            <mo>&asymp;</mo>
+            <mn>17.142</mn>
+            <mtext>%</mtext>
+          </math>
+        );
+      case "::d2$EMF = floor(\\frac{(MF+100)\\times\\text{quality factor}}{(MF+100) + \\text{quality factor}})$":
+        return (
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>EMF</mi>
+            <mo>=</mo>
+            <mtext>floor</mtext>
+            <mo>(</mo>
+            <mfrac>
+              <mrow>
+                <mo>(</mo>
+                <mi>MF</mi>
+                <mo>+</mo>
+                <mn>100</mn>
+                <mo>)</mo>
+                <mo>&times;</mo>
+                <mtext>quality factor</mtext>
+              </mrow>
+              <mrow>
+                <mo>(</mo>
+                <mi>MF</mi>
+                <mo>+</mo>
+                <mn>100</mn>
+                <mo>)</mo>
+                <mo>+</mo>
+                <mtext>quality factor</mtext>
+              </mrow>
+            </mfrac>
+            <mo>)</mo>
+          </math>
+        );
+      case "::d2$\\frac{\\text{target affix probability}} {\\text{all affixes probability sum}}$":
+        return (
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+              <mrow>
+                <mtext>target affix probability</mtext>
+              </mrow>
+              <mrow>
+                <mtext>all affixes probability sum</mtext>
+              </mrow>
+            </mfrac>
+          </math>
+        );
       default:
         return <figcaption>{caption}</figcaption>;
     }
