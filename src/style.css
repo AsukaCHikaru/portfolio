@@ -969,6 +969,11 @@ article.post-page-content {
   font-weight: 800;
   line-height: 1.15;
   color: var(--dark);
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+    margin: 20px 0 28px;
+  }
 }
 
 .resume-page_container {
