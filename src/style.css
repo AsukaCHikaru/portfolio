@@ -700,13 +700,9 @@ footer {
 }
 
 .post-page-header_container {
-  margin: 0 0 40px;
   grid-column: 1 / span 14;
-
-  @media (min-width: 768px) {
-    gap: 16px;
-    margin: 24px 0 40px;
-  }
+  gap: 16px;
+  margin: 24px 0 60px;
 
   > h1 {
     margin: 20px 0;
@@ -723,11 +719,11 @@ footer {
 
   > h2 {
     margin: 0 0 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-style: italic;
     font-family: "Gentium Plus", serif;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.2;
     color: var(--dark-second);
 
     @media (min-width: 768px) {
@@ -738,7 +734,8 @@ footer {
   }
 
   > p {
-    font-size: 12px;
+    margin: 0;
+    font-size: 16px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 200;
     line-height: 1.5;
@@ -751,6 +748,10 @@ footer {
 
   @media (max-width: 1080px) {
     grid-column: 1 / span 15;
+  }
+  @media (max-width: 768px) {
+    grid-column: 1 / span 16;
+    margin: 0 0 12px;
   }
 }
 
@@ -928,6 +929,33 @@ article.post-page-content {
 
       > figcaption {
         grid-column: 12 / span 5;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    font-size: 18px;
+    > *:not(figure) {
+      grid-column: 1 / span 16;
+    }
+
+    > h1, h2 , h3, h4, h5, h6 {
+      margin: 12px 0;
+    }
+
+    > figure {
+      grid-column: 1 / span 16;
+      grid-template-columns: repeat(16, 1fr);
+      margin: 20px 0;
+
+      > img,
+      video {
+        grid-column: 1 / span 16;
+      }
+
+      > figcaption {
+        grid-column: 1 / span 16;
+        font-size: 16px;
+        margin: 8px 0 0;
       }
     }
   }
