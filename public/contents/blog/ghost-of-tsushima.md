@@ -7,6 +7,7 @@ pathname: ghost-of-tsushima
 description: The island of Tsushima in Kamakura period created by Sucker Punch was authentic and full of surprises, and they made sure the immersion works well.
 category: review
 topic: gaming
+updated: 2025-06-10
 ---
 
 # Gameplay
@@ -19,7 +20,7 @@ The combat system was simple and fun. Counter-attacking and slashing people was 
 
 The developer of this game, Sucker Punch Studio, intended to maximize the immersion of Tsushima. The idea that current games provide too much hands-on support and instruction, treating players like toddlers, has nearly become a cliche. You get a quest list, as well as a target distance and direction indicator, and the character will remind you with lines every thirty seconds.
 
-![](ghost-of-tsushima_1.png)(Not the image I was looking for, but you get the idea.)
+![A fantasy FPS screenshot, with various types of UI show on screen.](ghost-of-tsushima_1.png)(Not the image I was looking for, but you get the idea.)
 
 
 There are three primary target indicators in Tsushima: the wind, the golden bird, and the foxes. All of them are dietetic, so the players don’t have to extract themselves from the immersion every time they want to check their current goals. These tools make roam play without accessing the map possible and enjoyable. An excellent direction for an open-world game.

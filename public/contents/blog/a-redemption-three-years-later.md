@@ -3,7 +3,7 @@ created: 2024/12/31 15:24
 title: A Redemption Three Years Later
 description: CD PROJEKT RED made a promise about Night City, which they broke. Three years later they had another attempt, and to me, it was their redemption.
 published: 2025-01-13
-updated: 2025-02-09
+updated: 2025-06-09
 language: en-US
 pathname: a-redemption-three-years-later
 category: review
@@ -14,7 +14,7 @@ thumbnail-direction: portrait
 
 Four years ago, I preordered Cyberpunk 2077: Collector's Edition, which includes the PS4 version of the game, a high quality statue, hardcover art book, and many other goodies, for more than four times of the price of the standard version, eight months earlier than its release. Since I was playing the game on PC, I also bought the game at full price on [GoG.com](https://gog.com).
 
-![](a_redemption_three_years_later_1.webp)
+![A 25 cm high statue of V, the game's protagonist, with two pistols in his hand, jumping off bike as it crushes onto a corp agent.](a_redemption_three_years_later_1.webp)(For a long time I thought this was Jackey's statue. Regardless the 1.0 version's game state, this statue's quality was pretty nice.)
 
 I bought them not because I loved Mike Pondsmith's cyberpunk world—I was not even a fan of the cyberpunk genre. I bought them entirely because I believed in CD PROJEKT RED, the Polish developer of the award-winning RPG franchise _The Witcher_. They not only made good games but also put the player first, releasing numerous free DLCs, and two very high-quality expansions. As the gaming industry was getting devoured by greed corporations bit by bit every day, I appreciated their approach and felt necessary to support the rare goodness remain.
 
@@ -42,7 +42,7 @@ The detail-rich approach wasn't only found on the dialogue performances. _Dogtow
 
 The best part of the quests, however, were undoubtedly the main quest, the story of _Songbird_. Gameplay-wise the quest line included many type of stages, such as snipping, stealth, dialogue-heavy spying, and of course, combats. In the quest before the last confrontation out of two distinctly different paths, the game even turned into a survivor-horror game. Horror is not my favorite genre, so I wouldn't say I enjoyed it, but I appreciate that the developers respected player and made the horror gameplay decently challenging. During the main quests I kept thinking it felt like the Konpeki Plaza heist quest, only longer, more complex, and overall more interesting to play. Narrative-wise it was also outstanding, especially on the writing of characters. _Aurore Cassel_ was only shown a fraction of the campaign's playtime, yet she was one of the most memorable characters, thanks to excellent writing, voice acting, and animation.
 
-![](a_redemption_three_years_later_2.mp4)(Look at the wink, look at the move, Aurore, what was that!? Such nuanced dialogue performances were nowhere to find in the main game.)
+![Aurore, a French mercenary netrunner, flirting with player.](a_redemption_three_years_later_2.mp4)(Look at the wink, look at the move, Aurore, what was that!? Such nuanced dialogue performances were nowhere to find in the main game.)
 
 But the best written character was definitely Song _"Songbird"_ So Mi. She was friendly, hostile, reliable, helpless, and many more, all of them relatable and believable. The first time she met players in person after several conversations in hologram was an impactful moment, seeing how less of a human she remained. But she certainly showed humanity by continuing to deceive players for her own benifit, yet the fragilities revealed somehow give player a cause to keep helping her. There was no happy ending, as neither she or players were the winner, for we were all pawns, forced to play a game we had no say.
 

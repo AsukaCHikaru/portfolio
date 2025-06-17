@@ -3,7 +3,7 @@ created: 2024/08/13 21:26
 title: "Site Patch Notes: 2024 Redesign"
 description: The 2024 redesign is finally here! I went on a journey of learning editorial design, and did an overhaul to this site's design, both functionality-wise and visual-wise.
 published: 2024-08-18
-updated: 2024-08-18
+updated: 2025-06-09
 language: en-US
 pathname: site-patch-notes-2024-redesign
 category: retrospective
@@ -38,7 +38,7 @@ The idea of making my blog newspaper style emerged from late last year. It has a
 
 My first source of inspirations were Pinterest and other blogs that shares my ideal style. From them I managed to find some common parts that seemed suit my needs; but however I reordered those components with minor adjustments, wishing to bump into a good draft, they never felt right. I realized that blindly copying without understanding the fundamentals of a newspaper design would lead me nowhere.
 
-![](site-patch-notes-2024-redesign_1.png)(My Pinterest pins of classic newspapers.)
+![Screenshot of a Pinterest collection of several old-scholl newspaper pictures.](site-patch-notes-2024-redesign_1.png)(My Pinterest pins of classic newspapers.)
 
 So started the journey of looking for newspaper design guidance. Books about layout and typography become the top priority every time I see a book store. With that mission bore in my mind, however, I still struggled to find the "right" material on this topic. It seemed like the visual design of newspaper -- especially the ones with western classic print style -- was such a specific topic, it's hard to find a devoted resource about it -- at least in Japan.
 
@@ -50,6 +50,6 @@ Weeks passed. Time was my trip to the United Kingdom, I had high hope on the boo
 
 It was in the [the Design Museum](https://designmuseum.org/) shop I meet [Editorial Design: Digital and Print](https://www.laurenceking.com/products/editorial-design). I didn't even realize the topic I should have search for was editorial design until this point. This book taught me the fundamentals about the design of publications, the principles and the components, the essential skills, and more. To be honest this book was pretty dry, I had to fight my way to the end; but it was the game changer I was searching for.
 
-![](site-patch-notes-2024-redesign_2.jpeg)(The research material for this redesign. I also bought an issue of the French newspaper Le Monde)
+![Book "Structuring Design: Graphic Grids in Theory and Practice" by Ulysses Voelker and "Editorial Design: Digital and Print" by Cath Caoldwell and Yolanda Zappaterra. Under them is a copy of French newspaper Le Monde, placed on a wooden table.](site-patch-notes-2024-redesign_2.jpeg)(The research material for this redesign. I also bought an issue of the French newspaper Le Monde.)
 
 I quickly made a second redesign draft after reading it, implying the knowledges I gained from it. It is the design you are looking at right now. Honestly, I'm still not satisfied; some decisions are still in pending and compromises were made. Art is never finished, merely abandoned, after all. But I'm very happy about the progress; this is undoubtedly my best design work yet. And with the foundation laid in this redesign, I'm extremely excited about the work I get to do with it in the future.

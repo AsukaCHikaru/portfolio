@@ -3,18 +3,19 @@ created: 2024-05-30 09:55
 title: A Peek of the World
 description: I went to Copenhagen and London for my honeymoon, the first trip to Europe in my life. Some memories keep staying on my mind and I have many thoughts about them.
 published: 2024-06-16
-updated: 2024-06-16
+updated: 2025-06-09
 language: en-US
 pathname: a-peek-of-the-world
 category: essay
 topic: travel
 thumbnail: a-peek-of-the-world_3.jpeg
 thumbnail-direction: landscape
+featured: true
 ---
 
 The sunshine shed through the wagon glass when the elevator arose above the surface. Before my eyes was the _Rådhuspladsen_ — city hall square in Danish — which was the name of the subway station too. The city hall itself was in backlight, the sky behind it blinding. It was nine in the morning, we just entered the center part of Copenhagen. We had already spent two hours in this country, changed from the pajamas for a thirteen hours flight to proper clothes, a quick coffee in the airport, then finally a train ride to the city. But it was finally at this moment, I truly felt I arrived in Europe. The ground of the square was paved in stones, speaking foreignness and — matching my imagination — Europe.
 
-![](a-peek-of-the-world_1.jpeg)
+![Copenhagen city hall in the morning in backlight. Dozens of people on the square.](a-peek-of-the-world_1.jpeg)(The first thing I saw after entering the city center of Copenhagen. After a five year draught of international travel, this moment was stunning.)
 
 # Happiness
 
@@ -24,7 +25,7 @@ The game of life in Asia plays in different rules, though. I doubt if I ever wil
 
 In the happiness museum there was a room captioned "Happiness around the world", every part of it except the floor was covered with post-its. Thousands of post-its in the whole room. The gimmick is simple: you take a pen and a piece of post-it freely provided in the room, write down what happiness means to you, then post it in the room. It was both astounding and inspiring to see literally what happiness means for people around the world.
 
-![](a-peek-of-the-world_2.jpeg)
+![A wall full of post-its with meaning of happiness written on them. On the wall writes "Happiness around the world"](a-peek-of-the-world_2.jpeg)(My favorite part of the museum. I still remember the warmth of being surrounded by people's happiness.)
 
 I wrote down "loved ones and hobby time". If someone notice mine I hope it made them smile.
 
@@ -40,7 +41,7 @@ Regardless of all the pleasure I found in London, however, I believe I would be 
 
 Visiting London after Copenhagen probably made it worse. I didn’t notice it in Denmark, but even at Indre by — the heart of the City of Copenhagen, the pace of everything was way slower. While also being the city I visited for the first time, I had more time and space to collect myself. I was a mere traveler, but I felt I could find my little place in there.
 
-![](a-peek-of-the-world_3.jpeg)
+![The Royal Exchange, with many skyscrapers behind it.](a-peek-of-the-world_3.jpeg)(This picture represents my impression of London: rich culture and heritage, with the fast-growing modern society taking up rest of the space.)
 
 # Experience
 

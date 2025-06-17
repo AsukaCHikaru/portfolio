@@ -3,7 +3,7 @@ created: 2024-11-11 12:10
 title: S14 Recap
 description: I did not play a lot of league during 2024, but I had a few unforgettable moments nonetheless.
 published: 2025-01-07
-updated: 2025-01-11
+updated: 2025-06-09
 language: en-US
 pathname: s14-recap
 category: retrospective
@@ -34,6 +34,6 @@ Overall I still enjoyed season two, but any shortcomings stand easy to notice af
 
 Season two, however, had my absolutely favorite moment in the series, which was of course episode seven, the _Ma Meilleure Ennemie_ scene. Because we saw what it was not, therefore the more beautiful what it could be was.
 
-![](s14_recap_1.webp)
+![Ekko and Powder sit shoulder to shoulder on a roof with the view of the undercity, looking at the moon](s14_recap_1.webp)(*"Can we just... pretend like it's the first time?"* Gives me chill every time. The wish to stay in a world where everything he ever wanted was there, and the painful determination to leave to save his own, all showed in this one line.)
 
 When I was watching season two, sometimes I felt like they were rushing to get the plot laid out as fast as possible, but I'm glad they told the story about Ekko and Powder in another universe slowly and carefully.
