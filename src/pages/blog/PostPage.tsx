@@ -7,7 +7,10 @@ export const PostPage = () => {
   const context = useContext(DataContext);
 
   const post = useMemo(() => {
-    const pathname = window.location.pathname.replace("/blog/", "");
+    const pathname = window.location.pathname.replace(
+      /\/blog\/(\S+?)\/?$/,
+      "$1",
+    );
     const staticProp = window.__STATIC_PROPS__;
     if (staticProp.blog?.post?.metadata.pathname === pathname) {
       return staticProp.blog.post;
