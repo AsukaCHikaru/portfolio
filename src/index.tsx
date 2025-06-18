@@ -18,6 +18,7 @@ declare global {
         categories: { name: string; count: number }[];
         featuredReading: Post;
       };
+      lastUpdated: string;
     };
   }
 }

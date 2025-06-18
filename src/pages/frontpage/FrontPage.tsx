@@ -21,10 +21,8 @@ export const FrontPage = () => {
   }, []);
 
   const lastUpdated = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.frontPage;
-    return staticProp
-      ? staticProp.leadStory.metadata.publishedAt
-      : post.metadata.publishedAt;
+    const staticProp = window.__STATIC_PROPS__.lastUpdated;
+    return staticProp;
   }, [post]);
 
   const furtherReading = useMemo(() => {

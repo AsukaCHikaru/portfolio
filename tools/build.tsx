@@ -90,6 +90,7 @@ const generateMetadata = (title: string, description: string) => {
 };
 
 const buildBlog = async () => {
+  const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   try {
     writeFile(
@@ -97,6 +98,7 @@ const buildBlog = async () => {
       "/blog",
       JSON.stringify({
         blog: { postList: postList.map((post) => post.metadata) },
+        lastUpdated: lastCommitDate,
       }),
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
     );
@@ -104,7 +106,7 @@ const buildBlog = async () => {
       writeFile(
         <PostPageContent metadata={post.metadata} content={post.content} />,
         `/blog/${post.metadata.pathname}`,
-        JSON.stringify({ blog: { post } }),
+        JSON.stringify({ blog: { post }, lastUpdated: lastCommitDate }),
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
@@ -117,11 +119,12 @@ const buildBlog = async () => {
 };
 
 const buildAboutPage = async () => {
+  const lastCommitDate = await getLastCommitDate();
   const about = await getAbout();
   writeFile(
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
-    JSON.stringify({ about }),
+    JSON.stringify({ about, lastUpdated: lastCommitDate }),
     generateMetadata("Asuka Wang", "About Asuka Wang"),
   );
 };
@@ -136,6 +139,7 @@ const buildResumePage = async () => {
 };
 
 const buildFrontPage = async () => {
+  const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   const lastPost = postList[0];
   const furtherReading = [
@@ -165,7 +169,7 @@ const buildFrontPage = async () => {
   writeFile(
     <FrontPageContent
       leadStory={lastPost}
-      lastUpdated={lastPost.metadata.publishedAt}
+      lastUpdated={lastCommitDate}
       furtherReading={furtherReading}
       categories={categories}
       featuredReading={featuredReading}
@@ -178,6 +182,7 @@ const buildFrontPage = async () => {
         categories,
         featuredReading,
       },
+      lastUpdated: lastCommitDate,
     }),
     generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
   );
@@ -221,6 +226,11 @@ const runSubfont = async () => {
     );
     await Bun.$`subfont ${filePath} -i --root ./dist`;
   }
+};
+
+const getLastCommitDate = async () => {
+  const output = await Bun.$`git log -1 --format=%cd --date=short`.text();
+  return output.trim();
 };
 
 export const build = async () => {
