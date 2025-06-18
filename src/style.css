@@ -67,6 +67,7 @@ a {
 
       &:hover {
         color: var(--dark);
+        text-decoration: underline;
       }
     }
   }
@@ -200,7 +201,8 @@ footer {
       color: var(--dark-second);
 
       &:hover {
-        color: var(--light-accent);
+        text-decoration: underline;
+        color: var(--dark);
       }
     }
 
