@@ -85,6 +85,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             <figcaption>{caption}</figcaption>
           </figure>
         );
+      case "::d2$$\\frac{\\text{target item weight}}{\\text{all item weight sum}}$$":
       case "::d2$\\frac{\\text{target item weight}}{\\text{all item weight sum}}$":
         return (
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -98,6 +99,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             </mfrac>
           </math>
         );
+      case "::d2$$\\frac{3}{3+2} = 60\\text{\\%}$$":
       case "::d2$\\frac{3}{3+2} = 60\\text{\\%}$":
         return (
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -114,6 +116,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             <mtext>%</mtext>
           </math>
         );
+      case "::d2$$\\frac{2}{7}\\times \\frac{3}{5}=\\frac{6}{35}\\approx17.142\\text{\\%}$$":
       case "::d2$\\frac{2}{7}\\times \\frac{3}{5}=\\frac{6}{35}\\approx17.142\\text{\\%}$":
         return (
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -144,6 +147,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             <mtext>%</mtext>
           </math>
         );
+      case "::d2$$EMF = floor(\\frac{(MF+100)\\times\\text{quality factor}}{(MF+100) + \\text{quality factor}})$$":
       case "::d2$EMF = floor(\\frac{(MF+100)\\times\\text{quality factor}}{(MF+100) + \\text{quality factor}})$":
         return (
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -174,6 +178,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
             <mo>)</mo>
           </math>
         );
+      case "::d2$$\\frac{\\text{target affix probability}} {\\text{all affixes probability sum}}$$":
       case "::d2$\\frac{\\text{target affix probability}} {\\text{all affixes probability sum}}$":
         return (
           <math xmlns="http://www.w3.org/1998/Math/MathML">
