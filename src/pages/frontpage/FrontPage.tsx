@@ -116,6 +116,7 @@ export const FrontPageContent = ({
         <FeaturedReading featuredReading={featuredReading} />
       ) : null}
     </main>
+    <Footer />
   </div>
 );
 
@@ -209,3 +210,5 @@ const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
     </Link>
   </div>
 );
+
+const Footer = () => <footer>Asuka Wang © {new Date().getFullYear()}</footer>;

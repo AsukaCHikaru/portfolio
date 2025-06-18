@@ -88,11 +88,12 @@ a {
 
 footer {
   grid-column: 1 / span 16;
-  margin: 40px 0;
+  margin: 20px 0 0 ;
   padding: 20px 0 0;
   border-top: solid 1px var(--dark);
   font-family: "Noto Sans", sans-serif;
   font-weight: 200;
+  text-align: center;
 }
 
 .site-header_divider {
@@ -518,6 +519,12 @@ footer {
       }
     }
   }
+}
+
+.frontpage-footer {
+  /* margin: 24px 0;
+  border-top: solid 1px var(--dark-second);
+  text-align: center; */
 }
 
 .post-archive-header {
