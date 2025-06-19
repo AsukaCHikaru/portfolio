@@ -1262,6 +1262,11 @@ article.post-page-content {
     & mo {
       margin: 0 4px;
     }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      display: block;
+    }
   }
 
   & .champion-monsters-img-container {
