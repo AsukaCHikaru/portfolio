@@ -1,10 +1,11 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import { DataContext } from "../../components/DataContext";
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
 import type { Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
+import { FrontPageHeader } from "../../components/SiteHeader";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -106,7 +107,7 @@ export const FrontPageContent = ({
   featuredReading,
 }: Props) => (
   <div className="site_container">
-    <Header lastUpdated={lastUpdated} />
+    <FrontPageHeader lastUpdated={lastUpdated} />
     <main className="grid">
       <LeadStory leadStory={leadStory} />
       <SideColumn furtherReading={furtherReading} categories={categories} />
@@ -116,30 +117,6 @@ export const FrontPageContent = ({
     </main>
     <Footer />
   </div>
-);
-
-const Header = ({ lastUpdated }: { lastUpdated: string }) => (
-  <header className="frontpage-header">
-    <div>
-      <div className="frontpage-header_left_content">
-        <p className="frontpage-header-slogan">"The Work{"\n"}Goes On"</p>
-        <MobileNavMenuButton />
-      </div>
-      <h1>
-        <Link to="/">ASUKA WANG</Link>
-      </h1>
-      <div className="frontpage-header_right_content">
-        Last Updated{"\n"}
-        <time dateTime={lastUpdated}>{formatDate(lastUpdated)}</time>
-      </div>
-    </div>
-    <nav>
-      <Link to="/blog">blog</Link>
-      <Link to="/about">about</Link>
-      <Link to="/rss">rss</Link>
-    </nav>
-    <div className="frontpage-header-divider" />
-  </header>
 );
 
 const LeadStory = ({ leadStory }: { leadStory: Post }) => (
@@ -212,36 +189,3 @@ const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
 );
 
 const Footer = () => <footer>Asuka Wang © {new Date().getFullYear()}</footer>;
-
-const MobileNavMenuButton = () => {
-  const [isMenuShown, setIsMenuShown] = useState(false);
-  return (
-    <>
-      <button
-        type="button"
-        className="frontpage-header-menu-button"
-        onClick={() => setIsMenuShown((prev) => !prev)}
-      >
-        {isMenuShown ? "close" : "menu"}
-      </button>
-      {isMenuShown ? (
-        <>
-          <div className="mobile-nav-menu">
-            <nav>
-              <Link to="/blog">blog</Link>
-              <Link to="/about">about</Link>
-              <Link to="/rss">rss</Link>
-            </nav>
-          </div>
-          <div
-            className="mobile-nav-menu-backdrop"
-            onClick={() => {
-              console.log("backdrop clicked");
-              setIsMenuShown(false);
-            }}
-          />
-        </>
-      ) : null}
-    </>
-  );
-};
