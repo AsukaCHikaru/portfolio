@@ -3,17 +3,23 @@ import { formatDate } from "../utils/dateTimeUtil";
 import { Link } from "./Link";
 
 export const SiteHeader = () => (
-  <nav className="site-header_grid-wrapper">
-    <div className="site-header_container">
-      <div>
-        <Link to="/blog">blog</Link>
-        <Link to="/about">about</Link>
-        {/* TODO: rss */}
+  <header className="site-header">
+    <div className="header-content">
+      <div className="header_left_content">
+        <nav>
+          <Link to="/blog">blog</Link>
+          <Link to="/about">about</Link>
+          <Link to="/rss">rss</Link>
+        </nav>
+        <MobileNavMenuButton />
       </div>
-      <Link to="/">ASUKA WANG</Link>
+      <h1>
+        <Link to="/">ASUKA WANG</Link>
+      </h1>
+      <div className="header_right_content" />
     </div>
-    <div className="site-header_divider" role="presentation" />
-  </nav>
+    <div className="header-divider" />
+  </header>
 );
 
 export const FrontPageHeader = ({ lastUpdated }: { lastUpdated: string }) => (

@@ -43,50 +43,93 @@ a {
   }
 }
 
-.site-header_grid-wrapper {
+.site-header {
   grid-column: 1 / span 16;
-  margin: 0 0 8px;
-}
 
-.site-header_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0 0;
-
-  > div {
-    width: fit-content;
+  > .header-content {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 
-    > a {
-      font-family: "Gentium Plus Book", serif;
-      font-size: 20px;
-      line-height: 24px;
-      color: var(--dark-third);
+    > .header_left_content {
+      width: 15%;
 
-      &[data-active="true"] {
-        color: var(--dark);
+      > button {
+        display: none;
+
+        @media (max-width: 768px) {
+          display: block;
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 200;
+          font-size: 14px;
+          line-height: 28px;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          padding: 0;
+          color: var(--dark);
+        }
       }
 
-      &:hover {
+      > nav {
+        width: fit-content;
+        display: flex;
+        gap: 20px;
+
+        > a {
+          font-family: "Gentium Plus Book", serif;
+          font-size: 20px;
+          line-height: 24px;
+          color: var(--dark-second);
+
+          &[data-active="true"] {
+            color: var(--dark);
+          }
+
+          &:hover {
+            color: var(--dark);
+            text-decoration: underline;
+          }
+        }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    > h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 400;
+      > a {
         color: var(--dark);
-        text-decoration: underline;
+      }
+    }
+
+    > .header_right_content {
+      display: none;
+
+      @media (max-width: 768px) {
+        width: 15%;
+        display: block;
       }
     }
   }
 
-  > a {
-    font-size: 28px;
-    line-height: 1;
-    font-family: "Cormorant Garamond", serif;
-    color: var(--dark);
-    padding: 0;
-  }
+  > .header-divider {
+    margin: 4px 0 0;
+    border-top: solid 1px var(--dark-third);
+    border-bottom: solid 2px var(--dark-third);
+    height: 5px;
 
-  @media (max-width: 768px) {
-    > a {
-      font-size: 22px;
+    @media (max-width: 768px) {
+      position: absolute;
+      margin: 4px 0 0 -12px;
+      width: 100vw;
+      border-bottom: none;
     }
   }
 }
@@ -99,17 +142,6 @@ footer {
   font-family: "Noto Sans", sans-serif;
   font-weight: 200;
   text-align: center;
-}
-
-.site-header_divider {
-  margin: 4px 0 0;
-  border-top: solid 1px;
-  border-bottom: solid 2px;
-  height: 5px;
-
-  @media (min-width: 768px) {
-    margin: 8px 0 0;
-  }
 }
 
 .frontpage-header {
@@ -254,7 +286,7 @@ footer {
   left: 0;
   z-index: 10;
   padding: 0;
-  
+
   > nav {
     display: flex;
     flex-direction: column;
