@@ -8,6 +8,7 @@ import { getAbout, getBlogPostList } from "./contentServices";
 import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
+import { buildRssFeed } from "./rss";
 
 const writeFile = (
   element: ReactNode,
@@ -241,6 +242,7 @@ export const build = async () => {
   await buildResumePage();
   await writeFontCss();
   await writeData();
+  await buildRssFeed();
   await Bun.$`cp -r ./public/fonts ./dist`;
   await Bun.$`mkdir -p ./dist/public`;
   await Bun.$`cp -r ./public/images ./dist/public`;

@@ -7,9 +7,9 @@ export const SiteHeader = () => (
     <div className="header-content">
       <div className="header_left_content">
         <nav>
-          <Link to="/blog">blog</Link>
+          <Link to="/blog">bl1og</Link>
           <Link to="/about">about</Link>
-          <Link to="/rss">rss</Link>
+          <Link to="/blog/feed.xml">rss</Link>
         </nav>
         <MobileNavMenuButton />
       </div>
@@ -40,7 +40,7 @@ export const FrontPageHeader = ({ lastUpdated }: { lastUpdated: string }) => (
     <nav>
       <Link to="/blog">blog</Link>
       <Link to="/about">about</Link>
-      <Link to="/rss">rss</Link>
+      <Link to="/blog/feed.xml">rss</Link>
     </nav>
     <div className="frontpage-header-divider" />
   </header>

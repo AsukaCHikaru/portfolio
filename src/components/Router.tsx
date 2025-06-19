@@ -25,6 +25,10 @@ export const Router = () => {
     if (/^\/$/.test(path)) {
       return <FrontPage />;
     }
+    if (/\.xml$/.test(path)) {
+      window.location.href = path;
+      return null;
+    }
     if (/^\/blog\/[^/]+\/?$/.test(path)) {
       return <PostPage />;
     }
