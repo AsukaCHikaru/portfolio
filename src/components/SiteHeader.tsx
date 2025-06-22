@@ -7,7 +7,7 @@ export const SiteHeader = () => (
     <div className="header-content">
       <div className="header_left_content">
         <nav>
-          <Link to="/blog">bl1og</Link>
+          <Link to="/blog">blog</Link>
           <Link to="/about">about</Link>
           <Link to="/blog/feed.xml">rss</Link>
         </nav>
