@@ -45,6 +45,7 @@ a {
 
 .site-header {
   grid-column: 1 / span 16;
+  margin: 0 0 24px;
 
   > .header-content {
     display: flex;
@@ -324,6 +325,8 @@ footer {
   grid-column: 1 / span 12;
 
   > .frontpage-lead-story_header {
+    margin: 0 0 40px;
+
     > h2 {
       margin: 0;
       font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
@@ -334,6 +337,7 @@ footer {
     }
 
     > p:first-of-type {
+      margin: 20px 0;
       font-size: 24px;
       font-style: italic;
       font-family: "Gentium Plus", serif;
@@ -343,10 +347,12 @@ footer {
     }
 
     > p:last-of-type {
+      margin: 0;
       font-size: 20px;
+      line-height: 1.5;
       font-family: "Noto Sans", sans-serif;
       font-weight: 200;
-      color: var(--dark-second);
+      color: var(--dark);
     }
   }
 
@@ -361,9 +367,11 @@ footer {
   @media (max-width: 768px) {
     grid-column: 1 / span 16;
     border-right: none;
-    margin: 0 0 24px;
+    padding: 0;
 
     > .frontpage-lead-story_header {
+      margin: 0 0 28px;
+
       > h2 {
         font-size: 32px;
       }
@@ -804,35 +812,24 @@ footer {
 .post-page-header_container {
   grid-column: 1 / span 14;
   gap: 16px;
-  margin: 24px 0 60px;
+  margin: 0 0 40px;
 
   > h1 {
-    margin: 20px 0;
+    margin: 8px 0 40px;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
-    font-size: 32px;
+    font-size: 72px;
     font-weight: 800;
     line-height: 1.15;
-
-    @media (min-width: 768px) {
-      margin: 8px 0 40px;
-      font-size: 72px;
-    }
   }
 
   > h2 {
-    margin: 0 0 20px;
-    font-size: 20px;
+    margin: 20px 0;
+    font-size: 28px;
     font-style: italic;
     font-family: "Gentium Plus", serif;
     font-weight: 400;
     line-height: 1.2;
     color: var(--dark-second);
-
-    @media (min-width: 768px) {
-      margin: 0 0 24px;
-      font-size: 28px;
-      line-height: 36px;
-    }
   }
 
   > p {
@@ -854,12 +851,21 @@ footer {
   @media (max-width: 768px) {
     grid-column: 1 / span 16;
     margin: 0 0 12px;
+
+    > h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    > h2 {
+      font-size: 20px;
+    }
   }
 }
 
 article {
   font-family: "Noto Serif JP CJK", "Gentium Plus Book", "Noto Serif JP", serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 
   & > p:first-child::first-letter {
@@ -870,6 +876,7 @@ article {
   }
   & > p {
     margin: 16px 0;
+    hyphens: auto;
   }
   & > ul,
   ol {
@@ -953,18 +960,6 @@ article {
     }
     > p:not(:last-child) {
       margin-bottom: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 24px;
-      line-height: 32px;
-
-      p:not(:first-child) {
-        margin-top: 1.5rem;
-      }
-      p:not(:last-child) {
-        margin-bottom: 1.5rem;
-      }
     }
   }
 

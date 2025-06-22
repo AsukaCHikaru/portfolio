@@ -126,7 +126,7 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
       <p>{leadStory.metadata.description}</p>
       <p>{formatDate(leadStory.metadata.publishedAt)}</p>
     </div>
-    <article className="fontpage-lead-story_container">
+    <article className="frontpage-lead-story_container">
       {leadStory.content.map((block, i) => (
         <ContentBlock block={block} key={i} />
       ))}
