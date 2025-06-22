@@ -33,7 +33,7 @@ export const ArchivePageContent = ({ postList }: Props) => {
 
   return (
     <Layout>
-      <h1 className="post-archive-header">Archive</h1>
+      <h1 className="post-archive-header">Blog</h1>
       {tileList.map((row, i) => (
         <div key={i} className="post-archive-row grid">
           {row.map(({ post, size, position }) => (
