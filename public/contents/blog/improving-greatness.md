@@ -4,8 +4,8 @@ title: Improving Greatness
 published: 2024-03-17
 language: en-US
 pathname: improving-greatness
-description: Breath of the Wild is one of the most impactful game in last decade. Yet for its successor, Nintendo built an even more polished version on an already magnificent fundamental.
-updated: 2024-05-03
+description: Tears of the Kingdom is built on the foundation of one of the most impactful game in last decade. Yet Nintendo did not settle, but managed to present a more polished world.
+updated: 2025-06-11
 category: review
 topic: gaming
 ---
