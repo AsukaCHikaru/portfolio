@@ -143,7 +143,7 @@ const SideColumn = ({
 }) => (
   <div className="frontpage-side-column">
     {furtherReading.length > 0 ? (
-      <>
+      <div className="frontpage-side-column-further-reading">
         <p>
           More from{" "}
           <Link to={`/blog?category=${furtherReading[0].metadata.category}`}>
@@ -163,7 +163,7 @@ const SideColumn = ({
             </Link>
           ))}
         </div>
-      </>
+      </div>
     ) : null}
     <div className="frontpage-side-column-categories">
       <p>Categories</p>
