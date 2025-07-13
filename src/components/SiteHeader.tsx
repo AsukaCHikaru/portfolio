@@ -68,10 +68,7 @@ const MobileNavMenuButton = () => {
           </div>
           <div
             className="mobile-nav-menu-backdrop"
-            onClick={() => {
-              console.log("backdrop clicked");
-              setIsMenuShown(false);
-            }}
+            onClick={() => setIsMenuShown(false)}
           />
         </>
       ) : null}
