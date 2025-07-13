@@ -13,15 +13,18 @@ export const ArchivePage = () => {
     window.__STATIC_PROPS__.blog?.postList ||
     context.postList.map((post) => post.metadata);
 
-  const filteredPostList = useMemo(() => {
+  const { filteredPostList, categoryFilter } = useMemo(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryFilter = urlParams.get('category');
     
     if (!categoryFilter) {
-      return allPosts;
+      return { filteredPostList: allPosts, categoryFilter: null };
     }
     
-    return allPosts.filter(post => post.category === categoryFilter);
+    return { 
+      filteredPostList: allPosts.filter(post => post.category === categoryFilter),
+      categoryFilter
+    };
   }, [allPosts]);
 
   if (!context) {
@@ -31,20 +34,21 @@ export const ArchivePage = () => {
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent postList={filteredPostList} />
+      <ArchivePageContent postList={filteredPostList} categoryFilter={categoryFilter} />
     </>
   );
 };
 
 interface Props {
   postList: PostMetaData[];
+  categoryFilter: string | null;
 }
-export const ArchivePageContent = ({ postList }: Props) => {
+export const ArchivePageContent = ({ postList, categoryFilter }: Props) => {
   const tileList = generateArchiveTileList(postList);
 
   return (
     <Layout>
-      <h1 className="post-archive-header">Blog</h1>
+      <h1 className="post-archive-header" data-categorized={categoryFilter !== null}>{categoryFilter || "Blog"}</h1>
       {tileList.map((row, i) => (
         <div key={i} className="post-archive-row grid">
           {row.map(({ post, size, position }) => (

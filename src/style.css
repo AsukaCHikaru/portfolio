@@ -647,6 +647,10 @@ footer {
   line-height: 1.15;
   color: var(--dark);
 
+  &[data-categorized="true"] {
+    font-family: "Gentium Plus", serif;
+  }
+
   @media (max-width: 768px) {
     font-size: 60px;
     margin: 20px 0 28px;

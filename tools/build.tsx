@@ -96,7 +96,7 @@ const buildBlog = async () => {
   const postList = await getBlogPostList();
   try {
     writeFile(
-      <ArchivePageContent postList={postList.map((post) => post.metadata)} />,
+      <ArchivePageContent postList={postList.map((post) => post.metadata)} categoryFilter={null} />,
       "/blog",
       JSON.stringify({
         blog: { postList: postList.map((post) => post.metadata) },
