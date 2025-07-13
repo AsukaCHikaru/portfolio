@@ -49,7 +49,7 @@ export const generateArchiveTileList = (
         return acc;
       }
       if (acc.space < cur.size) {
-        const smallestItem = acc.tiles.sort((a, b) => a.size - b.size)[0];
+        const smallestItem = [...acc.tiles].sort((a, b) => a.size - b.size)[0];
         return {
           space: 0,
           tiles: acc.tiles.reduce((a, c, _, array) => {
