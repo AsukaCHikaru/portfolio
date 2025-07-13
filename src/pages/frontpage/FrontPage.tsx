@@ -142,25 +142,29 @@ const SideColumn = ({
   categories: { name: string; count: number }[];
 }) => (
   <div className="frontpage-side-column">
-    <p>
-      More from{" "}
-      <Link to={`/blog?category=${furtherReading[0].metadata.category}`}>
-        {furtherReading[0].metadata.category}
-      </Link>
-    </p>
-    <div>
-      {furtherReading.map((post) => (
-        <Link
-          className="frontpage-side-column-post"
-          key={post.metadata.pathname}
-          to={`/blog/${post.metadata.pathname}`}
-        >
-          {post.metadata.title}
-          <span>{post.metadata.description}</span>
-          <span>{formatDate(post.metadata.publishedAt)}</span>
-        </Link>
-      ))}
-    </div>
+    {furtherReading.length > 0 ? (
+      <>
+        <p>
+          More from{" "}
+          <Link to={`/blog?category=${furtherReading[0].metadata.category}`}>
+            {furtherReading[0].metadata.category}
+          </Link>
+        </p>
+        <div>
+          {furtherReading.map((post) => (
+            <Link
+              className="frontpage-side-column-post"
+              key={post.metadata.pathname}
+              to={`/blog/${post.metadata.pathname}`}
+            >
+              {post.metadata.title}
+              <span>{post.metadata.description}</span>
+              <span>{formatDate(post.metadata.publishedAt)}</span>
+            </Link>
+          ))}
+        </div>
+      </>
+    ) : null}
   </div>
 );
 
