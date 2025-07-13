@@ -9,6 +9,7 @@ import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
+import type { FurtherReading } from "../src/types";
 
 const writeFile = (
   element: ReactNode,
@@ -143,13 +144,19 @@ const buildFrontPage = async () => {
   const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   const lastPost = postList[0];
-  const furtherReading = [
-    ...postList.filter(
-      (post) =>
-        post.metadata.category === lastPost.metadata.category &&
-        post.metadata.pathname !== lastPost.metadata.pathname,
-    ),
-  ].slice(0, 5);
+  const sameCategoryPosts = postList.filter(
+    (post) => post.metadata.category === lastPost.metadata.category,
+  );
+  const furtherReading: FurtherReading =
+    sameCategoryPosts.length > 1
+      ? {
+          type: "category",
+          posts: [...sameCategoryPosts].slice(0, 5),
+        }
+      : {
+          type: "recent",
+          posts: [...postList].slice(1, 6),
+        };
   const categories = [...postList]
     .reduce(
       (acc, post, _, array) => {

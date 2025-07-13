@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Router } from "./components/Router";
-import type { Post, PostMetaData } from "./types";
+import type { FurtherReading, Post, PostMetaData } from "./types";
 import { DataContext } from "./components/DataContext";
 
 declare global {
@@ -14,7 +14,7 @@ declare global {
       about: Post;
       frontPage: {
         leadStory: Post;
-        furtherReading: Post[];
+        furtherReading: FurtherReading;
         categories: { name: string; count: number }[];
         featuredReading: Post;
       };

@@ -2,7 +2,7 @@ import { useContext, useMemo } from "react";
 import { DataContext } from "../../components/DataContext";
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
-import type { Post } from "../../types";
+import type { FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
@@ -31,14 +31,13 @@ export const FrontPage = () => {
     if (staticProp) {
       return staticProp.furtherReading;
     }
-    return [
-      ...context.postList.filter(
-        (p) =>
-          p.metadata.category === post.metadata.category &&
-          p.metadata.pathname !== post.metadata.pathname,
-      ),
-    ].slice(0, 5);
-  }, [context, post]);
+    const sameCategoryPosts = context.postList.filter(
+      (p) => p.metadata.category === post.metadata.category,
+    );
+    return sameCategoryPosts.length > 1
+      ? { type: "category", posts: [...sameCategoryPosts].slice(0, 5) }
+      : { type: "recent", posts: [...context.postList].slice(1, 6) };
+  }, [context, post]) satisfies FurtherReading;
 
   const categories = useMemo(() => {
     const staticProp = window.__STATIC_PROPS__.frontPage;
@@ -94,7 +93,7 @@ export const FrontPage = () => {
 interface Props {
   leadStory: Post;
   lastUpdated: string;
-  furtherReading: Post[];
+  furtherReading: FurtherReading;
   categories: { name: string; count: number }[];
   featuredReading?: Post;
 }
@@ -138,20 +137,29 @@ const SideColumn = ({
   furtherReading,
   categories,
 }: {
-  furtherReading: Post[];
+  furtherReading: FurtherReading;
   categories: { name: string; count: number }[];
 }) => (
   <div className="frontpage-side-column">
-    {furtherReading.length > 0 ? (
+    {furtherReading.posts.length > 0 ? (
       <div className="frontpage-side-column-further-reading">
         <p>
-          More from{" "}
-          <Link to={`/blog?category=${furtherReading[0].metadata.category}`}>
-            {furtherReading[0].metadata.category}
-          </Link>
+          {furtherReading.type === "category" ? (
+            <>
+              {" "}
+              More from{" "}
+              <Link
+                to={`/blog?category=${furtherReading.posts[0].metadata.category}`}
+              >
+                {furtherReading.posts[0].metadata.category}
+              </Link>
+            </>
+          ) : (
+            "Recent posts"
+          )}
         </p>
         <div>
-          {furtherReading.map((post) => (
+          {furtherReading.posts.map((post) => (
             <Link
               className="frontpage-side-column-post"
               key={post.metadata.pathname}

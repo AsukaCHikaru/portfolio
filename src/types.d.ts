@@ -17,3 +17,13 @@ export type Post = {
   metadata: PostMetaData;
   content: Block[];
 };
+
+export type FurtherReading =
+  | {
+      type: "category";
+      posts: Post[];
+    }
+  | {
+      type: "recent";
+      posts: Post[];
+    };
