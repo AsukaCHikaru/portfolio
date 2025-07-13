@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
 import type { PostMetaData } from "../../types";
@@ -9,9 +9,20 @@ import { Helmet } from "../../components/Helmet";
 
 export const ArchivePage = () => {
   const context = useContext(DataContext);
-  const postList =
+  const allPosts =
     window.__STATIC_PROPS__.blog?.postList ||
     context.postList.map((post) => post.metadata);
+
+  const filteredPostList = useMemo(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFilter = urlParams.get('category');
+    
+    if (!categoryFilter) {
+      return allPosts;
+    }
+    
+    return allPosts.filter(post => post.category === categoryFilter);
+  }, [allPosts]);
 
   if (!context) {
     return null;
@@ -20,7 +31,7 @@ export const ArchivePage = () => {
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent postList={postList} />
+      <ArchivePageContent postList={filteredPostList} />
     </>
   );
 };
