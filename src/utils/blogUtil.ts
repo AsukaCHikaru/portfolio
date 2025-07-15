@@ -1,4 +1,5 @@
 import type { PostMetaData } from "../types";
+import { formatDate } from "./dateTimeUtil";
 
 type RowSize = 4 | 8 | 12 | 16;
 
@@ -104,3 +105,14 @@ const getTileSize = (post: PostMetaData): RowSize => {
 };
 const getSizeSum = (tiles: PostTile[]): number =>
   tiles.reduce((acc, cur) => acc + cur.size, 0);
+
+export const getPostDate = ({
+  publishedAt,
+  updatedAt,
+}: {
+  publishedAt: string;
+  updatedAt?: string;
+}) =>
+  updatedAt && updatedAt !== publishedAt
+    ? `Updated ${formatDate(updatedAt)}`
+    : formatDate(publishedAt);

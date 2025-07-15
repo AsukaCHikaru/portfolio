@@ -6,6 +6,7 @@ import type { FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
+import { getPostDate } from "../../utils/blogUtil";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -124,10 +125,10 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
       <h2>{leadStory.metadata.title}</h2>
       <p>{leadStory.metadata.description}</p>
       <p>
-        {leadStory.metadata.updatedAt &&
-        leadStory.metadata.updatedAt !== leadStory.metadata.publishedAt
-          ? `Updated ${formatDate(leadStory.metadata.updatedAt)}`
-          : formatDate(leadStory.metadata.publishedAt)}
+        {getPostDate({
+          publishedAt: leadStory.metadata.publishedAt,
+          updatedAt: leadStory.metadata.updatedAt,
+        })}
       </p>
     </div>
     <article className="frontpage-lead-story_container">
@@ -173,10 +174,10 @@ const SideColumn = ({
               {post.metadata.title}
               <span>{post.metadata.description}</span>
               <span>
-                {post.metadata.updatedAt &&
-                post.metadata.updatedAt !== post.metadata.publishedAt
-                  ? `Updated ${formatDate(post.metadata.updatedAt)}`
-                  : formatDate(post.metadata.publishedAt)}
+                {getPostDate({
+                  publishedAt: post.metadata.publishedAt,
+                  updatedAt: post.metadata.updatedAt,
+                })}
               </span>
             </Link>
           ))}
