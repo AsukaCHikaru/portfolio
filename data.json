@@ -5,6 +5,7 @@
         "title": "Project Fiddlesticks Devlog #1",
         "description": "In Project Fiddlestcks, my latest indie game project, I implemented a vision algorithm, trying to capture the classic Rogue experience.",
         "publishedAt": "2025-07-13",
+        "updatedAt": "2025-07-15",
         "pathname": "project-fiddlesticks-devlog-1",
         "category": "development",
         "topic": "game development",
@@ -308,6 +309,7 @@
         "title": "Observation on Programming with AI",
         "description": "I reckoned getting familiar with AI coding tools is necessary, tried some, and to my surprise, I turned out to be quite optimistic.",
         "publishedAt": "2025-03-13",
+        "updatedAt": "2025-03-13",
         "pathname": "observation-on-programming-with-ai",
         "category": "essay",
         "topic": "programming",
@@ -551,6 +553,7 @@
         "title": "Blogging and Digital Gardening in the Social Platform and Generative AI Era",
         "description": "I talk to myself about why bother writing at somewhere nobody comes.",
         "publishedAt": "2025-02-11",
+        "updatedAt": "2025-02-14",
         "pathname": "blogging-and-digital-gardening",
         "category": "essay",
         "topic": "life",
@@ -850,6 +853,7 @@
         "title": "A Redemption Three Years Later",
         "description": "CD PROJEKT RED made a promise about Night City, which they broke. Three years later they had another attempt, and to me, it was their redemption.",
         "publishedAt": "2025-01-13",
+        "updatedAt": "2025-06-09",
         "pathname": "a-redemption-three-years-later",
         "category": "review",
         "topic": "gaming",
@@ -1187,6 +1191,7 @@
         "title": "S14 Recap",
         "description": "I did not play a lot of league during 2024, but I had a few unforgettable moments nonetheless.",
         "publishedAt": "2025-01-07",
+        "updatedAt": "2025-06-09",
         "pathname": "s14-recap",
         "category": "retrospective",
         "topic": "gaming",
@@ -1401,6 +1406,7 @@
         "title": "Thoughts on Building a Game with XState",
         "description": "After hearing about XState's good reputation for years, I used it to build the prototype for my game. These are my thoughts.",
         "publishedAt": "2025-01-04",
+        "updatedAt": "2025-01-04",
         "pathname": "thoughts-on-building-a-game-with-xstate",
         "category": "note",
         "topic": "game development",
@@ -1805,6 +1811,7 @@
         "title": "Under the Hood: Diablo II Item Generation",
         "description": "A system design research turned into a reconciliation with a game I didn't know I was so in love with, so I wrote a research note to express my appreciation.",
         "publishedAt": "2024-11-08",
+        "updatedAt": "2024-11-08",
         "pathname": "under-the-hood-diablo-ii-item-generation",
         "category": "research",
         "topic": "game development",
@@ -5075,6 +5082,7 @@
         "title": "Site Patch Notes: 2024 Redesign",
         "description": "The 2024 redesign is finally here! I went on a journey of learning editorial design, and did an overhaul to this site's design, both functionality-wise and visual-wise.",
         "publishedAt": "2024-08-18",
+        "updatedAt": "2025-06-09",
         "pathname": "site-patch-notes-2024-redesign",
         "category": "retrospective",
         "topic": "meta",
@@ -5346,6 +5354,7 @@
         "title": "A Peek of the World",
         "description": "I went to Copenhagen and London for my honeymoon, the first trip to Europe in my life. Some memories keep staying on my mind and I have many thoughts about them.",
         "publishedAt": "2024-06-16",
+        "updatedAt": "2025-06-09",
         "pathname": "a-peek-of-the-world",
         "category": "essay",
         "topic": "travel",
@@ -5702,6 +5711,7 @@
         "title": "Godot Essentials",
         "description": "The biggest lessons I learned in my first Godot project.",
         "publishedAt": "2024-04-21",
+        "updatedAt": "2024-05-03",
         "pathname": "godot-essentials",
         "category": "note",
         "topic": "game development",
@@ -6233,6 +6243,7 @@
         "title": "4 Years Reflection",
         "description": "Another two years of life as a full-time developer has passed. Many things changed and many lessons learned. It's a perfect timing to look back and reflect.",
         "publishedAt": "2024-04-08",
+        "updatedAt": "2024-05-03",
         "pathname": "4-years-reflection",
         "category": "retrospective",
         "topic": "career",
@@ -6466,6 +6477,7 @@
         "title": "Improving Greatness",
         "description": "Tears of the Kingdom is built on the foundation of one of the most impactful game in last decade. Yet Nintendo did not settle, but managed to present a more polished world.",
         "publishedAt": "2024-03-17",
+        "updatedAt": "2025-06-11",
         "pathname": "improving-greatness",
         "category": "review",
         "topic": "gaming",
@@ -6670,6 +6682,7 @@
         "title": "S13 Recap",
         "description": "After a three years gap, I'm back to league.",
         "publishedAt": "2024-01-23",
+        "updatedAt": "2024-05-03",
         "pathname": "s13-recap",
         "category": "retrospective",
         "topic": "gaming",
@@ -6988,6 +7001,7 @@
         "title": "Refactor Blog 2023: Markdown Based Content",
         "description": "Embracing a different approach toward my own data, I made a change to the content hosting method of my blog.",
         "publishedAt": "2023-06-19",
+        "updatedAt": "2024-05-03",
         "pathname": "refactor-blog-2023-markdown-based-content",
         "category": "retrospective",
         "topic": "meta",
@@ -7145,6 +7159,7 @@
         "title": "Next.js App Font Not Loaded on Remote Machine Issue",
         "description": "Debugging note of a source loading issue that never reproduces on the dev machine.",
         "publishedAt": "2023-06-05",
+        "updatedAt": "2025-06-10",
         "pathname": "nextjs-app-font-not-loaded-on-remote-machine-issue",
         "category": "research",
         "topic": "web development",
@@ -7662,6 +7677,7 @@
         "title": "First Game Jam Postmortem",
         "description": "I attended a game jam for the first time in my life. It was the best decision I made as an indie game developer in many years.",
         "publishedAt": "2023-05-23",
+        "updatedAt": "2024-05-03",
         "pathname": "first-game-jam-postmortem",
         "category": "retrospective",
         "topic": "game development",
@@ -8284,6 +8300,7 @@
         "title": "God of War Ragnarök",
         "description": "As a successor of a game with solid gameplay and extraordinary narrative, God of War Ragnarök made attempts to be something better on many aspects. Some of them were great, some others were not.",
         "publishedAt": "2022-11-19",
+        "updatedAt": "2024-05-03",
         "pathname": "god-of-war-ragnarok",
         "category": "review",
         "topic": "gaming",
@@ -8444,6 +8461,7 @@
         "title": "Dark Souls",
         "description": "Though once a cult classic, the soul-like has become a mainstream genre. I beat its early entry to see its secrets and the reputation of unmerciful difficulty.",
         "publishedAt": "2022-07-19",
+        "updatedAt": "2024-05-03",
         "pathname": "dark-souls",
         "category": "review",
         "topic": "gaming",
@@ -8765,6 +8783,7 @@
         "title": "Ghost of Tsushima",
         "description": "The island of Tsushima in Kamakura period created by Sucker Punch was authentic and full of surprises, and they made sure the immersion works well.",
         "publishedAt": "2022-01-07",
+        "updatedAt": "2025-06-10",
         "pathname": "ghost-of-tsushima",
         "category": "review",
         "topic": "gaming",
@@ -11119,6 +11138,7 @@
         "title": "Immortal",
         "description": "\"Immortal\" 有數種含義，我藉由一則 league 的軼聞對其中一種含義得到更多理解。",
         "publishedAt": "2021-03-12",
+        "updatedAt": "2025-06-10",
         "pathname": "immortal",
         "category": "essay",
         "topic": "gaming",
@@ -14727,6 +14747,7 @@
         "title": "Celeste",
         "description": "「如何面對失敗」是人生重要的課題之一，而 Celeste 以極為優秀的敘事結合遊戲玩法做出了漂亮的回答。",
         "publishedAt": "2020-05-31",
+        "updatedAt": "2025-02-11",
         "pathname": "celeste",
         "category": "review",
         "topic": "gaming",
@@ -22358,20 +22379,11 @@
   ],
   "about": {
     "metadata": {
+      "updatedAt": "2025-07-15",
       "category": "[[-043 Side Project Memo]]",
       "featured": false
     },
     "content": [
-      {
-        "type": "paragraph",
-        "body": [
-          {
-            "type": "textBody",
-            "style": "plain",
-            "value": "Last updated: February 2025"
-          }
-        ]
-      },
       {
         "type": "paragraph",
         "body": [
@@ -22396,10 +22408,10 @@
               {
                 "type": "textBody",
                 "style": "plain",
-                "value": "LINE"
+                "value": "LY Corporation"
               }
             ],
-            "url": "https://linecorp.com/ja/"
+            "url": "https://www.lycorp.co.jp/en/"
           },
           {
             "type": "textBody",
@@ -22794,7 +22806,18 @@
               {
                 "type": "textBody",
                 "style": "plain",
-                "value": "a sanctuary of my words that does not depend on any social platform or service"
+                "value": "a sanctuary of my words that does not depend on any social platform or service; my "
+              },
+              {
+                "type": "link",
+                "body": [
+                  {
+                    "type": "textBody",
+                    "style": "plain",
+                    "value": "digital garden"
+                  }
+                ],
+                "url": "http://localhost:3000/blog/blogging-and-digital-gardening"
               }
             ]
           },
@@ -22816,7 +22839,7 @@
           {
             "type": "textBody",
             "style": "plain",
-            "value": "The current iteration of this site is hosted on GitHub Pages, built with Next.js, and all its content is written in markdown format, managed with obsidian."
+            "value": "The current iteration of this site is hosted on GitHub Pages, built with a self-made static site generator based on React, and all its content is written in markdown format, managed with obsidian."
           }
         ]
       },
@@ -22849,9 +22872,15 @@
             "type": "listItem",
             "body": [
               {
-                "type": "textBody",
-                "style": "plain",
-                "value": "https://bsky.app/profile/asukawang.com"
+                "type": "link",
+                "body": [
+                  {
+                    "type": "textBody",
+                    "style": "plain",
+                    "value": "https://bsky.app/profile/asukawang.com"
+                  }
+                ],
+                "url": "https://bsky.app/profile/asukawang.com"
               }
             ]
           }
