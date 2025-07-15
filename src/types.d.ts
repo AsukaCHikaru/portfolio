@@ -4,6 +4,7 @@ export type PostMetaData = {
   title: string;
   description: string;
   publishedAt: string;
+  updatedAt?: string;
   pathname: string;
   category: string;
   topic: string;

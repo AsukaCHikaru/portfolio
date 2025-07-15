@@ -123,7 +123,12 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
     <div className="frontpage-lead-story_header">
       <h2>{leadStory.metadata.title}</h2>
       <p>{leadStory.metadata.description}</p>
-      <p>{formatDate(leadStory.metadata.publishedAt)}</p>
+      <p>
+        {leadStory.metadata.updatedAt &&
+        leadStory.metadata.updatedAt !== leadStory.metadata.publishedAt
+          ? `Updated ${formatDate(leadStory.metadata.updatedAt)}`
+          : formatDate(leadStory.metadata.publishedAt)}
+      </p>
     </div>
     <article className="frontpage-lead-story_container">
       {leadStory.content.map((block, i) => (
@@ -167,7 +172,12 @@ const SideColumn = ({
             >
               {post.metadata.title}
               <span>{post.metadata.description}</span>
-              <span>{formatDate(post.metadata.publishedAt)}</span>
+              <span>
+                {post.metadata.updatedAt &&
+                post.metadata.updatedAt !== post.metadata.publishedAt
+                  ? `Updated ${formatDate(post.metadata.updatedAt)}`
+                  : formatDate(post.metadata.publishedAt)}
+              </span>
             </Link>
           ))}
         </div>

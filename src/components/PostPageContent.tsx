@@ -14,7 +14,11 @@ export const PostPageContent = ({ metadata, content }: Props) => {
       <div className="post-page-header_container">
         <h1>{metadata.title}</h1>
         <h2>{metadata.description}</h2>
-        <p>{formatDate(metadata.publishedAt)}</p>
+        <p>
+          {metadata.updatedAt && metadata.updatedAt !== metadata.publishedAt
+            ? `Updated ${formatDate(metadata.updatedAt)}`
+            : formatDate(metadata.publishedAt)}
+        </p>
       </div>
       <article className="post-page-content grid">
         {content.map((block, i) => (

@@ -8,6 +8,7 @@ export const convertFrontmatterToPostMetaData = (
     title: frontmatter.title,
     description: frontmatter.description,
     publishedAt: frontmatter.published,
+    updatedAt: frontmatter.updated ?? undefined,
     pathname: frontmatter.pathname,
     category: frontmatter.category,
     topic: frontmatter.topic,
