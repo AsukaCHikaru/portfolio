@@ -1087,16 +1087,34 @@ article.post-page-content {
 
 .about-page-header {
   grid-column: 1 / span 16;
-  font-family: "Noto Serif JP", serif;
-  margin: 24px 0 48px;
-  font-size: 90px;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--dark);
+  
+  > h1 {
+    font-family: "Noto Serif JP", serif;
+    margin: 24px 0;
+    font-size: 90px;
+    font-weight: 800;
+    color: var(--dark);
+  }
+
+  > p {
+    margin: 0 0 48px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--dark-second);
+  }
 
   @media (max-width: 768px) {
-    font-size: 60px;
-    margin: 20px 0 28px;
+
+    > h1 {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+
+    > p {
+      font-size: 18px;
+      margin: 0 0 28px;
+    }
   }
 }
 
