@@ -7,7 +7,7 @@ updated: 2025-07-15
 
 Hello! I'm Asuka. I love creating things.
 
-Currently I work at [LINE](https://linecorp.com/ja/) as a front-end developer, building web (and occasionally native) applications used by millions of users.
+Currently I work at [LY Corporation](https://www.lycorp.co.jp/en/) as a front-end developer, building web (and occasionally native) applications used by millions of users.
 
 During work I mainly focus on helping my team to create more value more efficiently while being happier.
 
@@ -59,15 +59,15 @@ I built this site to serve as:
 
 - a personal archive; a digital time capsule for me to revisit my past self
 - a place to share my findings and knowledge for anyone who may find it useful
-- a sanctuary of my words that does not depend on any social platform or service
+- a sanctuary of my words that does not depend on any social platform or service; my [digital garden](http://localhost:3000/blog/blogging-and-digital-gardening)
 - a laboratory to try any new ideas or tools; my web playground
 
-The current iteration of this site is hosted on GitHub Pages, built with Next.js, and all its content is written in markdown format, managed with obsidian.
+The current iteration of this site is hosted on GitHub Pages, built with a self-made static site generator based on React, and all its content is written in markdown format, managed with obsidian.
 
 # Contact
 
 - asuka@asukawang.com
-- https://bsky.app/profile/asukawang.com
+- [https://bsky.app/profile/asukawang.com](https://bsky.app/profile/asukawang.com)
 
 # Resume
 
