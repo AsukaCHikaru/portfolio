@@ -12,7 +12,7 @@ thumbnail: project-fiddlesticks-devlog-1_1.png
 thumbnail-direction: landscape
 featured: false
 ---
-This is the first dev log of my current indie game project: Project Fiddlesticks. As of July 9th 2025, it is underdevelopment for v0.2.0.
+This is the first dev log of my current indie game project: Project Fiddlesticks. As of July 9th 2025, it is under development for v0.2.0.
 
 ![A long swordman in a grid-based dungeon. He can see a zombie lurking in the darkness.](project-fiddlesticks-devlog-1_1.png)(In-game rendering. Captured on M3 Pro. All content subject to change.)
 
