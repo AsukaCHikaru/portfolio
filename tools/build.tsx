@@ -31,10 +31,12 @@ const writeFile = (
       .replace(/>/g, "\\u003e")
       .replace(/&/g, "\\u0026");
 
-    template = template.replace(
-      '<div id="root"></div>',
-      `<div id="root">${html}</div><script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script>`,
-    );
+    template = template
+      .replace(
+        "</head>",
+        `<script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script></head>`,
+      )
+      .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 
     template = template.replace("<head>", `<head>${metadata}`);
 
@@ -96,7 +98,10 @@ const buildBlog = async () => {
   const postList = await getBlogPostList();
   try {
     writeFile(
-      <ArchivePageContent postList={postList.map((post) => post.metadata)} categoryFilter={null} />,
+      <ArchivePageContent
+        postList={postList.map((post) => post.metadata)}
+        categoryFilter={null}
+      />,
       "/blog",
       JSON.stringify({
         blog: { postList: postList.map((post) => post.metadata) },
