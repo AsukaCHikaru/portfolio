@@ -59,7 +59,7 @@ I built this site to serve as:
 
 - a personal archive; a digital time capsule for me to revisit my past self
 - a place to share my findings and knowledge for anyone who may find it useful
-- a sanctuary of my words that does not depend on any social platform or service; my [digital garden](http://localhost:3000/blog/blogging-and-digital-gardening)
+- a sanctuary of my words that does not depend on any social platform or service; my [digital garden](http://asukawang.com/blog/blogging-and-digital-gardening)
 - a laboratory to try any new ideas or tools; my web playground
 
 The current iteration of this site is hosted on GitHub Pages, built with a self-made static site generator based on React, and all its content is written in markdown format, managed with obsidian.
