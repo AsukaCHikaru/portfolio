@@ -3,7 +3,7 @@ import { DataContext } from "../../components/DataContext";
 import { Layout } from "../../components/Layout";
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
-import { getPostDate } from "../../utils/blogUtil";
+import { formatDate } from "../../utils/dateTimeUtil";
 
 export const AboutPage = () => {
   const context = useContext(DataContext);
@@ -20,10 +20,7 @@ export const AboutPage = () => {
         <div className="about-page-header">
           <h1>About</h1>
           <p>
-            {getPostDate({
-              publishedAt: post.metadata.publishedAt,
-              updatedAt: post.metadata.updatedAt,
-            })}
+            {formatDate(post.metadata.publishedAt)}
           </p>
         </div>
         <article className="post-page-content grid">

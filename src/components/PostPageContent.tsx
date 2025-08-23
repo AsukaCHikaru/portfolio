@@ -2,7 +2,7 @@ import type { Block } from "@asukawang/amp";
 import { Layout } from "./Layout";
 import type { PostMetaData } from "../types";
 import { ContentBlock } from "./ContentBlock";
-import { getPostDate } from "../utils/blogUtil";
+import { formatDate } from "../utils/dateTimeUtil";
 
 interface Props {
   metadata: PostMetaData;
@@ -15,10 +15,7 @@ export const PostPageContent = ({ metadata, content }: Props) => {
         <h1>{metadata.title}</h1>
         <h2>{metadata.description}</h2>
         <p>
-          {getPostDate({
-            publishedAt: metadata.publishedAt,
-            updatedAt: metadata.updatedAt,
-          })}
+          {formatDate(metadata.publishedAt)}
         </p>
       </div>
       <article className="post-page-content grid">

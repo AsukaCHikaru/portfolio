@@ -6,7 +6,6 @@ import type { FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
-import { getPostDate } from "../../utils/blogUtil";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
@@ -125,10 +124,7 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
       <h2>{leadStory.metadata.title}</h2>
       <p>{leadStory.metadata.description}</p>
       <p>
-        {getPostDate({
-          publishedAt: leadStory.metadata.publishedAt,
-          updatedAt: leadStory.metadata.updatedAt,
-        })}
+        {formatDate(leadStory.metadata.publishedAt)}
       </p>
     </div>
     <article className="frontpage-lead-story_container">
