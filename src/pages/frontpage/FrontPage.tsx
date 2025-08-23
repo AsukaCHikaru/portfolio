@@ -174,10 +174,7 @@ const SideColumn = ({
               {post.metadata.title}
               <span>{post.metadata.description}</span>
               <span>
-                {getPostDate({
-                  publishedAt: post.metadata.publishedAt,
-                  updatedAt: post.metadata.updatedAt,
-                })}
+                {formatDate(post.metadata.publishedAt)}
               </span>
             </Link>
           ))}
