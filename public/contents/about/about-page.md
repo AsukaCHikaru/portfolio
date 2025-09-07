@@ -1,6 +1,6 @@
 ---
 created: 2023/09/08 22:11
-publishedAt: 2023-07-15
+published: 2023-07-15
 category: "[[-043 Side Project Memo]]"
 updated: 2025-07-15
 ---
