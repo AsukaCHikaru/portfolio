@@ -64,7 +64,8 @@ export const ArchivePageContent = ({ postList, categoryFilter }: Props) => {
               }`}
             >
               <div>
-                <p>{post.category}</p>
+                <p>
+                  {post.featured ? 'featured ' : ''}{post.category}</p>
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
                 <p>{formatDate(post.publishedAt)}</p>
