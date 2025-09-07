@@ -20,7 +20,8 @@ body {
   }
 
   @media (max-width: 768px) {
-    margin: 12px 12px 24px;
+    margin: 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
   }
 }
 
