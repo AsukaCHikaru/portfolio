@@ -847,15 +847,10 @@ footer {
 
   > p {
     margin: 0;
-    font-size: 16px;
+    font-size: 20px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 200;
-    line-height: 1.5;
-
-    @media (min-width: 768px) {
-      font-size: 20px;
-      line-height: 1;
-    }
+    line-height: 1;
   }
 
   @media (max-width: 1080px) {
@@ -873,13 +868,22 @@ footer {
     > h2 {
       font-size: 20px;
     }
+     
+    > p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
   }
 }
 
 article {
   font-family: "Noto Serif JP CJK", "Gentium Plus Book", "Noto Serif JP", serif;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 
   & > p:first-child::first-letter {
     float: left;
@@ -907,10 +911,6 @@ article {
     margin-bottom: 0;
   }
 
-  @media (min-width: 768px) {
-    font-size: 21px;
-  }
-
   a {
     color: var(--light-accent);
     text-decoration: underline;
@@ -921,14 +921,14 @@ article {
 
     figcaption {
       margin: 6px 0 0;
-      font-size: 14px;
-      line-height: 1;
+      font-size: 18px;
+      line-height: 1.2;
       color: var(--dark-second);
       text-align: center;
 
-      @media (min-width: 768px) {
-        font-size: 18px;
-        line-height: 1.2;
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 1;
       }
     }
   }
@@ -1053,7 +1053,6 @@ article.post-page-content {
     }
   }
   @media (max-width: 768px) {
-    font-size: 18px;
     > *:not(figure) {
       grid-column: 1 / span 16;
     }
@@ -1242,12 +1241,12 @@ article.post-page-content {
 
     & .item-family-image-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 12px;
       justify-content: center;
 
-      @media (min-width: 768px) {
-        flex-direction: row;
+      @media (max-width: 768px) {
+        flex-direction: column;
       }
     }
 
@@ -1260,25 +1259,25 @@ article.post-page-content {
     }
 
     > figcaption {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1;
       text-align: center;
       margin-top: 4px;
       color: var(--dark-second);
 
-      @media (min-width: 768px) {
-        font-size: 18px;
+      @media (max-width: 768px) {
+        font-size: 16px;
       }
     }
   }
 
   > figcaption {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--dark-second);
     text-align: center;
 
-    @media (min-width: 768px) {
-      font-size: 18px;
+    @media (max-width: 768px) {
+      font-size: 16px;
     }
   }
 
@@ -1307,14 +1306,14 @@ article.post-page-content {
 
   & .champion-monsters-img-container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #000000;
-
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     & .champion-monster-img {
