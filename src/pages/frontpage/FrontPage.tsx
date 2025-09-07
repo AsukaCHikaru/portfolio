@@ -148,7 +148,6 @@ const SideColumn = ({
         <p>
           {furtherReading.type === "category" ? (
             <>
-              {" "}
               More from{" "}
               <Link
                 to={`/blog?category=${furtherReading.posts[0].metadata.category}`}
