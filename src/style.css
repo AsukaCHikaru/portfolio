@@ -853,12 +853,45 @@ footer {
   gap: 16px;
   margin: 0 0 40px;
 
+  @media (max-width: 1080px) {
+    grid-column: 1 / span 15;
+  }
+
+  @media (max-width: 768px) {
+    grid-column: 1 / span 16;
+    margin: 0 0 12px;
+  }
+
+  >a {
+    display: inline-block;
+    margin: 8px 0 0;
+    font-family: 'Gentium Plus', serif;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--light-accent);
+    font-size: 24px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin: 8px 0 4px;
+    }
+  }
+
   >h1 {
-    margin: 8px 0 40px;
+    margin: 0 0 40px;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
     font-size: 72px;
     font-weight: 800;
     line-height: 1.15;
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+      margin: 0;
+    }
   }
 
   >h2 {
@@ -869,34 +902,20 @@ footer {
     font-weight: 400;
     line-height: 1.2;
     color: var(--dark-second);
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
-  >p {
+  >p:last-of-type {
     margin: 0;
     font-size: 20px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 200;
     line-height: 1;
-  }
 
-  @media (max-width: 1080px) {
-    grid-column: 1 / span 15;
-  }
-
-  @media (max-width: 768px) {
-    grid-column: 1 / span 16;
-    margin: 0 0 12px;
-
-    >h1 {
-      font-size: 32px;
-      margin: 0;
-    }
-
-    >h2 {
-      font-size: 20px;
-    }
-
-    >p {
+    @media (max-width: 768px) {
       font-size: 16px;
       line-height: 1.5;
     }
