@@ -20,7 +20,7 @@ export const AboutPage = () => {
         <div className="about-page-header">
           <h1>About</h1>
           <p>
-            {formatDate(post.metadata.publishedAt)}
+            Last updated: {formatDate(post.metadata.updatedAt || post.metadata.publishedAt)}
           </p>
         </div>
         <article className="post-page-content grid">
