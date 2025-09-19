@@ -15,15 +15,17 @@ export const ArchivePage = () => {
 
   const { filteredPostList, categoryFilter } = useMemo(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const categoryFilter = urlParams.get('category');
-    
+    const categoryFilter = urlParams.get("category");
+
     if (!categoryFilter) {
       return { filteredPostList: allPosts, categoryFilter: null };
     }
-    
-    return { 
-      filteredPostList: allPosts.filter(post => post.category === categoryFilter),
-      categoryFilter
+
+    return {
+      filteredPostList: allPosts.filter(
+        (post) => post.category === categoryFilter,
+      ),
+      categoryFilter,
     };
   }, [allPosts]);
 
@@ -34,7 +36,10 @@ export const ArchivePage = () => {
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent postList={filteredPostList} categoryFilter={categoryFilter} />
+      <ArchivePageContent
+        postList={filteredPostList}
+        categoryFilter={categoryFilter}
+      />
     </>
   );
 };
@@ -48,7 +53,12 @@ export const ArchivePageContent = ({ postList, categoryFilter }: Props) => {
 
   return (
     <Layout>
-      <h1 className="post-archive-header" data-categorized={categoryFilter !== null}>{categoryFilter || "Blog"}</h1>
+      <h1
+        className="post-archive-header"
+        data-categorized={categoryFilter !== null}
+      >
+        {categoryFilter || "Blog"}
+      </h1>
       {tileList.map((row, i) => (
         <div key={i} className="post-archive-row grid">
           {row.map(({ post, size, position }) => (
@@ -64,8 +74,12 @@ export const ArchivePageContent = ({ postList, categoryFilter }: Props) => {
               }`}
             >
               <div>
-                <p>
-                  {post.featured ? 'featured ' : ''}{post.category}</p>
+                {!categoryFilter ? (
+                  <p>
+                    {post.featured ? "featured " : ""}
+                    {post.category}
+                  </p>
+                ) : null}
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
                 <p>{formatDate(post.publishedAt)}</p>
