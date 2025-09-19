@@ -851,7 +851,7 @@ footer {
 .post-page-header_container {
   grid-column: 1 / span 14;
   gap: 16px;
-  margin: 0 0 40px;
+  margin: 8px 0 40px;
 
   @media (max-width: 1080px) {
     grid-column: 1 / span 15;
@@ -859,12 +859,10 @@ footer {
 
   @media (max-width: 768px) {
     grid-column: 1 / span 16;
-    margin: 0 0 12px;
+    margin: 8px 0 12px;
   }
 
   >a {
-    display: inline-block;
-    margin: 8px 0 0;
     font-family: 'Gentium Plus', serif;
     font-weight: 400;
     font-style: italic;
@@ -877,7 +875,6 @@ footer {
 
     @media (max-width: 768px) {
       font-size: 18px;
-      margin: 8px 0 4px;
     }
   }
 
@@ -890,7 +887,7 @@ footer {
 
     @media (max-width: 768px) {
       font-size: 32px;
-      margin: 0;
+      margin: 4px 0 0;
     }
   }
 
