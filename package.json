@@ -6,7 +6,7 @@
     "dev": "PHASE=dev bun run tools/dev.ts",
     "build": "PHASE=prod bun run tools/build.tsx",
     "deploy": "bun run build && touch ./dist/.nojekyll",
-    "copy:blog": "bun run tools/copyBlogPosts.ts"
+    "copy:content": "bun run tools/copyContent.ts"
   },
   "devDependencies": {
     "@shikijs/langs": "^3.4.2",
