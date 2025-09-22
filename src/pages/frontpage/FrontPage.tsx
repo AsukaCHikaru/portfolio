@@ -32,9 +32,11 @@ export const FrontPage = () => {
       return staticProp.furtherReading;
     }
     const sameCategoryPosts = context.postList.filter(
-      (p) => p.metadata.category === post.metadata.category,
+      (p) =>
+        p.metadata.category === post.metadata.category &&
+        p.metadata.pathname !== post.metadata.pathname,
     );
-    return sameCategoryPosts.length > 1
+    return sameCategoryPosts.length > 0
       ? { type: "category", posts: [...sameCategoryPosts].slice(0, 5) }
       : { type: "recent", posts: [...context.postList].slice(1, 6) };
   }, [context, post]) satisfies FurtherReading;
@@ -123,9 +125,7 @@ const LeadStory = ({ leadStory }: { leadStory: Post }) => (
     <div className="frontpage-lead-story_header">
       <h2>{leadStory.metadata.title}</h2>
       <p>{leadStory.metadata.description}</p>
-      <p>
-        {formatDate(leadStory.metadata.publishedAt)}
-      </p>
+      <p>{formatDate(leadStory.metadata.publishedAt)}</p>
     </div>
     <article className="frontpage-lead-story_container">
       {leadStory.content.map((block, i) => (
@@ -168,9 +168,7 @@ const SideColumn = ({
             >
               {post.metadata.title}
               <span>{post.metadata.description}</span>
-              <span>
-                {formatDate(post.metadata.publishedAt)}
-              </span>
+              <span>{formatDate(post.metadata.publishedAt)}</span>
             </Link>
           ))}
         </div>

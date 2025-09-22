@@ -150,10 +150,12 @@ const buildFrontPage = async () => {
   const postList = await getBlogPostList();
   const lastPost = postList[0];
   const sameCategoryPosts = postList.filter(
-    (post) => post.metadata.category === lastPost.metadata.category,
+    (post) =>
+      post.metadata.category === lastPost.metadata.category &&
+      post.metadata.pathname !== lastPost.metadata.pathname,
   );
   const furtherReading: FurtherReading =
-    sameCategoryPosts.length > 1
+    sameCategoryPosts.length > 0
       ? {
           type: "category",
           posts: [...sameCategoryPosts].slice(0, 5),
