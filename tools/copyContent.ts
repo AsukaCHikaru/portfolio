@@ -8,6 +8,8 @@ import { $ } from 'bun';
 
 const sourceBlogFolderPath = "./blogFolderSymbolicLink/";
 const localBlogFolderPath = './public/contents/blog/'
+const sourceBlogImageFolderPath = "./blogImageFolderSymbolicLink/";
+const localBlogImageFolderPath = './public/images/blog/'
 
 const sourceAboutPagePath = "./aboutPageSymbolicLink";
 const localAboutPagePath = './public/contents/about/'
@@ -50,7 +52,14 @@ const copyBlog = async() => {
   await $`rm -rf ${localBlogFolderPath}`;
   await $`mkdir -p ${localBlogFolderPath}`;
   await $`find -P ${sourceBlogFolderPath} -maxdepth 1 -type f -name '*.md' -exec cp {} ${localBlogFolderPath} \;`; 
+  await $`find -P ${sourceBlogFolderPath} -maxdepth 1 -type f -name '*.md' -exec cp {} ${localBlogFolderPath} \;`; 
   renameLocalBlogFiles(localBlogFolderPath);
+
+  // images
+  checkSymlinkExist(sourceBlogImageFolderPath);
+  await $`rm -rf ${localBlogImageFolderPath}`;
+  await $`mkdir -p ${localBlogImageFolderPath}`;
+  await $`find -P ${sourceBlogImageFolderPath} -maxdepth 1 -type f -exec cp {} ${localBlogImageFolderPath} \;`;
   console.log("Blog post files copied successfully.");
 }
 
