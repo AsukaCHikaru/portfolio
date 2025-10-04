@@ -9,7 +9,7 @@ category: retrospective
 topic: meta
 pathname: site-patch-notes-2025-rewrite
 thumbnail: site-patch-notes-2025-rewrite_1.jpeg
-thumbnail-direction:
+thumbnail-direction: portrait
 featured:
 ---
 In June 2025 I introduced two drastic changes to this site, one being internal and one external, both impacting how it fundamentally functions.
