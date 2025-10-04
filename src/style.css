@@ -968,6 +968,7 @@ article {
   a {
     color: var(--light-accent);
     text-decoration: underline;
+    word-break: break-all;
   }
 
   figure {
