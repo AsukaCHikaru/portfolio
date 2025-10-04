@@ -3,7 +3,7 @@ created: 2025/08/23 10:33
 title: The Smooth Journey Outshines the Highlights
 description: "I did not anticipate to play Metaphor: ReFantazio, yet despite each of its components overshadowed by other games, it may be my favorite game of the year."
 published: 2025-09-22
-updated: 2025-09-22
+updated: 2025-10-04
 language: en-US
 category: review
 topic: gaming
@@ -20,6 +20,6 @@ It certainly wasn't the narrative, the thread to connect the parts into a unforg
 
 I had zero knowledge about its character build and combat gameplay as well. They were decently fun, matched my expectation of a JRPG. The quality of life improvements, however, were surprises. Whether they have been the common practice of a modern JRPG while I was absent from this genre for nearly twenty years, I do not know. Features such as battle reset or real time combat for low level mobs made the experience smooth and pleasant, for that I was certain and grateful.
 
-The answer might be hiding in the previous game I played, a triple A RPG: Hogwarts Legacy. I shall write a dedicated post about Hogwarts as it deserves one for its impressive ineptitude. It did, however, contribute positive influence to my gaming experience eventually, for I wanted to forget about it as soon as possible, and Metaphor was what I found after. Oh the chiaroscuro between them, it felt like moving to a wizarding school from an abusive uncle's house. In fact, Metaphor was not only the better game between these two; it might be the best game I played in this year.
+The answer might be hiding in the previous game I played, a triple A RPG: Hogwarts Legacy. I shall write a dedicated post about Hogwarts as it deserves one for its impressive mediocrity. It did, however, contribute positive influence to my gaming experience eventually, for I wanted to forget about it as soon as possible, and Metaphor was what I found after. Oh the chiaroscuro between them, it felt like moving to a wizarding school from an abusive uncle's house. In fact, Metaphor was not only the better game between these two; it might be the best game I played in this year.
 
 Several titles I have played this year. Out of them Metaphor does not have the best gameplay, nor soundtracks, art direction or narrative. Out of them, surprisingly, I found myself having the most fun while playing Metaphor. The game seemed greater than the sum of its parts, like a well oiled machine, pumping out hours and hours of pleasure. Perhaps that is the key factor for me: rather than outstanding highlights, the absence of friction has a greater contribution to a pleasant experience.
