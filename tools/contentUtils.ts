@@ -1,4 +1,4 @@
-import { parse } from "@asukawang/amp";
+import { Amp } from "@asukawang/amp";
 import type { PostMetaData } from "../src/types";
 
 export const convertFrontmatterToPostMetaData = (
@@ -21,9 +21,11 @@ export const convertFrontmatterToPostMetaData = (
   };
 };
 
+const amp = new Amp();
+
 export const parsePost = async (filePath: string) => {
   const fileContent = await Bun.file(filePath).text();
-  const { frontmatter, blocks } = parse(fileContent);
+  const { frontmatter, blocks } = amp.parse(fileContent);
   return {
     metadata: convertFrontmatterToPostMetaData(frontmatter),
     content: blocks,
