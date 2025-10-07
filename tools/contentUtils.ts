@@ -1,5 +1,5 @@
-import { Amp } from "@asukawang/amp";
 import type { PostMetaData } from "../src/types";
+import { amp } from "./markdownParser";
 
 export const convertFrontmatterToPostMetaData = (
   frontmatter: Record<string, string>,
@@ -20,8 +20,6 @@ export const convertFrontmatterToPostMetaData = (
     ] as PostMetaData["thumbnailDirection"],
   };
 };
-
-const amp = new Amp();
 
 export const parsePost = async (filePath: string) => {
   const fileContent = await Bun.file(filePath).text();
