@@ -405,7 +405,7 @@
         "title": "Memorial of the First Step",
         "description": "I made a tribute long overdue to my first game development project.",
         "publishedAt": "2025-09-19",
-        "updatedAt": "2025-09-19",
+        "updatedAt": "2025-10-05",
         "pathname": "memorial-of-the-first-step",
         "category": "essay",
         "topic": "game development",
@@ -429,7 +429,7 @@
             {
               "type": "textBody",
               "style": "plain",
-              "value": "The idea that I was excited about, which developed into my first meaningful creation, was a game. The time was 2006, Blizzard was still cool, the genre of MOBA hasn't being recognized by its name, and through WorldEdit countless ideas were flowing on Battle.Net. A handful of them later developed into billion dollar businesses, while the vast majority fail to be known or remembered. The game was one of them. I've forgotten its name and only remember a friction of the gameplay, but the excitement and idea are still vivid: that was fun, but it would be more fun if it was like..."
+              "value": "The idea that I was excited about, which developed into my first meaningful creation, was a game. The time was 2006, Blizzard was still cool, the genre of MOBA hasn't being recognized by its name, and through WorldEdit countless ideas were flowing on Battle.Net. A handful of them later developed into billion dollar businesses, while the vast majority fail to be known or remembered. The game was one of them. I've forgotten its name and only remember a fraction of the gameplay, but the excitement and idea are still vivid: that was fun, but it would be more fun if it was like..."
             }
           ]
         },
@@ -9187,10 +9187,9 @@
           ]
         },
         {
-          "type": "image",
-          "url": "https://www.youtube.com/watch?v=g7xpyhEw6H0",
-          "altText": "",
-          "caption": ""
+          "type": "custom",
+          "customType": "youtube",
+          "id": "EPc6pv5jewM"
         },
         {
           "type": "thematicBreak"
@@ -13850,6 +13849,7 @@
         "title": "S10 Recap",
         "description": "Season 10 was the most eventful league season for me, as I witnessed the rise and fall of a successful team as part of it.",
         "publishedAt": "2021-01-08",
+        "updatedAt": "2025-10-9",
         "pathname": "s10-recap",
         "category": "retrospective",
         "topic": "gaming",
@@ -14474,10 +14474,9 @@
           ]
         },
         {
-          "type": "image",
-          "url": "https://youtu.be/TdlRvm4HUSM",
-          "altText": "",
-          "caption": ""
+          "type": "custom",
+          "customType": "youtube",
+          "id": "TdlRvm4HUSM"
         },
         {
           "type": "paragraph",
@@ -21665,10 +21664,10 @@
           ]
         },
         {
-          "type": "image",
-          "url": "https://www.youtube.com/watch?v=WOYOXMY1Xrg&t=538s",
-          "altText": "",
-          "caption": ""
+          "type": "custom",
+          "customType": "youtube",
+          "id": "WOYOXMY1Xrg",
+          "start": "538s"
         },
         {
           "type": "quote",
@@ -22393,10 +22392,9 @@
           ]
         },
         {
-          "type": "image",
-          "url": "https://www.youtube.com/watch?v=G4FUjD_N8YU",
-          "altText": "",
-          "caption": ""
+          "type": "custom",
+          "customType": "youtube",
+          "id": "G4FUjD_N8YU"
         },
         {
           "type": "paragraph",
@@ -22831,10 +22829,10 @@
           ]
         },
         {
-          "type": "image",
-          "url": "https://www.youtube.com/watch?v=9ZfUILVQm-0&t=45s",
-          "altText": "",
-          "caption": ""
+          "type": "custom",
+          "customType": "youtube",
+          "id": "9ZfUILVQm-0",
+          "start": "45s"
         },
         {
           "type": "paragraph",
