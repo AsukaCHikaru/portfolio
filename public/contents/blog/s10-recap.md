@@ -7,6 +7,7 @@ pathname: s10-recap
 description: Season 10 was the most eventful league season for me, as I witnessed the rise and fall of a successful team as part of it.
 category: retrospective
 topic: gaming
+updated: 2025-10-9
 ---
 
 # TSM
@@ -120,7 +121,7 @@ Useful in both pushing and poke, but remember to pick one, for Q's damage after 
 
 Caitlyn's bread and butter. Other than AA and positioning, A Caitlyn player's level depends on his trap usage. If you would like to know what's a good Caitlyn looks like, my advice is to watch xFSN Saber montage.
 
-![](https://youtu.be/TdlRvm4HUSM)
+![](https://www.youtube.com/watch?v=TdlRvm4HUSM)
 
 Traps behind the turret or at choke points of objectives are the basic. The intermediate way to use it is in team fights. Caitlyn should always be thinking about the next trap in team fights. W is not a skillshot with a projectile, so it's easy to lose track of. Places like the enemy's way of engaging or disengage are good for traps.
 

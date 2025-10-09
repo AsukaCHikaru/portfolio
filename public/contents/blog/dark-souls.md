@@ -32,7 +32,7 @@ They are my favorite boss in the entire game for the same reason. After hours of
 
 The BGM was great too.
 
-![](https://www.youtube.com/watch?v=g7xpyhEw6H0)
+![](https://www.youtube.com/watch?v=EPc6pv5jewM)
 
 ---
 
