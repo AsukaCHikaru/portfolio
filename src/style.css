@@ -996,6 +996,20 @@ article {
     width: 100%;
   }
 
+  .youtube-wrapper {
+    width: 100%;
+    margin: 48px 0;
+
+    @media (max-width: 768px) {
+      margin: 28px 0;
+    }
+
+    > iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
   blockquote {
     margin: 48px 0;
     white-space: pre-wrap;

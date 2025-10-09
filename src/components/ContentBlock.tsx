@@ -1,4 +1,5 @@
-import type { TextBody, Link, Block } from "@asukawang/amp";
+import type { TextBody, Link } from "@asukawang/amp";
+import type { Block } from "../../tools/markdownParser";
 import { Code } from "./CodeBlock";
 import { D2FigureBlock } from "./D2FigureBlock";
 
@@ -103,6 +104,13 @@ export const ContentBlock = ({ block }: { block: Block }) => {
       return <Code block={block} />;
     case "thematicBreak":
       return <hr />;
+    case "custom":
+      switch (block.customType) {
+        case "youtube":
+          return <YoutubeBlock id={block.id} start={block.start} />;
+        default:
+          return null;
+      }
     default:
       return null;
   }
@@ -140,4 +148,29 @@ const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
         </a>
       );
   }
+};
+
+const YoutubeBlock = ({ id, start }: { id: string; start?: string }) => {
+  const startParam = start ? `start=${start?.replace("s", "")}` : "";
+  const params = [
+    startParam,
+    "controls=1",
+    "modestbranding=1",
+    "rel=0",
+    "showinfo=0",
+    "fs=0",
+    "iv_load_policy=3",
+    "disablekb=1",
+  ]
+    .filter(Boolean)
+    .join("&");
+  return (
+    <div className="youtube-wrapper">
+      <iframe
+        src={`https://www.youtube.com/embed/${id}?${params}`}
+        title="YouTube video player"
+        frameBorder={0}
+      />
+    </div>
+  );
 };
