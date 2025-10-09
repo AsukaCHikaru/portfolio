@@ -1,4 +1,4 @@
-import type { Block } from "@asukawang/amp";
+import type { Block } from "../tools/markdownParser";
 
 export type PostMetaData = {
   title: string;

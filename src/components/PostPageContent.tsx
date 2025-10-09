@@ -1,4 +1,4 @@
-import type { Block } from "@asukawang/amp";
+import type { Block } from "../../tools/markdownParser";
 import { Layout } from "./Layout";
 import type { PostMetaData } from "../types";
 import { ContentBlock } from "./ContentBlock";
