@@ -3,7 +3,7 @@ created: 2025/09/15 18:33
 title: Memorial of the First Step
 description: I made a tribute long overdue to my first game development project.
 published: 2025-09-19
-updated: 2025-09-19
+updated: 2025-10-05
 language: en-US
 category: essay
 topic: game development
@@ -14,7 +14,7 @@ featured:
 ---
 My biggest obsession is and have always been creation. When I was in junior high I met my favorite novel of all time, which inspired me to start writing; when I was in senior high I met my favorite game of all time, which inspired me to starting modding. Such pattern happens again and again in my life. When I found something beautiful and being impressed by them ideas emerge like a wellspring; they become the only things I could think of, and when the temptation is too strong, the only way to vent is to create. It's a curse I'll have to bear for my entire life: I get excited about my ideas.
 
-The idea that I was excited about, which developed into my first meaningful creation, was a game. The time was 2006, Blizzard was still cool, the genre of MOBA hasn't being recognized by its name, and through WorldEdit countless ideas were flowing on Battle.Net. A handful of them later developed into billion dollar businesses, while the vast majority fail to be known or remembered. The game was one of them. I've forgotten its name and only remember a friction of the gameplay, but the excitement and idea are still vivid: that was fun, but it would be more fun if it was like...
+The idea that I was excited about, which developed into my first meaningful creation, was a game. The time was 2006, Blizzard was still cool, the genre of MOBA hasn't being recognized by its name, and through WorldEdit countless ideas were flowing on Battle.Net. A handful of them later developed into billion dollar businesses, while the vast majority fail to be known or remembered. The game was one of them. I've forgotten its name and only remember a fraction of the gameplay, but the excitement and idea are still vivid: that was fun, but it would be more fun if it was like...
 
 From the idea started my journey of game development, and essentially, my career of software engineering. It was also the start of many beautiful friendships, decades later and we're still talking and sharing happiness on a daily basis.
 
