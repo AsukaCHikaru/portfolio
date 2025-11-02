@@ -26,6 +26,8 @@ export const Router = () => {
       return <FrontPage />;
     }
     if (/\.xml$/.test(path)) {
+      // TODO: fix this eslint error
+      // eslint-disable-next-line react-hooks/immutability
       window.location.href = path;
       return null;
     }
