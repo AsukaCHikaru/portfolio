@@ -39,7 +39,7 @@ a {
   max-width: 1280px;
   margin: 0 auto;
 
-  >main {
+  > main {
     grid-column: 1 / span 16;
   }
 }
@@ -48,15 +48,15 @@ a {
   grid-column: 1 / span 16;
   margin: 0 0 24px;
 
-  >.header-content {
+  > .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    >.header_left_content {
+    > .header_left_content {
       width: 15%;
 
-      >button {
+      > button {
         display: none;
 
         @media (max-width: 768px) {
@@ -73,12 +73,12 @@ a {
         }
       }
 
-      >nav {
+      > nav {
         width: fit-content;
         display: flex;
         gap: 20px;
 
-        >a {
+        > a {
           font-family: "Gentium Plus Book", serif;
           font-size: 20px;
           line-height: 24px;
@@ -100,19 +100,19 @@ a {
       }
     }
 
-    >h1 {
+    > h1 {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
       font-size: 28px;
       line-height: 1;
       font-weight: 400;
 
-      >a {
+      > a {
         color: var(--dark);
       }
     }
 
-    >.header_right_content {
+    > .header_right_content {
       display: none;
 
       @media (max-width: 768px) {
@@ -122,7 +122,7 @@ a {
     }
   }
 
-  >.header-divider {
+  > .header-divider {
     margin: 4px 0 0;
     border-top: solid 1px var(--dark-third);
     border-bottom: solid 2px var(--dark-third);
@@ -151,14 +151,14 @@ footer {
   grid-column: 1 / span 16;
   margin: 0 0 24px;
 
-  >div:first-child {
+  > div:first-child {
     display: flex;
     align-items: center;
 
-    >.frontpage-header_left_content {
+    > .frontpage-header_left_content {
       width: 15%;
 
-      >p {
+      > p {
         width: fit-content;
         height: fit-content;
         padding: 10px 16px;
@@ -179,7 +179,7 @@ footer {
         }
       }
 
-      >button.frontpage-header-menu-button {
+      > button.frontpage-header-menu-button {
         font-family: "Noto Sans", sans-serif;
         font-weight: 200;
         font-size: 14px;
@@ -197,7 +197,7 @@ footer {
       }
     }
 
-    >h1 {
+    > h1 {
       margin: 0;
       flex: 1 0 auto;
       font-family: "Cormorant Garamond";
@@ -206,7 +206,7 @@ footer {
       line-height: 1;
       text-align: center;
 
-      >a {
+      > a {
         color: var(--dark);
       }
 
@@ -220,7 +220,7 @@ footer {
       }
     }
 
-    >.frontpage-header_right_content {
+    > .frontpage-header_right_content {
       width: 15%;
       font-family: "Noto Sans", sans-serif;
       font-size: 16px;
@@ -229,7 +229,7 @@ footer {
       white-space: pre-wrap;
       text-align: right;
 
-      >time {
+      > time {
         font-weight: 400;
       }
 
@@ -244,7 +244,7 @@ footer {
     }
   }
 
-  >nav {
+  > nav {
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -252,7 +252,7 @@ footer {
     border-top: solid 1px var(--dark);
     border-bottom: solid 2px var(--dark);
 
-    >a {
+    > a {
       font-family: "Gentium Plus Book", serif;
       font-size: 22px;
       line-height: 1;
@@ -269,7 +269,7 @@ footer {
     }
   }
 
-  >.frontpage-header-divider {
+  > .frontpage-header-divider {
     display: none;
 
     @media (max-width: 768px) {
@@ -291,14 +291,14 @@ footer {
   z-index: 10;
   padding: 0;
 
-  >nav {
+  > nav {
     display: flex;
     flex-direction: column;
     gap: 18px;
     padding: 24px 12px;
     background-color: var(--light);
 
-    >a {
+    > a {
       font-family: "Gentium Plus Book", serif;
       font-size: 18px;
       line-height: 1;
@@ -333,14 +333,14 @@ footer {
     padding: 0;
   }
 
-  >.frontpage-lead-story_header {
+  > .frontpage-lead-story_header {
     margin: 0 0 40px;
 
     @media (max-width: 768px) {
       margin: 0 0 28px;
     }
 
-    >h2 {
+    > h2 {
       margin: 0;
       font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
       font-size: 60px;
@@ -357,7 +357,7 @@ footer {
       }
     }
 
-    >p:first-of-type {
+    > p:first-of-type {
       margin: 20px 0;
       font-size: 24px;
       font-style: italic;
@@ -371,7 +371,7 @@ footer {
       }
     }
 
-    >p:last-of-type {
+    > p:last-of-type {
       margin: 0;
       font-size: 20px;
       line-height: 1.5;
@@ -398,7 +398,7 @@ footer {
   }
 
   & .frontpage-side-column-further-reading {
-    >p {
+    > p {
       margin: 0 0 24px;
       font-family: "Noto Sans", sans-serif;
       font-size: 24px;
@@ -406,7 +406,7 @@ footer {
       font-weight: 200;
       color: var(--dark);
 
-      >a {
+      > a {
         font-family: "Gentium Plus", serif;
         font-size: 24px;
         line-height: 1;
@@ -417,7 +417,7 @@ footer {
       @media (max-width: 1080px) {
         font-size: 22px;
 
-        >a {
+        > a {
           font-size: 22px;
         }
       }
@@ -442,7 +442,7 @@ footer {
         text-decoration: underline;
       }
 
-      >span:first-of-type {
+      > span:first-of-type {
         display: block;
         margin: 10px 0;
         font-family: "Gentium Plus", serif;
@@ -452,7 +452,7 @@ footer {
         color: var(--dark-second);
       }
 
-      >span:last-of-type {
+      > span:last-of-type {
         display: block;
         font-family: "Noto Sans", sans-serif;
         font-size: 16px;
@@ -463,11 +463,11 @@ footer {
       @media (max-width: 1080px) {
         font-size: 22px;
 
-        >span:first-of-type {
+        > span:first-of-type {
           font-size: 18px;
         }
 
-        >span:last-of-type {
+        > span:last-of-type {
           font-size: 14px;
         }
       }
@@ -477,7 +477,7 @@ footer {
   & .frontpage-side-column-categories {
     position: relative;
 
-    >p {
+    > p {
       margin: 0 0 24px;
       font-family: "Noto Sans", sans-serif;
       font-weight: 200;
@@ -485,7 +485,7 @@ footer {
       line-height: 1;
     }
 
-    >a {
+    > a {
       display: flex;
       margin: 0 0 16px;
       font-family: "Gentium Plus", serif;
@@ -497,13 +497,13 @@ footer {
         text-decoration: underline;
       }
 
-      >div {
+      > div {
         flex: 1 0 auto;
         border-bottom: dashed 1px var(--dark-third);
         padding: 0 4px;
       }
 
-      >span {
+      > span {
         font-family: "Noto Sans", sans-serif;
         font-size: 20px;
         line-height: 26px;
@@ -513,14 +513,14 @@ footer {
     }
 
     @media (max-width: 1080px) {
-      >p {
+      > p {
         font-size: 22px;
       }
 
-      >a {
+      > a {
         font-size: 22px;
 
-        >span {
+        > span {
           font-size: 18px;
         }
       }
@@ -529,7 +529,6 @@ footer {
     @media (max-width: 768px) {
       display: none;
     }
-
 
     &:not(:first-child) {
       padding: 12px 0 0;
@@ -544,7 +543,7 @@ footer {
         width: 100%;
       }
 
-      >p {
+      > p {
         margin: 12 0 24px;
       }
     }
@@ -556,19 +555,19 @@ footer {
   margin: 24px 0;
   border-top: solid 1px var(--dark-second);
 
-  >h2 {
+  > h2 {
     margin: 36px 0 24px;
     font-family: "Noto Sans", sans-serif;
     font-size: 35px;
     font-weight: 200;
   }
 
-  >a {
+  > a {
     display: flex;
     gap: 12px;
     color: var(--dark);
 
-    >div {
+    > div {
       & h3 {
         margin: 0;
         font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
@@ -594,14 +593,14 @@ footer {
       }
     }
 
-    >img {
+    > img {
       width: 50%;
     }
   }
 
   @media (max-width: 1080px) {
-    >a {
-      >div {
+    > a {
+      > div {
         & h3 {
           font-size: 48px;
         }
@@ -621,15 +620,15 @@ footer {
     margin: 0;
     border: none;
 
-    >h2 {
+    > h2 {
       margin: 28px 0 20px;
       font-size: 28px;
     }
 
-    >a {
+    > a {
       flex-direction: column;
 
-      >div {
+      > div {
         & h3 {
           font-size: 36px;
         }
@@ -643,7 +642,7 @@ footer {
         }
       }
 
-      >img {
+      > img {
         width: 100%;
       }
     }
@@ -699,7 +698,7 @@ footer {
     display: none;
   }
 
-  >img {
+  > img {
     width: calc(50% + 6px);
     min-width: calc(50% + 6px);
     height: auto;
@@ -708,11 +707,11 @@ footer {
     filter: grayscale(1) sepia(0.2) contrast(0.9);
   }
 
-  &:last-child>img {
+  &:last-child > img {
     padding: 0;
   }
 
-  >div {
+  > div {
     display: flex;
     flex-direction: column;
     padding: 0 12px 0 0;
@@ -757,7 +756,7 @@ footer {
     text-decoration: underline;
     text-decoration-color: var(--dark-second);
 
-    >img {
+    > img {
       filter: none;
     }
   }
@@ -797,7 +796,7 @@ footer {
   &.tile-landscape {
     flex-direction: column-reverse;
 
-    >img {
+    > img {
       width: 100%;
       margin: 0 0 12px;
     }
@@ -842,7 +841,7 @@ footer {
       display: none;
     }
 
-    >img {
+    > img {
       padding: 0;
     }
   }
@@ -862,8 +861,8 @@ footer {
     margin: 8px 0 12px;
   }
 
-  >a {
-    font-family: 'Gentium Plus', serif;
+  > a {
+    font-family: "Gentium Plus", serif;
     font-weight: 400;
     font-style: italic;
     color: var(--light-accent);
@@ -878,7 +877,7 @@ footer {
     }
   }
 
-  >h1 {
+  > h1 {
     margin: 0 0 40px;
     padding: 12px 0;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
@@ -892,7 +891,7 @@ footer {
     }
   }
 
-  >h2 {
+  > h2 {
     margin: 20px 0;
     font-size: 28px;
     font-style: italic;
@@ -906,7 +905,7 @@ footer {
     }
   }
 
-  >p:last-of-type {
+  > p:last-of-type {
     margin: 0;
     font-size: 20px;
     font-family: "Noto Sans", sans-serif;
@@ -929,7 +928,7 @@ article {
     font-size: 18px;
   }
 
-  &>p:first-child::first-letter {
+  & > p:first-child::first-letter {
     float: left;
     padding: 8px 8px 0 0;
     font-size: 80px;
@@ -942,17 +941,17 @@ article {
     }
   }
 
-  &>p {
+  & > p {
     margin: 16px 0;
     hyphens: auto;
   }
 
-  &>ul,
+  & > ul,
   ol {
     margin: 0;
   }
 
-  &>h1,
+  & > h1,
   h2,
   h3,
   h4,
@@ -960,7 +959,7 @@ article {
   h6 {
     margin: 30px 0;
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       margin: 12px 0;
     }
   }
@@ -1019,7 +1018,7 @@ article {
     line-height: 27px;
     color: var(--dark-second);
 
-    >span:first-child::before {
+    > span:first-child::before {
       content: "“";
       position: absolute;
       top: -1rem;
@@ -1028,7 +1027,7 @@ article {
       line-height: 2.25rem;
     }
 
-    >span:last-child::after {
+    > span:last-child::after {
       content: "”";
       display: inline;
       padding-left: 0.5rem;
@@ -1038,16 +1037,16 @@ article {
       line-height: 2.25rem;
     }
 
-    >p:not(:first-child) {
+    > p:not(:first-child) {
       margin-top: 1rem;
     }
 
-    >p:not(:last-child) {
+    > p:not(:last-child) {
       margin-bottom: 1rem;
     }
   }
 
-  p>code {
+  p > code {
     font-family: "Courier New", Courier, monospace;
     font-size: 16px;
     color: var(--dark);
@@ -1065,7 +1064,7 @@ article {
     line-height: 1.3;
     overflow-x: auto;
 
-    >code {
+    > code {
       border-radius: 5px;
     }
   }
@@ -1080,22 +1079,22 @@ article {
 article.post-page-content {
   grid-column: 1 / span 16;
 
-  >*:not(figure) {
+  > *:not(figure) {
     grid-column: 3 / span 10;
   }
 
-  >figure {
+  > figure {
     grid-column: 3 / span 14;
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     column-gap: 12px;
 
-    >img,
+    > img,
     video {
       grid-column: 1 / span 8;
     }
 
-    >figcaption {
+    > figcaption {
       grid-column: 9 / span 4;
       margin: 0;
       font-size: 20px;
@@ -1105,41 +1104,41 @@ article.post-page-content {
   }
 
   @media (max-width: 1080px) {
-    >*:not(figure) {
+    > *:not(figure) {
       grid-column: 2 / span 12;
     }
 
-    >figure {
+    > figure {
       grid-column: 1 / span 16;
       grid-template-columns: repeat(16, 1fr);
 
-      >img,
+      > img,
       video {
         grid-column: 1 / span 11;
       }
 
-      >figcaption {
+      > figcaption {
         grid-column: 12 / span 5;
       }
     }
   }
 
   @media (max-width: 768px) {
-    >*:not(figure) {
+    > *:not(figure) {
       grid-column: 1 / span 16;
     }
 
-    >figure {
+    > figure {
       grid-column: 1 / span 16;
       grid-template-columns: repeat(16, 1fr);
       margin: 20px 0;
 
-      >img,
+      > img,
       video {
         grid-column: 1 / span 16;
       }
 
-      >figcaption {
+      > figcaption {
         grid-column: 1 / span 16;
         font-size: 16px;
         margin: 8px 0 0;
@@ -1151,7 +1150,7 @@ article.post-page-content {
 .about-page-header {
   grid-column: 1 / span 16;
 
-  >h1 {
+  > h1 {
     font-family: "Noto Serif JP", serif;
     margin: 24px 0;
     font-size: 90px;
@@ -1164,9 +1163,9 @@ article.post-page-content {
     }
   }
 
-  >p {
+  > p {
     margin: 0 0 48px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 20px;
     font-weight: 200;
     color: var(--dark-second);
@@ -1176,14 +1175,13 @@ article.post-page-content {
       margin: 0 0 28px;
     }
   }
-
 }
 
 .resume-page_container {
   max-width: 960;
   margin: 24px auto;
 
-  >p {
+  > p {
     margin-bottom: 40px;
     font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
 
@@ -1193,7 +1191,7 @@ article.post-page-content {
     }
   }
 
-  >article {
+  > article {
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
     line-height: 1.35;
@@ -1218,16 +1216,16 @@ article.post-page-content {
         margin-bottom: 12px;
       }
 
-      >div {
+      > div {
         text-align: center;
 
-        >ul {
+        > ul {
           display: flex;
           justify-content: center;
           gap: 12px;
           list-style: none;
 
-          >li:not(:last-child) {
+          > li:not(:last-child) {
             border-right: 1px solid black;
             padding-right: 12px;
           }
@@ -1236,7 +1234,7 @@ article.post-page-content {
             flex-direction: column;
             gap: 4px;
 
-            >li:not(:last-child) {
+            > li:not(:last-child) {
               border-right: none;
               padding-right: 0;
             }
@@ -1248,7 +1246,7 @@ article.post-page-content {
     & section:not(:first-of-type) {
       margin: 24px 0;
 
-      >h2 {
+      > h2 {
         padding-bottom: 7px;
         border-bottom: 1px solid black;
         font-size: 32px;
@@ -1256,25 +1254,25 @@ article.post-page-content {
         margin: 12px 0;
       }
 
-      >h3 {
+      > h3 {
         font-size: 24px;
         line-height: 1.3;
         margin: 24px 0 0;
       }
 
-      >p {
+      > p {
         margin: 0 0 16px;
         font-size: 18px;
 
-        >span {
+        > span {
           font-weight: 200;
         }
       }
 
-      >ul {
+      > ul {
         list-style-position: inside;
 
-        >li {
+        > li {
           margin: 8px 0;
         }
       }
@@ -1283,7 +1281,7 @@ article.post-page-content {
 }
 
 .d2-figure-block_wrapper {
-  >figure {
+  > figure {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1317,7 +1315,7 @@ article.post-page-content {
       }
     }
 
-    >figcaption {
+    > figcaption {
       font-size: 18px;
       line-height: 1;
       text-align: center;
@@ -1330,7 +1328,7 @@ article.post-page-content {
     }
   }
 
-  >figcaption {
+  > figcaption {
     font-size: 18px;
     color: var(--dark-second);
     text-align: center;
@@ -1340,7 +1338,7 @@ article.post-page-content {
     }
   }
 
-  >math {
+  > math {
     font-size: 30px;
     font-family: "Gentium Plus", serif;
     display: flex;
@@ -1396,7 +1394,7 @@ article.post-page-content {
         color: #6969ff;
       }
 
-      >p:first-child {
+      > p:first-child {
         margin: 0 auto;
         padding: 0 20px;
         font-family: "Exocet";
@@ -1418,7 +1416,7 @@ article.post-page-content {
     justify-content: center;
     align-items: center;
 
-    >img {
+    > img {
       padding: 12px;
       box-sizing: content-box;
     }
