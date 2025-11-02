@@ -19,12 +19,12 @@ export const FrontPage = () => {
         new Date(b.metadata.publishedAt).getTime() -
         new Date(a.metadata.publishedAt).getTime(),
     )[0];
-  }, []);
+  }, [context]);
 
   const lastUpdated = useMemo(() => {
     const staticProp = window.__STATIC_PROPS__.lastUpdated;
     return staticProp;
-  }, [post]);
+  }, []);
 
   const furtherReading = useMemo(() => {
     const staticProp = window.__STATIC_PROPS__.frontPage;

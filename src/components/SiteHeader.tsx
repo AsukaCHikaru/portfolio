@@ -26,7 +26,9 @@ export const FrontPageHeader = ({ lastUpdated }: { lastUpdated: string }) => (
   <header className="frontpage-header">
     <div>
       <div className="frontpage-header_left_content">
-        <p className="frontpage-header-slogan">"The Work{"\n"}Goes On"</p>
+        <p className="frontpage-header-slogan">
+          &quot;The Work{"\n"}Goes On&quot;
+        </p>
         <MobileNavMenuButton />
       </div>
       <h1>

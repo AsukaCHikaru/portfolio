@@ -25,7 +25,7 @@ const youtubeParser = (input: string): YoutubeBlock => {
     type: "custom",
     customType: "youtube",
     id,
-    start
+    start,
   };
 };
 

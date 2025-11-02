@@ -125,7 +125,7 @@ const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
       switch (body.style) {
         case "plain":
           if (body.value.startsWith("::d2")) {
-            return <D2FigureBlock children={body.value} />;
+            return <D2FigureBlock value={body.value} />;
           }
           return <>{body.value}</>;
         case "code":

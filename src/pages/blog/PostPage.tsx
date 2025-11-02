@@ -16,7 +16,7 @@ export const PostPage = () => {
       return staticProp.blog.post;
     }
     return context.postList.find((post) => post.metadata.pathname === pathname);
-  }, []);
+  }, [context.postList]);
 
   if (!post) {
     return null;

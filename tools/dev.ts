@@ -23,13 +23,15 @@ const startHttpServer = async () => {
             const file = Bun.file("./dist/blog/index.html");
             return new Response(file);
           }
-          case "/about":
+          case "/about": {
             const file = Bun.file("./dist/about/index.html");
             return new Response(file);
+          }
           case "/resume/":
-          case "/resume":
+          case "/resume": {
             const resumeFile = Bun.file("./dist/resume/index.html");
             return new Response(resumeFile);
+          }
           default:
             if (/^\/blog\/\w+/.test(path)) {
               const file = Bun.file(`./dist${path}/index.html`);
@@ -42,7 +44,7 @@ const startHttpServer = async () => {
               if (await file.exists()) {
                 return new Response(file);
               }
-            } catch (e) {
+            } catch (_) {
               // File doesn't exist or other error, continue to 404
             }
 

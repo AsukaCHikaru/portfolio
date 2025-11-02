@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 
-export const D2FigureBlock = ({ children }: { children: string }) => {
+export const D2FigureBlock = ({ value }: { value: string }) => {
   const [blockCode, caption] = useMemo(
-    () => (children.includes("|") ? children.split("|") : [children]),
-    [children],
+    () => (value.includes("|") ? value.split("|") : [value]),
+    [value],
   );
 
   const content = useMemo(() => {
@@ -195,7 +195,7 @@ export const D2FigureBlock = ({ children }: { children: string }) => {
       default:
         return <figcaption>{caption}</figcaption>;
     }
-  }, []);
+  }, [caption, blockCode]);
 
   return <div className="d2-figure-block_wrapper">{content}</div>;
 };
