@@ -2,6 +2,107 @@
   "postList": [
     {
       "metadata": {
+        "title": "Do Lumière Citizen Dream of Painted Sheep?",
+        "description": "Clair Obscur: Expedition 33 has the best narrative and soundtrack of the year. Months after seeing both endings, I still often recall those beautiful moments, and I can't stop wondering.",
+        "publishedAt": "2025-11-16",
+        "updatedAt": "2025-11-16",
+        "pathname": "do-lumiere-citizen-dream-of-painted-sheep",
+        "category": "review",
+        "topic": "gaming",
+        "language": "en-US",
+        "featured": false
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": "With the full revelation about the origin and the fate of little Verso's canvas, the Dessendre family's tragic loss, it's easy to see them making peace with Verso's passing in the "
+            },
+            {
+              "type": "textBody",
+              "style": "italic",
+              "value": "A Life to Love"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": " ending and say, this is the better, healthier ending. No matter how beautiful the dream is, you can't escape from reality forever. You have "
+            },
+            {
+              "type": "textBody",
+              "style": "italic",
+              "value": "real"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": " family outside the canvas waiting for you."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": "I beg to differ. People of Lumière are real too. Before her Gommage, Lune sits on the ground, refusing to approach Verso. For her whole life she has believed the people of Lumière could and would eventually beat the curse of Paintress thus change their fate, and through their unwavering belief and action, she is led to this very moment. The frustration and defiance against god and fate, to me, is nothing but human."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "do-lumiere-citizen-dream-of-painted-sheep_1.png",
+          "altText": "Lune, with dusts and blood on her face, staring at Verso",
+          "caption": "Lune, with dusts and blood on her face, staring at Verso."
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": "They know how to hate. They know how to love. They are real humans with souls and free will. And for Maelle, Verso's canvas is a reality where she spends 16 years of life with her family. Despite being someone’s creation, they are not a bit less human; the only difference between them and the Dessendres is the ability to access outside of the canvas, and that, to Maelle, is irrelevant."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": "Life outside of the canvas for Maelle is painful. Every day she awakes to face the fact that her mistake killed her brother. There is no escape from it. Her everlasting wounds remind her of that. Her "
+            },
+            {
+              "type": "textBody",
+              "style": "italic",
+              "value": "families"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": " remind her of that. The whole Dessendres are consumed by grief, the girl who lived gets no support but negligence. She then happens to live another life, in which while she has to face death early and frequently, she has families that care about her, support her, love her. A life in which she doesn't have to blame herself."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": "An escape from the Dessendres' reality, maybe. But that doesn't make Lumière less real. Staying in Lumière may take her life in both realities, but the decision is hers to make, and no one's to judge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
         "title": "Site Patch Notes: 2025 Rewrite",
         "description": "The site has a new face as well as a new body, as it now has a long overdue frontpage and a code base rewritten from scratch.",
         "publishedAt": "2025-10-04",
