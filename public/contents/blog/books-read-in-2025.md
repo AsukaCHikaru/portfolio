@@ -101,7 +101,7 @@ Shallow. Not recommended.
 # 赤ちゃんにもママにも優しい安眠ガイド (Infant Sleep Guide)
 _清水悦子, 2011_
 
-Her sleep time is, as a newborn, very scattered, thus my priority task is sleep training. I read four books regarding infant sleep including this one, turned out everybody's more or less advocating for the same practice, which means, I reckon, that the methods mentioned are inspected by multiple parties, and have some level of credibility. She is not there yet in terms of brain development required for sleep training, so there are still weeks to consider before I can start apply them.I read four books regarding infant sleep including this one, turned out everybody's more or less advocating for the same practice, which means, I reckon, that the methods mentioned are inspected by multiple parties, and have some level of credibility. She is not there yet in terms of brain development required for sleep training, so there are still weeks to consider before I can start apply them.
+Her sleep time is, as a newborn, very scattered, thus my priority task is sleep training. I read four books regarding infant sleep including this one, turned out everybody's more or less advocating for the same practice, which means, I reckon, that the methods mentioned are inspected by multiple parties, and have some level of credibility. She is not there yet in terms of brain development required for sleep training, so there are still weeks to consider before I can start apply them.
 
 # The Historian
 _Elizabeth Kostova, 2005_
