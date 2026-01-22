@@ -3,7 +3,7 @@ created: 2025/09/15 18:33
 title: Memorial of the First Step
 description: I made a tribute long overdue to my first game development project.
 published: 2025-09-19
-updated: 2025-10-05
+updated: 2025-10-09
 language: en-US
 category: essay
 topic: game development

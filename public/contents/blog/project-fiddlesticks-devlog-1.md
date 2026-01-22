@@ -55,4 +55,4 @@ I came out with the multiplying approach without any research. Until the impleme
 
 ![](project-fiddlesticks-devlog-1_6.mp4)
 
-Another big implementation between me and v0.2.0 release will be, I reckon, mob AI. Perhaps I will have to write an A star pathfinding from scratch. I'll leave that part to the next episode.
+Another big implementation between me and v0.2.0 release will be, I reckon, mob AI. Perhaps I will have to write an A* pathfinding from scratch. I'll leave that part to the next episode.

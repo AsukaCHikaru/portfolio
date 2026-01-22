@@ -7,7 +7,7 @@ pathname: s10-recap
 description: Season 10 was the most eventful league season for me, as I witnessed the rise and fall of a successful team as part of it.
 category: retrospective
 topic: gaming
-updated: 2025-10-9
+updated: 2025-10-09
 ---
 
 # TSM
