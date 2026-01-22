@@ -1107,7 +1107,7 @@
         "title": "Memorial of the First Step",
         "description": "I made a tribute long overdue to my first game development project.",
         "publishedAt": "2025-09-19",
-        "updatedAt": "2025-10-05",
+        "updatedAt": "2025-10-09",
         "pathname": "memorial-of-the-first-step",
         "category": "essay",
         "topic": "game development",
@@ -1606,7 +1606,7 @@
             {
               "type": "textBody",
               "style": "plain",
-              "value": "Another big implementation between me and v0.2.0 release will be, I reckon, mob AI. Perhaps I will have to write an A star pathfinding from scratch. I'll leave that part to the next episode."
+              "value": "Another big implementation between me and v0.2.0 release will be, I reckon, mob AI. Perhaps I will have to write an A_ pathfinding from scratch. I'll leave that part to the next episode."
             }
           ]
         }
@@ -14551,7 +14551,7 @@
         "title": "S10 Recap",
         "description": "Season 10 was the most eventful league season for me, as I witnessed the rise and fall of a successful team as part of it.",
         "publishedAt": "2021-01-08",
-        "updatedAt": "2025-10-9",
+        "updatedAt": "2025-10-09",
         "pathname": "s10-recap",
         "category": "retrospective",
         "topic": "gaming",
