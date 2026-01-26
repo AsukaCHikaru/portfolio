@@ -8,12 +8,12 @@ import {
 import { resolve } from "path";
 import { $ } from "bun";
 
-const sourceBlogFolderPath = "./blogFolderSymbolicLink/";
+const sourceBlogFolderPath = "./symbolicLinks/blog/";
 const localBlogFolderPath = "./public/contents/blog/";
-const sourceBlogImageFolderPath = "./blogImageFolderSymbolicLink/";
+const sourceBlogImageFolderPath = "./symbolicLinks/blogImage/";
 const localBlogImageFolderPath = "./public/images/blog/";
 
-const sourceAboutPagePath = "./aboutPageSymbolicLink";
+const sourceAboutPagePath = "./symbolicLinks/about";
 const localAboutPagePath = "./public/contents/about/";
 
 const checkSymlinkExist = (path: string) => {
