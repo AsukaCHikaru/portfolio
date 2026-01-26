@@ -24,7 +24,7 @@ interface YearData {
   categories: ParsedCategory[];
 }
 
-const musicAwardsFolderPath = "./symbolicLinks/musicAwards";
+const musicAwardsFolderPath = "./symbolicLinks/list/musicAwards";
 
 const checkSymlinkExist = (path: string) => {
   if (existsSync(path)) {
