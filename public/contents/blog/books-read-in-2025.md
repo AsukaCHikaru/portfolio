@@ -12,7 +12,7 @@ thumbnail: books_read_in_2025_2.webp
 thumbnail-direction: portrait
 featured:
 ---
-In recent years I developed a new hobby: buying books. It is irresistible, the idea of what knowledge I could acquire from the next book; what path it could unfold for me. It might not be an obvious candidate when talking about costly hobbies, but the money, and more importantly, space it takes In my humble household can not be overlooked. To justify such rather expensive hobby, I started reading more books.
+In recent years I developed a new hobby: buying books. It is irresistible, the idea of what knowledge I could acquire from the next book; what path it could unfold for me. It might not be an obvious candidate when talking about costly hobbies, but the money, and more importantly, space it takes in my humble household can not be overlooked. To justify such rather expensive hobby, I started reading more books.
 
 The title of books without English version published are translated by me.
 # Harry Potter
