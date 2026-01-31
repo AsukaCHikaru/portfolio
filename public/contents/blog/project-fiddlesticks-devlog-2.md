@@ -2,8 +2,8 @@
 created: 2026/01/27 14:32
 title: "Project Fiddlesticks Devlog #2"
 description: I refactored the combat loop mechanic, an essential component in my indie game Project Fiddlesticks.
-published: 2026-01-30
-updated: 2026-01-30
+published: 2026-01-31
+updated: 2026-01-31
 language: en-US
 category: development
 topic: game development
