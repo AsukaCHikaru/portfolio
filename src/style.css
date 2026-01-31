@@ -1046,7 +1046,8 @@ article {
     }
   }
 
-  p > code {
+  p > code,
+  li > code {
     font-family: "Courier New", Courier, monospace;
     font-size: 16px;
     color: var(--dark);
