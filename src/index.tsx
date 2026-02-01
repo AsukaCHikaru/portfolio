@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Router } from "./components/Router";
-import type { FurtherReading, Post, PostMetaData } from "./types";
-import { DataContext } from "./components/DataContext";
+import type {
+  FurtherReading,
+  MusicAwardNominee,
+  Post,
+  PostMetaData,
+} from "./types";
+import { DataContext, type ContextData } from "./components/DataContext";
 
 declare global {
   interface Window {
@@ -18,23 +23,27 @@ declare global {
         categories: { name: string; count: number }[];
         featuredReading: Post;
       };
+      list: {
+        musicAwards: {
+          year: {
+            category: string;
+            nominees: MusicAwardNominee[];
+          }[];
+        }[];
+      };
       lastUpdated: string;
     };
   }
 }
 
 const App = () => {
-  const [data, setData] = useState<{
-    postList: Post[];
-    about: Post | null;
-  }>();
+  const [data, setData] = useState<ContextData | null>(null);
 
   useEffect(() => {
     (async () => {
-      const data = (await fetch("/data.json").then((res) => res.json())) as {
-        postList: Post[];
-        about: Post | null;
-      };
+      const data = (await fetch("/data.json").then((res) =>
+        res.json(),
+      )) as ContextData;
       setData(data);
     })();
   }, []);
