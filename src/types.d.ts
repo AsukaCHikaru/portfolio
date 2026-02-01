@@ -28,3 +28,15 @@ export type FurtherReading =
       type: "recent";
       posts: Post[];
     };
+
+type RecordNominee = {
+  title: string;
+  artist: string;
+  feat?: string;
+  isWinner: boolean;
+};
+type ArtistNominee = {
+  artist: string;
+  isWinner: boolean;
+};
+export type MusicAwardNominee = RecordNominee | ArtistNominee;

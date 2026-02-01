@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { writeFile } from "fs/promises";
+import type { MusicAwardNominee } from "../src/types";
 
 const musicAwardsFolderPath = "./symbolicLinks/list/musicAwards";
 
@@ -26,19 +27,10 @@ const sortYearDescending = (a: string, b: string) => {
   return parseInt(yearB) - parseInt(yearA);
 };
 
-type RecordNominee = {
-  title: string;
-  artist: string;
-  feat?: string;
-  isWinner: boolean;
-};
-type ArtistNominee = {
-  artist: string;
-  isWinner: boolean;
-};
-type Nominee = RecordNominee | ArtistNominee;
-
-const mapLineToNominee = (items: string[], category: string): Nominee => {
+const mapLineToNominee = (
+  items: string[],
+  category: string,
+): MusicAwardNominee => {
   const isWinner = items[0] === "O";
   const trimmed = isWinner ? items.slice(2) : items;
 
@@ -65,7 +57,7 @@ const groupByCategory = (items: string[][]) => {
     }
   });
 
-  const categories: Record<string, Nominee[]> = {};
+  const categories: Record<string, MusicAwardNominee[]> = {};
   grouped.forEach((group) => {
     const category = group[0][1];
     group.forEach((item) => {
@@ -104,7 +96,7 @@ const run = async () => {
   const files = getFileList(musicAwardsFolderPath);
   const sortedFiles = files.sort(sortYearDescending);
 
-  const yearMap = new Map<string, Record<string, Nominee[]>>();
+  const yearMap = new Map<string, Record<string, MusicAwardNominee[]>>();
   sortedFiles.forEach((file) => {
     const content = readFileSync(`${musicAwardsFolderPath}/${file}`, "utf8");
     const table = content.match(/#\sList\n[^#]+/)?.[0];
