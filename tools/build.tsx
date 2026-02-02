@@ -4,12 +4,13 @@ import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
 import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
-import { getAbout, getBlogPostList } from "./contentServices";
+import { getAbout, getBlogPostList, getList } from "./contentServices";
 import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
 import type { FurtherReading } from "../src/types";
+import { ListPageContent } from "../src/pages/list/ListPage";
 
 const writeFile = (
   element: ReactNode,
@@ -203,6 +204,23 @@ const buildFrontPage = async () => {
   );
 };
 
+const buildList = async () => {
+  const lastCommitDate = await getLastCommitDate();
+  const { musicAwards } = await getList();
+
+  writeFile(
+    <ListPageContent musicAwards={musicAwards} />,
+    "/list",
+    JSON.stringify({
+      list: {
+        musicAwards,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+};
+
 const writeFontCss = async () => {
   const file = await Bun.file("./src/fonts.css").text();
   const replaced = file.replace(/\.\.\/public/g, ".");
@@ -212,12 +230,14 @@ const writeFontCss = async () => {
 const writeData = async () => {
   const postList = await getBlogPostList();
   const about = await getAbout();
+  const list = await getList();
   await Bun.write(
     "./dist/data.json",
     JSON.stringify(
       {
         postList,
         about,
+        list,
       },
       null,
       2,
@@ -254,6 +274,7 @@ export const build = async () => {
   await buildFrontPage();
   await buildAboutPage();
   await buildResumePage();
+  await buildList();
   await writeFontCss();
   await writeData();
   await buildRssFeed();

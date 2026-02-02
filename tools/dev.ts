@@ -27,6 +27,10 @@ const startHttpServer = async () => {
             const file = Bun.file("./dist/about/index.html");
             return new Response(file);
           }
+          case "/list": {
+            const file = Bun.file("./dist/list/index.html");
+            return new Response(file);
+          }
           case "/resume/":
           case "/resume": {
             const resumeFile = Bun.file("./dist/resume/index.html");
