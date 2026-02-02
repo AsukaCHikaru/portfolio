@@ -1,6 +1,8 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { writeFile } from "fs/promises";
 import type { MusicAwardNominee } from "../src/types";
+import { resolve } from "path";
+import { amp } from "./markdownParser";
 
 const musicAwardsFolderPath = "./symbolicLinks/list/musicAwards";
 
@@ -11,7 +13,7 @@ const checkSymlinkExist = (path: string) => {
   process.exit(0);
 };
 
-const getFileList = (folderPath: string) => {
+const getAnnualFileList = (folderPath: string) => {
   const years = readdirSync(folderPath).filter((file) =>
     /Music Awards \d{4}\.md$/.test(file),
   );
@@ -97,8 +99,12 @@ const parseTableLine = (line: string) =>
 
 const run = async () => {
   checkSymlinkExist(musicAwardsFolderPath);
-
-  const files = getFileList(musicAwardsFolderPath);
+  const fileContent = readFileSync(
+    resolve(musicAwardsFolderPath, "Music Awards.md"),
+    "utf-8",
+  );
+  const { frontmatter } = amp.parse(fileContent);
+  const files = getAnnualFileList(musicAwardsFolderPath);
   const sortedFiles = files.sort(sortYearDescending);
 
   const yearList: {
@@ -106,7 +112,7 @@ const run = async () => {
     categories: { category: string; nominees: MusicAwardNominee[] }[];
   }[] = [];
   sortedFiles.forEach((file) => {
-    const content = readFileSync(`${musicAwardsFolderPath}/${file}`, "utf8");
+    const content = readFileSync(`${musicAwardsFolderPath}/${file}`, "utf-8");
     const table = content.match(/#\sList\n[^#]+/)?.[0];
     if (!table) {
       throw new Error(`No table found in ${file}`);
@@ -126,9 +132,9 @@ const run = async () => {
     "./public/contents/list/musicAwards.json",
     JSON.stringify(
       {
-        name: "Music Awards",
-        description: "lorem ipsum music awards list",
-        pathname: "/list/music-awards",
+        name: frontmatter.portfolio_list_name,
+        description: frontmatter.portfolio_list_description,
+        pathname: frontmatter.portfolio_list_pathname,
         list: yearList,
       },
       null,

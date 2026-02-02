@@ -3,6 +3,8 @@ import { parsePost } from "./contentUtils";
 
 const BLOG_FOLDER_PATH = import.meta.dir + "/../public/contents/blog";
 const ABOUT_PATH = import.meta.dir + "/../public/contents/about/about-page.md";
+const LIST_MUSIC_AWARDS_PATH =
+  import.meta.dir + "/../public/contents/list/musicAwards.json";
 
 export const getBlogPostList = async () => {
   const files = await readdir(BLOG_FOLDER_PATH);
@@ -19,3 +21,9 @@ export const getBlogPostList = async () => {
 };
 
 export const getAbout = async () => parsePost(ABOUT_PATH);
+
+export const getList = async () => {
+  const musicAwards = await import(LIST_MUSIC_AWARDS_PATH);
+
+  return { musicAwards };
+};
