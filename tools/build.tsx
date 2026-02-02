@@ -11,6 +11,7 @@ import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
 import type { FurtherReading } from "../src/types";
 import { ListPageContent } from "../src/pages/list/ListPage";
+import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
 
 const writeFile = (
   element: ReactNode,
@@ -211,6 +212,18 @@ const buildList = async () => {
   writeFile(
     <ListPageContent musicAwards={musicAwards} />,
     "/list",
+    JSON.stringify({
+      list: {
+        musicAwards,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+
+  writeFile(
+    <MusicAwardsListPage musicAwards={musicAwards} />,
+    "/list/music-awards",
     JSON.stringify({
       list: {
         musicAwards,

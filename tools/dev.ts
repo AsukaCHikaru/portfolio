@@ -41,6 +41,10 @@ const startHttpServer = async () => {
               const file = Bun.file(`./dist${path}/index.html`);
               return new Response(file);
             }
+            if (/^\/list\/\w+/.test(path)) {
+              const file = Bun.file(`./dist${path}/index.html`);
+              return new Response(file);
+            }
 
             try {
               const filePath = "./dist" + path;
