@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Router } from "./components/Router";
 import type {
   FurtherReading,
+  List,
   MusicAwardNominee,
   Post,
   PostMetaData,
@@ -24,12 +25,17 @@ declare global {
         featuredReading: Post;
       };
       list: {
-        musicAwards: {
-          year: {
-            category: string;
-            nominees: MusicAwardNominee[];
-          }[];
-        }[];
+        musicAwards: List<
+          {
+            year: string;
+            categories: [
+              {
+                category: string;
+                nominees: MusicAwardNominee[];
+              },
+            ];
+          }[]
+        >;
       };
       lastUpdated: string;
     };

@@ -57,19 +57,25 @@ const groupByCategory = (items: string[][]) => {
     }
   });
 
-  const categories: Record<string, MusicAwardNominee[]> = {};
+  const categories: Record<
+    string,
+    { category: string; nominees: MusicAwardNominee[] }
+  > = {};
   grouped.forEach((group) => {
     const category = group[0][1];
     group.forEach((item) => {
       if (item[0] === "O") {
-        categories[category] = [mapLineToNominee(item, category)];
+        categories[category] = {
+          category,
+          nominees: [mapLineToNominee(item, category)],
+        };
       } else {
-        categories[category].push(mapLineToNominee(item, category));
+        categories[category].nominees.push(mapLineToNominee(item, category));
       }
     });
   });
 
-  return categories;
+  return Object.values(categories);
 };
 
 const parseTable = (table: string) => {
@@ -79,8 +85,7 @@ const parseTable = (table: string) => {
     .slice(2)
     .map(parseTableLine);
 
-  const parsed = groupByCategory(lines);
-  return parsed;
+  return groupByCategory(lines);
 };
 
 const parseTableLine = (line: string) =>
@@ -96,24 +101,39 @@ const run = async () => {
   const files = getFileList(musicAwardsFolderPath);
   const sortedFiles = files.sort(sortYearDescending);
 
-  const yearMap = new Map<string, Record<string, MusicAwardNominee[]>>();
+  const yearList: {
+    year: string;
+    categories: { category: string; nominees: MusicAwardNominee[] }[];
+  }[] = [];
   sortedFiles.forEach((file) => {
     const content = readFileSync(`${musicAwardsFolderPath}/${file}`, "utf8");
     const table = content.match(/#\sList\n[^#]+/)?.[0];
     if (!table) {
       throw new Error(`No table found in ${file}`);
     }
-    const parsed = parseTable(table);
+    const categories = parseTable(table);
     const year = file.match(/\d{4}/)?.[0];
     if (!year) {
       throw new Error(`No year found in ${file}`);
     }
-    yearMap.set(year, parsed);
+    yearList.push({
+      year,
+      categories: categories,
+    });
   });
 
   await writeFile(
     "./public/contents/list/musicAwards.json",
-    JSON.stringify(Object.fromEntries(yearMap), null, 2),
+    JSON.stringify(
+      {
+        name: "Music Awards",
+        description: "lorem ipsum music awards list",
+        pathname: "/list/music-awards",
+        list: yearList,
+      },
+      null,
+      2,
+    ),
   );
   console.log(
     `Music awards markdown data written to JSON file ${"./public/contents/list/musicAwards.json"}`,
