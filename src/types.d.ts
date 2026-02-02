@@ -29,7 +29,7 @@ export type FurtherReading =
       posts: Post[];
     };
 
-type RecordNominee = {
+export type RecordNominee = {
   title: string;
   artist: string;
   feat?: string;
