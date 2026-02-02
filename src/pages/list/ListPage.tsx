@@ -29,16 +29,17 @@ interface Props {
 export const ListPageContent = ({ musicAwards }: Props) => {
   return (
     <Layout>
-      <h1>List</h1>
-      <h2>description</h2>
-      <ul>
-        <li>
-          <Link to="/list/music-awards">
-            <h3>{musicAwards.name}</h3>
-            <h4>{musicAwards.description}</h4>
-          </Link>
-        </li>
-      </ul>
+      <h1 className="list-page-header">List</h1>
+      <div className="list-page-list">
+        <ul>
+          <li>
+            <Link to="/list/music-awards">
+              <h3>{musicAwards.name}</h3>
+              <p>{musicAwards.description}</p>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </Layout>
   );
 };
