@@ -4,9 +4,10 @@ import { Router } from "./components/Router";
 import type {
   FurtherReading,
   List,
-  MusicAwardNominee,
+  MusicAwardList,
   Post,
   PostMetaData,
+  VideoGameIndexList,
 } from "./types";
 import { DataContext, type ContextData } from "./components/DataContext";
 
@@ -25,17 +26,8 @@ declare global {
         featuredReading: Post;
       };
       list: {
-        musicAwards: List<
-          {
-            year: string;
-            categories: [
-              {
-                category: string;
-                nominees: MusicAwardNominee[];
-              },
-            ];
-          }[]
-        >;
+        musicAwards: List<MusicAwardList>;
+        videoGameIndex: List<VideoGameIndexList>;
       };
       lastUpdated: string;
     };

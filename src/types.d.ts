@@ -48,6 +48,15 @@ export type MusicAwardList = {
   }[];
 }[];
 
+export type VideoGameIndexList = {
+  title: string;
+  developer: string;
+  publisher: string;
+  released: string;
+  platform: string;
+  rating: string;
+}[];
+
 export type List<T> = {
   name: string;
   description: string;
