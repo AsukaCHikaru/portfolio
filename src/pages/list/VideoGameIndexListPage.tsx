@@ -7,13 +7,13 @@ interface Props {
 }
 
 export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
-  const groupByReleased = useMemo(() => {
+  const groupByFinished = useMemo(() => {
     const map = new Map<string, VideoGameIndexList>();
     videoGameIndex.list.forEach((game) => {
-      if (map.has(game.released)) {
-        map.set(game.released, [...(map.get(game.released) || []), game]);
+      if (map.has(game.finished)) {
+        map.set(game.finished, [...(map.get(game.finished) || []), game]);
       } else {
-        map.set(game.released, [game]);
+        map.set(game.finished, [game]);
       }
     });
     return map;
@@ -26,13 +26,13 @@ export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
         <h2>{videoGameIndex.description}</h2>
       </div>
       <article className="list-video-game-index">
-        {Array.from(groupByReleased.keys())
+        {Array.from(groupByFinished.keys())
           .sort((prev, next) => Number(next) - Number(prev))
           .map((year) => (
             <div key={year}>
               <h3>{year}</h3>
               <ul>
-                {groupByReleased.get(year)?.map((game) => (
+                {groupByFinished.get(year)?.map((game) => (
                   <li key={game.title}>
                     <h4>{game.title}</h4>
                     <p>

@@ -53,6 +53,7 @@ export type VideoGameIndexList = {
   developer: string;
   publisher: string;
   released: string;
+  finished: string;
   platform: string;
   rating: string;
   review?: string;

@@ -1709,14 +1709,15 @@ article.list-video-game-index {
         color: var(--dark);
       }
       p:first-of-type {
-        font-size: 22px;
+        margin: 6px 0 12px 0;
+        font-size: 24px;
         font-family: "Gentium Plus", serif;
         line-height: 1;
         color: var(--dark-second);
       }
       p:nth-of-type(2) {
         display: flex;
-      align-items: center;
+        align-items: center;
         margin: 0;
         font-size: 22px;
         font-family: "Gentium Plus Book", serif;
@@ -1725,10 +1726,13 @@ article.list-video-game-index {
       }
       span {
         margin: 0 8px;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 22px;
         color: var(--dark-third);
       }
     }
+  }
+  > div:last-child > ul > li:last-child {
+    border: none;
   }
 }

@@ -24,18 +24,18 @@ const run = () => {
         developer: frontmatter.developer,
         publisher: frontmatter.publisher,
         released: frontmatter.released,
+        finished: new Date(
+          frontmatter.finished || frontmatter.started,
+        ).toLocaleDateString("en-US", {
+          year: "numeric",
+        }),
         platform: frontmatter.portfolio_list_play_platform,
         review: frontmatter.portfolio_list_game_review_url,
         rating: frontmatter.rating,
       };
     })
     .filter((frontmatter) => frontmatter.rating !== undefined)
-    .sort((prev, next) => {
-      const ratingDiff = Number(next.rating) - Number(prev.rating);
-      return ratingDiff === 0
-        ? Number(next.released) - Number(prev.released)
-        : ratingDiff;
-    });
+    .sort((prev, next) => Number(next.released) - Number(prev.released));
 
   const indexFile = readFileSync(resolve(indexFilePath), "utf-8");
   const { frontmatter } = amp.parse(indexFile);
