@@ -1,5 +1,6 @@
 import type { PostMetaData } from "../src/types";
 import { amp } from "./markdownParser";
+import { existsSync } from "fs";
 
 export const convertFrontmatterToPostMetaData = (
   frontmatter: Record<string, string>,
@@ -28,4 +29,12 @@ export const parsePost = async (filePath: string) => {
     metadata: convertFrontmatterToPostMetaData(frontmatter),
     content: blocks,
   };
+};
+
+export const checkSymlinkExist = (path: string) => {
+  if (existsSync(path)) {
+    return;
+  }
+  console.log(`Symbolic link at ${path} does not exist.`);
+  process.exit(0);
 };

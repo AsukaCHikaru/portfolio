@@ -1,17 +1,11 @@
-import { existsSync, readdirSync, readFileSync } from "fs";
+import { readdirSync, readFileSync } from "fs";
 import { writeFile } from "fs/promises";
 import type { MusicAwardNominee } from "../src/types";
 import { resolve } from "path";
 import { amp } from "./markdownParser";
+import { checkSymlinkExist } from "./contentUtils";
 
 const musicAwardsFolderPath = "./symbolicLinks/list/musicAwards";
-
-const checkSymlinkExist = (path: string) => {
-  if (existsSync(path)) {
-    return;
-  }
-  process.exit(0);
-};
 
 const getAnnualFileList = (folderPath: string) => {
   const years = readdirSync(folderPath).filter((file) =>
