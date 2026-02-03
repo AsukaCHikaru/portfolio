@@ -1669,9 +1669,11 @@ article.list-music-awards {
         margin: 40px 0 0 12px;
         border-top: solid 1px var(--dark-third);
       }
-      &:last-child > div.list-music-awards-category-divider {
-        display: none;
-      }
+    }
+    li:last-child
+      > div.list-music-awards-category:last-child
+      > div.list-music-awards-category-divider {
+      display: none;
     }
   }
 }
