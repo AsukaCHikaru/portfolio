@@ -5,6 +5,8 @@ const BLOG_FOLDER_PATH = import.meta.dir + "/../public/contents/blog";
 const ABOUT_PATH = import.meta.dir + "/../public/contents/about/about-page.md";
 const LIST_MUSIC_AWARDS_PATH =
   import.meta.dir + "/../public/contents/list/musicAwards.json";
+const LIST_VIDEO_GAME_INDEX_PATH =
+  import.meta.dir + "/../public/contents/list/videoGameIndex.json";
 
 export const getBlogPostList = async () => {
   const files = await readdir(BLOG_FOLDER_PATH);
@@ -24,6 +26,7 @@ export const getAbout = async () => parsePost(ABOUT_PATH);
 
 export const getList = async () => {
   const musicAwards = await import(LIST_MUSIC_AWARDS_PATH);
+  const videoGameIndex = await import(LIST_VIDEO_GAME_INDEX_PATH);
 
-  return { musicAwards };
+  return { musicAwards, videoGameIndex };
 };

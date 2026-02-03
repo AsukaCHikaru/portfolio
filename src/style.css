@@ -1677,3 +1677,58 @@ article.list-music-awards {
     }
   }
 }
+
+article.list-video-game-index {
+  grid-column: 2 / span 10;
+
+  h3 {
+    margin: 0 40px 0 0;
+    font-size: 60px;
+    font-family: "Gentium Plus Book", serif;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+
+    li {
+      margin: 36px 0;
+      padding: 0 0 12px 0;
+      border-bottom: solid 1px var(--dark-third);
+
+      h4 {
+        margin: 0;
+        font-size: 36px;
+        font-family: "Gentium Plus Book", "Noto Serif JP CJK", serif;
+        line-height: 1;
+        font-weight: 700;
+        color: var(--dark);
+      }
+      p:first-of-type {
+        font-size: 22px;
+        font-family: "Gentium Plus", serif;
+        line-height: 1;
+        color: var(--dark-second);
+      }
+      p:nth-of-type(2) {
+        display: flex;
+      align-items: center;
+        margin: 0;
+        font-size: 22px;
+        font-family: "Gentium Plus Book", serif;
+        line-height: 1;
+        color: var(--dark);
+      }
+      span {
+        margin: 0 8px;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--dark-third);
+      }
+    }
+  }
+}

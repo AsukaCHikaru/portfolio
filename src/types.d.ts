@@ -55,6 +55,7 @@ export type VideoGameIndexList = {
   released: string;
   platform: string;
   rating: string;
+  review?: string;
 }[];
 
 export type List<T> = {

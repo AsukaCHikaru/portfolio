@@ -12,6 +12,7 @@ import { buildRssFeed } from "./rss";
 import type { FurtherReading } from "../src/types";
 import { ListPageContent } from "../src/pages/list/ListPage";
 import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
 
 const writeFile = (
   element: ReactNode,
@@ -207,14 +208,18 @@ const buildFrontPage = async () => {
 
 const buildList = async () => {
   const lastCommitDate = await getLastCommitDate();
-  const { musicAwards } = await getList();
+  const { musicAwards, videoGameIndex } = await getList();
 
   writeFile(
-    <ListPageContent musicAwards={musicAwards} />,
+    <ListPageContent
+      musicAwards={musicAwards}
+      videoGameIndex={videoGameIndex}
+    />,
     "/list",
     JSON.stringify({
       list: {
         musicAwards,
+        videoGameIndex,
       },
       lastUpdated: lastCommitDate,
     }),
@@ -232,6 +237,17 @@ const buildList = async () => {
     }),
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
   );
+  writeFile(
+    <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
+    "/list/video-game-index",
+    JSON.stringify({
+      list: {
+        videoGameIndex,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
 };
 
 const writeFontCss = async () => {
@@ -243,14 +259,17 @@ const writeFontCss = async () => {
 const writeData = async () => {
   const postList = await getBlogPostList();
   const about = await getAbout();
-  const list = await getList();
+  const { videoGameIndex, musicAwards } = await getList();
   await Bun.write(
     "./dist/data.json",
     JSON.stringify(
       {
         postList,
         about,
-        list,
+        list: {
+          videoGameIndex,
+          musicAwards,
+        },
       },
       null,
       2,
