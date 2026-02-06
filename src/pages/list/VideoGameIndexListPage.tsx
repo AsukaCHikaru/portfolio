@@ -33,7 +33,7 @@ export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
               <h3>{year}</h3>
               <ul>
                 {groupByFinished.get(year)?.map((game) => (
-                  <li key={game.title}>
+                  <li key={`${game.title}-${game.released}`}>
                     <h4>{game.title}</h4>
                     <p>
                       {game.developer}
