@@ -1552,6 +1552,7 @@ div.list-page-list {
     list-style: none;
 
     li {
+      margin: 0 0 40px;
       padding: 0 0 20px;
       border-bottom: solid 1px var(--dark-third);
       &:last-child {
