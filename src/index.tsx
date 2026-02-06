@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Router } from "./components/Router";
 import type {
+  BucketList,
   FurtherReading,
   List,
   MusicAwardList,
@@ -28,6 +29,7 @@ declare global {
       list: {
         musicAwards: List<MusicAwardList>;
         videoGameIndex: List<VideoGameIndexList>;
+        bucketList: List<BucketList>;
       };
       lastUpdated: string;
     };
