@@ -59,6 +59,11 @@ export type VideoGameIndexList = {
   reviewUrl?: string;
 }[];
 
+export type BucketList = {
+  category: string;
+  tasks: { isDone: boolean; doneDate: string | undefined; value: string }[];
+}[];
+
 export type List<T> = {
   name: string;
   description: string;
