@@ -10,10 +10,10 @@ export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
   const groupByFinished = useMemo(() => {
     const map = new Map<string, VideoGameIndexList>();
     videoGameIndex.list.forEach((game) => {
-      if (map.has(game.finished)) {
-        map.set(game.finished, [...(map.get(game.finished) || []), game]);
+      if (map.has(game.played)) {
+        map.set(game.played, [...(map.get(game.played) || []), game]);
       } else {
-        map.set(game.finished, [game]);
+        map.set(game.played, [game]);
       }
     });
     return map;
@@ -46,10 +46,10 @@ export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
                       {game.rating}/10
                       <Separator />
                       {game.platform}
-                      {game.review ? (
+                      {game.reviewUrl ? (
                         <>
                           <Separator />
-                          <a href={game.review}>review</a>
+                          <a href={game.reviewUrl}>review</a>
                         </>
                       ) : null}
                     </p>

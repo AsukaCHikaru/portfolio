@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import { checkSymlinkExist } from "./contentUtils";
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { amp } from "./markdownParser";
+import type { VideoGameIndexList } from "../src/types";
 
 const videoGameIndexFolderPath = "./symbolicLinks/list/videoGameIndexFolder";
 const indexFilePath = "./symbolicLinks/list/videoGameIndex";
@@ -24,15 +25,15 @@ const run = () => {
         developer: frontmatter.developer,
         publisher: frontmatter.publisher,
         released: frontmatter.released,
-        finished: new Date(
+        played: new Date(
           frontmatter.finished || frontmatter.started,
         ).toLocaleDateString("en-US", {
           year: "numeric",
         }),
         platform: frontmatter.portfolio_list_play_platform,
-        review: frontmatter.portfolio_list_game_review_url,
+        reviewUrl: frontmatter.portfolio_list_game_review_url,
         rating: frontmatter.rating,
-      };
+      } satisfies VideoGameIndexList[number];
     })
     .filter((frontmatter) => frontmatter.rating !== undefined)
     .sort((prev, next) => Number(next.released) - Number(prev.released));
