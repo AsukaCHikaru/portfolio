@@ -61,7 +61,7 @@ export type VideoGameIndexList = {
 
 export type BucketList = {
   category: string;
-  tasks: { isDone: boolean; doneDate: string | undefined; value: string }[];
+  tasks: { isDone: boolean; doneDate: string | undefined; value: Block[] }[];
 }[];
 
 export type List<T> = {

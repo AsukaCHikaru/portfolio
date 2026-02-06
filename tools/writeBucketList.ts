@@ -31,13 +31,13 @@ const run = () => {
       if (!match) {
         throw new Error();
       }
-      const [, check, value, doneDate] = match;
+      const [, check, task, doneDate] = match;
       grouped[currentCategory] = [
         ...grouped[currentCategory],
         {
           isDone: check === "x",
           doneDate,
-          value,
+          value: amp.parse(task).blocks,
         },
       ];
     }
