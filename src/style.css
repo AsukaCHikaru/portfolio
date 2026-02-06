@@ -1736,3 +1736,16 @@ article.list-video-game-index {
     border: none;
   }
 }
+
+article.list-bucket-list {
+  grid-column: 2 / span 10;
+
+  h3 {
+    margin: 40px 0;
+    font-size: 48px;
+    font-family: "Gentium Plus Book", serif;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--dark);
+  }
+}

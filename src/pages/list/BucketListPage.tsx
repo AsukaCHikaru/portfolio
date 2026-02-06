@@ -1,3 +1,4 @@
+import { ContentBlock } from "../../components/ContentBlock";
 import { Layout } from "../../components/Layout";
 import type { BucketList, List } from "../../types";
 
@@ -11,13 +12,17 @@ export const BucketListPage = ({ bucketList }: Props) => {
         <h1>{bucketList.name}</h1>
         <h2>{bucketList.description}</h2>
       </div>
-      <article className="list-video-game-index">
+      <article className="list-bucket-list">
         {bucketList.list.map(({ category, tasks }) => (
           <div key={category}>
             <h3>{category}</h3>
             <ul>
-              {tasks.map((task) => (
-                <li key={task.value}>{task.value}</li>
+              {tasks.map((task, i) => (
+                <li key={i}>
+                  {task.value.map((block, j) => (
+                    <ContentBlock block={block} key={j} />
+                  ))}
+                </li>
               ))}
             </ul>
           </div>
