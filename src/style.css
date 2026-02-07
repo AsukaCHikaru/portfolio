@@ -79,7 +79,7 @@ a {
         gap: 20px;
 
         > a {
-          font-family: "Gentium Plus Book", serif;
+          font-family: "Gentium Book Plus", serif;
           font-size: 20px;
           line-height: 24px;
           color: var(--dark-second);
@@ -164,7 +164,7 @@ footer {
         padding: 10px 16px;
         border: solid 1px var(--dark-third);
         color: var(--dark-second);
-        font-family: "Gentium Plus Book", serif;
+        font-family: "Gentium Book Plus", serif;
         font-size: 18px;
         line-height: 1;
         white-space: pre-wrap;
@@ -253,7 +253,7 @@ footer {
     border-bottom: solid 2px var(--dark);
 
     > a {
-      font-family: "Gentium Plus Book", serif;
+      font-family: "Gentium Book Plus", serif;
       font-size: 22px;
       line-height: 1;
       color: var(--dark-second);
@@ -299,7 +299,7 @@ footer {
     background-color: var(--light);
 
     > a {
-      font-family: "Gentium Plus Book", serif;
+      font-family: "Gentium Book Plus", serif;
       font-size: 18px;
       line-height: 1;
       color: var(--dark-second);
@@ -920,7 +920,7 @@ footer {
 }
 
 article {
-  font-family: "Noto Serif JP CJK", "Gentium Plus Book", "Noto Serif JP", serif;
+  font-family: "Noto Serif JP CJK", "Gentium Book Plus", "Noto Serif JP", serif;
   font-size: 21px;
   line-height: 1.5;
 
@@ -1686,7 +1686,7 @@ article.list {
           font-size: 28px;
           line-height: 1;
           font-family:
-            "Gentium Plus Book", "Noto Serif JP CJK", "Noto Serif JP", serif;
+            "Gentium Book Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
           font-weight: 700;
           color: var(--dark);
           @media (max-width: 768px) {
@@ -1740,7 +1740,7 @@ article.list {
           margin: 0;
           color: var(--dark);
           font-family:
-            "Gentium Plus Book", "Noto Serif JP CJK", "Noto Serif JP", serif;
+            "Gentium Book Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
           white-space: nowrap;
 
           @media (max-width: 1080px) {
@@ -1786,7 +1786,7 @@ article.list {
   h3 {
     margin: 0 40px 0 0;
     font-size: 60px;
-    font-family: "Gentium Plus Book", serif;
+    font-family: "Gentium Book Plus", serif;
     line-height: 1;
     font-weight: 700;
     color: var(--dark);
@@ -1825,7 +1825,7 @@ article.list {
       h4 {
         margin: 0;
         font-size: 36px;
-        font-family: "Gentium Plus Book", "Noto Serif JP CJK", serif;
+        font-family: "Gentium Book Plus", "Noto Serif JP CJK", serif;
         line-height: 1;
         font-weight: 700;
         color: var(--dark);
@@ -1857,7 +1857,7 @@ article.list {
         align-items: center;
         margin: 0;
         font-size: 22px;
-        font-family: "Gentium Plus Book", serif;
+        font-family: "Gentium Book Plus", serif;
         line-height: 1;
         color: var(--dark);
         @media (max-width: 1080px) {
@@ -1894,7 +1894,7 @@ article.list {
   h3 {
     margin: 40px 0;
     font-size: 48px;
-    font-family: "Gentium Plus Book", serif;
+    font-family: "Gentium Book Plus", serif;
     line-height: 1;
     font-weight: 700;
     color: var(--dark);

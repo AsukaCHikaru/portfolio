@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Gentium Plus Book";
+  font-family: "Gentium Book Plus";
   src: url("../public/fonts/subset_extended_latin_GentiumBookPlus_Regular.woff2")
     format("woff2");
   font-weight: 400;
@@ -7,7 +7,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Gentium Plus Book";
+  font-family: "Gentium Book Plus";
   src: url("../public/fonts/subset_extended_latin_GentiumBookPlus_Bold.woff2")
     format("woff2");
   font-weight: 700;
