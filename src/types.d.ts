@@ -28,3 +28,45 @@ export type FurtherReading =
       type: "recent";
       posts: Post[];
     };
+
+export type RecordNominee = {
+  title: string;
+  artist: string;
+  feat?: string;
+  isWinner: boolean;
+};
+type ArtistNominee = {
+  artist: string;
+  isWinner: boolean;
+};
+export type MusicAwardNominee = RecordNominee | ArtistNominee;
+export type MusicAwardList = {
+  year: string;
+  categories: {
+    category: string;
+    nominees: MusicAwardNominee[];
+  }[];
+}[];
+
+export type VideoGameIndexList = {
+  title: string;
+  developer: string;
+  publisher: string;
+  released: string;
+  played: string;
+  platform: string;
+  rating: string;
+  reviewUrl?: string;
+}[];
+
+export type BucketList = {
+  category: string;
+  tasks: { isDone: boolean; doneDate: string | undefined; value: Block[] }[];
+}[];
+
+export type List<T> = {
+  name: string;
+  description: string;
+  pathname: string;
+  list: T;
+};

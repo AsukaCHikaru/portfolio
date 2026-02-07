@@ -1,28 +1,15 @@
-import {
-  lstatSync,
-  readdirSync,
-  readFileSync,
-  renameSync,
-  existsSync,
-} from "fs";
+import { lstatSync, readdirSync, readFileSync, renameSync } from "fs";
 import { resolve } from "path";
 import { $ } from "bun";
+import { checkSymlinkExist } from "./contentUtils";
 
-const sourceBlogFolderPath = "./blogFolderSymbolicLink/";
+const sourceBlogFolderPath = "./symbolicLinks/blog/";
 const localBlogFolderPath = "./public/contents/blog/";
-const sourceBlogImageFolderPath = "./blogImageFolderSymbolicLink/";
+const sourceBlogImageFolderPath = "./symbolicLinks/blogImage/";
 const localBlogImageFolderPath = "./public/images/blog/";
 
-const sourceAboutPagePath = "./aboutPageSymbolicLink";
+const sourceAboutPagePath = "./symbolicLinks/about";
 const localAboutPagePath = "./public/contents/about/";
-
-const checkSymlinkExist = (path: string) => {
-  if (existsSync(path)) {
-    return;
-  }
-  console.log(`Symbolic link at ${path} does not exist.`);
-  process.exit(0);
-};
 
 const getMarkdownFileList = (blogFolderPath: string) => {
   const markdownFiles = readdirSync(

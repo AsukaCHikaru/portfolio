@@ -79,7 +79,7 @@ a {
         gap: 20px;
 
         > a {
-          font-family: "Gentium Plus Book", serif;
+          font-family: "Gentium Book Plus", serif;
           font-size: 20px;
           line-height: 24px;
           color: var(--dark-second);
@@ -164,7 +164,7 @@ footer {
         padding: 10px 16px;
         border: solid 1px var(--dark-third);
         color: var(--dark-second);
-        font-family: "Gentium Plus Book", serif;
+        font-family: "Gentium Book Plus", serif;
         font-size: 18px;
         line-height: 1;
         white-space: pre-wrap;
@@ -253,7 +253,7 @@ footer {
     border-bottom: solid 2px var(--dark);
 
     > a {
-      font-family: "Gentium Plus Book", serif;
+      font-family: "Gentium Book Plus", serif;
       font-size: 22px;
       line-height: 1;
       color: var(--dark-second);
@@ -299,7 +299,7 @@ footer {
     background-color: var(--light);
 
     > a {
-      font-family: "Gentium Plus Book", serif;
+      font-family: "Gentium Book Plus", serif;
       font-size: 18px;
       line-height: 1;
       color: var(--dark-second);
@@ -920,7 +920,7 @@ footer {
 }
 
 article {
-  font-family: "Noto Serif JP CJK", "Gentium Plus Book", "Noto Serif JP", serif;
+  font-family: "Noto Serif JP CJK", "Gentium Book Plus", "Noto Serif JP", serif;
   font-size: 21px;
   line-height: 1.5;
 
@@ -1524,6 +1524,417 @@ article.post-page-content {
 
     & .set-piece-not-acquired {
       color: #ff4d4d;
+    }
+  }
+}
+
+.list-page-header {
+  grid-column: 1 / span 16;
+  margin: 24px 0 48px;
+  font-family: "Noto Serif JP", serif;
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark);
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+    margin: 20px 0 28px;
+  }
+}
+
+div.list-page-list {
+  grid-column: 1 / span 12;
+
+  @media (max-width: 1080px) {
+    grid-column: 1 / span 14;
+  }
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin: 0 0 40px;
+      padding: 0 0 20px;
+      border-bottom: solid 1px var(--dark-third);
+      &:last-child {
+        border: none;
+      }
+
+      @media (max-width: 1080px) {
+        margin: 0 0 20px;
+        padding: 0 0 10px;
+      }
+      @media (max-width: 768px) {
+      }
+
+      h3 {
+        margin: 0 0 20px;
+        font-family: "Noto Serif JP CJK", "Noto Serif JP", serif;
+        font-size: 48px;
+        font-weight: 200;
+        line-height: 1;
+        color: var(--dark);
+
+        @media (max-width: 1080px) {
+          font-size: 36px;
+        }
+        @media (max-width: 768px) {
+          font-size: 28px;
+        }
+      }
+      p {
+        margin: 0 0 20px;
+        font-family: "Gentium Plus", "Noto Serif JP CJK", serif;
+        font-size: 25px;
+        font-weight: 200;
+        line-height: 32px;
+        color: var(--dark-second);
+
+        @media (max-width: 1080px) {
+          margin: 0 0 10px;
+          font-size: 22px;
+          line-height: 1.35;
+        }
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+article.list {
+  grid-column: 2 / span 10;
+
+  @media (max-width: 1080px) {
+    grid-column: 2 / span 13;
+  }
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.list-music-awards {
+  > ul {
+    list-style: none;
+    padding: 0;
+
+    h3 {
+      margin: 0 0 40px;
+      font-size: 60px;
+      line-height: 1;
+
+      @media (max-width: 1080px) {
+        font-size: 48px;
+      }
+      @media (max-width: 768px) {
+        font-size: 40px;
+        margin: 0 0 20px;
+      }
+    }
+
+    li {
+      margin: 0 0 40px;
+    }
+
+    div.list-music-awards-category {
+      padding: 0 0 40px 12px;
+
+      @media (max-width: 1080px) {
+        padding: 0 0 40px 8px;
+      }
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+
+      h4 {
+        font-size: 36px;
+        line-height: 1;
+        @media (max-width: 1080px) {
+          font-size: 32px;
+        }
+        @media (max-width: 768px) {
+          margin: 16px 0;
+          font-size: 28px;
+        }
+      }
+
+      .list-music-awards-winner {
+        margin: 0 0 40px 12px;
+        padding: 0 0 0 12px;
+        border-left: solid 2px var(--dark-third);
+
+        @media (max-width: 1080px) {
+          margin: 0 0 40px 8px;
+        }
+        @media (max-width: 768px) {
+          margin: 20px 0;
+        }
+
+        p:first-child {
+          margin: 0 0 12px 0;
+          font-size: 28px;
+          line-height: 1;
+          font-family:
+            "Gentium Book Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
+          font-weight: 700;
+          color: var(--dark);
+          @media (max-width: 768px) {
+            font-size: 24px;
+            margin: 0 0 8px 0;
+          }
+        }
+
+        p:nth-child(2) {
+          margin: 0;
+          padding: 0 0 0 14px;
+          font-size: 28px;
+          line-height: 1;
+          font-family:
+            "Gentium Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
+          color: var(--dark-second);
+          @media (max-width: 768px) {
+            font-size: 22px;
+          }
+        }
+      }
+      .list-music-awards-nominee {
+        display: flex;
+        margin: 14px 0;
+        padding: 0 0 0 12px;
+        font-size: 22px;
+        line-height: 22px;
+
+        @media (max-width: 1080px) {
+          padding: 0 0 0 8px;
+          font-size: 20px;
+          line-height: 20px;
+        }
+        @media (max-width: 768px) {
+          margin: 15px 0;
+          padding: 0 0 0 4px;
+          font-size: 18px;
+          line-height: 18px;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        span:first-of-type {
+          color: var(--dark);
+          line-height: 22px;
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+        p:first-of-type {
+          margin: 0;
+          color: var(--dark);
+          font-family:
+            "Gentium Book Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
+          white-space: nowrap;
+
+          @media (max-width: 1080px) {
+            white-space: unset;
+          }
+        }
+        span:nth-of-type(2) {
+          color: var(--dark-third);
+          margin: 0 8px;
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+        p:nth-of-type(2) {
+          margin: 0;
+          color: var(--dark-second);
+          font-family:
+            "Gentium Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
+
+          @media (max-width: 768px) {
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+
+      div.list-music-awards-category-divider {
+        margin: 40px 0 0 12px;
+        border-top: solid 1px var(--dark-third);
+        @media (max-width: 768px) {
+          margin: 20px 0;
+        }
+      }
+    }
+    li:last-child
+      > div.list-music-awards-category:last-child
+      > div.list-music-awards-category-divider {
+      display: none;
+    }
+  }
+}
+
+.list-video-game-index {
+  h3 {
+    margin: 0 40px 0 0;
+    font-size: 60px;
+    font-family: "Gentium Book Plus", serif;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--dark);
+
+    @media (max-width: 1080px) {
+      font-size: 48px;
+    }
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+    @media (max-width: 1080px) {
+      padding: 0 0 0 12px;
+    }
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    li {
+      margin: 36px 0;
+      padding: 0 0 12px 0;
+      border-bottom: solid 1px var(--dark-third);
+
+      @media (max-width: 1080px) {
+        margin: 28px 0;
+      }
+      @media (max-width: 768px) {
+        margin: 20px 0;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 36px;
+        font-family: "Gentium Book Plus", "Noto Serif JP CJK", serif;
+        line-height: 1;
+        font-weight: 700;
+        color: var(--dark);
+
+        @media (max-width: 1080px) {
+          font-size: 30px;
+        }
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
+      }
+      p:first-of-type {
+        margin: 6px 0 12px 0;
+        font-size: 24px;
+        font-family: "Gentium Plus", serif;
+        line-height: 1;
+        color: var(--dark-second);
+
+        @media (max-width: 1080px) {
+          font-size: 20px;
+          margin: 6px 0 8px 0;
+        }
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+      p:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-size: 22px;
+        font-family: "Gentium Book Plus", serif;
+        line-height: 1;
+        color: var(--dark);
+        @media (max-width: 1080px) {
+          font-size: 18px;
+        }
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+      span {
+        margin: 0 8px;
+        font-size: 12px;
+        line-height: 22px;
+        color: var(--dark-third);
+        @media (max-width: 768px) {
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+  > div:last-child > ul > li:last-child {
+    border: none;
+  }
+}
+
+.list-bucket-list {
+  > div:first-of-type > h3 {
+    margin: 0 0 20px 0;
+    @media (max-width: 768px) {
+      margin: 0 0 12px 0;
+    }
+  }
+
+  h3 {
+    margin: 40px 0;
+    font-size: 48px;
+    font-family: "Gentium Book Plus", serif;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--dark);
+
+    @media (max-width: 1080px) {
+      margin: 20px 0;
+      font-size: 40px;
+    }
+    @media (max-width: 768px) {
+      margin: 12px 0;
+      font-size: 28px;
+    }
+  }
+
+  ul {
+    @media (max-width: 768px) {
+      padding: 0 0 0 24px;
+    }
+  }
+
+  li {
+    p {
+      @media (max-width: 1080px) {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      @media (max-width: 768px) {
+        margin: 6px 0;
+        font-size: 18px;
+      }
+    }
+  }
+
+  li > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    s > p {
+      margin: 0;
     }
   }
 }

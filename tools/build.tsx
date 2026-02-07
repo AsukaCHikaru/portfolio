@@ -4,12 +4,16 @@ import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
 import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
-import { getAbout, getBlogPostList } from "./contentServices";
+import { getAbout, getBlogPostList, getList } from "./contentServices";
 import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
 import type { FurtherReading } from "../src/types";
+import { ListPageContent } from "../src/pages/list/ListPage";
+import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
+import { BucketListPage } from "../src/pages/list/BucketListPage";
 
 const writeFile = (
   element: ReactNode,
@@ -203,6 +207,63 @@ const buildFrontPage = async () => {
   );
 };
 
+const buildList = async () => {
+  const lastCommitDate = await getLastCommitDate();
+  const { musicAwards, videoGameIndex, bucketList } = await getList();
+
+  writeFile(
+    <ListPageContent
+      musicAwards={musicAwards}
+      videoGameIndex={videoGameIndex}
+      bucketList={bucketList}
+    />,
+    "/list",
+    JSON.stringify({
+      list: {
+        musicAwards,
+        videoGameIndex,
+        bucketList,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+
+  writeFile(
+    <MusicAwardsListPage musicAwards={musicAwards} />,
+    "/list/music-awards",
+    JSON.stringify({
+      list: {
+        musicAwards,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+  writeFile(
+    <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
+    "/list/video-game-index",
+    JSON.stringify({
+      list: {
+        videoGameIndex,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+  writeFile(
+    <BucketListPage bucketList={bucketList} />,
+    "/list/bucket-list",
+    JSON.stringify({
+      list: {
+        bucketList,
+      },
+      lastUpdated: lastCommitDate,
+    }),
+    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+  );
+};
+
 const writeFontCss = async () => {
   const file = await Bun.file("./src/fonts.css").text();
   const replaced = file.replace(/\.\.\/public/g, ".");
@@ -212,12 +273,18 @@ const writeFontCss = async () => {
 const writeData = async () => {
   const postList = await getBlogPostList();
   const about = await getAbout();
+  const { videoGameIndex, musicAwards, bucketList } = await getList();
   await Bun.write(
     "./dist/data.json",
     JSON.stringify(
       {
         postList,
         about,
+        list: {
+          videoGameIndex,
+          musicAwards,
+          bucketList,
+        },
       },
       null,
       2,
@@ -254,6 +321,7 @@ export const build = async () => {
   await buildFrontPage();
   await buildAboutPage();
   await buildResumePage();
+  await buildList();
   await writeFontCss();
   await writeData();
   await buildRssFeed();

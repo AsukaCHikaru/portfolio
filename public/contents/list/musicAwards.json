@@ -1,0 +1,2797 @@
+{
+  "name": "Music Awards",
+  "description": "My annual retrospective in music est. 2009 (with blank from 2013 to 2016 because I was into a Japanese idol group and listened to nothing but them). Every December I, once again, appreciate music companioned me in past year, contemplating why and how I found them beautiful, and leave them in words.",
+  "pathname": "music-awards",
+  "list": [
+    {
+      "year": "2025",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "BIRDS OF A FEATHER",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            },
+            {
+              "title": "Midwest Indigo",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "In Lumière's Name",
+              "artist": "Lorien Testard",
+              "isWinner": false
+            },
+            {
+              "title": "Billie Bossa Nova",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Record",
+          "nominees": [
+            {
+              "title": "Billie Bossa Nova",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Lumière",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "In Lumière's Name",
+              "artist": "Lorien Testard",
+              "isWinner": false
+            },
+            {
+              "title": "Femininomenon",
+              "artist": "Chappell Roan",
+              "isWinner": false
+            },
+            {
+              "title": "Midwest Indigo",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "artist": "Chappell Roan",
+              "isWinner": false
+            },
+            {
+              "artist": "Lorien Testard",
+              "isWinner": false
+            },
+            {
+              "artist": "Wet Leg",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "In Lumière's Name",
+              "artist": "Lorien Testard",
+              "isWinner": true
+            },
+            {
+              "title": "BIRDS OF A FEATHER",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            },
+            {
+              "title": "Salty (with SUNMI)",
+              "artist": "Chung Ha, Sunmi",
+              "isWinner": false
+            },
+            {
+              "title": "APT.",
+              "artist": "Rosé, Bruno Mars",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Billie Bossa Nova",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Oldie Station",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "Femininomenon",
+              "artist": "Chappell Roan",
+              "isWinner": false
+            },
+            {
+              "title": "Midwest Indigo",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "BIRDS OF A FEATHER",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Bittersweet",
+              "artist": "Lianne La Havas",
+              "isWinner": true
+            },
+            {
+              "title": "Billie Bossa Nova",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            },
+            {
+              "title": "Lumiére",
+              "artist": "Alice Duport-Percier",
+              "isWinner": false
+            },
+            {
+              "title": "Alicia",
+              "artist": "Alice Duport-Percier",
+              "isWinner": false
+            },
+            {
+              "title": "Red Wine Supernova",
+              "artist": "Chappell Roan",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "In Lumière's Name",
+              "artist": "Lorien Testard",
+              "isWinner": true
+            },
+            {
+              "title": "The Yotei Six",
+              "artist": "Toma Otowa",
+              "isWinner": false
+            },
+            {
+              "title": "Lampmaster",
+              "artist": "Lorien Testard",
+              "isWinner": false
+            },
+            {
+              "title": "Coral Crown",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "Lumière à I’Aube",
+              "artist": "Lorien Testard",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Hit'Em Up",
+              "artist": "2Pac, Outlawz",
+              "isWinner": false
+            },
+            {
+              "title": "Heavy Is the Crown",
+              "artist": "Linkin Park",
+              "isWinner": false
+            },
+            {
+              "title": "Smoking Out The Window",
+              "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+              "isWinner": false
+            },
+            {
+              "title": "LUNCH",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Record",
+          "nominees": [
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Hit'Em Up",
+              "artist": "2Pac, Outlawz",
+              "isWinner": false
+            },
+            {
+              "title": "Heavy Is the Crown",
+              "artist": "Linkin Park",
+              "isWinner": false
+            },
+            {
+              "title": "Blood Sweat & Tears",
+              "artist": "Arcane, Sheryl Lee Ralph",
+              "isWinner": false
+            },
+            {
+              "title": "LUNCH",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "artist": "Linkin Park",
+              "isWinner": false
+            },
+            {
+              "artist": "Sabrina Carpenter",
+              "isWinner": false
+            },
+            {
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "artist": "Ennio Morricone",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Blood Sweat & Tears",
+              "artist": "Arcane, Sheryl Lee Ralph",
+              "isWinner": false
+            },
+            {
+              "title": "BIRDS OF A FEATHER",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            },
+            {
+              "title": "The Good, The Bad And The Ugly",
+              "artist": "Ennio Morricone",
+              "isWinner": false
+            },
+            {
+              "title": "Cut the Bridge",
+              "artist": "Linkin Park",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "LUNCH",
+              "artist": "Billie Eilish",
+              "isWinner": true
+            },
+            {
+              "title": "Nonsense",
+              "artist": "Sabrina Carpenter",
+              "isWinner": false
+            },
+            {
+              "title": "Typa Girl",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Smoking Out The Window",
+              "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+              "isWinner": false
+            },
+            {
+              "title": "L'AMOUR DE MA VIE",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Heavy Is the Crown",
+              "artist": "Linkin Park",
+              "isWinner": true
+            },
+            {
+              "title": "Hit'Em Up",
+              "artist": "2Pac, Outlawz",
+              "isWinner": false
+            },
+            {
+              "title": "Blood Sweat & Tears",
+              "artist": "Arcane, Sheryl Lee Ralph",
+              "isWinner": false
+            },
+            {
+              "title": "Smoking Out The Window",
+              "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+              "isWinner": false
+            },
+            {
+              "title": "Ditto",
+              "artist": "New Jeans",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Sweet Child O' Mine",
+              "artist": "Gun N' Roses",
+              "isWinner": true
+            },
+            {
+              "title": "Free Bird",
+              "artist": "Lynyrd Skynyrd",
+              "isWinner": false
+            },
+            {
+              "title": "Heavy is the Crown",
+              "artist": "Linkin Park",
+              "isWinner": false
+            },
+            {
+              "title": "CHIHIRO",
+              "artist": "Billie Eilish",
+              "isWinner": false
+            },
+            {
+              "title": "Coral Crown",
+              "artist": "Darren Korb",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "Blood Sweat & Tears",
+              "artist": "Arcane, Sheryl Lee Ralph",
+              "isWinner": true
+            },
+            {
+              "title": "Smoking Out The Window",
+              "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+              "isWinner": false
+            },
+            {
+              "title": "Phantom Liberty",
+              "artist": "Dawid Podsiadło, P.T. Adamczyk",
+              "isWinner": false
+            },
+            {
+              "title": "Rich Friends",
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "title": "Moskau",
+              "artist": "Dschinghis Khan",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2023",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "Ticking Away",
+              "artist": "VALORANT, Grabbitz, bbno$",
+              "isWinner": true
+            },
+            {
+              "title": "Only Girl (In The World)",
+              "artist": "Rihanna",
+              "isWinner": false
+            },
+            {
+              "title": "Can't Stop",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Black Summer",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Late Night Talking",
+              "artist": "Harry Styles",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Record",
+          "nominees": [
+            {
+              "title": "Ticking Away",
+              "artist": "VALORANT, Grabbitz, bbno$",
+              "isWinner": true
+            },
+            {
+              "title": "Only Girl (In The World)",
+              "artist": "Rihanna",
+              "isWinner": false
+            },
+            {
+              "title": "Late Night Talking",
+              "artist": "Harry Styles",
+              "isWinner": false
+            },
+            {
+              "title": "Return of the Obra Dinn",
+              "artist": "Lucas Pope",
+              "isWinner": false
+            },
+            {
+              "title": "Kids",
+              "artist": "MGMT",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Rihanna",
+              "isWinner": true
+            },
+            {
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "artist": "Lucas Pope",
+              "isWinner": false
+            },
+            {
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "artist": "Harry Styles",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Ticking Away",
+              "artist": "VALORANT, Grabbitz, bbno$",
+              "isWinner": true
+            },
+            {
+              "title": "Only Girl (In The World)",
+              "artist": "Rihanna",
+              "isWinner": false
+            },
+            {
+              "title": "Kids",
+              "artist": "MGMT",
+              "isWinner": false
+            },
+            {
+              "title": "Late Night Talking",
+              "artist": "Harry Styles",
+              "isWinner": false
+            },
+            {
+              "title": "Return of the Obra Dinn",
+              "artist": "Lucas Pope",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Nobody Else",
+              "artist": "Em Beihold",
+              "isWinner": true
+            },
+            {
+              "title": "Ticking Away",
+              "artist": "VALORANT, Grabbitz, bbno$",
+              "isWinner": false
+            },
+            {
+              "title": "Late Night Talking",
+              "artist": "Harry Styles",
+              "isWinner": false
+            },
+            {
+              "title": "Good Girl Gone Bad",
+              "artist": "Rihanna",
+              "isWinner": false
+            },
+            {
+              "title": "Lose Yourself",
+              "artist": "Eminem",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Ticking Away",
+              "artist": "VALORANT, Grabbitz, bbno$",
+              "isWinner": true
+            },
+            {
+              "title": "Hype Boy",
+              "artist": "New Jeans",
+              "isWinner": false
+            },
+            {
+              "title": "Seasons of Love",
+              "artist": "Rosalio Dawson, Taye Diggs, Idina Menzel, Jesse L. Martin, Adam Pascal, Anthony Rapp, Tracie Thoms, Wilson Jermaine Heredia",
+              "isWinner": false
+            },
+            {
+              "title": "Some Nights",
+              "artist": "fun.",
+              "isWinner": false
+            },
+            {
+              "title": "Blame it on the Boogie",
+              "artist": "The Jacksons",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Black Summer",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": true
+            },
+            {
+              "title": "Can't Stop",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Kids",
+              "artist": "MGMT",
+              "isWinner": false
+            },
+            {
+              "title": "Return of the Obra Dinn",
+              "artist": "Lucas Pope",
+              "isWinner": false
+            },
+            {
+              "title": "Late Night Talking",
+              "artist": "Harry Styles",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": true
+            },
+            {
+              "title": "Black Summer",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "City of Angels",
+              "artist": "Em Beihold",
+              "isWinner": false
+            },
+            {
+              "title": "Qué Más Pues?",
+              "artist": "J Balvin, Maria Bacerra",
+              "isWinner": false
+            },
+            {
+              "title": "Otherside",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Record",
+          "nominees": [
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": true
+            },
+            {
+              "title": "Black Summer",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Qué Más Pues?",
+              "artist": "J Balvin, Maria Bacerra",
+              "isWinner": false
+            },
+            {
+              "title": "City of Angels",
+              "artist": "Em Beihold",
+              "isWinner": false
+            },
+            {
+              "title": "Eddie",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": true
+            },
+            {
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            },
+            {
+              "artist": "Em Beihold",
+              "isWinner": false
+            },
+            {
+              "artist": "Lucas Pope",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Levitating",
+              "artist": "Dua Lipa",
+              "feat": "(feat. DaBaby)",
+              "isWinner": true
+            },
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "title": "Otherside",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Lonely",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            },
+            {
+              "title": "Qué Más Pues?",
+              "artist": "J Balvin, Maria Bacerra",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "City of Angels",
+              "artist": "Em Beihold",
+              "isWinner": true
+            },
+            {
+              "title": "Fix You",
+              "artist": "Coldplay",
+              "isWinner": false
+            },
+            {
+              "title": "Numb Little Bug",
+              "artist": "Em Beihold",
+              "isWinner": false
+            },
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "title": "Lonely",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": true
+            },
+            {
+              "title": "LA FAMA",
+              "artist": "ROSALÍA",
+              "feat": "ft. The Weeknd",
+              "isWinner": false
+            },
+            {
+              "title": "Enemy",
+              "artist": "Imagine Dragons",
+              "feat": "(with JID)",
+              "isWinner": false
+            },
+            {
+              "title": "Hold My Hand",
+              "artist": "Lady Gaga",
+              "isWinner": false
+            },
+            {
+              "title": "Dull Knives",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Eddie",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": true
+            },
+            {
+              "title": "Black Summer",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "Can't Stop",
+              "artist": "Red Hot Chili Pepper",
+              "isWinner": false
+            },
+            {
+              "title": "So Young",
+              "artist": "Portugal. The Man",
+              "isWinner": false
+            },
+            {
+              "title": "City of Angels",
+              "artist": "Em Beihold",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "Enemy",
+              "artist": "Imagine Dragons",
+              "feat": "(with JID)",
+              "isWinner": true
+            },
+            {
+              "title": "MAMACITA",
+              "artist": "Black Eyed Peas, Ozuna",
+              "isWinner": false
+            },
+            {
+              "title": "Adventure of a Lifetime",
+              "artist": "Coldplay",
+              "isWinner": false
+            },
+            {
+              "title": "Concerto No.2 in G minor, Op. 8, RV 315, \"L'estate\": III. Presto",
+              "artist": "Antonio Vivaldi",
+              "isWinner": false
+            },
+            {
+              "title": "Rage of the Myrmidons",
+              "artist": "Darren Korb",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Darren Korb",
+              "isWinner": true
+            },
+            {
+              "artist": "Black Eyed Peas",
+              "isWinner": false
+            },
+            {
+              "artist": "Coldplay",
+              "isWinner": false
+            },
+            {
+              "artist": "AC/DC",
+              "isWinner": false
+            },
+            {
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Concerto No.2 in G minor, Op. 8, RV 315, \"L'estate\": III. Presto",
+              "artist": "Antonio Vivaldi",
+              "isWinner": true
+            },
+            {
+              "title": "Enemy",
+              "artist": "Imagine Dragons",
+              "feat": "(with JID)",
+              "isWinner": false
+            },
+            {
+              "title": "The Painful Way",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "Rage of the Myrmidons",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "MAMACITA",
+              "artist": "Black Eyed Peas, Ozuna",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "NEWS TODAY",
+              "artist": "Black Eyed Peas",
+              "isWinner": true
+            },
+            {
+              "title": "Adventure of a Lifetime",
+              "artist": "Coldplay",
+              "isWinner": false
+            },
+            {
+              "title": "Believer",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            },
+            {
+              "title": "Where Is Love?",
+              "artist": "Black Eyed Peas",
+              "isWinner": false
+            },
+            {
+              "title": "Something Just Like This",
+              "artist": "Coldplay, The Chainsmokers",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Enemy",
+              "artist": "Imagine Dragons",
+              "feat": "(with JID)",
+              "isWinner": true
+            },
+            {
+              "title": "Gotta Go",
+              "artist": "Chung Ha",
+              "isWinner": false
+            },
+            {
+              "title": "Believer",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            },
+            {
+              "title": "Good Riddence",
+              "artist": "Ashley Barrett",
+              "isWinner": false
+            },
+            {
+              "title": "Faith",
+              "artist": "The Weeknd",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance, classical or soundtrack",
+          "nominees": [
+            {
+              "title": "Concerto No.2 in G minor, Op. 8, RV 315, \"L'estate\": III. Presto",
+              "artist": "Janacek Chamber Orchestra, Zdenesk Dejmek",
+              "isWinner": true
+            },
+            {
+              "title": "The Painful Way",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "Rage of the Myrmidons",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "Wrethed Shades",
+              "artist": "Darren Korb",
+              "isWinner": false
+            },
+            {
+              "title": "Concerto No. 4 in F minor, Op. 8, RV 297, “L’inverno”: I. Allergro non molto",
+              "artist": "Janacek Chamber Orchestra, Zdenesk Dejmek",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance, non-classical or soundtrack",
+          "nominees": [
+            {
+              "title": "Viva La Vida",
+              "artist": "Coldplay",
+              "isWinner": true
+            },
+            {
+              "title": "Thunderstruck",
+              "artist": "AC/DC",
+              "isWinner": false
+            },
+            {
+              "title": "Adventure of a Lifetime",
+              "artist": "Coldplay",
+              "isWinner": false
+            },
+            {
+              "title": "Believer",
+              "artist": "Imagine Dragons",
+              "isWinner": false
+            },
+            {
+              "title": "Light It Up",
+              "artist": "Robin Hustin, TobiMorrow",
+              "feat": "(feat. Jex)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "Youngblood",
+              "artist": "5 Seconds of Summer",
+              "isWinner": true
+            },
+            {
+              "title": "MAMACITA",
+              "artist": "Black Eyed Peas, Ozuna",
+              "isWinner": false
+            },
+            {
+              "title": "Gotta Go",
+              "artist": "Chung Ha",
+              "isWinner": false
+            },
+            {
+              "title": "Enemy",
+              "artist": "Imagine Dragons",
+              "feat": "(with JID)",
+              "isWinner": false
+            },
+            {
+              "title": "Smokin Out The Window",
+              "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2020",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "Him & I",
+              "artist": "G-Easy & Halsey",
+              "isWinner": true
+            },
+            {
+              "title": "Ambulance",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "Lovesick Girls",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": false
+            },
+            {
+              "title": "Me Gusta",
+              "artist": "Anuel AA, Shakira",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Record",
+          "nominees": [
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": true
+            },
+            {
+              "title": "A Little Messed Up",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "Ambulance",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "Lovesick Girls",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Me Gusta",
+              "artist": "Anuel AA, Shakira",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Halsey",
+              "isWinner": true
+            },
+            {
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "artist": "Eminem",
+              "isWinner": false
+            },
+            {
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "artist": "Shakira",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Lovesick Girls",
+              "artist": "BLACKPINK",
+              "isWinner": true
+            },
+            {
+              "title": "GIRL LIKE ME",
+              "artist": "Black Eyed Peas",
+              "feat": "ft. Shakira",
+              "isWinner": false
+            },
+            {
+              "title": "Him & I",
+              "artist": "G-Easy & Halsey",
+              "isWinner": false
+            },
+            {
+              "title": "Me Gusta",
+              "artist": "Anuel AA, Shakira",
+              "isWinner": false
+            },
+            {
+              "title": "THE BADDEST",
+              "artist": "K/DA",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Remember The Name",
+              "artist": "Ed Sheeran",
+              "feat": "(feat. Eminem & 50 cent)",
+              "isWinner": true
+            },
+            {
+              "title": "Ambulance",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "A Little Messed Up",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "Try Everything",
+              "artist": "Shakira",
+              "isWinner": false
+            },
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": true
+            },
+            {
+              "title": "Ambulance",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "Closer",
+              "artist": "The Chainsmokers",
+              "feat": "ft. Halsey",
+              "isWinner": false
+            },
+            {
+              "title": "Godzilla",
+              "artist": "Eminem",
+              "feat": "(feat. Juice WRLD)",
+              "isWinner": false
+            },
+            {
+              "title": "白日",
+              "artist": "King Gnu",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental performance",
+          "nominees": [
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": true
+            },
+            {
+              "title": "Closer",
+              "artist": "The Chainsmokers",
+              "feat": "ft. Halsey",
+              "isWinner": false
+            },
+            {
+              "title": "Lovesick Girls",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Tick Tock",
+              "artist": "Clean Bandit",
+              "feat": "(feat. 24kGoldn)",
+              "isWinner": false
+            },
+            {
+              "title": "白日",
+              "artist": "King Gnu",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "GIRL LIKE ME",
+              "artist": "Black Eyed Peas",
+              "feat": "ft. Shakira",
+              "isWinner": true
+            },
+            {
+              "title": "You Should Be Sad",
+              "artist": "Halsey",
+              "isWinner": false
+            },
+            {
+              "title": "A Little Messed Up",
+              "artist": "june",
+              "isWinner": false
+            },
+            {
+              "title": "白日",
+              "artist": "King Gnu",
+              "isWinner": false
+            },
+            {
+              "title": "Tick Tock",
+              "artist": "Clean Bandit",
+              "feat": "(feat. 24kGoldn)",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2019",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "AS IF IT'S YOUR LAST",
+              "artist": "BLACKPINK",
+              "isWinner": true
+            },
+            {
+              "title": "Up & Down",
+              "artist": "EXID",
+              "isWinner": false
+            },
+            {
+              "title": "Every night",
+              "artist": "EXID",
+              "isWinner": false
+            },
+            {
+              "title": "Decalcomanie",
+              "artist": "MAMAMOO",
+              "isWinner": false
+            },
+            {
+              "title": "Phoenix",
+              "artist": "League of Legends",
+              "feat": "(ft. Cailin Russo and Chrissy Costanza)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "EXID",
+              "isWinner": true
+            },
+            {
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "artist": "MAMAMOO",
+              "isWinner": false
+            },
+            {
+              "artist": "Taeyoon",
+              "isWinner": false
+            },
+            {
+              "artist": "League of Legends",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "AS IF IT'S YOUR LAST",
+              "artist": "BLACKPINK",
+              "isWinner": true
+            },
+            {
+              "title": "Love You Like Crazy",
+              "artist": "Taeyoon",
+              "isWinner": false
+            },
+            {
+              "title": "PLAYING WITH FIRE",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Up & Down",
+              "artist": "EXID",
+              "isWinner": false
+            },
+            {
+              "title": "Every night",
+              "artist": "EXID",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Fall",
+              "artist": "Eminem",
+              "isWinner": true
+            },
+            {
+              "title": "Bring Home the Glory",
+              "artist": "League of Legends",
+              "feat": "(ft. Sara Skinner)",
+              "isWinner": false
+            },
+            {
+              "title": "Scared of the Dark",
+              "artist": "Lil Wayne & Ty Dolla Sign",
+              "feat": "(feat. XXXTentacion)",
+              "isWinner": false
+            },
+            {
+              "title": "Speechless",
+              "artist": "Naomi Scott",
+              "isWinner": false
+            },
+            {
+              "title": "What's Up Danger",
+              "artist": "Blackway & Black Cavir",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Shallow",
+              "artist": "Lady Gaga & Bradley Cooper",
+              "isWinner": true
+            },
+            {
+              "title": "DON'T KNOW WHAT TO DO",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Starry Night",
+              "artist": "MAMAMOO",
+              "isWinner": false
+            },
+            {
+              "title": "Old town Road (remix)",
+              "artist": "Lil Nas X",
+              "feat": "(feat. Billy Ray Cyrus)",
+              "isWinner": false
+            },
+            {
+              "title": "Find Me",
+              "artist": "Taeyoon",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "DON'T KNOW WHAT TO DO",
+              "artist": "BLACKPINK",
+              "isWinner": true
+            },
+            {
+              "title": "Every night",
+              "artist": "EXID",
+              "isWinner": false
+            },
+            {
+              "title": "Timber",
+              "artist": "Pitbull",
+              "feat": "(feat. Ke$ha)",
+              "isWinner": false
+            },
+            {
+              "title": "PLAYING WITH FIRE",
+              "artist": "BLACKPINK",
+              "isWinner": false
+            },
+            {
+              "title": "Phoenix",
+              "artist": "League of Legends",
+              "feat": "(ft. Cailin Russo and Chrissy Costanza)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "GIANTS",
+              "artist": "League of Legends",
+              "feat": "(ft. Becky G, Keke Palmer, SOYEON of (G)I-DLE, DUCKWRTH, Thutmose)",
+              "isWinner": true
+            },
+            {
+              "title": "Awaken",
+              "artist": "League of Legends",
+              "feat": "(feat. Valerie Broussard)",
+              "isWinner": false
+            },
+            {
+              "title": "Phoenix",
+              "artist": "League of Legends",
+              "feat": "(ft. Cailin Russo and Chrissy Costanza)",
+              "isWinner": false
+            },
+            {
+              "title": "Mama",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Ellie Goulding)",
+              "isWinner": false
+            },
+            {
+              "title": "Lost",
+              "artist": "SEKAI NO OWARI",
+              "feat": "ft. Clean Bandit",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "All the Stars",
+              "artist": "Kendrick Lamar, SZA",
+              "isWinner": true
+            },
+            {
+              "title": "Octavo Dia",
+              "artist": "Shakira",
+              "isWinner": false
+            },
+            {
+              "title": "Tragic Endings",
+              "artist": "Eminem",
+              "feat": "ft. Skylar Grey",
+              "isWinner": false
+            },
+            {
+              "title": "RISE",
+              "artist": "League of Legends",
+              "feat": "(ft. The Glitch Mob, Mako, and The Word Alive)",
+              "isWinner": false
+            },
+            {
+              "title": "Dusk Till Dawn",
+              "artist": "ZAYN",
+              "feat": "(feat. Sia)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Eminem",
+              "isWinner": true
+            },
+            {
+              "artist": "Clean Bandit",
+              "isWinner": false
+            },
+            {
+              "artist": "Kygo",
+              "isWinner": false
+            },
+            {
+              "artist": "Kendrick Lamar",
+              "isWinner": false
+            },
+            {
+              "artist": "N.W.A.",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Octavo Dia",
+              "artist": "Shakira",
+              "isWinner": true
+            },
+            {
+              "title": "Dusk Till Dawn",
+              "artist": "ZAYN",
+              "feat": "(feat. Sia)",
+              "isWinner": false
+            },
+            {
+              "title": "In Us I Believe",
+              "artist": "Clean Bandit",
+              "feat": "(feat. ALMA)",
+              "isWinner": false
+            },
+            {
+              "title": "Tragic Endings",
+              "artist": "Eminem",
+              "feat": "ft. Skylar Grey",
+              "isWinner": false
+            },
+            {
+              "title": "Him & I",
+              "artist": "G-Eazy & Halsey",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "All the Stars",
+              "artist": "Kendrick Lamar, SZA",
+              "isWinner": true
+            },
+            {
+              "title": "アンビバレント",
+              "artist": "欅坂46",
+              "isWinner": false
+            },
+            {
+              "title": "This Is America",
+              "artist": "Chilish Gambino",
+              "isWinner": false
+            },
+            {
+              "title": "Stranger Things",
+              "artist": "Kygo",
+              "feat": "(feat. OneRepublic)",
+              "isWinner": false
+            },
+            {
+              "title": "Let Me Go",
+              "artist": "Hailee Steinfield & Alesso",
+              "feat": "ft. Florida Georgia Line, WATT",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Dusk Till Dawn",
+              "artist": "ZAYN",
+              "feat": "(feat. Sia)",
+              "isWinner": true
+            },
+            {
+              "title": "Baby",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Marina & Luis Fonsi)",
+              "isWinner": false
+            },
+            {
+              "title": "All the Stars",
+              "artist": "Kendrick Lamar, SZA",
+              "isWinner": false
+            },
+            {
+              "title": "Mama",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Ellie Goulding)",
+              "isWinner": false
+            },
+            {
+              "title": "Stranger Things",
+              "artist": "Kygo",
+              "feat": "(feat. OneRepublic)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "All the Stars",
+              "artist": "Kendrick Lamar, SZA",
+              "isWinner": true
+            },
+            {
+              "title": "RISE",
+              "artist": "League of Legends",
+              "feat": "(ft. The Glitch Mob, Mako, and The Word Alive)",
+              "isWinner": false
+            },
+            {
+              "title": "Octavo Dia",
+              "artist": "Shakira",
+              "isWinner": false
+            },
+            {
+              "title": "Stargazing",
+              "artist": "Kygo",
+              "feat": "(feat. Justin Jesso)",
+              "isWinner": false
+            },
+            {
+              "title": "In Us I Believe",
+              "artist": "Clean Bandit",
+              "feat": "(feat. ALMA)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "RISE",
+              "artist": "League of Legends",
+              "feat": "(ft. The Glitch Mob, Mako, and The Word Alive)",
+              "isWinner": true
+            },
+            {
+              "title": "All the Stars",
+              "artist": "Kendrick Lamar, SZA",
+              "isWinner": false
+            },
+            {
+              "title": "アンビバレント",
+              "artist": "欅坂46",
+              "isWinner": false
+            },
+            {
+              "title": "This Is America",
+              "artist": "Chilish Gambino",
+              "isWinner": false
+            },
+            {
+              "title": "River",
+              "artist": "Eminem",
+              "feat": "ft. Ed Sheeran",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2017",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "Rockabye",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Sean Paul & Anne-Marie)",
+              "isWinner": true
+            },
+            {
+              "title": "Tears",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Louisa Johnson)",
+              "isWinner": false
+            },
+            {
+              "title": "Eraser",
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "title": "Despacito (Remix)",
+              "artist": "Luis Fonsi, Daddy Yankee",
+              "feat": "ft. Justin Bieber",
+              "isWinner": false
+            },
+            {
+              "title": "Glorious",
+              "artist": "Macklemore",
+              "feat": "(feat. Skylar Grey)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "Clean Bandit",
+              "isWinner": true
+            },
+            {
+              "artist": "Avicii",
+              "isWinner": false
+            },
+            {
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "artist": "欅坂46",
+              "isWinner": false
+            },
+            {
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite New Artist",
+          "nominees": [
+            {
+              "artist": "Ed Sheeran",
+              "isWinner": true
+            },
+            {
+              "artist": "Sean Paul",
+              "isWinner": false
+            },
+            {
+              "artist": "Macklemore",
+              "isWinner": false
+            },
+            {
+              "artist": "Nina Nesbitt",
+              "isWinner": false
+            },
+            {
+              "artist": "La Oreja de Van Gogh",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Despacito (Remix)",
+              "artist": "Luis Fonsi, Daddy Yankee",
+              "feat": "ft. Justin Bieber",
+              "isWinner": true
+            },
+            {
+              "title": "Tear In My Heart",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            },
+            {
+              "title": "Come Over",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Stylo G)",
+              "isWinner": false
+            },
+            {
+              "title": "Rockybye",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Sean Paul & Anne-Marie)",
+              "isWinner": false
+            },
+            {
+              "title": "Tears",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Louisa Johnson)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Eraser",
+              "artist": "Ed Sheeran",
+              "isWinner": true
+            },
+            {
+              "title": "The A Team",
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "title": "Rockabye",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Sean Paul & Anne-Marie)",
+              "isWinner": false
+            },
+            {
+              "title": "Nancy Mulligan",
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "title": "1-800-273-8255",
+              "artist": "Logic",
+              "feat": "ft. Alessia Cara, Khalid",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Symphony",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Zara Larsson)",
+              "isWinner": true
+            },
+            {
+              "title": "To Be Human",
+              "artist": "Sia",
+              "isWinner": false
+            },
+            {
+              "title": "Glorious",
+              "artist": "Macklemore",
+              "feat": "(feat. Skylar Grey)",
+              "isWinner": false
+            },
+            {
+              "title": "Eraser",
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "title": "Extraordinary",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Sharna Bass)",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Tears",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Louisa Johnson)",
+              "isWinner": true
+            },
+            {
+              "title": "Dust Clears",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Noonie Bao)",
+              "isWinner": false
+            },
+            {
+              "title": "A+E",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Kandaka Moore & Nikki Cislyn)",
+              "isWinner": false
+            },
+            {
+              "title": "Shape of You",
+              "artist": "Ed Sheeran",
+              "isWinner": false
+            },
+            {
+              "title": "Stressed Out",
+              "artist": "Twenty One Pilots",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "1-800-273-8255",
+              "artist": "Logic",
+              "feat": "ft. Alessia Cara, Khalid",
+              "isWinner": true
+            },
+            {
+              "title": "Rockabye",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Sean Paul & Anne-Marie)",
+              "isWinner": false
+            },
+            {
+              "title": "Symphony",
+              "artist": "Clean Bandit",
+              "feat": "(feat. Zara Larsson)",
+              "isWinner": false
+            },
+            {
+              "title": "Beautiful Now",
+              "artist": "Zedd",
+              "feat": "(feat. Jon Bellion)",
+              "isWinner": false
+            },
+            {
+              "title": "インフルエンサー",
+              "artist": "乃木坂46",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2012",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "歩いて行こう",
+              "artist": "いきものがかり",
+              "isWinner": true
+            },
+            {
+              "title": "0 GAME",
+              "artist": "SPYAIR",
+              "isWinner": false
+            },
+            {
+              "title": "誓い",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "チャイムはLOVE SONG",
+              "artist": "SKE48",
+              "isWinner": false
+            },
+            {
+              "title": "真夏のSounds good!",
+              "artist": "AKB48",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "SKE48",
+              "isWinner": true
+            },
+            {
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "artist": "前田敦子",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "風は吹いている",
+              "artist": "AKB48",
+              "isWinner": true
+            },
+            {
+              "title": "思い出以上",
+              "artist": "SKE48",
+              "isWinner": false
+            },
+            {
+              "title": "片想い",
+              "artist": "miwa",
+              "isWinner": false
+            },
+            {
+              "title": "白いダイアリー",
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "title": "チャイムはLOVE SONG",
+              "artist": "SKE48",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Innocence",
+              "artist": "SKE48",
+              "isWinner": true
+            },
+            {
+              "title": "Dear my teacher",
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "title": "思い出以上",
+              "artist": "SKE48",
+              "isWinner": false
+            },
+            {
+              "title": "初日",
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "title": "万華鏡",
+              "artist": "SKE48",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "誓い",
+              "artist": "坂本真綾",
+              "isWinner": true
+            },
+            {
+              "title": "441",
+              "artist": "miwa",
+              "isWinner": false
+            },
+            {
+              "title": "Melt the snow in me",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "歩いて行こう",
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "title": "うたをうたおう",
+              "artist": "moumoon",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Sunday Drive",
+              "artist": "前田敦子",
+              "isWinner": true
+            },
+            {
+              "title": "0 GAME",
+              "artist": "SPYAIR",
+              "isWinner": false
+            },
+            {
+              "title": "About You",
+              "artist": "浜崎あゆみ",
+              "isWinner": false
+            },
+            {
+              "title": "Rain",
+              "artist": "YUI",
+              "isWinner": false
+            },
+            {
+              "title": "笑ってたいんだ",
+              "artist": "いきものがかり",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2011",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "Pride",
+              "artist": "SCANDAL",
+              "isWinner": true
+            },
+            {
+              "title": "Perfect Day",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "アナダガマワル",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "大声ダイヤモンド",
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "title": "少女S",
+              "artist": "SCANDAL",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "SCANDAL",
+              "isWinner": true
+            },
+            {
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "artist": "moumoon",
+              "isWinner": false
+            },
+            {
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "アナダガマワル",
+              "artist": "SCANDAL",
+              "isWinner": true
+            },
+            {
+              "title": "大声ダイヤモンド",
+              "artist": "AKB48",
+              "isWinner": false
+            },
+            {
+              "title": "少女S",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "青春ライン",
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "title": "天国に一番遠い場所",
+              "artist": "moumoon",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "Perfect Day",
+              "artist": "supercell",
+              "isWinner": true
+            },
+            {
+              "title": "Pride",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "少女S",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "トモシビ",
+              "artist": "moumoon",
+              "isWinner": false
+            },
+            {
+              "title": "秘密",
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "Perfect Day",
+              "artist": "supercell",
+              "isWinner": true
+            },
+            {
+              "title": "Sunshine Girl",
+              "artist": "moumoon",
+              "isWinner": false
+            },
+            {
+              "title": "キミノセイ",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "トモシビ",
+              "artist": "moumoon",
+              "isWinner": false
+            },
+            {
+              "title": "秘密",
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "GO-ON",
+              "artist": "UVERworld",
+              "isWinner": true
+            },
+            {
+              "title": "Hi-Hi-Hi",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "Perfect Day",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "少女S",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "ひとつだけ",
+              "artist": "SCANDAL",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Music Video",
+          "nominees": [
+            {
+              "title": "涙サプライズ！",
+              "artist": "AKB48",
+              "isWinner": true
+            },
+            {
+              "title": "アルクアラウンド",
+              "artist": "サカナクション",
+              "isWinner": false
+            },
+            {
+              "title": "少女S",
+              "artist": "SCANDAL",
+              "isWinner": false
+            },
+            {
+              "title": "秘密",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "ねぇ",
+              "artist": "perfume",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2010",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "君の知らない物語",
+              "artist": "supercell",
+              "isWinner": true
+            },
+            {
+              "title": "Private Sky",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "さよならメモリーズ",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "ストロボの空",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "星が瞬くこんな夜に",
+              "artist": "supercell",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "supercell",
+              "isWinner": true
+            },
+            {
+              "artist": "Sound Horizon",
+              "isWinner": false
+            },
+            {
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "星が瞬くこんな夜に",
+              "artist": "supercell",
+              "isWinner": true
+            },
+            {
+              "title": "SAKURA",
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "title": "Tシャツ",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "君の知らない物語",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "ストロボの空",
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Lyrics",
+          "nominees": [
+            {
+              "title": "SAKURA",
+              "artist": "いきものがかり",
+              "isWinner": true
+            },
+            {
+              "title": "Hello",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "YELL",
+              "artist": "いきものがかり",
+              "isWinner": false
+            },
+            {
+              "title": "うたかた花火",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "隅田川夏恋歌",
+              "artist": "村井聖夜",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Vocal Performance",
+          "nominees": [
+            {
+              "title": "tune the rainbow",
+              "artist": "坂本真綾",
+              "isWinner": true
+            },
+            {
+              "title": "yield",
+              "artist": "Sound Horizon",
+              "isWinner": false
+            },
+            {
+              "title": "うたかた花火",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "ストロボの空",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "ハジマリノウタ～遠い空澄んで～",
+              "artist": "いきものがかり",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "嘘つきのパレート",
+              "artist": "supercell",
+              "feat": "feat. 初音ミク",
+              "isWinner": true
+            },
+            {
+              "title": "Private Sky",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "tune the rainbow",
+              "artist": "坂本真綾",
+              "isWinner": false
+            },
+            {
+              "title": "星が瞬くこんな夜に",
+              "artist": "supercell",
+              "isWinner": false
+            },
+            {
+              "title": "凛として咲く花の如く",
+              "artist": "紅色リトマス",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2009",
+      "categories": [
+        {
+          "category": "Favorite Record",
+          "nominees": [
+            {
+              "title": "トライアングラー",
+              "artist": "坂本真綾",
+              "isWinner": true
+            },
+            {
+              "title": "Heavy Starry Chain",
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "title": "sense",
+              "artist": "川田まみ",
+              "isWinner": false
+            },
+            {
+              "title": "There will be love there ~愛のある場所~",
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "title": "君の知らない物語",
+              "artist": "supercell",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Artist",
+          "nominees": [
+            {
+              "artist": "坂本真綾",
+              "isWinner": true
+            },
+            {
+              "artist": "kotoko",
+              "isWinner": false
+            },
+            {
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "artist": "川田まみ",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Album",
+          "nominees": [
+            {
+              "title": "かぜよみ",
+              "artist": "坂本真綾",
+              "isWinner": true
+            },
+            {
+              "title": "Gothic Melting Ice Cream's Darkness “Nightmare”",
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "title": "Complete Single Collection '97-'08",
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "title": "SAVIA",
+              "artist": "川田まみ",
+              "isWinner": false
+            },
+            {
+              "title": "30minutes night flight",
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Composition",
+          "nominees": [
+            {
+              "title": "Heavy Starry Chain",
+              "artist": "Tommy Heavenly6",
+              "isWinner": true
+            },
+            {
+              "title": "I♡Xmas",
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "title": "sense",
+              "artist": "川田まみ",
+              "isWinner": false
+            },
+            {
+              "title": "Stand by me",
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "title": "君の知らない物語",
+              "artist": "supercell",
+              "isWinner": false
+            }
+          ]
+        },
+        {
+          "category": "Favorite Instrumental Performance",
+          "nominees": [
+            {
+              "title": "Unlimited Sky",
+              "artist": "the brilliant green",
+              "isWinner": true
+            },
+            {
+              "title": "There will be love there ~愛のある場所~",
+              "artist": "Tommy Heavenly6",
+              "isWinner": false
+            },
+            {
+              "title": "Stand by me",
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "title": "Heavy Starry Chain",
+              "artist": "the brilliant green",
+              "isWinner": false
+            },
+            {
+              "title": "光あれ",
+              "artist": "坂本真綾",
+              "isWinner": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
