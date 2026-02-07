@@ -44,7 +44,6 @@ const MOB_IDLE_SUBSTATE = {
 This list of states represents two different things: mob's action status (`IDLE`, `ATTACK`, `DEAD`) and mob's state machine status (`IN__ACTION`, `ACTION__OVER`, `MOB__TURN__TRANSITION`). The entanglement of these two concerns disrupted the mental model, making the code messy and eventually sabotaged the game. By isolating combat state into a different model, the vision toward a simple state machine design became clear. Here is the refactored mob states:
 
 ```ts
-
 const MOB_STATE = {
   IDLE: 'IDLE',
   AGGRO: 'AGGRO',
