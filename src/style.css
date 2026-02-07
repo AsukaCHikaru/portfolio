@@ -1586,6 +1586,13 @@ div.list-page-list {
 article.list-music-awards {
   grid-column: 2 / span 10;
 
+  @media (max-width: 1080px) {
+    grid-column: 2 / span 12;
+  }
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
+
   > ul {
     list-style: none;
     padding: 0;
@@ -1594,6 +1601,10 @@ article.list-music-awards {
       margin: 0 0 40px;
       font-size: 72px;
       line-height: 1;
+
+      @media (max-width: 1080px) {
+        font-size: 60px;
+      }
     }
 
     li {
@@ -1606,6 +1617,9 @@ article.list-music-awards {
       h4 {
         font-size: 36px;
         line-height: 1;
+        @media (max-width: 1080px) {
+          font-size: 32px;
+        }
       }
 
       .list-music-awards-winner {
@@ -1650,6 +1664,10 @@ article.list-music-awards {
           font-size: 22px;
           line-height: 1;
           white-space: nowrap;
+
+          @media (max-width: 1080px) {
+            white-space: unset;
+          }
         }
         span:nth-of-type(2) {
           color: var(--dark-third);
@@ -1748,5 +1766,15 @@ article.list-bucket-list {
     line-height: 1;
     font-weight: 700;
     color: var(--dark);
+  }
+
+  li > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    s > p {
+      margin: 0;
+    }
   }
 }

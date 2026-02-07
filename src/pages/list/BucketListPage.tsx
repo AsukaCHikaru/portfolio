@@ -19,9 +19,18 @@ export const BucketListPage = ({ bucketList }: Props) => {
             <ul>
               {tasks.map((task, i) => (
                 <li key={i}>
-                  {task.value.map((block, j) => (
-                    <ContentBlock block={block} key={j} />
-                  ))}
+                  {task.value.map((block, j) =>
+                    task.isDone ? (
+                      <div key={j}>
+                        <s>
+                          <ContentBlock block={block} />
+                        </s>
+                        <span>{task.doneDate ? `${task.doneDate}` : null}</span>
+                      </div>
+                    ) : (
+                      <ContentBlock block={block} key={j} />
+                    ),
+                  )}
                 </li>
               ))}
             </ul>
