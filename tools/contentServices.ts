@@ -1,5 +1,11 @@
 import { readdir } from "node:fs/promises";
 import { parsePost } from "./contentUtils";
+import type {
+  BucketList,
+  List,
+  MusicAwardList,
+  VideoGameIndexList,
+} from "../src/types";
 
 const BLOG_FOLDER_PATH = import.meta.dir + "/../public/contents/blog";
 const ABOUT_PATH = import.meta.dir + "/../public/contents/about/about-page.md";
@@ -27,9 +33,13 @@ export const getBlogPostList = async () => {
 export const getAbout = async () => parsePost(ABOUT_PATH);
 
 export const getList = async () => {
-  const musicAwards = await import(LIST_MUSIC_AWARDS_PATH);
-  const videoGameIndex = await import(LIST_VIDEO_GAME_INDEX_PATH);
-  const bucketList = await import(LIST_BUCKET_LIST_PATH);
+  const musicAwards = (await import(
+    LIST_MUSIC_AWARDS_PATH
+  )) as List<MusicAwardList>;
+  const videoGameIndex = (await import(
+    LIST_VIDEO_GAME_INDEX_PATH
+  )) as List<VideoGameIndexList>;
+  const bucketList = (await import(LIST_BUCKET_LIST_PATH)) as List<BucketList>;
 
   return { musicAwards, videoGameIndex, bucketList };
 };

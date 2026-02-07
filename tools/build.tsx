@@ -238,7 +238,10 @@ const buildList = async () => {
       },
       lastUpdated: lastCommitDate,
     }),
-    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+    generateMetadata(
+      `${musicAwards.name} | Asuka Wang`,
+      musicAwards.description,
+    ),
   );
   writeFile(
     <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
@@ -249,7 +252,10 @@ const buildList = async () => {
       },
       lastUpdated: lastCommitDate,
     }),
-    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+    generateMetadata(
+      `${videoGameIndex.name} | Asuka Wang`,
+      videoGameIndex.description,
+    ),
   );
   writeFile(
     <BucketListPage bucketList={bucketList} />,
@@ -260,7 +266,7 @@ const buildList = async () => {
       },
       lastUpdated: lastCommitDate,
     }),
-    generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+    generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
   );
 };
 

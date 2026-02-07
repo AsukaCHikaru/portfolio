@@ -11,17 +11,21 @@ import { Link } from "../../components/Link";
 import { MusicAwardsListPage } from "./MusicAwardsListPage";
 import { VideoGameIndexListPage } from "./VideoGameIndexListPage";
 import { BucketListPage } from "./BucketListPage";
+import { Helmet } from "../../components/Helmet";
 
 export const ListPage = () => {
   const context = useContext(DataContext);
   const list = window.__STATIC_PROPS__.list || context.list;
 
   return (
-    <ListPageContent
-      musicAwards={list.musicAwards}
-      videoGameIndex={list.videoGameIndex}
-      bucketList={list.bucketList}
-    />
+    <>
+      <Helmet title="List | Asuka Wang" description="Asuka Wang's lists" />
+      <ListPageContent
+        musicAwards={list.musicAwards}
+        videoGameIndex={list.videoGameIndex}
+        bucketList={list.bucketList}
+      />
+    </>
   );
 };
 

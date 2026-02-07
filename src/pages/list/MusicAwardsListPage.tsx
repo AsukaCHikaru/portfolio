@@ -1,3 +1,4 @@
+import { Helmet } from "../../components/Helmet";
 import { Layout } from "../../components/Layout";
 import type {
   List,
@@ -15,36 +16,39 @@ interface Props {
 }
 export const MusicAwardsListPage = ({ musicAwards }: Props) => {
   return (
-    <Layout>
-      <div className="list post-page-header_container">
-        <h1>{musicAwards.name}</h1>
-        <h2>{musicAwards.description}</h2>
-      </div>
-      <article className="list list-music-awards">
-        <ul>
-          {musicAwards.list.map(({ year, categories }) => (
-            <li key={year}>
-              <h3>{year}</h3>
-              {categories.map(({ category, nominees }) => (
-                <div
-                  key={`${year}-${category}`}
-                  className="list-music-awards-category"
-                >
-                  <h4>{category}</h4>
-                  {nominees.map((nominee, i) => (
-                    <Nominee
-                      nominee={nominee}
-                      key={`${year}-${category}-${nominee.artist}-${i}`}
-                    />
-                  ))}
-                  <div className="list-music-awards-category-divider" />
-                </div>
-              ))}
-            </li>
-          ))}
-        </ul>
-      </article>
-    </Layout>
+    <>
+      <Helmet title={musicAwards.name} description={musicAwards.description} />
+      <Layout>
+        <div className="list post-page-header_container">
+          <h1>{musicAwards.name}</h1>
+          <h2>{musicAwards.description}</h2>
+        </div>
+        <article className="list list-music-awards">
+          <ul>
+            {musicAwards.list.map(({ year, categories }) => (
+              <li key={year}>
+                <h3>{year}</h3>
+                {categories.map(({ category, nominees }) => (
+                  <div
+                    key={`${year}-${category}`}
+                    className="list-music-awards-category"
+                  >
+                    <h4>{category}</h4>
+                    {nominees.map((nominee, i) => (
+                      <Nominee
+                        nominee={nominee}
+                        key={`${year}-${category}-${nominee.artist}-${i}`}
+                      />
+                    ))}
+                    <div className="list-music-awards-category-divider" />
+                  </div>
+                ))}
+              </li>
+            ))}
+          </ul>
+        </article>
+      </Layout>
+    </>
   );
 };
 
