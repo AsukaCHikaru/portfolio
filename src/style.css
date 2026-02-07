@@ -1549,6 +1549,9 @@ div.list-page-list {
   @media (max-width: 1080px) {
     grid-column: 1 / span 14;
   }
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
 
   ul {
     padding: 0;
@@ -1567,6 +1570,8 @@ div.list-page-list {
         margin: 0 0 20px;
         padding: 0 0 10px;
       }
+      @media (max-width: 768px) {
+      }
 
       h3 {
         margin: 0 0 20px;
@@ -1578,6 +1583,9 @@ div.list-page-list {
 
         @media (max-width: 1080px) {
           font-size: 36px;
+        }
+        @media (max-width: 768px) {
+          font-size: 28px;
         }
       }
       p {
@@ -1592,6 +1600,9 @@ div.list-page-list {
           margin: 0 0 10px;
           font-size: 22px;
           line-height: 1.35;
+        }
+        @media (max-width: 768px) {
+          font-size: 20px;
         }
       }
 
@@ -1614,15 +1625,6 @@ article.list {
 }
 
 .list-music-awards {
-  grid-column: 2 / span 10;
-
-  @media (max-width: 1080px) {
-    grid-column: 2 / span 12;
-  }
-  @media (max-width: 768px) {
-    grid-column: 1 / -1;
-  }
-
   > ul {
     list-style: none;
     padding: 0;
@@ -1634,6 +1636,10 @@ article.list {
 
       @media (max-width: 1080px) {
         font-size: 48px;
+      }
+      @media (max-width: 768px) {
+        font-size: 40px;
+        margin: 0 0 20px;
       }
     }
 
@@ -1647,12 +1653,19 @@ article.list {
       @media (max-width: 1080px) {
         padding: 0 0 40px 8px;
       }
+      @media (max-width: 768px) {
+        padding: 0;
+      }
 
       h4 {
         font-size: 36px;
         line-height: 1;
         @media (max-width: 1080px) {
           font-size: 32px;
+        }
+        @media (max-width: 768px) {
+          margin: 16px 0;
+          font-size: 28px;
         }
       }
 
@@ -1664,6 +1677,9 @@ article.list {
         @media (max-width: 1080px) {
           margin: 0 0 40px 8px;
         }
+        @media (max-width: 768px) {
+          margin: 20px 0;
+        }
 
         p:first-child {
           margin: 0 0 12px 0;
@@ -1673,6 +1689,10 @@ article.list {
             "Gentium Plus Book", "Noto Serif JP CJK", "Noto Serif JP", serif;
           font-weight: 700;
           color: var(--dark);
+          @media (max-width: 768px) {
+            font-size: 24px;
+            margin: 0 0 8px 0;
+          }
         }
 
         p:nth-child(2) {
@@ -1683,6 +1703,9 @@ article.list {
           font-family:
             "Gentium Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
           color: var(--dark-second);
+          @media (max-width: 768px) {
+            font-size: 22px;
+          }
         }
       }
       .list-music-awards-nominee {
@@ -1697,10 +1720,21 @@ article.list {
           font-size: 20px;
           line-height: 20px;
         }
+        @media (max-width: 768px) {
+          margin: 15px 0;
+          padding: 0 0 0 4px;
+          font-size: 18px;
+          line-height: 18px;
+          flex-direction: column;
+          gap: 4px;
+        }
 
         span:first-of-type {
           color: var(--dark);
           line-height: 22px;
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
         p:first-of-type {
           margin: 0;
@@ -1716,18 +1750,28 @@ article.list {
         span:nth-of-type(2) {
           color: var(--dark-third);
           margin: 0 8px;
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
         p:nth-of-type(2) {
           margin: 0;
           color: var(--dark-second);
           font-family:
             "Gentium Plus", "Noto Serif JP CJK", "Noto Serif JP", serif;
+
+          @media (max-width: 768px) {
+            margin: 0 0 0 8px;
+          }
         }
       }
 
       div.list-music-awards-category-divider {
         margin: 40px 0 0 12px;
         border-top: solid 1px var(--dark-third);
+        @media (max-width: 768px) {
+          margin: 20px 0;
+        }
       }
     }
     li:last-child
@@ -1750,6 +1794,9 @@ article.list {
     @media (max-width: 1080px) {
       font-size: 48px;
     }
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
   }
 
   ul {
@@ -1759,6 +1806,9 @@ article.list {
     @media (max-width: 1080px) {
       padding: 0 0 0 12px;
     }
+    @media (max-width: 768px) {
+      padding: 0;
+    }
 
     li {
       margin: 36px 0;
@@ -1767,6 +1817,9 @@ article.list {
 
       @media (max-width: 1080px) {
         margin: 28px 0;
+      }
+      @media (max-width: 768px) {
+        margin: 20px 0;
       }
 
       h4 {
@@ -1780,6 +1833,9 @@ article.list {
         @media (max-width: 1080px) {
           font-size: 30px;
         }
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
       }
       p:first-of-type {
         margin: 6px 0 12px 0;
@@ -1791,6 +1847,9 @@ article.list {
         @media (max-width: 1080px) {
           font-size: 20px;
           margin: 6px 0 8px 0;
+        }
+        @media (max-width: 768px) {
+          font-size: 18px;
         }
       }
       p:nth-of-type(2) {
@@ -1804,12 +1863,18 @@ article.list {
         @media (max-width: 1080px) {
           font-size: 18px;
         }
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
       }
       span {
         margin: 0 8px;
         font-size: 12px;
         line-height: 22px;
         color: var(--dark-third);
+        @media (max-width: 768px) {
+          margin: 0 6px;
+        }
       }
     }
   }
@@ -1819,10 +1884,11 @@ article.list {
 }
 
 .list-bucket-list {
-  grid-column: 2 / span 10;
-
   > div:first-of-type > h3 {
     margin: 0 0 20px 0;
+    @media (max-width: 768px) {
+      margin: 0 0 12px 0;
+    }
   }
 
   h3 {
@@ -1837,6 +1903,16 @@ article.list {
       margin: 20px 0;
       font-size: 40px;
     }
+    @media (max-width: 768px) {
+      margin: 12px 0;
+      font-size: 28px;
+    }
+  }
+
+  ul {
+    @media (max-width: 768px) {
+      padding: 0 0 0 24px;
+    }
   }
 
   li {
@@ -1844,6 +1920,10 @@ article.list {
       @media (max-width: 1080px) {
         margin: 10px 0;
         font-size: 20px;
+      }
+      @media (max-width: 768px) {
+        margin: 6px 0;
+        font-size: 18px;
       }
     }
   }

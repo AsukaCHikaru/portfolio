@@ -12,7 +12,7 @@ export const BucketListPage = ({ bucketList }: Props) => {
         <h1>{bucketList.name}</h1>
         <h2>{bucketList.description}</h2>
       </div>
-      <article className="list-bucket-list">
+      <article className="list list-bucket-list">
         {bucketList.list.map(({ category, tasks }) => (
           <div key={category}>
             <h3>{category}</h3>

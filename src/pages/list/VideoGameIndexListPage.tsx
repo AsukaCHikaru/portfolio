@@ -25,7 +25,7 @@ export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
         <h1>{videoGameIndex.name}</h1>
         <h2>{videoGameIndex.description}</h2>
       </div>
-      <article className="list-video-game-index">
+      <article className="list list-video-game-index">
         {Array.from(groupByFinished.keys())
           .sort((prev, next) => Number(next) - Number(prev))
           .map((year) => (

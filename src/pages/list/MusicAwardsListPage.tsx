@@ -16,11 +16,11 @@ interface Props {
 export const MusicAwardsListPage = ({ musicAwards }: Props) => {
   return (
     <Layout>
-      <div className="post-page-header_container">
+      <div className="list post-page-header_container">
         <h1>{musicAwards.name}</h1>
         <h2>{musicAwards.description}</h2>
       </div>
-      <article className="list-music-awards">
+      <article className="list list-music-awards">
         <ul>
           {musicAwards.list.map(({ year, categories }) => (
             <li key={year}>
