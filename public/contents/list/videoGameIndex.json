@@ -1,0 +1,1480 @@
+{
+  "name": "Video Game Index",
+  "description": "My life in video games. Entries are grouped by year completed or first played. Only include games completed or more than 10 hours played. List may be inaccurate for early years, as I started to record them in 2022.",
+  "pathname": "video-game-index",
+  "list": [
+    {
+      "title": "Ghost of Yotei",
+      "developer": "Sucker Punch Productions",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2025",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "rating": "8"
+    },
+    {
+      "title": "Monster Hunter Wilds",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2025",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "rating": "7"
+    },
+    {
+      "title": "Clair Obscur: Expedition 33",
+      "developer": "Sandfull Interactive",
+      "publisher": "Kepler Interactive",
+      "released": "2025",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/do-lumiere-citizen-dream-of-painted-sheep",
+      "rating": "8"
+    },
+    {
+      "title": "Metaphor: ReFantazio",
+      "developer": "Studio Zero",
+      "publisher": "Atlus",
+      "released": "2024",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/the-smooth-journey-outshines-the-highlights",
+      "rating": "8"
+    },
+    {
+      "title": "Hades II",
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "released": "2024",
+      "played": "2025",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "20 Small Mazes",
+      "developer": "FLEB",
+      "publisher": "FLEB",
+      "released": "2024",
+      "played": "2024",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Balatro",
+      "developer": "LocalThunk",
+      "publisher": "Playstack",
+      "released": "2024",
+      "played": "2025",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Animal Well",
+      "developer": "Shared Memory",
+      "publisher": "Bigmode",
+      "released": "2024",
+      "played": "2024",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Chants of Sennaar",
+      "developer": "Rundisc",
+      "publisher": "Focus Entertainment",
+      "released": "2023",
+      "played": "2024",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Cyberpunk 2077: Phantom Liberty",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "released": "2023",
+      "played": "2024",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/a-redemption-three-years-later",
+      "rating": "9"
+    },
+    {
+      "title": "Hogwarts Legacy",
+      "developer": "Avalanche Software",
+      "publisher": "Warner Bros. Games",
+      "released": "2023",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "rating": "4"
+    },
+    {
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "released": "2023",
+      "played": "2024",
+      "platform": "Nintendo Switch",
+      "reviewUrl": "https://asukawang.com/blog/improving-greatness",
+      "rating": "10"
+    },
+    {
+      "title": "IMMORTALITY",
+      "developer": "Sam Barlow",
+      "publisher": "Sam Barlow",
+      "released": "2022",
+      "played": "2023",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "The Case of the Golden Idol",
+      "developer": "Color Gray Games",
+      "publisher": "Playstack",
+      "released": "2022",
+      "played": "2023",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Gran Turismo 7",
+      "developer": "Polyphony Digital",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2022",
+      "played": "2022",
+      "platform": "PC, PlayStation 5",
+      "rating": "6"
+    },
+    {
+      "title": "Pentiment",
+      "developer": "Obsidian Entertainment",
+      "publisher": "Xbox Game Studios",
+      "released": "2022",
+      "played": "2024",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Potion Craft",
+      "developer": "niceplay games",
+      "publisher": "tinyBuild",
+      "released": "2022",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "God of War Ragnarök",
+      "developer": "Santa Monica Studio",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2022",
+      "played": "2022",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/god-of-war-ragnarok",
+      "rating": "7"
+    },
+    {
+      "title": "Elden Ring",
+      "developer": "From Software",
+      "publisher": "Bandai Namco Entertainment",
+      "released": "2022",
+      "played": "2025",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/bitter-masterpiece",
+      "rating": "7"
+    },
+    {
+      "title": "Stacklands",
+      "developer": "Sokpop Collevtive",
+      "publisher": "Sokpop Collevtive",
+      "released": "2022",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Metroid Dread",
+      "developer": "Mercury System, Nintendo EPD",
+      "publisher": "Nintendo",
+      "released": "2021",
+      "played": "2022",
+      "platform": "Nintendo Switch",
+      "rating": "8"
+    },
+    {
+      "title": "DEATHLOOP",
+      "developer": "Arkane Studios",
+      "publisher": "Bathesda Softworks",
+      "released": "2021",
+      "played": "2021",
+      "platform": "PlayStation 5",
+      "rating": "7"
+    },
+    {
+      "title": "Element TD 2",
+      "developer": "Element Studios",
+      "publisher": "Element Studios",
+      "released": "2021",
+      "played": "2021",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Inscryption",
+      "developer": "Daniel Mullins Games",
+      "publisher": "Devolver Digital",
+      "released": "2021",
+      "played": "2024",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Ghost of Tsushima",
+      "developer": "Sucker Punch Productions",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2020",
+      "played": "2021",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/ghost-of-tsushima",
+      "rating": "8"
+    },
+    {
+      "title": "CARRION",
+      "developer": "Phobia Game Studio",
+      "publisher": "Devolver Digital",
+      "released": "2020",
+      "played": "2021",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "VALORANT",
+      "developer": "Riot Games",
+      "publisher": "Riot Games",
+      "released": "2020",
+      "played": "2020",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "released": "2020",
+      "played": "2020",
+      "platform": "PC, PlayStation 5",
+      "rating": "7"
+    },
+    {
+      "title": "Apex Legends",
+      "developer": "Respawn Entertainment",
+      "publisher": "Electronic Arts",
+      "released": "2019",
+      "played": "2019",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Disco Elysium",
+      "developer": "ZA/UM",
+      "publisher": "ZA/UM",
+      "released": "2019",
+      "played": "2021",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Sekiro: Shadows Die Twice",
+      "developer": "From Software",
+      "publisher": "Bandai Namco Entertainemnt",
+      "released": "2019",
+      "played": "2022",
+      "platform": "PlayStation 5",
+      "rating": "9"
+    },
+    {
+      "title": "Dota Underlords",
+      "developer": "Valve Corporation",
+      "publisher": "Valve Corporation",
+      "released": "2019",
+      "played": "2019",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Blasphemous",
+      "developer": "The Game Kitchen",
+      "publisher": "Team17",
+      "released": "2019",
+      "played": "2023",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "A Short Hike",
+      "developer": "adamgryu",
+      "publisher": "adamgryu",
+      "released": "2019",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "My Friend Pedro",
+      "developer": "DeadToast Entertainment",
+      "publisher": "Devolver Digital",
+      "released": "2019",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Resident Evil 2",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2019",
+      "played": "2019",
+      "platform": "PlayStation 4",
+      "rating": "8"
+    },
+    {
+      "title": "Tails Noir (formerly Backbone)",
+      "developer": "Eggnut",
+      "publisher": "Raw Fury",
+      "released": "2019",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Devotion",
+      "developer": "Red Candle Games",
+      "publisher": "Red Candle Games",
+      "released": "2019",
+      "played": "2019",
+      "platform": "PC",
+      "reviewUrl": "https://asukawang.com/blog/devotion",
+      "rating": "8"
+    },
+    {
+      "title": "Marvel's Spider-Man",
+      "developer": "Insomniac Games",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2018",
+      "played": "2019",
+      "platform": "PlayStation 4",
+      "rating": "8"
+    },
+    {
+      "title": "Celeste",
+      "developer": "Matt Makes Games",
+      "publisher": "Matt Makes Games",
+      "released": "2018",
+      "played": "2020",
+      "platform": "PC",
+      "reviewUrl": "https://asukawang.com/blog/celeste",
+      "rating": "9"
+    },
+    {
+      "title": "A Way Out",
+      "developer": "Hazeligh Studios",
+      "publisher": "Electronic Arts",
+      "released": "2018",
+      "played": "2018",
+      "platform": "PlayStation 4",
+      "rating": "7"
+    },
+    {
+      "title": "Detroit: Become Human",
+      "developer": "Quantic Dream",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2018",
+      "played": "2018",
+      "platform": "PlayStation 4",
+      "rating": "9"
+    },
+    {
+      "title": "Artifact",
+      "developer": "Valve Corporation",
+      "publisher": "Valve Corporation",
+      "released": "2018",
+      "played": "2018",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "God of War",
+      "developer": "Santa Monica Studio",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2018",
+      "played": "2021",
+      "platform": "PlayStation 5",
+      "reviewUrl": "https://asukawang.com/blog/god-of-war-2018",
+      "rating": "9"
+    },
+    {
+      "title": "Red Dead Redemption 2",
+      "developer": "Rockstar Studios",
+      "publisher": "Rockstart Games",
+      "released": "2018",
+      "played": "2020",
+      "platform": "PlayStation 4",
+      "reviewUrl": "https://asukawang.com/blog/red-dead-redemption-2",
+      "rating": "9"
+    },
+    {
+      "title": "Hades",
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "released": "2018",
+      "played": "2021",
+      "platform": "PC, PlayStation 4",
+      "reviewUrl": "https://asukawang.com/blog/hades",
+      "rating": "9"
+    },
+    {
+      "title": "Frostpunk",
+      "developer": "11 Bit Studios",
+      "publisher": "11 Bit Studios",
+      "released": "2018",
+      "played": "2020",
+      "platform": "PC",
+      "reviewUrl": "https://asukawang.com/blog/frostpunk",
+      "rating": "7"
+    },
+    {
+      "title": "GRIS",
+      "developer": "Nomada Studio",
+      "publisher": "Devolver Digital",
+      "released": "2018",
+      "played": "2023",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Return of the Obra Dinn",
+      "developer": "Lucas Pope",
+      "publisher": "3909",
+      "released": "2018",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "released": "2017",
+      "played": "2018",
+      "platform": "Nintendo Switch",
+      "reviewUrl": "https://asukawang.com/blog/zelda-botw",
+      "rating": "9"
+    },
+    {
+      "title": "Gorogoa",
+      "developer": "Jason Roberts",
+      "publisher": "Annapurna Interactive",
+      "released": "2017",
+      "played": "2017",
+      "platform": "Nintendo Switch",
+      "rating": "8"
+    },
+    {
+      "title": "Shadow Tactics: Blades of the Shogun",
+      "developer": "Mimimi Games",
+      "publisher": "Kalypso Media",
+      "released": "2016",
+      "played": "2020",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Overwatch",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2016",
+      "played": "2016",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Uncharted 4: A Thief's End",
+      "developer": "Naughty Dog",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2016",
+      "played": "2016",
+      "platform": "PlayStation 4",
+      "rating": "8"
+    },
+    {
+      "title": "Sid Meier's Civilization VI",
+      "developer": "Firaxis Games",
+      "publisher": "2K Games",
+      "released": "2016",
+      "played": "2016",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Dark Souls 3",
+      "developer": "From Software",
+      "publisher": "Bandai Namco Entertainment",
+      "released": "2016",
+      "played": "2022",
+      "platform": "PlayStation 5",
+      "rating": "5"
+    },
+    {
+      "title": "Factorio",
+      "developer": "Wube Software",
+      "publisher": "Wube Software",
+      "released": "2016",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Darkest Dungeon",
+      "developer": "Red Hook Studios",
+      "publisher": "Red Hook Studios",
+      "released": "2016",
+      "played": "2018",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Dex",
+      "developer": "Dreadlocks Ltd.",
+      "publisher": "Dreadlocks Ltd.",
+      "released": "2015",
+      "played": "2023",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "released": "2015",
+      "played": "2016",
+      "platform": "PC, PlayStation 4",
+      "rating": "9"
+    },
+    {
+      "title": "Heroes of the Storm",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2015",
+      "played": "2015",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Ori and the Blind Forest",
+      "developer": "Moon Studios",
+      "publisher": "Xbox Game Studios",
+      "released": "2015",
+      "played": "2020",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Fallout 4",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bathesda Softworks",
+      "released": "2015",
+      "played": "2017",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Tropico 5",
+      "developer": "Heemimont Games",
+      "publisher": "Kalyspo Media",
+      "released": "2015",
+      "played": "2015",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Her Story",
+      "developer": "Sam Barlow",
+      "publisher": "Sam Barlow",
+      "released": "2015",
+      "played": "2021",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Cities Skyline",
+      "developer": "Karoliina Korppoo",
+      "publisher": "Paradox Interactive",
+      "released": "2015",
+      "played": "2015",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Divinity: Original Sin",
+      "developer": "Larian Studios",
+      "publisher": "Larian Studios",
+      "released": "2015",
+      "played": "2021",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Call of Duty: Advanced Warfare",
+      "developer": "Sledgehammer Games",
+      "publisher": "Activision",
+      "released": "2014",
+      "played": "2014",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Far Cry 4",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2014",
+      "played": "2014",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Divinity: Original Sin 2",
+      "developer": "Larian Studios",
+      "publisher": "Larian Studios",
+      "released": "2014",
+      "played": "2017",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Hearthstone",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2013",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Path of Exile",
+      "developer": "Grinding Gear Games",
+      "publisher": "Grinding Gear Games",
+      "released": "2013",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Assassin's Creed IV Black Flag",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2013",
+      "played": "2014",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Bioshock Infinite",
+      "developer": "Irrational Games",
+      "publisher": "2K Games",
+      "released": "2013",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Tomb Raider",
+      "developer": "Eidos",
+      "publisher": "Square Enix",
+      "released": "2013",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Mark of the Ninja",
+      "developer": "Klei Entertainment",
+      "publisher": "Microsoft Studios",
+      "released": "2012",
+      "played": "2014",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Assassin's Creed III",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2012",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Diablo III",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2012",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Dead Island",
+      "developer": "Techland",
+      "publisher": "Deep Silver",
+      "released": "2011",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "5"
+    },
+    {
+      "title": "Portal 2",
+      "developer": "Valve Corporation",
+      "publisher": "Valve Corporation",
+      "released": "2011",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Minecraft",
+      "developer": "Mojang Studios",
+      "publisher": "Xbox Game Studios",
+      "released": "2011",
+      "played": "2011",
+      "platform": "PC, Nintendo Switch",
+      "rating": "10"
+    },
+    {
+      "title": "Deus Ex: Human Revolution",
+      "developer": "Eidos",
+      "publisher": "Square Enix",
+      "released": "2011",
+      "played": "2011",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Magicka",
+      "developer": "Arrowhead Games",
+      "publisher": "Paradox Interactive",
+      "released": "2011",
+      "played": "2016",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Bastion",
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "released": "2011",
+      "played": "2022",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "World of Tanks",
+      "developer": "Wargaming.net",
+      "publisher": "Wargaming.net",
+      "released": "2011",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Call of Duty: Modern Warfare 3",
+      "developer": "Infinity Ward",
+      "publisher": "Activision",
+      "released": "2011",
+      "played": "2011",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Dark Souls",
+      "developer": "From Software",
+      "publisher": "Bandai Namco Entertainment",
+      "released": "2011",
+      "played": "2022",
+      "platform": "PC",
+      "reviewUrl": "https://asukawang.com/blog/dark-souls",
+      "rating": "9"
+    },
+    {
+      "title": "The Elder Scrolls V: Skyrim",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda Softworks",
+      "released": "2011",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Uncharted 3: Drake's Deception",
+      "developer": "Naughty Dog",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2011",
+      "played": "2012",
+      "platform": "PlayStation 3",
+      "rating": "4"
+    },
+    {
+      "title": "Call of Duty: Black Ops",
+      "developer": "Treyarch",
+      "publisher": "Activision",
+      "released": "2010",
+      "played": "2010",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Alan Wake",
+      "developer": "Remedy Entertainment",
+      "publisher": "Microsoft Game Studios",
+      "released": "2010",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "REFLEC BEAT",
+      "developer": "KONAMI",
+      "publisher": "KONAMI",
+      "released": "2010",
+      "played": "2010",
+      "platform": "Arcade, iPad",
+      "rating": "7"
+    },
+    {
+      "title": "Sid Meier's Civilization V",
+      "developer": "Firaxis Games",
+      "publisher": "2K Games",
+      "released": "2010",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Monster Hunter Portable 3rd",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2010",
+      "played": "2010",
+      "platform": "PlayStation Portable",
+      "rating": "7"
+    },
+    {
+      "title": "Tom Clancy's Splinter Cell: Conviction",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2010",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Assassin's Creed Brotherhood",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2010",
+      "played": "2010",
+      "platform": "PlayStation 3",
+      "rating": "8"
+    },
+    {
+      "title": "StarCraft II",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2010",
+      "played": "2010",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "jubeat knit",
+      "developer": "KONAMI",
+      "publisher": "KONAMI",
+      "released": "2010",
+      "played": "2010",
+      "platform": "Arcade, iPad",
+      "rating": "9"
+    },
+    {
+      "title": "Final Fantasy XIII",
+      "developer": "Square Enix",
+      "publisher": "Square Enix",
+      "released": "2009",
+      "played": "2010",
+      "platform": "PlayStation 3",
+      "rating": "6"
+    },
+    {
+      "title": "Assassin's Creed II",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2009",
+      "played": "2009",
+      "platform": "PlayStation 3",
+      "rating": "7"
+    },
+    {
+      "title": "Uncharted 2: Among Thieves",
+      "developer": "Naughty Dog",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "2009",
+      "played": "2010",
+      "platform": "PlayStation 3",
+      "rating": "9"
+    },
+    {
+      "title": "Resident Evil 5",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2009",
+      "played": "2009",
+      "platform": "Xbox 360",
+      "rating": "4"
+    },
+    {
+      "title": "Call of Duty: Modern Warfare 2",
+      "developer": "Infinity Ward",
+      "publisher": "Activision",
+      "released": "2009",
+      "played": "2009",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Left 4 Dead 2",
+      "developer": "Valve Corporation",
+      "publisher": "Valve Corporation",
+      "released": "2009",
+      "played": "2013",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Tropico 3: Absolute Power",
+      "developer": "Haemimont Games",
+      "publisher": "Kalypos Media",
+      "released": "2009",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "League of Legends",
+      "developer": "Riot Games",
+      "publisher": "Riot Games",
+      "released": "2009",
+      "played": "2009",
+      "platform": "PC",
+      "rating": "10"
+    },
+    {
+      "title": "Monster Hunter Freeedom Unite",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2008",
+      "played": "2008",
+      "platform": "PlayStation Portable",
+      "rating": "7"
+    },
+    {
+      "title": "Devil May Cry 4",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2008",
+      "played": "2008",
+      "platform": "PlayStation 2",
+      "rating": "7"
+    },
+    {
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "developer": "KONAMI",
+      "publisher": "KONAMI",
+      "released": "2008",
+      "played": "2010",
+      "platform": "PlayStation 3",
+      "rating": "7"
+    },
+    {
+      "title": "Touhou Fuujinroku: Mountain of Faith",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2007",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Call of Duty: Modern Warfare",
+      "developer": "Infinity Ward",
+      "publisher": "Activision",
+      "released": "2007",
+      "played": "2007",
+      "platform": "Xbox 360",
+      "rating": "9"
+    },
+    {
+      "title": "NBA 2K8",
+      "developer": "Visual Concepts",
+      "publisher": "2K",
+      "released": "2007",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Portal",
+      "developer": "Valve Corporation",
+      "publisher": "Valve Corporation",
+      "released": "2007",
+      "played": "2010",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Assassin's Creed",
+      "developer": "Ubisoft",
+      "publisher": "Ubisoft",
+      "released": "2007",
+      "played": "2007",
+      "platform": "PlayStation 3",
+      "rating": "6"
+    },
+    {
+      "title": "Monster Hunter Freedom 2",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2007",
+      "played": "2008",
+      "platform": "PlayStation Portable",
+      "rating": "7"
+    },
+    {
+      "title": "Higurashi Daybreak Kai",
+      "developer": "Twilight Frontier",
+      "publisher": "Twilight Frontier",
+      "released": "2007",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Gears of War",
+      "developer": "Epic Games",
+      "publisher": "Xbox Game Studios",
+      "released": "2006",
+      "played": "2006",
+      "platform": "Xbox 360",
+      "rating": "8"
+    },
+    {
+      "title": "Higurashi Daybreak",
+      "developer": "Twilight Frontier",
+      "publisher": "Twilight Frontier",
+      "released": "2006",
+      "played": "2006",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Dead Rising",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2006",
+      "played": "2006",
+      "platform": "Xbox 360",
+      "rating": "8"
+    },
+    {
+      "title": "Devil May Cry 3",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2005",
+      "played": "2005",
+      "platform": "PlayStation 2",
+      "rating": "8"
+    },
+    {
+      "title": "Resident Evil 4",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2005",
+      "played": "2005",
+      "platform": "PlayStation 2",
+      "rating": "10"
+    },
+    {
+      "title": "Touhou Eiyashou: Imperishable Night",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2004",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Onimusha 3",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2004",
+      "played": "2004",
+      "platform": "PlayStation 2",
+      "rating": "7"
+    },
+    {
+      "title": "World of Warcraft",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2004",
+      "played": "2004",
+      "platform": "PC",
+      "rating": "10"
+    },
+    {
+      "title": "Devil May Cry 2",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2003",
+      "played": "2003",
+      "platform": "PlayStation 2",
+      "rating": "5"
+    },
+    {
+      "title": "Lineage II",
+      "developer": "NCSoft",
+      "publisher": "NCSoft",
+      "released": "2003",
+      "played": "2003",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Seal Online",
+      "developer": "Grigon Entertainment",
+      "publisher": "YNK Interactive",
+      "released": "2003",
+      "played": "2003",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Touhou Youyoumu: Perfect Cherry Blossom",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2003",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Dynasty Warriors 4",
+      "developer": "Omega Force",
+      "publisher": "Koei",
+      "released": "2003",
+      "played": "2003",
+      "platform": "PlayStation 2",
+      "rating": "9"
+    },
+    {
+      "title": "Warcraft III",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2002",
+      "played": "2002",
+      "platform": "PC",
+      "rating": "10"
+    },
+    {
+      "title": "Ragnarok Online",
+      "developer": "Gravity",
+      "publisher": "Gravity",
+      "released": "2002",
+      "played": "2002",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Touhou Koumakyou: The Embodiment of Scarlet Devil",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2002",
+      "played": "2007",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Super Mario Advance",
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "released": "2001",
+      "played": "2002",
+      "platform": "Game Boy Advance",
+      "rating": "6"
+    },
+    {
+      "title": "Castlevania: Circle of the Moon",
+      "developer": "KONAMI",
+      "publisher": "KONAMI",
+      "released": "2001",
+      "played": "2002",
+      "platform": "Game Boy Advance",
+      "rating": "7"
+    },
+    {
+      "title": "Command & Conquer: Red Alert 2 - Yuri's Revenge",
+      "developer": "Westwood Pacific",
+      "publisher": "Electronic Arts",
+      "released": "2001",
+      "played": "2001",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Mega Man Battle Network",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "2001",
+      "played": "2001",
+      "platform": "Game Boy Advance",
+      "rating": "7"
+    },
+    {
+      "title": "Return to Castle Wolfenstein",
+      "developer": " Gray Matter Studios",
+      "publisher": "Activision",
+      "released": "2001",
+      "played": "2001",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Xuan-Yuan Sword: The Scar of the Sky",
+      "developer": "SOFTSTAR",
+      "publisher": "SOFTSTAR",
+      "released": "2000",
+      "played": "2000",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Diablo II",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2000",
+      "played": "2001",
+      "platform": "PC",
+      "rating": "10"
+    },
+    {
+      "title": "Hitman: Codename 47",
+      "developer": "IO Interactive",
+      "publisher": "Eidos Interactive",
+      "released": "2000",
+      "played": "2000",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
+      "title": "Age of Empires II: The Conquerors",
+      "developer": "Ensemble Studios",
+      "publisher": "Microsoft",
+      "released": "2000",
+      "played": "2000",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "新絕代雙驕貳",
+      "developer": "UserJoy Technology",
+      "publisher": "UserJoy Technology",
+      "released": "2000",
+      "played": "2000",
+      "platform": "PC",
+      "rating": "5"
+    },
+    {
+      "title": "Wario Land 3",
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "released": "2000",
+      "played": "2000",
+      "platform": "Game Boy Color",
+      "rating": "9"
+    },
+    {
+      "title": "Command & Conquer: Red Alert 2",
+      "developer": "Westwood Pacific",
+      "publisher": "Electronic Arts",
+      "released": "2000",
+      "played": "2000",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Pokémon Crystal Version",
+      "developer": "Game Freak Inc.",
+      "publisher": "Nintendo",
+      "released": "2000",
+      "played": "2000",
+      "platform": "Game Boy Color",
+      "rating": "8"
+    },
+    {
+      "title": "Star Wars Episode I: The Phantom Menace",
+      "developer": "Big Ape Productions",
+      "publisher": "Lucasarts",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PC, PlayStation",
+      "rating": "4"
+    },
+    {
+      "title": "Super Smash Bros.",
+      "developer": "HAL Laboratory",
+      "publisher": "Nintendo",
+      "released": "1999",
+      "played": "2000",
+      "platform": "Nintendo 64",
+      "rating": "6"
+    },
+    {
+      "title": "Toy Story 2: Buzz Lightyear to the Rescue!",
+      "developer": "Traveller’s Tales",
+      "publisher": "Activision",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PlayStation",
+      "rating": "7"
+    },
+    {
+      "title": "Resident Evil 3: Nemesis",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PlayStation",
+      "rating": "7"
+    },
+    {
+      "title": "Resident Evil 2",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Xuan-Yuan Sword: Mists Beyond the Mountains",
+      "developer": "SOFTSTAR",
+      "publisher": "SOFTSTAR",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Crush Team Racing",
+      "developer": "Naughty Dog",
+      "publisher": "Sony Interactive Entertainment",
+      "released": "1999",
+      "played": "1999",
+      "platform": "PlayStation",
+      "rating": "8"
+    },
+    {
+      "title": "Final Fantasy VIII",
+      "developer": "Square",
+      "publisher": "Square",
+      "released": "1999",
+      "played": "2000",
+      "platform": "PlayStation",
+      "rating": "8"
+    },
+    {
+      "title": "Lineage",
+      "developer": "NCSoft",
+      "publisher": "NCSoft",
+      "released": "1998",
+      "played": "2001",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Need for Speed II",
+      "developer": "EA Canada",
+      "publisher": "Electronic Arts",
+      "released": "1997",
+      "played": "1997",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Touhou Seirensen: Undefined Fantastic Object",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2009-08-16",
+      "played": "2009",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
+      "title": "Dragon Raja Online",
+      "developer": "eSofnet",
+      "publisher": "eSofnet",
+      "released": "1998",
+      "played": "1998",
+      "platform": "PC",
+      "rating": "5"
+    },
+    {
+      "title": "漂流記",
+      "developer": "KSS",
+      "publisher": "KSS",
+      "released": "1998",
+      "played": "2025",
+      "platform": "PC, PlayStation",
+      "rating": "6"
+    },
+    {
+      "title": "仙劍奇俠傳 (Chinese Paladin)",
+      "developer": "SOFTSTAR",
+      "publisher": "SOFTSTAR",
+      "released": "1995",
+      "played": "1996",
+      "platform": "PC",
+      "rating": "9"
+    },
+    {
+      "title": "Touhou Chireiden: Subterranean Animism",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2008-08-16",
+      "played": "2008",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "Pokémon Yellow Version: Special Pikachu Edition",
+      "developer": "Game Freak Inc.",
+      "publisher": "Game Freak Inc.",
+      "released": "1998",
+      "played": "1998",
+      "platform": "Game Boy",
+      "rating": "9"
+    },
+    {
+      "title": "Resident Evil",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "released": "1996",
+      "played": "1999",
+      "platform": "PlayStation",
+      "rating": "10"
+    }
+  ]
+}
