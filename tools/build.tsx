@@ -235,6 +235,8 @@ const buildList = async () => {
     JSON.stringify({
       list: {
         musicAwards,
+        videoGameIndex,
+        bucketList,
       },
       lastUpdated: lastCommitDate,
     }),
@@ -248,7 +250,9 @@ const buildList = async () => {
     "/list/video-game-index",
     JSON.stringify({
       list: {
+        musicAwards,
         videoGameIndex,
+        bucketList,
       },
       lastUpdated: lastCommitDate,
     }),
@@ -262,6 +266,8 @@ const buildList = async () => {
     "/list/bucket-list",
     JSON.stringify({
       list: {
+        musicAwards,
+        videoGameIndex,
         bucketList,
       },
       lastUpdated: lastCommitDate,
