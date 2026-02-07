@@ -1,7 +1,7 @@
 ---
 created: 2023/09/08 22:11
 category: "[[-044 Side Project Memo]]"
-updated: 2025-09-19
+updated: 2026-02-07
 published: 2023-07-15
 ---
 Hello! I'm Asuka. I love creating things.
@@ -19,7 +19,7 @@ I speak fluent Mandarin, Japanese and English. Out of these three, English is my
 
 I've always had a deep passion for expressing myself through turning my ideas into reality, which is the major reason why I'm into web development. I also enjoy [writing](https://asukawang.com/blog/) and photography.
 
-I love making lists, so I'll tell you more about myself with lists below:
+I love making [lists](https://asukawang.com/list), so I'll tell you more about myself with lists below:
 
 ## Favorite Games
 - Warcraft III
@@ -43,7 +43,6 @@ I love making lists, so I'll tell you more about myself with lists below:
 ## Random Facts
 - I was president of Literature Club in university
 - My favorite English word is "irrelevant"
-- I have my own annual music awards since 2009
 - All of my side projects are named after League of Legends champions
 
 # About this site
