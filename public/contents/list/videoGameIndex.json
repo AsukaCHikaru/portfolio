@@ -488,7 +488,7 @@
     {
       "title": "Overwatch",
       "developer": "Blizzard Entertainment",
-      "publisher": "Blizzard Entertainment",
+      "publisher": "Activision Blizzard",
       "released": "2016",
       "played": "2016",
       "platform": "PC",
@@ -639,6 +639,15 @@
       "rating": "7"
     },
     {
+      "title": "World of Warcraft: Warlords of Draenor",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Activision Blizzard",
+      "released": "2014",
+      "played": "2014",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
       "title": "Divinity: Original Sin 2",
       "developer": "Larian Studios",
       "publisher": "Larian Studios",
@@ -698,6 +707,15 @@
       "publisher": "Microsoft Studios",
       "released": "2012",
       "played": "2014",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
+      "title": "World of Warcraft: Mists of Pandaria",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Activision Blizzard",
+      "released": "2012",
+      "played": "2012",
       "platform": "PC",
       "rating": "8"
     },
@@ -892,6 +910,15 @@
       "rating": "8"
     },
     {
+      "title": "World of Warcraft: Cataclysm",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Activision Blizzard",
+      "released": "2010",
+      "played": "2010",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
       "title": "jubeat knit",
       "developer": "KONAMI",
       "publisher": "KONAMI",
@@ -946,6 +973,15 @@
       "rating": "8"
     },
     {
+      "title": "Touhou Seirensen: Undefined Fantastic Object",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2009",
+      "played": "2009",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
       "title": "Left 4 Dead 2",
       "developer": "Valve Corporation",
       "publisher": "Valve Corporation",
@@ -982,6 +1018,15 @@
       "rating": "7"
     },
     {
+      "title": "Touhou Chireiden: Subterranean Animism",
+      "developer": "Team Shanhai Alice",
+      "publisher": "Team Shanhai Alice",
+      "released": "2008",
+      "played": "2008",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
       "title": "Devil May Cry 4",
       "developer": "Capcom",
       "publisher": "Capcom",
@@ -998,6 +1043,15 @@
       "played": "2010",
       "platform": "PlayStation 3",
       "rating": "7"
+    },
+    {
+      "title": "World of Warcraft: Wrath of the Lich King",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2008",
+      "played": "2008",
+      "platform": "PC",
+      "rating": "10"
     },
     {
       "title": "Touhou Fuujinroku: Mountain of Faith",
@@ -1171,6 +1225,15 @@
       "rating": "7"
     },
     {
+      "title": "Warcraft III: The Frozen Throne",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2003",
+      "played": "2004",
+      "platform": "PC",
+      "rating": "10"
+    },
+    {
       "title": "Dynasty Warriors 4",
       "developer": "Omega Force",
       "publisher": "Koei",
@@ -1180,13 +1243,13 @@
       "rating": "9"
     },
     {
-      "title": "Warcraft III",
+      "title": "Warcraft III: Reign of Chaos",
       "developer": "Blizzard Entertainment",
       "publisher": "Blizzard Entertainment",
       "released": "2002",
       "played": "2002",
       "platform": "PC",
-      "rating": "10"
+      "rating": "9"
     },
     {
       "title": "Ragnarok Online",
@@ -1405,24 +1468,6 @@
       "rating": "7"
     },
     {
-      "title": "Need for Speed II",
-      "developer": "EA Canada",
-      "publisher": "Electronic Arts",
-      "released": "1997",
-      "played": "1997",
-      "platform": "PC",
-      "rating": "8"
-    },
-    {
-      "title": "Touhou Seirensen: Undefined Fantastic Object",
-      "developer": "Team Shanhai Alice",
-      "publisher": "Team Shanhai Alice",
-      "released": "2009-08-16",
-      "played": "2009",
-      "platform": "PC",
-      "rating": "7"
-    },
-    {
       "title": "Dragon Raja Online",
       "developer": "eSofnet",
       "publisher": "eSofnet",
@@ -1430,33 +1475,6 @@
       "played": "1998",
       "platform": "PC",
       "rating": "5"
-    },
-    {
-      "title": "漂流記",
-      "developer": "KSS",
-      "publisher": "KSS",
-      "released": "1998",
-      "played": "2025",
-      "platform": "PC, PlayStation",
-      "rating": "6"
-    },
-    {
-      "title": "仙劍奇俠傳 (Chinese Paladin)",
-      "developer": "SOFTSTAR",
-      "publisher": "SOFTSTAR",
-      "released": "1995",
-      "played": "1996",
-      "platform": "PC",
-      "rating": "9"
-    },
-    {
-      "title": "Touhou Chireiden: Subterranean Animism",
-      "developer": "Team Shanhai Alice",
-      "publisher": "Team Shanhai Alice",
-      "released": "2008-08-16",
-      "played": "2008",
-      "platform": "PC",
-      "rating": "8"
     },
     {
       "title": "Pokémon Yellow Version: Special Pikachu Edition",
@@ -1468,6 +1486,24 @@
       "rating": "9"
     },
     {
+      "title": "漂流記",
+      "developer": "KSS",
+      "publisher": "KSS",
+      "released": "1998",
+      "played": "2025",
+      "platform": "PC, PlayStation",
+      "rating": "6"
+    },
+    {
+      "title": "Need for Speed II",
+      "developer": "EA Canada",
+      "publisher": "Electronic Arts",
+      "released": "1997",
+      "played": "1997",
+      "platform": "PC",
+      "rating": "8"
+    },
+    {
       "title": "Resident Evil",
       "developer": "Capcom",
       "publisher": "Capcom",
@@ -1475,6 +1511,15 @@
       "played": "1999",
       "platform": "PlayStation",
       "rating": "10"
+    },
+    {
+      "title": "仙劍奇俠傳 (Chinese Paladin)",
+      "developer": "SOFTSTAR",
+      "publisher": "SOFTSTAR",
+      "released": "1995",
+      "played": "1996",
+      "platform": "PC",
+      "rating": "9"
     }
   ]
 }

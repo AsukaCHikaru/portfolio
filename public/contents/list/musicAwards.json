@@ -1,6 +1,6 @@
 {
   "name": "Music Awards",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis vulputate erat, sit amet interdum tellus. Curabitur placerat eu elit sed sodales.",
+  "description": "My annual retrospective in music est. 2009 (with blank from 2013 to 2016 because I was into a Japanese idol group and listened to nothing but them). Every December I, once again, appreciate music companioned me in past year, contemplating why and how I found them beautiful, and leave them in words.",
   "pathname": "music-awards",
   "list": [
     {
@@ -111,7 +111,7 @@
             },
             {
               "title": "Salty (with SUNMI)",
-              "artist": "Chung Ha, sunmi",
+              "artist": "Chung Ha, Sunmi",
               "isWinner": false
             },
             {
@@ -130,9 +130,8 @@
               "isWinner": true
             },
             {
-              "title": "<br>",
-              "artist": "Oldie Station",
-              "feat": "Twenty One Pilots",
+              "title": "Oldie Station",
+              "artist": "Twenty One Pilots",
               "isWinner": false
             },
             {
@@ -161,9 +160,8 @@
               "isWinner": true
             },
             {
-              "title": "<br>",
-              "artist": "Billie Bossa Nova",
-              "feat": "Billie Eilish",
+              "title": "Billie Bossa Nova",
+              "artist": "Billie Eilish",
               "isWinner": false
             },
             {
@@ -198,7 +196,7 @@
             },
             {
               "title": "Lampmaster",
-              "artist": "Billie Eilish",
+              "artist": "Lorien Testard",
               "isWinner": false
             },
             {
@@ -268,7 +266,7 @@
             },
             {
               "title": "Blood Sweat & Tears",
-              "artist": "Sheryl Lee Ralph",
+              "artist": "Arcane, Sheryl Lee Ralph",
               "isWinner": false
             },
             {
@@ -313,7 +311,7 @@
             },
             {
               "title": "Blood Sweat & Tears",
-              "artist": "Sheryl Lee Ralph",
+              "artist": "Arcane, Sheryl Lee Ralph",
               "isWinner": false
             },
             {
@@ -378,7 +376,7 @@
             },
             {
               "title": "Blood Sweat & Tears",
-              "artist": "Sheryl Lee Ralph",
+              "artist": "Arcane, Sheryl Lee Ralph",
               "isWinner": false
             },
             {
@@ -428,7 +426,7 @@
           "nominees": [
             {
               "title": "Blood Sweat & Tears",
-              "artist": "Sheryl Lee Ralph",
+              "artist": "Arcane, Sheryl Lee Ralph",
               "isWinner": true
             },
             {
@@ -677,7 +675,7 @@
               "isWinner": true
             },
             {
-              "title": "BLACK SUMMER",
+              "title": "Black Summer",
               "artist": "Red Hot Chili Pepper",
               "isWinner": false
             },
@@ -707,7 +705,7 @@
               "isWinner": true
             },
             {
-              "title": "BLACK SUMMER",
+              "title": "Black Summer",
               "artist": "Red Hot Chili Pepper",
               "isWinner": false
             },
@@ -855,7 +853,7 @@
               "isWinner": true
             },
             {
-              "title": "BLACK SUMMER",
+              "title": "Black Summer",
               "artist": "Red Hot Chili Pepper",
               "isWinner": false
             },
@@ -938,7 +936,7 @@
           ]
         },
         {
-          "category": "Favorite Composition<br>",
+          "category": "Favorite Composition",
           "nominees": [
             {
               "title": "Concerto No.2 in G minor, Op. 8, RV 315, \"L'estate\": III. Presto",
@@ -1091,7 +1089,7 @@
           ]
         },
         {
-          "category": "Favorite Music Video<br>",
+          "category": "Favorite Music Video",
           "nominees": [
             {
               "title": "Youngblood",
@@ -1306,7 +1304,7 @@
           ]
         },
         {
-          "category": "Favorite Instrumental performance<br>",
+          "category": "Favorite Instrumental performance",
           "nominees": [
             {
               "title": "You Should Be Sad",
@@ -1868,7 +1866,7 @@
               "isWinner": false
             },
             {
-              "artist": "twenty one pilots",
+              "artist": "Twenty One Pilots",
               "isWinner": false
             },
             {
@@ -1917,7 +1915,7 @@
             },
             {
               "title": "Tear In My Heart",
-              "artist": "twenty one pilots",
+              "artist": "Twenty One Pilots",
               "isWinner": false
             },
             {
@@ -2033,7 +2031,7 @@
             },
             {
               "title": "Stressed Out",
-              "artist": "twenty one pilots",
+              "artist": "Twenty One Pilots",
               "isWinner": false
             }
           ]
