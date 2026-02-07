@@ -1,14 +1,13 @@
 import { resolve } from "node:path";
 import { checkSymlinkExist } from "./contentUtils";
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { amp } from "./markdownParser";
 import type { VideoGameIndexList } from "../src/types";
 
 const videoGameIndexFolderPath = "./symbolicLinks/list/videoGameIndexFolder";
 const indexFilePath = "./symbolicLinks/list/videoGameIndex";
-const outputPath = "./public/contents/list/videoGameIndex.json";
 
-const run = () => {
+export const getVideoGameIndexList = () => {
   checkSymlinkExist(videoGameIndexFolderPath);
   checkSymlinkExist(indexFilePath);
 
@@ -41,22 +40,10 @@ const run = () => {
   const indexFile = readFileSync(resolve(indexFilePath), "utf-8");
   const { frontmatter } = amp.parse(indexFile);
 
-  writeFileSync(
-    outputPath,
-    JSON.stringify(
-      {
-        name: frontmatter.portfolio_list_name,
-        description: frontmatter.portfolio_list_description,
-        pathname: frontmatter.portfolio_list_pathname,
-        list: rated,
-      },
-      null,
-      2,
-    ),
-  );
-  console.log(`Video game index data written to JSON file ${outputPath}`);
+  return {
+    name: frontmatter.portfolio_list_name,
+    description: frontmatter.portfolio_list_description,
+    pathname: frontmatter.portfolio_list_pathname,
+    list: rated,
+  };
 };
-
-if (import.meta.main) {
-  run();
-}

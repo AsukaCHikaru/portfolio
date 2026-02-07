@@ -1,5 +1,4 @@
 import { readdirSync, readFileSync } from "fs";
-import { writeFile } from "fs/promises";
 import type { MusicAwardNominee } from "../src/types";
 import { resolve } from "path";
 import { amp } from "./markdownParser";
@@ -91,7 +90,7 @@ const parseTableLine = (line: string) =>
     .map((cell) => cell.trim())
     .filter((cell) => cell !== "");
 
-const run = async () => {
+export const getMusicAwardsList = () => {
   checkSymlinkExist(musicAwardsFolderPath);
   const fileContent = readFileSync(
     resolve(musicAwardsFolderPath, "Music Awards.md"),
@@ -122,24 +121,10 @@ const run = async () => {
     });
   });
 
-  await writeFile(
-    "./public/contents/list/musicAwards.json",
-    JSON.stringify(
-      {
-        name: frontmatter.portfolio_list_name,
-        description: frontmatter.portfolio_list_description,
-        pathname: frontmatter.portfolio_list_pathname,
-        list: yearList,
-      },
-      null,
-      2,
-    ),
-  );
-  console.log(
-    `Music awards markdown data written to JSON file ${"./public/contents/list/musicAwards.json"}`,
-  );
+  return {
+    name: frontmatter.portfolio_list_name,
+    description: frontmatter.portfolio_list_description,
+    pathname: frontmatter.portfolio_list_pathname,
+    list: yearList,
+  };
 };
-
-if (import.meta.main) {
-  run();
-}

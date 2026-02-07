@@ -1,11 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import type { BucketList, List } from "../src/types";
 import { amp } from "./markdownParser";
 
 const sourcePath = "./symbolicLinks/list/bucketList";
-const outputPath = "./public/contents/list/bucketList.json";
 
-const run = () => {
+export const getBucketList = () => {
   if (!existsSync(sourcePath)) {
     console.log(`Source file at ${sourcePath} does not exist.`);
     process.exit(0);
@@ -53,12 +52,5 @@ const run = () => {
     })),
   } satisfies List<BucketList>;
 
-  mkdirSync("./public/contents/list", { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(list));
-
-  console.log(`Successfully wrote bucket list to ${outputPath}`);
+  return list;
 };
-
-if (import.meta.main) {
-  run();
-}

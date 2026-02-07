@@ -235,6 +235,8 @@ const buildList = async () => {
     JSON.stringify({
       list: {
         musicAwards,
+        videoGameIndex,
+        bucketList,
       },
       lastUpdated: lastCommitDate,
     }),
@@ -245,7 +247,9 @@ const buildList = async () => {
     "/list/video-game-index",
     JSON.stringify({
       list: {
+        musicAwards,
         videoGameIndex,
+        bucketList,
       },
       lastUpdated: lastCommitDate,
     }),
@@ -256,6 +260,8 @@ const buildList = async () => {
     "/list/bucket-list",
     JSON.stringify({
       list: {
+        musicAwards,
+        videoGameIndex,
         bucketList,
       },
       lastUpdated: lastCommitDate,
@@ -273,18 +279,14 @@ const writeFontCss = async () => {
 const writeData = async () => {
   const postList = await getBlogPostList();
   const about = await getAbout();
-  const { videoGameIndex, musicAwards, bucketList } = await getList();
+  const list = await getList();
   await Bun.write(
     "./dist/data.json",
     JSON.stringify(
       {
         postList,
         about,
-        list: {
-          videoGameIndex,
-          musicAwards,
-          bucketList,
-        },
+        list,
       },
       null,
       2,
