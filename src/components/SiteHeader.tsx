@@ -66,6 +66,7 @@ const MobileNavMenuButton = () => {
           <div className="mobile-nav-menu">
             <nav>
               <Link to="/blog">blog</Link>
+              <Link to="/list">list</Link>
               <Link to="/about">about</Link>
               <Link to="/rss">rss</Link>
             </nav>
