@@ -28,7 +28,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@asukawang/amp": "^0.3.1",
+    "@asukawang/amp": "^0.3.2",
     "modern-normalize": "^3.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
