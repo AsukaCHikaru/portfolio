@@ -41,7 +41,7 @@ const MOB_IDLE_SUBSTATE = {
 } as const;
 ```
 
-This list of states represents two different things: mob's action status (`IDLE`, `ATTACK`, `DEAD`) and mob's state machine status (`IN__ACTION`, `ACTION__OVER`, `MOB__TURN__TRANSITION`). The entanglement of these two concerns disrupted the mental model, making the code messy and eventually sabotaged the game. By isolating combat state into a different model, the vision toward a simple state machine design became clear. Here is the refactored mob states:
+This list of states represents two different things: mob's action status (`IDLE`, `ATTACK`, `DEAD`) and mob's state machine status (`IN_ACTION`, `ACTION_OVER`, `MOB_TURN_TRANSITION`). The entanglement of these two concerns disrupted the mental model, making the code messy and eventually sabotaged the game. By isolating combat state into a different model, the vision toward a simple state machine design became clear. Here is the refactored mob states:
 
 ```ts
 const MOB_STATE = {
@@ -63,10 +63,10 @@ The states are clearer now; it's about the mob's in-game action.
 
 As for the combat loop, I implemented it as a custom React hook. The mechanic itself is extremely simple: transition between hero turn and mob turn base on hero and mob **AP**, or action point. Move or attack uses AP, and one's turn is over when all AP is used. Below is the full list of executions in a combat loop:
 
-1. Start in `HERO__TURN`. Wait for hero **ATTACK** or **MOVE** action.
-2. When hero **AP** is equal to or less than zero, transition to `MOB__TURN`.
-3. In `MOB__TURN`, mobs in level take action in turn. Each mob checks if hero is in vision if it is in `IDLE` state. If yes, it transitions to `AGGRO` state, in which it may **ATTACK** or **MOVE** toward hero. One mob take actions until its **AP** is equal to or less than zero. If no, mob skips turn. `DEAD` mobs skip turn as well.
-4. When all mobs have consumed their **AP**, transition to `HERO__TURN`.
+1. Start in `HERO_TURN`. Wait for hero **ATTACK** or **MOVE** action.
+2. When hero **AP** is equal to or less than zero, transition to `MOB_TURN`.
+3. In `MOB_TURN`, mobs in level take action in turn. Each mob checks if hero is in vision if it is in `IDLE` state. If yes, it transitions to `AGGRO` state, in which it may **ATTACK** or **MOVE** toward hero. One mob take actions until its **AP** is equal to or less than zero. If no, mob skips turn. `DEAD` mobs skip turn as well.
+4. When all mobs have consumed their **AP**, transition to `HERO_TURN`.
 
 The hook's responsibility is to monitor hero and mobs' AP and proceed on the state transition. First, the hero's one:
 
@@ -94,17 +94,17 @@ const useTurn = ({ heroActorRef }) => {
   }, [heroActorRef])
 ```
 
-The XState [subscription API](https://stately.ai/docs/actors#subscriptions) suits this part very well. The transition from `HERO__TURN` to `MOB__TURN` only depends on two things:
+The XState [subscription API](https://stately.ai/docs/actors#subscriptions) suits this part very well. The transition from `HERO_TURN` to `MOB_TURN` only depends on two things:
 1. AP is no larger than zero.
-2. It is `HERO__TURN`.
+2. It is `HERO_TURN`.
 Here I used another effect to update `turnStateRef` instead of directly depending on `turnState`, as it would make the turn state setting effect depending on turn state itself, a common anti-pattern for React effects.
 
 Next is the mob turn. The effect does below things:
-- only work in `MOB___TURN`
+- only work in `MOB_TURN`
 - only work for mobs not in `DEAD` state
 - each mob take action in turn, until all AP is used
 
-The first two tasks are simple conditions; the third is the main task of this effect. The mob taking action part, however, has been encapsulated in mob state machine; all it requires is just to send a `TAKE__TRUN` event to them. This abstraction I did previously made implementing mob turn mechanic extremely simple. 
+The first two tasks are simple conditions; the third is the main task of this effect. The mob taking action part, however, has been encapsulated in mob state machine; all it requires is just to send a `TAKE_TRUN` event to them. This abstraction I did previously made implementing mob turn mechanic extremely simple. 
 
 ```ts
 // useTurn.ts
@@ -156,7 +156,7 @@ states: {
 		],
 ```
 
-Each mob acts until all AP is used, therefore after each `TAKE__TURN` event, check mob API, start a timeout to keep multiple actions from being compressed into one frame, then wrap all of the above into a loop.
+Each mob acts until all AP is used, therefore after each `TAKE_TURN` event, check mob API, start a timeout to keep multiple actions from being compressed into one frame, then wrap all of the above into a loop.
 
 ```ts
 eligibleMobs.forEach(async (mob) => {
@@ -182,7 +182,7 @@ eligibleMobs.forEach(async (mob) => {
 }
 ```
 
-The last part of turn is the end. After a short delay for clarity, regenerate hero and mobs' AP, set turn state to `HERO__TURN`, and it's a new turn waiting to start.
+The last part of turn is the end. After a short delay for clarity, regenerate hero and mobs' AP, set turn state to `HERO_TURN`, and it's a new turn waiting to start.
 
 ```ts
 await new Promise((resolve) => setTimeout(resolve, AP_REGEN_DELAY_MS));
