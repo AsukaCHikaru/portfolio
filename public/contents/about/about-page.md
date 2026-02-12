@@ -1,6 +1,5 @@
 ---
 created: 2023/09/08 22:11
-category: "[[-044 Side Project Memo]]"
 updated: 2026-02-07
 published: 2023-07-15
 ---
