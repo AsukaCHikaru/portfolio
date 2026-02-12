@@ -20,6 +20,6 @@ As I also mentioned in the [about page](https://asukawang.com/about), I love mak
 
 There are non-zero sum lists as well, such as [**Video Game Index**](https://asukawang.com/list/video-game-index), a comprehensive record of my played games. While they do not induce the selection dilemma, the time machine role is fulfilled all the same; the dots in the stream of time are, by lists, needled into a tapestry of history.
 
-List is not just about past. [**Bucket list**](htts://asukawang.com/list/bucket-list) is the ultimate todo list that paints a favorable future; every goal is a dream so overdue that it eventually earned its place in this list of life.
+List is not just about past. [**Bucket list**](https://asukawang.com/list/bucket-list) is the ultimate todo list that paints a favorable future; every goal is a dream so overdue that it eventually earned its place in this list of life.
 
 List is self-expression in the most concise form, dry yet deeply personal. Similar to blog, I expect to add more entries to it in the future, and somewhere on the timeline, more additions to this site's top level section as well.
