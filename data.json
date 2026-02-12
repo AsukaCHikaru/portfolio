@@ -2,6 +2,197 @@
   "postList": [
     {
       "metadata": {
+        "title": "Site Patch Notes: List",
+        "description": "Introducing List: the snapshot of my thoughts on various topics.",
+        "publishedAt": "2026-02-12",
+        "updatedAt": "2026-02-12",
+        "pathname": "site-patch-notes-list",
+        "category": "retrospective",
+        "topic": "meta",
+        "language": "en-US",
+        "featured": false
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "List",
+                  "style": "strong"
+                }
+              ],
+              "url": "https://asukawang.com/list"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": " is this site's latest addition of sections, following "
+            },
+            {
+              "type": "textBody",
+              "style": "strong",
+              "value": "blog"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": " and "
+            },
+            {
+              "type": "textBody",
+              "style": "strong",
+              "value": "about"
+            },
+            {
+              "type": "textBody",
+              "value": " which were here since last ",
+              "style": "plain"
+            },
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "redesign",
+                  "style": "plain"
+                }
+              ],
+              "url": "https://asukawang.com/blog/site-patch-notes-2024-redesign"
+            },
+            {
+              "type": "textBody",
+              "value": ". It contains my personal records on various topics, including video game, music, and my bucket list.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "value": "As I also mentioned in the ",
+              "style": "plain"
+            },
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "about page",
+                  "style": "plain"
+                }
+              ],
+              "url": "https://asukawang.com/about"
+            },
+            {
+              "type": "textBody",
+              "style": "plain",
+              "value": ", I love making lists. I’ve been making any type of lists since I remember, be them iPod playlists, "
+            },
+            {
+              "type": "textBody",
+              "style": "italic",
+              "value": "OnePiece"
+            },
+            {
+              "type": "textBody",
+              "value": " character power rankings, or my favorite Japanese idols. Through selection and elimination I see beauty, like clay take shape under sculptor's finger. Curation, to me, is a conversation with myself, during which I keep asking when, what, how and why. These questions are refined to nothing but essences in the form of a list, representing my mind at the very moment; a snapshot of me. They serve as time machines, opening the gateway to visit my past self.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "Music Awards",
+                  "style": "strong"
+                }
+              ],
+              "url": "https://asukawang.com/list/music-awards"
+            },
+            {
+              "type": "textBody",
+              "value": " is a typical embodiment of this ethos. I started this year-end ritual seventeen years ago, because the idea of thinking about things I enjoyed for past year seemed fun, which turned out indeed was, including the uncomfortable moments–I constantly faced the dilemma of having to choose from two evenly adored entries, and after countless replay and debate with myself, still struggling to find a convincing verdict. The list therefore bears both the weight of the eliminated as well as the pleasure of reaching satisfaction. It was something I’m glad I did, and still do, after more than a decade.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "value": "There are non-zero sum lists as well, such as ",
+              "style": "plain"
+            },
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "Video Game Index",
+                  "style": "strong"
+                }
+              ],
+              "url": "https://asukawang.com/list/video-game-index"
+            },
+            {
+              "type": "textBody",
+              "value": ", a comprehensive record of my played games. While they do not induce the selection dilemma, the time machine role is fulfilled all the same; the dots in the stream of time are, by lists, needled into a tapestry of history.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "value": "List is not just about past. ",
+              "style": "plain"
+            },
+            {
+              "type": "link",
+              "body": [
+                {
+                  "type": "textBody",
+                  "value": "Bucket list",
+                  "style": "strong"
+                }
+              ],
+              "url": "htts://asukawang.com/list/bucket-list"
+            },
+            {
+              "type": "textBody",
+              "value": " is the ultimate todo list that paints a favorable future; every goal is a dream so overdue that it eventually earned its place in this list of life.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": [
+            {
+              "type": "textBody",
+              "value": "List is self-expression in the most concise form, dry yet deeply personal. Similar to blog, I expect to add more entries to it in the future, and somewhere on the timeline, more additions to this site's top level section as well.",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
         "title": "Project Fiddlesticks Devlog #2",
         "description": "I refactored the combat loop mechanic, an essential component in my indie game Project Fiddlesticks.",
         "publishedAt": "2026-01-31",

@@ -4,7 +4,12 @@
 <link>https://asukawang.com</link>
 <description>Asuka Wang's blog</description>
 <language>en-US</language>
-<lastBuildDate>Sun, 08 Feb 2026 06:49:14 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Feb 2026 00:42:04 GMT</lastBuildDate>
+<item>
+<title>Site Patch Notes: List</title>
+<link>https://asukawang.com/blog/site-patch-notes-list</link><description>Introducing List: the snapshot of my thoughts on various topics.</description>
+<pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
+<guid>https://asukawang.com/blog/site-patch-notes-list</guid></item>
 <item>
 <title>Project Fiddlesticks Devlog #2</title>
 <link>https://asukawang.com/blog/project-fiddlesticks-devlog-2</link><description>I refactored the combat loop mechanic, an essential component in my indie game Project Fiddlesticks.</description>
