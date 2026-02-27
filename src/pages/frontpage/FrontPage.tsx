@@ -1,74 +1,28 @@
-import { useContext, useMemo } from "react";
-import { DataContext } from "../../components/DataContext";
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
 import type { FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
+import { useSiteData } from "../../hooks/useSiteData";
 
 export const FrontPage = () => {
-  const context = useContext(DataContext);
-  const post = useMemo(
-    () =>
-      context.postList.sort(
-        (a, b) =>
-          new Date(b.metadata.publishedAt).getTime() -
-          new Date(a.metadata.publishedAt).getTime(),
-      )[0],
-    [context],
-  );
+  const siteData = useSiteData("front_page");
 
-  const furtherReading = useMemo(() => {
-    const sameCategoryPosts = context.postList.filter(
-      (p) =>
-        p.metadata.category === post.metadata.category &&
-        p.metadata.pathname !== post.metadata.pathname,
-    );
-    return sameCategoryPosts.length > 0
-      ? { type: "category", posts: [...sameCategoryPosts].slice(0, 5) }
-      : { type: "recent", posts: [...context.postList].slice(1, 6) };
-  }, [context, post]) satisfies FurtherReading;
-
-  const categories = useMemo(
-    () =>
-      [...context.postList]
-        .reduce(
-          (acc, post) => {
-            if (acc.some((c) => c.name === post.metadata.category)) {
-              return acc;
-            }
-            const category = post.metadata.category;
-            const count = context.postList.filter(
-              (p) => p.metadata.category === category,
-            ).length;
-            return [...acc, { name: category, count }];
-          },
-          [] as { name: string; count: number }[],
-        )
-        .sort((a, b) => b.count - a.count),
-    [context],
-  );
-
-  const featuredReading = useMemo(
-    () => context.postList.find((p) => p.metadata.featured),
-    [context],
-  );
-
-  if (!post) {
+  if (!siteData) {
     return null;
   }
+
+  const { leadStory, lastUpdated, furtherReading, categories, featuredReading } =
+    siteData.data;
 
   return (
     <>
       <Helmet title="Asuka Wang" description="Asuka Wang's personal website" />
       <FrontPageContent
-        leadStory={{
-          metadata: post.metadata,
-          content: post.content,
-        }}
+        leadStory={leadStory}
         furtherReading={furtherReading}
-        lastUpdated={context.lastCommitDate}
+        lastUpdated={lastUpdated}
         categories={categories}
         featuredReading={featuredReading}
       />

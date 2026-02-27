@@ -1,17 +1,18 @@
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
 import type { PostMetaData } from "../../types";
-import { DataContext } from "../../components/DataContext";
 import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
+import { useSiteData } from "../../hooks/useSiteData";
 
 export const ArchivePage = () => {
-  const context = useContext(DataContext);
-  const allPosts = context.postList.map((post) => post.metadata);
+  const siteData = useSiteData("blog_archive");
 
   const { filteredPostList, categoryFilter } = useMemo(() => {
+    if (!siteData) return { filteredPostList: [], categoryFilter: null };
+    const allPosts = siteData.data.postList.map((p) => p.metadata);
     const urlParams = new URLSearchParams(window.location.search);
     const categoryFilter = urlParams.get("category");
 
@@ -25,9 +26,9 @@ export const ArchivePage = () => {
       ),
       categoryFilter,
     };
-  }, [allPosts]);
+  }, [siteData]);
 
-  if (!context) {
+  if (!siteData) {
     return null;
   }
 

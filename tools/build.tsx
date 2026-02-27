@@ -11,11 +11,16 @@ import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
 import type { FurtherReading, SiteData } from "../src/types";
 import { ListPageContent } from "../src/pages/list/ListPage";
-import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
-import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
-import { BucketListPage } from "../src/pages/list/BucketListPage";
+import { MusicAwardsListPageContent } from "../src/pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPageContent } from "../src/pages/list/VideoGameIndexListPage";
+import { BucketListPageContent } from "../src/pages/list/BucketListPage";
 
-const writeFile = (element: ReactNode, path: string, metadata: string) => {
+const writeFile = (
+  element: ReactNode,
+  path: string,
+  metadata: string,
+  pageData?: SiteData,
+) => {
   let template = readFileSync(
     resolve(import.meta.dir, "..", "index.html"),
     "utf-8",
@@ -30,6 +35,15 @@ const writeFile = (element: ReactNode, path: string, metadata: string) => {
     );
 
     template = template.replace("<head>", `<head>${metadata}`);
+
+    if (pageData) {
+      const json = JSON.stringify(pageData).replace(/<\//g, "<\\/");
+      template = template.replace(
+        "</head>",
+        `<script type="application/json" id="__DATA__">${json}</script>\n</head>`,
+      );
+      Bun.write(`./dist${path}/data.json`, JSON.stringify(pageData));
+    }
 
     if (process.env.PHASE === "dev") {
       template = template.replace(
@@ -74,10 +88,6 @@ const writeFile = (element: ReactNode, path: string, metadata: string) => {
   }
 };
 
-const writePageData = (path: string, data: SiteData) => {
-  Bun.write(`./dist${path}/data.json`, JSON.stringify(data));
-};
-
 const generateMetadata = (title: string, description: string) => {
   return `
     <title>${title}</title>
@@ -98,11 +108,13 @@ const buildBlog = async () => {
       />,
       "/blog",
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
+      {
+        section: "blog_archive",
+        data: {
+          postList: postList.map((post) => ({ metadata: post.metadata })),
+        },
+      },
     );
-    writePageData("/blog", {
-      section: "blog_archive",
-      data: { postList: postList.map((post) => ({ metadata: post.metadata })) },
-    });
     postList.forEach((post) => {
       const path = `/blog/${post.metadata.pathname}`;
       writeFile(
@@ -112,11 +124,11 @@ const buildBlog = async () => {
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
         ),
+        {
+          section: "blog",
+          data: { metadata: post.metadata, content: post.content },
+        },
       );
-      writePageData(path, {
-        section: "blog",
-        data: { metadata: post.metadata, content: post.content },
-      });
     });
   } catch (error) {
     console.error("Error building blog:", error);
@@ -129,11 +141,8 @@ const buildAboutPage = async () => {
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
     generateMetadata("Asuka Wang", "About Asuka Wang"),
+    { section: "about", data: about },
   );
-  writePageData("/about", {
-    section: "about",
-    data: about,
-  });
 };
 
 const buildResumePage = async () => {
@@ -190,17 +199,17 @@ const buildFrontPage = async () => {
     />,
     "/",
     generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
-  );
-  writePageData("/", {
-    section: "front_page",
-    data: {
-      leadStory: lastPost,
-      lastUpdated: lastCommitDate,
-      furtherReading,
-      categories,
-      featuredReading,
+    {
+      section: "front_page",
+      data: {
+        leadStory: lastPost,
+        lastUpdated: lastCommitDate,
+        furtherReading,
+        categories,
+        featuredReading,
+      },
     },
-  });
+  );
 };
 
 const buildList = async () => {
@@ -214,47 +223,35 @@ const buildList = async () => {
     />,
     "/list",
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+    { section: "list", data: { musicAwards, videoGameIndex, bucketList } },
   );
-  writePageData("/list", {
-    section: "list",
-    data: { musicAwards, videoGameIndex, bucketList },
-  });
 
   writeFile(
-    <MusicAwardsListPage musicAwards={musicAwards} />,
+    <MusicAwardsListPageContent musicAwards={musicAwards} />,
     "/list/music-awards",
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
     ),
+    { section: "list_music_awards", data: { musicAwards } },
   );
-  writePageData("/list/music-awards", {
-    section: "list_music_awards",
-    data: { musicAwards },
-  });
 
   writeFile(
-    <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
+    <VideoGameIndexListPageContent videoGameIndex={videoGameIndex} />,
     "/list/video-game-index",
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
     ),
+    { section: "list_video_game_index", data: { videoGameIndex } },
   );
-  writePageData("/list/video-game-index", {
-    section: "list_video_game_index",
-    data: { videoGameIndex },
-  });
 
   writeFile(
-    <BucketListPage bucketList={bucketList} />,
+    <BucketListPageContent bucketList={bucketList} />,
     "/list/bucket-list",
     generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
+    { section: "list_bucket_list", data: { bucketList } },
   );
-  writePageData("/list/bucket-list", {
-    section: "list_bucket_list",
-    data: { bucketList },
-  });
 };
 
 const writeFontCss = async () => {

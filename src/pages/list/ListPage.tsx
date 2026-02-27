@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { DataContext } from "../../components/DataContext";
 import { Layout } from "../../components/Layout";
 import type {
   BucketList,
@@ -8,22 +6,25 @@ import type {
   VideoGameIndexList,
 } from "../../types";
 import { Link } from "../../components/Link";
-import { MusicAwardsListPage } from "./MusicAwardsListPage";
-import { VideoGameIndexListPage } from "./VideoGameIndexListPage";
-import { BucketListPage } from "./BucketListPage";
 import { Helmet } from "../../components/Helmet";
+import { useSiteData } from "../../hooks/useSiteData";
 
 export const ListPage = () => {
-  const context = useContext(DataContext);
-  const list = context.list;
+  const siteData = useSiteData("list");
+
+  if (!siteData) {
+    return null;
+  }
+
+  const { musicAwards, videoGameIndex, bucketList } = siteData.data;
 
   return (
     <>
       <Helmet title="List | Asuka Wang" description="Asuka Wang's lists" />
       <ListPageContent
-        musicAwards={list.musicAwards}
-        videoGameIndex={list.videoGameIndex}
-        bucketList={list.bucketList}
+        musicAwards={musicAwards}
+        videoGameIndex={videoGameIndex}
+        bucketList={bucketList}
       />
     </>
   );
@@ -67,18 +68,4 @@ export const ListPageContent = ({
       </div>
     </Layout>
   );
-};
-
-export const ListRouter = () => {
-  const listName = window.location.pathname.replace(/\/list\/(\S+?)\/?$/, "$1");
-  const context = useContext(DataContext);
-  const list = context.list;
-
-  return listName === "music-awards" ? (
-    <MusicAwardsListPage musicAwards={list.musicAwards} />
-  ) : listName === "video-game-index" ? (
-    <VideoGameIndexListPage videoGameIndex={list.videoGameIndex} />
-  ) : listName === "bucket-list" ? (
-    <BucketListPage bucketList={list.bucketList} />
-  ) : null;
 };

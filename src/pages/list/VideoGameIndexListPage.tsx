@@ -2,12 +2,23 @@ import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import type { List, VideoGameIndexList } from "../../types";
 import { Helmet } from "../../components/Helmet";
+import { useSiteData } from "../../hooks/useSiteData";
+
+export const VideoGameIndexListPage = () => {
+  const siteData = useSiteData("list_video_game_index");
+  if (!siteData) return null;
+  return (
+    <VideoGameIndexListPageContent
+      videoGameIndex={siteData.data.videoGameIndex}
+    />
+  );
+};
 
 interface Props {
   videoGameIndex: List<VideoGameIndexList>;
 }
 
-export const VideoGameIndexListPage = ({ videoGameIndex }: Props) => {
+export const VideoGameIndexListPageContent = ({ videoGameIndex }: Props) => {
   const groupByFinished = useMemo(() => {
     const map = new Map<string, VideoGameIndexList>();
     videoGameIndex.list.forEach((game) => {

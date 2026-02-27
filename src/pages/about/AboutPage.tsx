@@ -1,17 +1,17 @@
-import { useContext } from "react";
-import { DataContext } from "../../components/DataContext";
 import { Layout } from "../../components/Layout";
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
 import { formatDate } from "../../utils/dateTimeUtil";
+import { useSiteData } from "../../hooks/useSiteData";
 
 export const AboutPage = () => {
-  const context = useContext(DataContext);
-  const post = context.about;
+  const siteData = useSiteData("about");
 
-  if (!post) {
+  if (!siteData) {
     return null;
   }
+
+  const post = siteData.data;
 
   return (
     <>

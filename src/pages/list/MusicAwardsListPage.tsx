@@ -6,15 +6,22 @@ import type {
   MusicAwardNominee,
   RecordNominee,
 } from "../../types";
+import { useSiteData } from "../../hooks/useSiteData";
 
 const isRecordNominee = (
   nominee: MusicAwardNominee,
 ): nominee is RecordNominee => "title" in nominee;
 
+export const MusicAwardsListPage = () => {
+  const siteData = useSiteData("list_music_awards");
+  if (!siteData) return null;
+  return <MusicAwardsListPageContent musicAwards={siteData.data.musicAwards} />;
+};
+
 interface Props {
   musicAwards: List<MusicAwardList>;
 }
-export const MusicAwardsListPage = ({ musicAwards }: Props) => {
+export const MusicAwardsListPageContent = ({ musicAwards }: Props) => {
   return (
     <>
       <Helmet title={musicAwards.name} description={musicAwards.description} />
