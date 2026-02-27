@@ -27,7 +27,7 @@ const writeFile = (
   );
 
   try {
-    const html = ReactDOMServer.renderToString(<div>{element}</div>);
+    const html = ReactDOMServer.renderToString(<>{element}</>);
 
     template = template.replace(
       '<div id="root"></div>',
