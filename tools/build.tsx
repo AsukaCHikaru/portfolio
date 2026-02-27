@@ -260,30 +260,6 @@ const writeFontCss = async () => {
   Bun.write("./dist/fonts.css", replaced);
 };
 
-const writeData = async () => {
-  const lastCommitDate = await getLastCommitDate();
-  const postList = await getBlogPostList();
-  const about = await getAbout();
-  const { videoGameIndex, musicAwards, bucketList } = await getList();
-  await Bun.write(
-    "./dist/data.json",
-    JSON.stringify(
-      {
-        lastCommitDate,
-        postList,
-        about,
-        list: {
-          videoGameIndex,
-          musicAwards,
-          bucketList,
-        },
-      },
-      null,
-      2,
-    ),
-  );
-};
-
 const runSubfont = async () => {
   const postList = await getBlogPostList();
   const cjkPosts = postList.filter(
@@ -315,7 +291,6 @@ export const build = async () => {
   await buildResumePage();
   await buildList();
   await writeFontCss();
-  await writeData();
   await buildRssFeed();
   await Bun.$`cp -r ./public/fonts ./dist`;
   await Bun.$`mkdir -p ./dist/public`;
