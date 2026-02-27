@@ -9,28 +9,17 @@ import { FrontPageHeader } from "../../components/SiteHeader";
 
 export const FrontPage = () => {
   const context = useContext(DataContext);
-  const post = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.frontPage;
-    if (staticProp) {
-      return staticProp.leadStory;
-    }
-    return context.postList.sort(
-      (a, b) =>
-        new Date(b.metadata.publishedAt).getTime() -
-        new Date(a.metadata.publishedAt).getTime(),
-    )[0];
-  }, [context]);
-
-  const lastUpdated = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.lastUpdated;
-    return staticProp;
-  }, []);
+  const post = useMemo(
+    () =>
+      context.postList.sort(
+        (a, b) =>
+          new Date(b.metadata.publishedAt).getTime() -
+          new Date(a.metadata.publishedAt).getTime(),
+      )[0],
+    [context],
+  );
 
   const furtherReading = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.frontPage;
-    if (staticProp) {
-      return staticProp.furtherReading;
-    }
     const sameCategoryPosts = context.postList.filter(
       (p) =>
         p.metadata.category === post.metadata.category &&
@@ -41,35 +30,30 @@ export const FrontPage = () => {
       : { type: "recent", posts: [...context.postList].slice(1, 6) };
   }, [context, post]) satisfies FurtherReading;
 
-  const categories = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.frontPage;
-    if (staticProp) {
-      return staticProp.categories;
-    }
-    return [...context.postList]
-      .reduce(
-        (acc, post) => {
-          if (acc.some((c) => c.name === post.metadata.category)) {
-            return acc;
-          }
-          const category = post.metadata.category;
-          const count = context.postList.filter(
-            (p) => p.metadata.category === category,
-          ).length;
-          return [...acc, { name: category, count }];
-        },
-        [] as { name: string; count: number }[],
-      )
-      .sort((a, b) => b.count - a.count);
-  }, [context]);
+  const categories = useMemo(
+    () =>
+      [...context.postList]
+        .reduce(
+          (acc, post) => {
+            if (acc.some((c) => c.name === post.metadata.category)) {
+              return acc;
+            }
+            const category = post.metadata.category;
+            const count = context.postList.filter(
+              (p) => p.metadata.category === category,
+            ).length;
+            return [...acc, { name: category, count }];
+          },
+          [] as { name: string; count: number }[],
+        )
+        .sort((a, b) => b.count - a.count),
+    [context],
+  );
 
-  const featuredReading = useMemo(() => {
-    const staticProp = window.__STATIC_PROPS__.frontPage;
-    if (staticProp) {
-      return staticProp.featuredReading;
-    }
-    return context.postList.find((p) => p.metadata.featured);
-  }, [context]);
+  const featuredReading = useMemo(
+    () => context.postList.find((p) => p.metadata.featured),
+    [context],
+  );
 
   if (!post) {
     return null;
@@ -84,7 +68,7 @@ export const FrontPage = () => {
           content: post.content,
         }}
         furtherReading={furtherReading}
-        lastUpdated={lastUpdated}
+        lastUpdated={context.lastCommitDate}
         categories={categories}
         featuredReading={featuredReading}
       />

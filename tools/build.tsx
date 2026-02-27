@@ -15,12 +15,7 @@ import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
 import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
 import { BucketListPage } from "../src/pages/list/BucketListPage";
 
-const writeFile = (
-  element: ReactNode,
-  path: string,
-  staticProps: string,
-  metadata: string,
-) => {
+const writeFile = (element: ReactNode, path: string, metadata: string) => {
   let template = readFileSync(
     resolve(import.meta.dir, "..", "index.html"),
     "utf-8",
@@ -28,19 +23,11 @@ const writeFile = (
 
   try {
     const html = ReactDOMServer.renderToString(<div>{element}</div>);
-    const escapedStaticProps = staticProps
-      .replace(/\u2028/g, "\\u2028") // Line separator
-      .replace(/\u2029/g, "\\u2029") // Paragraph separator
-      .replace(/</g, "\\u003c")
-      .replace(/>/g, "\\u003e")
-      .replace(/&/g, "\\u0026");
 
-    template = template
-      .replace(
-        "</head>",
-        `<script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script></head>`,
-      )
-      .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+    template = template.replace(
+      '<div id="root"></div>',
+      `<div id="root">${html}</div>`,
+    );
 
     template = template.replace("<head>", `<head>${metadata}`);
 
@@ -98,7 +85,6 @@ const generateMetadata = (title: string, description: string) => {
 };
 
 const buildBlog = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   try {
     writeFile(
@@ -107,17 +93,12 @@ const buildBlog = async () => {
         categoryFilter={null}
       />,
       "/blog",
-      JSON.stringify({
-        blog: { postList: postList.map((post) => post.metadata) },
-        lastUpdated: lastCommitDate,
-      }),
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
     );
     postList.forEach((post) => {
       writeFile(
         <PostPageContent metadata={post.metadata} content={post.content} />,
         `/blog/${post.metadata.pathname}`,
-        JSON.stringify({ blog: { post }, lastUpdated: lastCommitDate }),
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
@@ -130,12 +111,10 @@ const buildBlog = async () => {
 };
 
 const buildAboutPage = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const about = await getAbout();
   writeFile(
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
-    JSON.stringify({ about, lastUpdated: lastCommitDate }),
     generateMetadata("Asuka Wang", "About Asuka Wang"),
   );
 };
@@ -144,7 +123,6 @@ const buildResumePage = async () => {
   writeFile(
     <ResumePage />,
     "/resume",
-    "",
     generateMetadata("Resume | Asuka Wang", "Asuka Wang's resume"),
   );
 };
@@ -194,21 +172,11 @@ const buildFrontPage = async () => {
       featuredReading={featuredReading}
     />,
     "/",
-    JSON.stringify({
-      frontPage: {
-        leadStory: lastPost,
-        furtherReading,
-        categories,
-        featuredReading,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
   );
 };
 
 const buildList = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const { musicAwards, videoGameIndex, bucketList } = await getList();
 
   writeFile(
@@ -218,28 +186,12 @@ const buildList = async () => {
       bucketList={bucketList}
     />,
     "/list",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
   );
 
   writeFile(
     <MusicAwardsListPage musicAwards={musicAwards} />,
     "/list/music-awards",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
@@ -248,14 +200,6 @@ const buildList = async () => {
   writeFile(
     <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
     "/list/video-game-index",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
@@ -264,14 +208,6 @@ const buildList = async () => {
   writeFile(
     <BucketListPage bucketList={bucketList} />,
     "/list/bucket-list",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
   );
 };
@@ -283,6 +219,7 @@ const writeFontCss = async () => {
 };
 
 const writeData = async () => {
+  const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   const about = await getAbout();
   const { videoGameIndex, musicAwards, bucketList } = await getList();
@@ -290,6 +227,7 @@ const writeData = async () => {
     "./dist/data.json",
     JSON.stringify(
       {
+        lastCommitDate,
         postList,
         about,
         list: {

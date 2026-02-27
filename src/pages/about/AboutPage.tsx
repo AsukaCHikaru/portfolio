@@ -7,7 +7,7 @@ import { formatDate } from "../../utils/dateTimeUtil";
 
 export const AboutPage = () => {
   const context = useContext(DataContext);
-  const post = window.__STATIC_PROPS__.about || context.about;
+  const post = context.about;
 
   if (!post) {
     return null;

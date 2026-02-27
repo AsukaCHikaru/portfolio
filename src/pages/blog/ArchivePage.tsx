@@ -9,9 +9,7 @@ import { Helmet } from "../../components/Helmet";
 
 export const ArchivePage = () => {
   const context = useContext(DataContext);
-  const allPosts =
-    window.__STATIC_PROPS__.blog?.postList ||
-    context.postList.map((post) => post.metadata);
+  const allPosts = context.postList.map((post) => post.metadata);
 
   const { filteredPostList, categoryFilter } = useMemo(() => {
     const urlParams = new URLSearchParams(window.location.search);

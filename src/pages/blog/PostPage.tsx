@@ -11,10 +11,7 @@ export const PostPage = () => {
       /\/blog\/(\S+?)\/?$/,
       "$1",
     );
-    const staticProp = window.__STATIC_PROPS__;
-    if (staticProp.blog?.post?.metadata.pathname === pathname) {
-      return staticProp.blog.post;
-    }
+
     return context.postList.find((post) => post.metadata.pathname === pathname);
   }, [context.postList]);
 

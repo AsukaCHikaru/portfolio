@@ -8,6 +8,7 @@ import type {
 } from "../types";
 
 export type ContextData = {
+  lastCommitDate: string;
   postList: Post[];
   about: Post | null;
   list: {
@@ -18,6 +19,7 @@ export type ContextData = {
 };
 
 export const DataContext = createContext<ContextData>({
+  lastCommitDate: "",
   postList: [],
   about: null,
   list: {

@@ -15,7 +15,7 @@ import { Helmet } from "../../components/Helmet";
 
 export const ListPage = () => {
   const context = useContext(DataContext);
-  const list = window.__STATIC_PROPS__.list || context.list;
+  const list = context.list;
 
   return (
     <>
@@ -72,7 +72,7 @@ export const ListPageContent = ({
 export const ListRouter = () => {
   const listName = window.location.pathname.replace(/\/list\/(\S+?)\/?$/, "$1");
   const context = useContext(DataContext);
-  const list = window.__STATIC_PROPS__.list || context.list;
+  const list = context.list;
 
   return listName === "music-awards" ? (
     <MusicAwardsListPage musicAwards={list.musicAwards} />
