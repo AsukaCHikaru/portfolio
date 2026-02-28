@@ -13,7 +13,7 @@ export const PostPageContent = ({ metadata, content }: Props) => {
   return (
     <Layout>
       <div className="post-page-header_container">
-        <Link to={`/blog/?category=${metadata.category}`}>
+        <Link to={`/blog?category=${metadata.category}`}>
           {metadata.category}
         </Link>
         <h1>{metadata.title}</h1>
