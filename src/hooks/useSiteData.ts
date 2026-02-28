@@ -1,30 +1,29 @@
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import type { SiteData } from "../types";
-
-const dataEl =
-  typeof document !== "undefined" ? document.getElementById("__DATA__") : null;
-const inlineData: SiteData | null = dataEl
-  ? (JSON.parse(dataEl.textContent!) as SiteData)
-  : null;
+import { SiteDataStoreContext } from "../components/SiteDataStore";
 
 export const useSiteData = <S extends SiteData["section"]>(
   section: S,
 ): Extract<SiteData, { section: S }> | null => {
   type PageData = Extract<SiteData, { section: S }>;
 
-  const [data, setData] = useState<PageData | null>(
-    inlineData?.section === section ? (inlineData as PageData) : null,
-  );
+  const { cache, set } = useContext(SiteDataStoreContext);
+  const path =
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/$/, "")
+      : "";
+
+  const cached = cache.get(path);
+  const match = cached?.section === section ? (cached as PageData) : null;
 
   useEffect(() => {
-    if (data) {
+    if (match) {
       return;
     }
-    const path = window.location.pathname.replace(/\/$/, "");
     fetch(`${path}/data.json`)
       .then((res) => res.json())
-      .then((json: PageData) => setData(json));
-  }, [data]);
+      .then((json: SiteData) => set(path, json));
+  }, [match, path, set]);
 
-  return data;
+  return match;
 };
