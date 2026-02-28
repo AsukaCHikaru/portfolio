@@ -14,7 +14,8 @@ const prefetch = (
   if (cache.has(path)) {
     return;
   }
-  fetch(`${path}/data.json`)
+  const url = path === "/" ? "/data.json" : `${path}/data.json`;
+  fetch(url)
     .then((res) => res.json())
     .then((json: SiteData) => set(path, json))
     // TODO: implement error boundary
@@ -45,7 +46,7 @@ export const Link = ({
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          prefetch(to.replace(/\/$/, ""), cache, set);
+          prefetch(to.replace(/\/$/, "") || "/", cache, set);
           observer.disconnect();
         }
       },
@@ -56,7 +57,7 @@ export const Link = ({
     return () => observer.disconnect();
   }, [to, cache, set]);
 
-  const handleHover = () => prefetch(to.replace(/\/$/, ""), cache, set);
+  const handleHover = () => prefetch(to.replace(/\/$/, "") || "/", cache, set);
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.history.pushState({}, "", to);

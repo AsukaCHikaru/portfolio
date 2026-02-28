@@ -1,13 +1,13 @@
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
-import type { FurtherReading, Post } from "../../types";
+import type { FrontPageData, FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
-import { useSiteData } from "../../hooks/useSiteData";
+import { useSiteData } from "../../components/SiteDataStore";
 
 export const FrontPage = () => {
-  const siteData = useSiteData("front_page");
+  const siteData = useSiteData<FrontPageData>("/");
 
   if (!siteData) {
     return null;

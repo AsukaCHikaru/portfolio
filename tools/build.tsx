@@ -109,7 +109,6 @@ const buildBlog = async () => {
       "/blog",
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
       {
-        section: "blog_archive",
         data: {
           postList: postList.map((post) => ({ metadata: post.metadata })),
         },
@@ -125,7 +124,6 @@ const buildBlog = async () => {
           post.metadata.description,
         ),
         {
-          section: "blog",
           data: { metadata: post.metadata, content: post.content },
         },
       );
@@ -141,7 +139,7 @@ const buildAboutPage = async () => {
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
     generateMetadata("Asuka Wang", "About Asuka Wang"),
-    { section: "about", data: about },
+    { data: about },
   );
 };
 
@@ -200,7 +198,6 @@ const buildFrontPage = async () => {
     "/",
     generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
     {
-      section: "front_page",
       data: {
         leadStory: lastPost,
         lastUpdated: lastCommitDate,
@@ -223,7 +220,7 @@ const buildList = async () => {
     />,
     "/list",
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
-    { section: "list", data: { musicAwards, videoGameIndex, bucketList } },
+    { data: { musicAwards, videoGameIndex, bucketList } },
   );
 
   writeFile(
@@ -233,7 +230,7 @@ const buildList = async () => {
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
     ),
-    { section: "list_music_awards", data: { musicAwards } },
+    { data: { musicAwards } },
   );
 
   writeFile(
@@ -243,14 +240,14 @@ const buildList = async () => {
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
     ),
-    { section: "list_video_game_index", data: { videoGameIndex } },
+    { data: { videoGameIndex } },
   );
 
   writeFile(
     <BucketListPageContent bucketList={bucketList} />,
     "/list/bucket-list",
     generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
-    { section: "list_bucket_list", data: { bucketList } },
+    { data: { bucketList } },
   );
 };
 

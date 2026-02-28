@@ -1,11 +1,11 @@
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
 import { Layout } from "../../components/Layout";
-import type { BucketList, List } from "../../types";
-import { useSiteData } from "../../hooks/useSiteData";
+import type { BucketList, BucketListData, List } from "../../types";
+import { useSiteData } from "../../components/SiteDataStore";
 
 export const BucketListPage = () => {
-  const siteData = useSiteData("list_bucket_list");
+  const siteData = useSiteData<BucketListData>("/list/bucket-list");
   if (!siteData) return null;
   return <BucketListPageContent bucketList={siteData.data.bucketList} />;
 };

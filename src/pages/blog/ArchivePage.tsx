@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
-import type { PostMetaData } from "../../types";
+import type { BlogArchiveData, PostMetaData } from "../../types";
 import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
-import { useSiteData } from "../../hooks/useSiteData";
+import { useSiteData } from "../../components/SiteDataStore";
 
 export const ArchivePage = () => {
-  const siteData = useSiteData("blog_archive");
+  const siteData = useSiteData<BlogArchiveData>("/blog");
 
   const { filteredPostList, categoryFilter } = useMemo(() => {
     if (!siteData) return { filteredPostList: [], categoryFilter: null };

@@ -1,9 +1,11 @@
 import { PostPageContent } from "../../components/PostPageContent";
 import { Helmet } from "../../components/Helmet";
-import { useSiteData } from "../../hooks/useSiteData";
+import { useSiteData } from "../../components/SiteDataStore";
+import type { BlogData } from "../../types";
 
 export const PostPage = () => {
-  const siteData = useSiteData("blog");
+  const path = window.location.pathname.replace(/\/$/, "");
+  const siteData = useSiteData<BlogData>(path);
 
   if (!siteData) {
     return null;

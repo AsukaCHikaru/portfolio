@@ -1,4 +1,10 @@
-import { createContext, useCallback, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import type { ReactNode } from "react";
 import type { SiteData } from "../types";
 
@@ -23,7 +29,7 @@ const getInlineData = (): Map<string, SiteData> => {
   }
 
   const data = JSON.parse(el.textContent!) as SiteData;
-  const path = window.location.pathname.replace(/\/$/, "");
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
   return new Map([[path, data]]);
 };
 
@@ -45,4 +51,23 @@ export const SiteDataStoreProvider = ({
       {children}
     </SiteDataStoreContext.Provider>
   );
+};
+
+const dataUrl = (path: string) =>
+  path === "/" ? "/data.json" : `${path}/data.json`;
+
+export const useSiteData = <T extends SiteData>(path: string): T | null => {
+  const { cache, set } = useContext(SiteDataStoreContext);
+  const cached = cache.get(path) as T | undefined;
+
+  useEffect(() => {
+    if (cached) {
+      return;
+    }
+    fetch(dataUrl(path))
+      .then((res) => res.json())
+      .then((json: SiteData) => set(path, json));
+  }, [cached, path, set]);
+
+  return cached ?? null;
 };

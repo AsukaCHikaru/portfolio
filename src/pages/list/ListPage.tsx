@@ -2,15 +2,16 @@ import { Layout } from "../../components/Layout";
 import type {
   BucketList,
   List,
+  ListData,
   MusicAwardList,
   VideoGameIndexList,
 } from "../../types";
 import { Link } from "../../components/Link";
 import { Helmet } from "../../components/Helmet";
-import { useSiteData } from "../../hooks/useSiteData";
+import { useSiteData } from "../../components/SiteDataStore";
 
 export const ListPage = () => {
-  const siteData = useSiteData("list");
+  const siteData = useSiteData<ListData>("/list");
 
   if (!siteData) {
     return null;

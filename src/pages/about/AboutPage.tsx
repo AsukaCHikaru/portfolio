@@ -2,10 +2,11 @@ import { Layout } from "../../components/Layout";
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
 import { formatDate } from "../../utils/dateTimeUtil";
-import { useSiteData } from "../../hooks/useSiteData";
+import { useSiteData } from "../../components/SiteDataStore";
+import type { AboutData } from "../../types";
 
 export const AboutPage = () => {
-  const siteData = useSiteData("about");
+  const siteData = useSiteData<AboutData>("/about");
 
   if (!siteData) {
     return null;
