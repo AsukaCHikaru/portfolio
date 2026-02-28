@@ -6,14 +6,7 @@ const isMobile = () =>
   typeof window !== "undefined" &&
   ("ontouchstart" in window || navigator.maxTouchPoints > 0);
 
-const prefetch = (
-  to: string,
-  cache: Map<string, SiteData>,
-  set: (path: string, data: SiteData) => void,
-) => {
-  if (cache.has(to)) {
-    return;
-  }
+const prefetch = (to: string, set: (path: string, data: SiteData) => void) => {
   const url = new URL(to, window.location.origin);
   fetchData(url).then((json) => set(to, json));
 };
@@ -42,8 +35,11 @@ export const Link = ({
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          prefetch(to, cache, set);
           observer.disconnect();
+          if (cache.has(to)) {
+            return;
+          }
+          prefetch(to, set);
         }
       },
       { rootMargin: "200px" },
@@ -53,7 +49,12 @@ export const Link = ({
     return () => observer.disconnect();
   }, [to, cache, set]);
 
-  const handleHover = () => prefetch(to, cache, set);
+  const handleHover = () => {
+    if (cache.has(to)) {
+      return;
+    }
+    prefetch(to, set);
+  };
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.history.pushState({}, "", to);
