@@ -5,7 +5,7 @@ import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const VideoGameIndexListPage = () => {
-  const siteData = useSiteData<VideoGameIndexData>(new URL(window.location.href));
+  const siteData = useSiteData<VideoGameIndexData>();
   if (!siteData) return null;
   return (
     <VideoGameIndexListPageContent

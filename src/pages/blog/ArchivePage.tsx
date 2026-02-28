@@ -7,7 +7,7 @@ import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const ArchivePage = () => {
-  const siteData = useSiteData<BlogArchiveData>(new URL(window.location.href));
+  const siteData = useSiteData<BlogArchiveData>();
 
   if (!siteData) {
     return null;

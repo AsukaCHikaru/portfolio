@@ -5,7 +5,7 @@ import type { BucketList, BucketListData, List } from "../../types";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const BucketListPage = () => {
-  const siteData = useSiteData<BucketListData>(new URL(window.location.href));
+  const siteData = useSiteData<BucketListData>();
   if (!siteData) return null;
   return <BucketListPageContent bucketList={siteData.data.bucketList} />;
 };

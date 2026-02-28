@@ -88,9 +88,9 @@ export const fetchData = async (url: URL) => {
   return url.search ? filterData(data, url.searchParams) : data;
 };
 
-export const useSiteData = <T extends SiteData>(url: URL): T | null => {
+export const useSiteData = <T extends SiteData>(): T | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
-  const key = cacheKey(url);
+  const key = cacheKey(new URL(window.location.href));
   const cached = cache.get(key) as T | undefined;
 
   useEffect(() => {

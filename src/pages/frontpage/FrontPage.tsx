@@ -7,7 +7,7 @@ import { FrontPageHeader } from "../../components/SiteHeader";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const FrontPage = () => {
-  const siteData = useSiteData<FrontPageData>(new URL(window.location.href));
+  const siteData = useSiteData<FrontPageData>();
 
   if (!siteData) {
     return null;

@@ -6,7 +6,7 @@ import { useSiteData } from "../../components/SiteDataStore";
 import type { AboutData } from "../../types";
 
 export const AboutPage = () => {
-  const siteData = useSiteData<AboutData>(new URL(window.location.href));
+  const siteData = useSiteData<AboutData>();
 
   if (!siteData) {
     return null;
