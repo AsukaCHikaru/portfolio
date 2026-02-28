@@ -1,6 +1,25 @@
-import { useContext, type ReactNode } from "react";
+import { useContext, useEffect, useRef, type ReactNode } from "react";
 import { SiteDataStoreContext } from "./SiteDataStore";
 import type { SiteData } from "../types";
+
+const isMobile = () =>
+  typeof window !== "undefined" &&
+  ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
+const prefetch = (
+  path: string,
+  cache: Map<string, SiteData>,
+  set: (path: string, data: SiteData) => void,
+) => {
+  if (cache.has(path)) {
+    return;
+  }
+  fetch(`${path}/data.json`)
+    .then((res) => res.json())
+    .then((json: SiteData) => set(path, json))
+    // TODO: implement error boundary
+    .catch(() => {});
+};
 
 export const Link = ({
   children,
@@ -12,17 +31,32 @@ export const Link = ({
   className?: string;
 }) => {
   const { cache, set } = useContext(SiteDataStoreContext);
+  const ref = useRef<HTMLAnchorElement>(null);
 
-  const handleMouseEnter = () => {
-    const path = to.replace(/\/$/, "");
-    if (cache.has(path)) return;
-    fetch(`${path}/data.json`)
-      .then((res) => res.json())
-      .then((json: SiteData) => set(path, json))
-      // TODO: implement error boundary
-      .catch(() => {});
-  };
+  useEffect(() => {
+    if (!isMobile()) {
+      return;
+    }
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          prefetch(to.replace(/\/$/, ""), cache, set);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [to, cache, set]);
+
+  const handleHover = () => prefetch(to.replace(/\/$/, ""), cache, set);
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.history.pushState({}, "", to);
@@ -35,9 +69,10 @@ export const Link = ({
 
   return (
     <a
+      ref={ref}
       href={to}
       onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={handleHover}
       className={className}
     >
       {children}
