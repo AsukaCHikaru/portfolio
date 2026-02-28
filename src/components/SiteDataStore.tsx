@@ -56,6 +56,13 @@ export const SiteDataStoreProvider = ({
 const dataUrl = (path: string) =>
   path === "/" ? "/data.json" : `${path}/data.json`;
 
+export const fetchData = async (path: string) => {
+  const data = (await fetch(dataUrl(path)).then((res) =>
+    res.json(),
+  )) as SiteData;
+  return data;
+};
+
 export const useSiteData = <T extends SiteData>(path: string): T | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
   const cached = cache.get(path) as T | undefined;
@@ -64,9 +71,7 @@ export const useSiteData = <T extends SiteData>(path: string): T | null => {
     if (cached) {
       return;
     }
-    fetch(dataUrl(path))
-      .then((res) => res.json())
-      .then((json: SiteData) => set(path, json));
+    fetchData(path).then((json) => set(path, json));
   }, [cached, path, set]);
 
   return cached ?? null;

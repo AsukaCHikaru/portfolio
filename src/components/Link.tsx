@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, type ReactNode } from "react";
-import { SiteDataStoreContext } from "./SiteDataStore";
+import { fetchData, SiteDataStoreContext } from "./SiteDataStore";
 import type { SiteData } from "../types";
 
 const isMobile = () =>
@@ -14,12 +14,7 @@ const prefetch = (
   if (cache.has(path)) {
     return;
   }
-  const url = path === "/" ? "/data.json" : `${path}/data.json`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((json: SiteData) => set(path, json))
-    // TODO: implement error boundary
-    .catch(() => {});
+  fetchData(path).then((json) => set(path, json));
 };
 
 export const Link = ({
@@ -46,7 +41,7 @@ export const Link = ({
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          prefetch(to.replace(/\/$/, "") || "/", cache, set);
+          prefetch(to, cache, set);
           observer.disconnect();
         }
       },
@@ -57,7 +52,7 @@ export const Link = ({
     return () => observer.disconnect();
   }, [to, cache, set]);
 
-  const handleHover = () => prefetch(to.replace(/\/$/, "") || "/", cache, set);
+  const handleHover = () => prefetch(to, cache, set);
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.history.pushState({}, "", to);
