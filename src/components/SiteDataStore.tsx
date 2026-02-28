@@ -18,17 +18,14 @@ export const SiteDataStoreContext = createContext<SiteDataStore>({
   set: () => {},
 });
 
-const dataUrl = (pathname: string) =>
-  pathname === "/" ? "/data.json" : `${pathname}/data.json`;
-
 const filterData = (data: SiteData, params: URLSearchParams): SiteData => {
-  const category = params.get("category");
-  if (category) {
+  const postCategory = params.get("category");
+  if (postCategory) {
     const archiveData = data as BlogArchiveData;
     return {
       data: {
         postList: archiveData.data.postList.filter(
-          (p) => p.metadata.category === category,
+          (p) => p.metadata.category === postCategory,
         ),
       },
     };
@@ -50,7 +47,7 @@ const getInlineData = (): Map<string, SiteData> => {
   const pathname = window.location.pathname.replace(/\/$/, "") || "/";
   const search = window.location.search;
   const key = pathname + search;
-  const data = search ? filterData(raw, new URLSearchParams(search)) : raw;
+  const data = filterData(raw, new URLSearchParams(search));
   return new Map([[key, data]]);
 };
 
@@ -74,10 +71,8 @@ export const SiteDataStoreProvider = ({
   );
 };
 
-const cacheKey = (url: URL) => {
-  const pathname = url.pathname.replace(/\/$/, "") || "/";
-  return pathname + url.search;
-};
+const dataUrl = (pathname: string) =>
+  pathname === "/" ? "/data.json" : `${pathname}/data.json`;
 
 export const fetchData = async (url: URL) => {
   const pathname = url.pathname.replace(/\/$/, "") || "/";
@@ -86,6 +81,11 @@ export const fetchData = async (url: URL) => {
   )) as SiteData;
 
   return url.search ? filterData(data, url.searchParams) : data;
+};
+
+const cacheKey = (url: URL) => {
+  const pathname = url.pathname.replace(/\/$/, "") || "/";
+  return pathname + url.search;
 };
 
 export const useSiteData = <T extends SiteData>(): T | null => {
