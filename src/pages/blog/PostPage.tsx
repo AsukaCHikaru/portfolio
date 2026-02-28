@@ -4,8 +4,7 @@ import { useSiteData } from "../../components/SiteDataStore";
 import type { BlogData } from "../../types";
 
 export const PostPage = () => {
-  const path = window.location.pathname.replace(/\/$/, "");
-  const siteData = useSiteData<BlogData>(path);
+  const siteData = useSiteData<BlogData>(new URL(window.location.href));
 
   if (!siteData) {
     return null;

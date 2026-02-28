@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
 import type { BlogArchiveData, PostMetaData } from "../../types";
@@ -8,37 +7,21 @@ import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const ArchivePage = () => {
-  const siteData = useSiteData<BlogArchiveData>("/blog");
-
-  const { filteredPostList, categoryFilter } = useMemo(() => {
-    if (!siteData) return { filteredPostList: [], categoryFilter: null };
-    const allPosts = siteData.data.postList.map((p) => p.metadata);
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryFilter = urlParams.get("category");
-
-    if (!categoryFilter) {
-      return { filteredPostList: allPosts, categoryFilter: null };
-    }
-
-    return {
-      filteredPostList: allPosts.filter(
-        (post) => post.category === categoryFilter,
-      ),
-      categoryFilter,
-    };
-  }, [siteData]);
+  const siteData = useSiteData<BlogArchiveData>(new URL(window.location.href));
 
   if (!siteData) {
     return null;
   }
 
+  const postList = siteData.data.postList.map((p) => p.metadata);
+  const categoryFilter = new URLSearchParams(window.location.search).get(
+    "category",
+  );
+
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent
-        postList={filteredPostList}
-        categoryFilter={categoryFilter}
-      />
+      <ArchivePageContent postList={postList} categoryFilter={categoryFilter} />
     </>
   );
 };

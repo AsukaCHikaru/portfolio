@@ -7,14 +7,15 @@ const isMobile = () =>
   ("ontouchstart" in window || navigator.maxTouchPoints > 0);
 
 const prefetch = (
-  path: string,
+  to: string,
   cache: Map<string, SiteData>,
   set: (path: string, data: SiteData) => void,
 ) => {
-  if (cache.has(path)) {
+  if (cache.has(to)) {
     return;
   }
-  fetchData(path).then((json) => set(path, json));
+  const url = new URL(to, window.location.origin);
+  fetchData(url).then((json) => set(to, json));
 };
 
 export const Link = ({

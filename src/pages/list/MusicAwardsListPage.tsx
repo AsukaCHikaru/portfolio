@@ -14,7 +14,7 @@ const isRecordNominee = (
 ): nominee is RecordNominee => "title" in nominee;
 
 export const MusicAwardsListPage = () => {
-  const siteData = useSiteData<MusicAwardsData>("/list/music-awards");
+  const siteData = useSiteData<MusicAwardsData>(new URL(window.location.href));
   if (!siteData) return null;
   return <MusicAwardsListPageContent musicAwards={siteData.data.musicAwards} />;
 };

@@ -11,7 +11,7 @@ import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const ListPage = () => {
-  const siteData = useSiteData<ListData>("/list");
+  const siteData = useSiteData<ListData>(new URL(window.location.href));
 
   if (!siteData) {
     return null;
