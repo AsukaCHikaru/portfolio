@@ -19,51 +19,6 @@ import type {
   AboutData,
 } from "../types";
 
-type Route = {
-  path: string;
-  component: ReactNode;
-};
-
-const routes = [
-  {
-    path: "/",
-    component: <FrontPage />,
-  },
-  {
-    path: "/blog",
-    component: <ArchivePage />,
-  },
-  {
-    path: "/blog/:post",
-    component: <PostPage />,
-  },
-  {
-    path: "/list",
-    component: <ListPage />,
-  },
-  {
-    path: "/list/music-awards",
-    component: <MusicAwardsListPage />,
-  },
-  {
-    path: "/list/video-game-index",
-    component: <VideoGameIndexListPage />,
-  },
-  {
-    path: "/list/bucket-list",
-    component: <BucketListPage />,
-  },
-  {
-    path: "/about",
-    component: <AboutPage />,
-  },
-  {
-    path: "/resume",
-    component: <ResumePage />,
-  },
-] as const satisfies Route[];
-export type SitePath = (typeof routes)[number]["path"];
-
 type SiteDataMap = {
   "/": FrontPageData;
   "/blog": BlogArchiveData;
@@ -75,7 +30,21 @@ type SiteDataMap = {
   "/about": AboutData;
   "/resume": never;
 };
+
+export type SitePath = keyof SiteDataMap;
 export type SitePathToData<P extends SitePath> = SiteDataMap[P];
+
+const routes = [
+  { path: "/", component: <FrontPage /> },
+  { path: "/blog", component: <ArchivePage /> },
+  { path: "/blog/:post", component: <PostPage /> },
+  { path: "/list", component: <ListPage /> },
+  { path: "/list/music-awards", component: <MusicAwardsListPage /> },
+  { path: "/list/video-game-index", component: <VideoGameIndexListPage /> },
+  { path: "/list/bucket-list", component: <BucketListPage /> },
+  { path: "/about", component: <AboutPage /> },
+  { path: "/resume", component: <ResumePage /> },
+] satisfies { path: SitePath; component: ReactNode }[];
 
 export const Route = ({
   path,
