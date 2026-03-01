@@ -4,7 +4,6 @@ import type {
   List,
   MusicAwardList,
   MusicAwardNominee,
-  MusicAwardsData,
   RecordNominee,
 } from "../../types";
 import { useSiteData } from "../../components/SiteDataStore";
@@ -14,7 +13,7 @@ const isRecordNominee = (
 ): nominee is RecordNominee => "title" in nominee;
 
 export const MusicAwardsListPage = () => {
-  const siteData = useSiteData<MusicAwardsData>();
+  const siteData = useSiteData({ path: "/list/music-awards" });
   if (!siteData) return null;
   return <MusicAwardsListPageContent musicAwards={siteData.data.musicAwards} />;
 };

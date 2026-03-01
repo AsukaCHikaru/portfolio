@@ -1,13 +1,15 @@
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
-import type { BlogArchiveData, PostMetaData } from "../../types";
+import type { PostMetaData } from "../../types";
 import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const ArchivePage = () => {
-  const siteData = useSiteData<BlogArchiveData>();
+  const siteData = useSiteData({
+    path: "/blog",
+  });
 
   if (!siteData) {
     return null;

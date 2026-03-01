@@ -8,6 +8,16 @@ import { ListPage } from "../pages/list/ListPage";
 import { MusicAwardsListPage } from "../pages/list/MusicAwardsListPage";
 import { VideoGameIndexListPage } from "../pages/list/VideoGameIndexListPage";
 import { BucketListPage } from "../pages/list/BucketListPage";
+import type {
+  FrontPageData,
+  BlogArchiveData,
+  BlogData,
+  ListData,
+  MusicAwardsData,
+  VideoGameIndexData,
+  BucketListData,
+  AboutData,
+} from "../types";
 
 type Route = {
   path: string;
@@ -52,8 +62,28 @@ const routes = [
     component: <ResumePage />,
   },
 ] as const satisfies Route[];
+export type SitePath = (typeof routes)[number]["path"];
 
-const Route = ({ path, children }: { path: string; children: ReactNode }) => {
+type SiteDataMap = {
+  "/": FrontPageData;
+  "/blog": BlogArchiveData;
+  "/blog/:post": BlogData;
+  "/list": ListData;
+  "/list/music-awards": MusicAwardsData;
+  "/list/video-game-index": VideoGameIndexData;
+  "/list/bucket-list": BucketListData;
+  "/about": AboutData;
+  "/resume": never;
+};
+export type SitePathToData<P extends SitePath> = SiteDataMap[P];
+
+export const Route = ({
+  path,
+  children,
+}: {
+  path: string;
+  children: ReactNode;
+}) => {
   const url = new URL(window.location.href);
   const pathPattern = new RegExp(url.pathname.replace(/:[a-z-]+/g, "\\w+"));
   if (pathPattern.test(path)) {

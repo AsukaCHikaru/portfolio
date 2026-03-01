@@ -1,10 +1,11 @@
 import { PostPageContent } from "../../components/PostPageContent";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
-import type { BlogData } from "../../types";
 
 export const PostPage = () => {
-  const siteData = useSiteData<BlogData>();
+  const siteData = useSiteData({
+    path: "/blog/:post",
+  });
 
   if (!siteData) {
     return null;

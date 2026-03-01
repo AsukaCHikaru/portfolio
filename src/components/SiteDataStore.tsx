@@ -7,6 +7,7 @@ import {
 } from "react";
 import type { ReactNode } from "react";
 import type { BlogArchiveData, SiteData } from "../types";
+import type { SitePath, SitePathToData } from "./Router";
 
 type SiteDataStore = {
   cache: Map<string, SiteData>;
@@ -88,10 +89,14 @@ const cacheKey = (url: URL) => {
   return pathname + url.search;
 };
 
-export const useSiteData = <T extends SiteData>(): T | null => {
+export const useSiteData = <P extends SitePath>({
+  path,
+}: {
+  path: P;
+}): SitePathToData<P> | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
   const key = cacheKey(new URL(window.location.href));
-  const cached = cache.get(key) as T | undefined;
+  const cached = cache.get(key) as SitePathToData<P> | undefined;
 
   useEffect(() => {
     if (cached) {

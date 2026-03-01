@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
-import type { List, VideoGameIndexData, VideoGameIndexList } from "../../types";
+import type { List, VideoGameIndexList } from "../../types";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const VideoGameIndexListPage = () => {
-  const siteData = useSiteData<VideoGameIndexData>();
+  const siteData = useSiteData({ path: "/list/video-game-index" });
   if (!siteData) return null;
   return (
     <VideoGameIndexListPageContent
