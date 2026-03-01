@@ -52,12 +52,14 @@ const getInlineData = (): Map<string, SiteData> => {
   return new Map([[key, data]]);
 };
 
-export const SiteDataStoreProvider = ({
+export const SiteDataStoreProvider = <P extends SitePath>({
   children,
+  context,
 }: {
   children: ReactNode;
+  context?: Map<P, SitePathToData<P>>;
 }) => {
-  const [cache, setCache] = useState(getInlineData);
+  const [cache, setCache] = useState(context || getInlineData);
 
   const set = useCallback(
     (path: string, data: SiteData) =>
@@ -95,7 +97,11 @@ export const useSiteData = <P extends SitePath>({
   path: P;
 }): SitePathToData<P> | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
-  const key = cacheKey(new URL(window.location.href));
+  const key =
+    typeof window !== "undefined"
+      ? cacheKey(new URL(window.location.href))
+      : Array.from(cache.keys())[0];
+  console.log({ key });
   const cached = cache.get(key) as SitePathToData<P> | undefined;
 
   useEffect(() => {

@@ -3,17 +3,19 @@ import { readFileSync } from "node:fs";
 import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
-import { ArchivePageContent } from "../src/pages/blog/ArchivePage";
+import { ArchivePage } from "../src/pages/blog/ArchivePage";
 import { getAbout, getBlogPostList, getList } from "./contentServices";
-import { PostPageContent } from "../src/components/PostPageContent";
+import { AboutPage } from "../src/pages/about/AboutPage";
 import { ResumePage } from "../src/pages/resume/ResumePage";
-import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
+import { FrontPage } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
 import type { FurtherReading, SiteData } from "../src/types";
-import { ListPageContent } from "../src/pages/list/ListPage";
-import { MusicAwardsListPageContent } from "../src/pages/list/MusicAwardsListPage";
-import { VideoGameIndexListPageContent } from "../src/pages/list/VideoGameIndexListPage";
-import { BucketListPageContent } from "../src/pages/list/BucketListPage";
+import { ListPage } from "../src/pages/list/ListPage";
+import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
+import { BucketListPage } from "../src/pages/list/BucketListPage";
+import { SiteDataStoreProvider } from "../src/components/SiteDataStore";
+import { PostPage } from "../src/pages/blog/PostPage";
 
 const writeFile = (
   element: ReactNode,
@@ -102,10 +104,22 @@ const buildBlog = async () => {
   const postList = await getBlogPostList();
   try {
     writeFile(
-      <ArchivePageContent
-        postList={postList.map((post) => post.metadata)}
-        categoryFilter={null}
-      />,
+      <SiteDataStoreProvider
+        context={
+          new Map([
+            [
+              "/blog",
+              {
+                data: {
+                  postList: postList.map(({ metadata }) => ({ metadata })),
+                },
+              },
+            ],
+          ])
+        }
+      >
+        <ArchivePage />
+      </SiteDataStoreProvider>,
       "/blog",
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
       {
@@ -117,7 +131,20 @@ const buildBlog = async () => {
     postList.forEach((post) => {
       const path = `/blog/${post.metadata.pathname}`;
       writeFile(
-        <PostPageContent metadata={post.metadata} content={post.content} />,
+        <SiteDataStoreProvider
+          context={
+            new Map([
+              [
+                "/blog/:post",
+                {
+                  data: post,
+                },
+              ],
+            ])
+          }
+        >
+          <PostPage />
+        </SiteDataStoreProvider>,
         path,
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
@@ -136,7 +163,20 @@ const buildBlog = async () => {
 const buildAboutPage = async () => {
   const about = await getAbout();
   writeFile(
-    <PostPageContent metadata={about.metadata} content={about.content} />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/about",
+            {
+              data: about,
+            },
+          ],
+        ])
+      }
+    >
+      <AboutPage />
+    </SiteDataStoreProvider>,
     "/about",
     generateMetadata("Asuka Wang", "About Asuka Wang"),
     { data: about },
@@ -188,13 +228,26 @@ const buildFrontPage = async () => {
   const featuredReading = postList.find((p) => p.metadata.featured);
 
   writeFile(
-    <FrontPageContent
-      leadStory={lastPost}
-      lastUpdated={lastCommitDate}
-      furtherReading={furtherReading}
-      categories={categories}
-      featuredReading={featuredReading}
-    />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/",
+            {
+              data: {
+                leadStory: lastPost,
+                lastUpdated: lastCommitDate,
+                categories,
+                featuredReading,
+                furtherReading,
+              },
+            },
+          ],
+        ])
+      }
+    >
+      <FrontPage />
+    </SiteDataStoreProvider>,
     "/",
     generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
     {
@@ -213,18 +266,40 @@ const buildList = async () => {
   const { musicAwards, videoGameIndex, bucketList } = await getList();
 
   writeFile(
-    <ListPageContent
-      musicAwards={musicAwards}
-      videoGameIndex={videoGameIndex}
-      bucketList={bucketList}
-    />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/list",
+            {
+              data: { musicAwards, videoGameIndex, bucketList },
+            },
+          ],
+        ])
+      }
+    >
+      <ListPage />
+    </SiteDataStoreProvider>,
     "/list",
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
     { data: { musicAwards, videoGameIndex, bucketList } },
   );
 
   writeFile(
-    <MusicAwardsListPageContent musicAwards={musicAwards} />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/list/music-awards",
+            {
+              data: { musicAwards },
+            },
+          ],
+        ])
+      }
+    >
+      <MusicAwardsListPage />
+    </SiteDataStoreProvider>,
     "/list/music-awards",
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
@@ -234,7 +309,20 @@ const buildList = async () => {
   );
 
   writeFile(
-    <VideoGameIndexListPageContent videoGameIndex={videoGameIndex} />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/list/video-game-index",
+            {
+              data: { videoGameIndex },
+            },
+          ],
+        ])
+      }
+    >
+      <VideoGameIndexListPage />
+    </SiteDataStoreProvider>,
     "/list/video-game-index",
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
@@ -244,7 +332,20 @@ const buildList = async () => {
   );
 
   writeFile(
-    <BucketListPageContent bucketList={bucketList} />,
+    <SiteDataStoreProvider
+      context={
+        new Map([
+          [
+            "/list/bucket-list",
+            {
+              data: { bucketList },
+            },
+          ],
+        ])
+      }
+    >
+      <BucketListPage />
+    </SiteDataStoreProvider>,
     "/list/bucket-list",
     generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
     { data: { bucketList } },
