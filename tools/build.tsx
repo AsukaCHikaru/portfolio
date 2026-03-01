@@ -9,17 +9,17 @@ import { PostPageContent } from "../src/components/PostPageContent";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPageContent } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
-import type { FurtherReading } from "../src/types";
+import type { FurtherReading, SiteData } from "../src/types";
 import { ListPageContent } from "../src/pages/list/ListPage";
-import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
-import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage";
-import { BucketListPage } from "../src/pages/list/BucketListPage";
+import { MusicAwardsListPageContent } from "../src/pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPageContent } from "../src/pages/list/VideoGameIndexListPage";
+import { BucketListPageContent } from "../src/pages/list/BucketListPage";
 
 const writeFile = (
   element: ReactNode,
   path: string,
-  staticProps: string,
   metadata: string,
+  pageData?: SiteData,
 ) => {
   let template = readFileSync(
     resolve(import.meta.dir, "..", "index.html"),
@@ -27,22 +27,23 @@ const writeFile = (
   );
 
   try {
-    const html = ReactDOMServer.renderToString(<div>{element}</div>);
-    const escapedStaticProps = staticProps
-      .replace(/\u2028/g, "\\u2028") // Line separator
-      .replace(/\u2029/g, "\\u2029") // Paragraph separator
-      .replace(/</g, "\\u003c")
-      .replace(/>/g, "\\u003e")
-      .replace(/&/g, "\\u0026");
+    const html = ReactDOMServer.renderToString(<>{element}</>);
 
-    template = template
-      .replace(
-        "</head>",
-        `<script>window.__STATIC_PROPS__ = ${escapedStaticProps}</script></head>`,
-      )
-      .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+    template = template.replace(
+      '<div id="root"></div>',
+      `<div id="root">${html}</div>`,
+    );
 
     template = template.replace("<head>", `<head>${metadata}`);
+
+    if (pageData) {
+      const json = JSON.stringify(pageData).replace(/<\//g, "<\\/");
+      template = template.replace(
+        "</head>",
+        `<script type="application/json" id="__DATA__">${json}</script>\n</head>`,
+      );
+      Bun.write(`./dist${path}/data.json`, JSON.stringify(pageData));
+    }
 
     if (process.env.PHASE === "dev") {
       template = template.replace(
@@ -98,7 +99,6 @@ const generateMetadata = (title: string, description: string) => {
 };
 
 const buildBlog = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const postList = await getBlogPostList();
   try {
     writeFile(
@@ -107,21 +107,25 @@ const buildBlog = async () => {
         categoryFilter={null}
       />,
       "/blog",
-      JSON.stringify({
-        blog: { postList: postList.map((post) => post.metadata) },
-        lastUpdated: lastCommitDate,
-      }),
       generateMetadata("Blog | Asuka Wang", "Asuka Wang's blog"),
+      {
+        data: {
+          postList: postList.map((post) => ({ metadata: post.metadata })),
+        },
+      },
     );
     postList.forEach((post) => {
+      const path = `/blog/${post.metadata.pathname}`;
       writeFile(
         <PostPageContent metadata={post.metadata} content={post.content} />,
-        `/blog/${post.metadata.pathname}`,
-        JSON.stringify({ blog: { post }, lastUpdated: lastCommitDate }),
+        path,
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
         ),
+        {
+          data: { metadata: post.metadata, content: post.content },
+        },
       );
     });
   } catch (error) {
@@ -130,13 +134,12 @@ const buildBlog = async () => {
 };
 
 const buildAboutPage = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const about = await getAbout();
   writeFile(
     <PostPageContent metadata={about.metadata} content={about.content} />,
     "/about",
-    JSON.stringify({ about, lastUpdated: lastCommitDate }),
     generateMetadata("Asuka Wang", "About Asuka Wang"),
+    { data: about },
   );
 };
 
@@ -144,7 +147,6 @@ const buildResumePage = async () => {
   writeFile(
     <ResumePage />,
     "/resume",
-    "",
     generateMetadata("Resume | Asuka Wang", "Asuka Wang's resume"),
   );
 };
@@ -194,21 +196,20 @@ const buildFrontPage = async () => {
       featuredReading={featuredReading}
     />,
     "/",
-    JSON.stringify({
-      frontPage: {
+    generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
+    {
+      data: {
         leadStory: lastPost,
+        lastUpdated: lastCommitDate,
         furtherReading,
         categories,
         featuredReading,
       },
-      lastUpdated: lastCommitDate,
-    }),
-    generateMetadata("Asuka Wang", "Asuka Wang's personal website"),
+    },
   );
 };
 
 const buildList = async () => {
-  const lastCommitDate = await getLastCommitDate();
   const { musicAwards, videoGameIndex, bucketList } = await getList();
 
   writeFile(
@@ -218,61 +219,35 @@ const buildList = async () => {
       bucketList={bucketList}
     />,
     "/list",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata("List | Asuka Wang", "Asuka Wang's lists"),
+    { data: { musicAwards, videoGameIndex, bucketList } },
   );
 
   writeFile(
-    <MusicAwardsListPage musicAwards={musicAwards} />,
+    <MusicAwardsListPageContent musicAwards={musicAwards} />,
     "/list/music-awards",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
     ),
+    { data: { musicAwards } },
   );
+
   writeFile(
-    <VideoGameIndexListPage videoGameIndex={videoGameIndex} />,
+    <VideoGameIndexListPageContent videoGameIndex={videoGameIndex} />,
     "/list/video-game-index",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
     ),
+    { data: { videoGameIndex } },
   );
+
   writeFile(
-    <BucketListPage bucketList={bucketList} />,
+    <BucketListPageContent bucketList={bucketList} />,
     "/list/bucket-list",
-    JSON.stringify({
-      list: {
-        musicAwards,
-        videoGameIndex,
-        bucketList,
-      },
-      lastUpdated: lastCommitDate,
-    }),
     generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
+    { data: { bucketList } },
   );
 };
 
@@ -280,28 +255,6 @@ const writeFontCss = async () => {
   const file = await Bun.file("./src/fonts.css").text();
   const replaced = file.replace(/\.\.\/public/g, ".");
   Bun.write("./dist/fonts.css", replaced);
-};
-
-const writeData = async () => {
-  const postList = await getBlogPostList();
-  const about = await getAbout();
-  const { videoGameIndex, musicAwards, bucketList } = await getList();
-  await Bun.write(
-    "./dist/data.json",
-    JSON.stringify(
-      {
-        postList,
-        about,
-        list: {
-          videoGameIndex,
-          musicAwards,
-          bucketList,
-        },
-      },
-      null,
-      2,
-    ),
-  );
 };
 
 const runSubfont = async () => {
@@ -335,7 +288,6 @@ export const build = async () => {
   await buildResumePage();
   await buildList();
   await writeFontCss();
-  await writeData();
   await buildRssFeed();
   await Bun.$`cp -r ./public/fonts ./dist`;
   await Bun.$`mkdir -p ./dist/public`;

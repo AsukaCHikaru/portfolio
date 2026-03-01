@@ -1,17 +1,18 @@
-import { useContext } from "react";
-import { DataContext } from "../../components/DataContext";
 import { Layout } from "../../components/Layout";
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
 import { formatDate } from "../../utils/dateTimeUtil";
+import { useSiteData } from "../../components/SiteDataStore";
+import type { AboutData } from "../../types";
 
 export const AboutPage = () => {
-  const context = useContext(DataContext);
-  const post = window.__STATIC_PROPS__.about || context.about;
+  const siteData = useSiteData<AboutData>();
 
-  if (!post) {
+  if (!siteData) {
     return null;
   }
+
+  const post = siteData.data;
 
   return (
     <>

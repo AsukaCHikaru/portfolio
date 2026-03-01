@@ -37,6 +37,10 @@ const startHttpServer = async () => {
             return new Response(resumeFile);
           }
           default:
+            if (path.endsWith("data.json")) {
+              const file = Bun.file(`./dist${path}`);
+              return new Response(file);
+            }
             if (/^\/blog\/\w+/.test(path)) {
               const file = Bun.file(`./dist${path}/index.html`);
               return new Response(file);

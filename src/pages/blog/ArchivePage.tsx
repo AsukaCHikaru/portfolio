@@ -1,45 +1,27 @@
-import { useContext, useMemo } from "react";
 import { Layout } from "../../components/Layout";
 import { Link } from "../../components/Link";
-import type { PostMetaData } from "../../types";
-import { DataContext } from "../../components/DataContext";
+import type { BlogArchiveData, PostMetaData } from "../../types";
 import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
+import { useSiteData } from "../../components/SiteDataStore";
 
 export const ArchivePage = () => {
-  const context = useContext(DataContext);
-  const allPosts =
-    window.__STATIC_PROPS__.blog?.postList ||
-    context.postList.map((post) => post.metadata);
+  const siteData = useSiteData<BlogArchiveData>();
 
-  const { filteredPostList, categoryFilter } = useMemo(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryFilter = urlParams.get("category");
-
-    if (!categoryFilter) {
-      return { filteredPostList: allPosts, categoryFilter: null };
-    }
-
-    return {
-      filteredPostList: allPosts.filter(
-        (post) => post.category === categoryFilter,
-      ),
-      categoryFilter,
-    };
-  }, [allPosts]);
-
-  if (!context) {
+  if (!siteData) {
     return null;
   }
+
+  const postList = siteData.data.postList.map((p) => p.metadata);
+  const categoryFilter = new URLSearchParams(window.location.search).get(
+    "category",
+  );
 
   return (
     <>
       <Helmet title="Blog | Asuka Wang" description="Asuka Wang's blog" />
-      <ArchivePageContent
-        postList={filteredPostList}
-        categoryFilter={categoryFilter}
-      />
+      <ArchivePageContent postList={postList} categoryFilter={categoryFilter} />
     </>
   );
 };

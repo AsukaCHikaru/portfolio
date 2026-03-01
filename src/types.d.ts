@@ -70,3 +70,62 @@ export type List<T> = {
   pathname: string;
   list: T;
 };
+
+export type FrontPageData = {
+  data: {
+    leadStory: Post;
+    lastUpdated: string;
+    furtherReading: FurtherReading;
+    categories: { name: string; count: number }[];
+    featuredReading: Post | undefined;
+  };
+};
+
+export type BlogArchiveData = {
+  data: {
+    postList: {
+      metadata: PostMetaData;
+    }[];
+  };
+};
+
+export type BlogData = {
+  data: {
+    metadata: PostMetaData;
+    content: Block[];
+  };
+};
+
+export type AboutData = {
+  data: Post;
+};
+
+export type ListData = {
+  data: {
+    musicAwards: List<MusicAwardList>;
+    videoGameIndex: List<VideoGameIndexList>;
+    bucketList: List<BucketList>;
+  };
+};
+
+export type MusicAwardsData = {
+  data: { musicAwards: List<MusicAwardList> };
+};
+
+export type VideoGameIndexData = {
+  data: { videoGameIndex: List<VideoGameIndexList> };
+};
+
+export type BucketListData = {
+  data: { bucketList: List<BucketList> };
+};
+
+export type SiteData =
+  | FrontPageData
+  | BlogArchiveData
+  | BlogData
+  | AboutData
+  | ListData
+  | MusicAwardsData
+  | VideoGameIndexData
+  | BucketListData;

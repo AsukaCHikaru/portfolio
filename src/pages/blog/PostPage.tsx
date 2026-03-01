@@ -1,34 +1,21 @@
-import { useContext, useMemo } from "react";
 import { PostPageContent } from "../../components/PostPageContent";
-import { DataContext } from "../../components/DataContext";
 import { Helmet } from "../../components/Helmet";
+import { useSiteData } from "../../components/SiteDataStore";
+import type { BlogData } from "../../types";
 
 export const PostPage = () => {
-  const context = useContext(DataContext);
+  const siteData = useSiteData<BlogData>();
 
-  const post = useMemo(() => {
-    const pathname = window.location.pathname.replace(
-      /\/blog\/(\S+?)\/?$/,
-      "$1",
-    );
-    const staticProp = window.__STATIC_PROPS__;
-    if (staticProp.blog?.post?.metadata.pathname === pathname) {
-      return staticProp.blog.post;
-    }
-    return context.postList.find((post) => post.metadata.pathname === pathname);
-  }, [context.postList]);
-
-  if (!post) {
+  if (!siteData) {
     return null;
   }
 
+  const { metadata, content } = siteData.data;
+
   return (
     <>
-      <Helmet
-        title={post.metadata.title}
-        description={post.metadata.description}
-      />
-      <PostPageContent metadata={post.metadata} content={post.content} />
+      <Helmet title={metadata.title} description={metadata.description} />
+      <PostPageContent metadata={metadata} content={content} />
     </>
   );
 };

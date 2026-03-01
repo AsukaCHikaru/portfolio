@@ -1,66 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { Router } from "./components/Router";
-import type {
-  BucketList,
-  FurtherReading,
-  List,
-  MusicAwardList,
-  Post,
-  PostMetaData,
-  VideoGameIndexList,
-} from "./types";
-import { DataContext, type ContextData } from "./components/DataContext";
+import { SiteDataStoreProvider } from "./components/SiteDataStore";
 
-declare global {
-  interface Window {
-    __STATIC_PROPS__: {
-      blog: {
-        postList: PostMetaData[];
-        post: Post;
-      };
-      about: Post;
-      frontPage: {
-        leadStory: Post;
-        furtherReading: FurtherReading;
-        categories: { name: string; count: number }[];
-        featuredReading: Post;
-      };
-      list: {
-        musicAwards: List<MusicAwardList>;
-        videoGameIndex: List<VideoGameIndexList>;
-        bucketList: List<BucketList>;
-      };
-      lastUpdated: string;
-    };
-  }
-}
-
-const App = () => {
-  const [data, setData] = useState<ContextData | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      const data = (await fetch("/data.json").then((res) =>
-        res.json(),
-      )) as ContextData;
-      setData(data);
-    })();
-  }, []);
-
-  if (!data) {
-    return <Router />;
-  }
-
-  return (
-    <DataContext.Provider value={data}>
-      <Router />
-    </DataContext.Provider>
-  );
-};
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.hydrateRoot(
+  document.getElementById("root")!,
   <React.StrictMode>
-    <App />
+    <SiteDataStoreProvider>
+      <Router />
+    </SiteDataStoreProvider>
   </React.StrictMode>,
 );

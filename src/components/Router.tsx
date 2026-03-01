@@ -4,7 +4,10 @@ import { ArchivePage } from "../pages/blog/ArchivePage";
 import { PostPage } from "../pages/blog/PostPage";
 import { FrontPage } from "../pages/frontpage/FrontPage";
 import { ResumePage } from "../pages/resume/ResumePage";
-import { ListPage, ListRouter } from "../pages/list/ListPage";
+import { ListPage } from "../pages/list/ListPage";
+import { MusicAwardsListPage } from "../pages/list/MusicAwardsListPage";
+import { VideoGameIndexListPage } from "../pages/list/VideoGameIndexListPage";
+import { BucketListPage } from "../pages/list/BucketListPage";
 
 export const Router = () => {
   const [path, setPath] = useState(window.location.pathname);
@@ -44,8 +47,14 @@ export const Router = () => {
     if (/^\/resume\/?$/.test(path)) {
       return <ResumePage />;
     }
-    if (/^\/list\/[^/]+\/?$/.test(path)) {
-      return <ListRouter />;
+    if (/^\/list\/music-awards\/?$/.test(path)) {
+      return <MusicAwardsListPage />;
+    }
+    if (/^\/list\/video-game-index\/?$/.test(path)) {
+      return <VideoGameIndexListPage />;
+    }
+    if (/^\/list\/bucket-list\/?$/.test(path)) {
+      return <BucketListPage />;
     }
     if (/^\/list\/?$/.test(path)) {
       return <ListPage />;
