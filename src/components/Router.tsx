@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ArchivePage } from "../pages/blog/ArchivePage";
 import { PostPage } from "../pages/blog/PostPage";
@@ -8,6 +8,82 @@ import { ListPage } from "../pages/list/ListPage";
 import { MusicAwardsListPage } from "../pages/list/MusicAwardsListPage";
 import { VideoGameIndexListPage } from "../pages/list/VideoGameIndexListPage";
 import { BucketListPage } from "../pages/list/BucketListPage";
+
+type Route = {
+  path: string;
+  component: ReactNode;
+};
+
+const routes = [
+  {
+    path: "/",
+    component: <FrontPage />,
+  },
+  {
+    path: "/blog",
+    component: <ArchivePage />,
+  },
+  {
+    path: "/blog/:post",
+    component: <PostPage />,
+  },
+  {
+    path: "/list",
+    component: <ListPage />,
+  },
+  {
+    path: "/list/music-awards",
+    component: <MusicAwardsListPage />,
+  },
+  {
+    path: "/list/video-game-index",
+    component: <VideoGameIndexListPage />,
+  },
+  {
+    path: "/list/bucket-list",
+    component: <BucketListPage />,
+  },
+  {
+    path: "/about",
+    component: <AboutPage />,
+  },
+  {
+    path: "/resume",
+    component: <ResumePage />,
+  },
+] as const satisfies Route[];
+
+const Route = ({ path, children }: { path: string; children: ReactNode }) => {
+  const url = new URL(window.location.href);
+  const pathPattern = new RegExp(url.pathname.replace(/:[a-z-]+/g, "\\w+"));
+  if (pathPattern.test(path)) {
+    return null;
+  }
+  return children;
+};
+
+export const RouterV2 = () => {
+  const [, setRenderVersion] = useState(0);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setRenderVersion((prev) => prev + 1);
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("popstate", handleLocationChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
+
+  return routes.map((route) => (
+    <Route path={route.path} key={route.path}>
+      {route.component}
+    </Route>
+  ));
+};
 
 export const Router = () => {
   const [path, setPath] = useState(window.location.pathname);
