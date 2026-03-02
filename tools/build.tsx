@@ -135,7 +135,7 @@ const buildBlog = async () => {
           context={
             new Map([
               [
-                "/blog/:post",
+                `/blog/${post.metadata.pathname}`,
                 {
                   data: post,
                 },
