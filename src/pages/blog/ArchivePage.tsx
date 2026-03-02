@@ -15,9 +15,10 @@ export const ArchivePage = () => {
   }
 
   const postList = siteData.data.postList.map((p) => p.metadata);
-  const categoryFilter = new URLSearchParams(window.location.search).get(
-    "category",
-  );
+  const categoryFilter =
+    typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search).get("category")
+      : null;
   const tileList = generateArchiveTileList(postList);
 
   return (
