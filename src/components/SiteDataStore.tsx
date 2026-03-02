@@ -101,7 +101,6 @@ export const useSiteData = <P extends SitePath>({
     typeof window !== "undefined"
       ? cacheKey(new URL(window.location.href))
       : Array.from(cache.keys())[0];
-  console.log({ key });
   const cached = cache.get(key) as SitePathToData<P> | undefined;
 
   useEffect(() => {
