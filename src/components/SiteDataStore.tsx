@@ -57,7 +57,7 @@ export const SiteDataStoreProvider = <P extends SitePath>({
   context,
 }: {
   children: ReactNode;
-  context?: Map<P, SitePathToData<P>>;
+  context?: Map<string, SitePathToData<P>>;
 }) => {
   const [cache, setCache] = useState(context || getInlineData);
 
