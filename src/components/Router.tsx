@@ -22,7 +22,7 @@ import type {
 type SiteDataMap = {
   "/": FrontPageData;
   "/blog": BlogArchiveData;
-  "/blog/:post": BlogData;
+  "/blog/:postId": BlogData;
   "/list": ListData;
   "/list/music-awards": MusicAwardsData;
   "/list/video-game-index": VideoGameIndexData;
@@ -33,18 +33,27 @@ type SiteDataMap = {
 
 export type SitePath = keyof SiteDataMap;
 export type SitePathToData<P extends SitePath> = SiteDataMap[P];
+export type SitePathParam<PATH extends SitePath> =
+  PATH extends `/${string}/:${infer PARAM}`
+    ? PARAM extends string
+      ? PARAM
+      : never
+    : never;
 
 const routes = [
   { path: "/", component: <FrontPage /> },
   { path: "/blog", component: <ArchivePage /> },
-  { path: "/blog/:post", component: <PostPage /> },
+  { path: "/blog/:postId", component: <PostPage /> },
   { path: "/list", component: <ListPage /> },
   { path: "/list/music-awards", component: <MusicAwardsListPage /> },
   { path: "/list/video-game-index", component: <VideoGameIndexListPage /> },
   { path: "/list/bucket-list", component: <BucketListPage /> },
   { path: "/about", component: <AboutPage /> },
   { path: "/resume", component: <ResumePage /> },
-] satisfies { path: SitePath; component: ReactNode }[];
+] satisfies {
+  path: SitePath;
+  component: ReactNode;
+}[];
 
 export const Route = ({
   path,

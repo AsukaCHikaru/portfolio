@@ -7,7 +7,7 @@ import { useSiteData } from "../../components/SiteDataStore";
 
 export const PostPage = () => {
   const siteData = useSiteData({
-    path: "/blog/:post",
+    path: "/blog/:postId",
   });
 
   if (!siteData) {
