@@ -4,10 +4,13 @@ import { formatDate } from "../../utils/dateTimeUtil";
 import { Link } from "../../components/Link";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
+import { usePathParams } from "../../hooks/usePathParams";
 
 export const PostPage = () => {
+  const params = usePathParams("/blog/:postId");
   const siteData = useSiteData({
     path: "/blog/:postId",
+    params,
   });
 
   if (!siteData) {
