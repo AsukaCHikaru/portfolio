@@ -7,7 +7,7 @@ import {
 } from "react";
 import type { ReactNode } from "react";
 import type { BlogArchiveData, SiteData } from "../types";
-import type { SitePath, SitePathToData } from "./Router";
+import type { SitePath, SitePathParam, SitePathToData } from "./Router";
 
 type SiteDataStore = {
   cache: Map<string, SiteData>;
@@ -86,31 +86,37 @@ export const fetchData = async (url: URL) => {
   return url.search ? filterData(data, url.searchParams) : data;
 };
 
-const cacheKey = (url: URL) => {
-  const pathname = url.pathname.replace(/\/$/, "") || "/";
-  return pathname + url.search;
-};
+const resolvePath = (path: string, params: Record<string, string>): string =>
+  Object.entries(params).reduce(
+    (resolved, [key, value]) => resolved.replace(`:${key}`, value),
+    path,
+  );
 
-export const useSiteData = <P extends SitePath>({
-  path,
-}: {
-  path: P;
-}): SitePathToData<P> | null => {
+export const useSiteData = <P extends SitePath>(
+  args: SitePathParam<P> extends never
+    ? { path: P }
+    : { path: P; params: Record<SitePathParam<P>, string> | undefined },
+): SitePathToData<P> | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
-  const key =
-    typeof window !== "undefined"
-      ? cacheKey(new URL(window.location.href))
-      : Array.from(cache.keys())[0];
+  const params = "params" in args ? args.params : undefined;
+  const pathname =
+    params !== undefined ? resolvePath(args.path, params) : args.path;
+  const search = typeof window !== "undefined" ? window.location.search : "";
+  const key = pathname + search;
   const cached = cache.get(key) as SitePathToData<P> | undefined;
 
   useEffect(() => {
-    if (cached) {
+    if (cached || ("params" in args && !params)) {
       return;
     }
     fetchData(new URL(key, window.location.origin)).then((json) =>
       set(key, json),
     );
-  }, [cached, key, set]);
+  }, [cached, key, set, args, params]);
+
+  if ("params" in args && !params) {
+    return null;
+  }
 
   return cached ?? null;
 };
