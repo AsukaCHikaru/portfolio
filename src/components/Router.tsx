@@ -64,13 +64,13 @@ export const Route = ({
 }) => {
   const url = new URL(window.location.href);
   const pathPattern = new RegExp(url.pathname.replace(/:[a-z-]+/g, "\\w+"));
-  if (pathPattern.test(path)) {
+  if (!pathPattern.test(path)) {
     return null;
   }
   return children;
 };
 
-export const RouterV2 = () => {
+export const Router = () => {
   const [, setRenderVersion] = useState(0);
 
   useEffect(() => {
@@ -91,58 +91,4 @@ export const RouterV2 = () => {
       {route.component}
     </Route>
   ));
-};
-
-export const Router = () => {
-  const [path, setPath] = useState(window.location.pathname);
-
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setPath(window.location.pathname);
-      window.scrollTo(0, 0);
-    };
-
-    window.addEventListener("popstate", handleLocationChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleLocationChange);
-    };
-  }, []);
-
-  return (() => {
-    if (/^\/$/.test(path)) {
-      return <FrontPage />;
-    }
-    if (/\.xml$/.test(path)) {
-      // TODO: fix this eslint error
-      // eslint-disable-next-line react-hooks/immutability
-      window.location.href = path;
-      return null;
-    }
-    if (/^\/blog\/[^/]+\/?$/.test(path)) {
-      return <PostPage />;
-    }
-    if (/^\/blog\/?$/.test(path)) {
-      return <ArchivePage />;
-    }
-    if (/^\/about\/?$/.test(path)) {
-      return <AboutPage />;
-    }
-    if (/^\/resume\/?$/.test(path)) {
-      return <ResumePage />;
-    }
-    if (/^\/list\/music-awards\/?$/.test(path)) {
-      return <MusicAwardsListPage />;
-    }
-    if (/^\/list\/video-game-index\/?$/.test(path)) {
-      return <VideoGameIndexListPage />;
-    }
-    if (/^\/list\/bucket-list\/?$/.test(path)) {
-      return <BucketListPage />;
-    }
-    if (/^\/list\/?$/.test(path)) {
-      return <ListPage />;
-    }
-    return <div>404</div>;
-  })();
 };
