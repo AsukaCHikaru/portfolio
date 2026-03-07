@@ -65,13 +65,13 @@ export const Route = ({
 }) => {
   const url = new URL(window.location.href);
   const pathPattern = new RegExp(
-    `${path.replace(/:([a-zA-Z-]+)/, "([a-zA-Z-]+)")}$`,
+    `${path.replace(/:([a-zA-Z-\d]+)/, "([a-zA-Z-\\d]+)")}$`,
   );
   const match = pathPattern.exec(url.pathname);
   if (!match) {
     return null;
   }
-  const paramKeyMatch = path.match(/:([a-zA-Z-]+)/);
+  const paramKeyMatch = path.match(/:([a-zA-Z\d-]+)/);
   if (match?.[1] && paramKeyMatch?.[1]) {
     return (
       <PathParamContext.Provider

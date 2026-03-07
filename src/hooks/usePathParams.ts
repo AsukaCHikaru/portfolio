@@ -11,7 +11,7 @@ export const usePathParams = <P extends SitePath>(
   path: P,
 ): PathParamResult<P> => {
   const context = useContext(PathParamContext);
-  const paramKeyMatch = path.match(/:([a-zA-Z-]+)/);
+  const paramKeyMatch = path.match(/:([a-zA-Z\d-]+)/);
 
   if (!paramKeyMatch?.[1] || !context?.pathParam.length) {
     return undefined as PathParamResult<P>;
