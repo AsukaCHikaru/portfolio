@@ -63,8 +63,11 @@ export const Route = ({
   children: ReactNode;
 }) => {
   const url = new URL(window.location.href);
-  const pathPattern = new RegExp(url.pathname.replace(/:[a-z-]+/g, "\\w+"));
-  if (!pathPattern.test(path)) {
+  const pathPattern = new RegExp(
+    `${path.replace(/:([a-zA-Z-]+)/, "([a-zA-Z-]+)")}$`,
+  );
+  const match = pathPattern.exec(url.pathname);
+  if (!match) {
     return null;
   }
   return children;
