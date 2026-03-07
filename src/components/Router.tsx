@@ -1,4 +1,5 @@
 import { useState, useEffect, type ReactNode } from "react";
+import { PathParamContext } from "./PathParamContext";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ArchivePage } from "../pages/blog/ArchivePage";
 import { PostPage } from "../pages/blog/PostPage";
@@ -69,6 +70,16 @@ export const Route = ({
   const match = pathPattern.exec(url.pathname);
   if (!match) {
     return null;
+  }
+  const paramKeyMatch = path.match(/:([a-zA-Z-]+)/);
+  if (match?.[1] && paramKeyMatch?.[1]) {
+    return (
+      <PathParamContext.Provider
+        value={{ pathParam: [{ key: paramKeyMatch[1], value: match[1] }] }}
+      >
+        {children}
+      </PathParamContext.Provider>
+    );
   }
   return children;
 };

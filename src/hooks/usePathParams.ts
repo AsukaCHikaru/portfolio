@@ -1,35 +1,26 @@
+import { useContext } from "react";
+import { PathParamContext } from "../components/PathParamContext";
 import type { SitePath, SitePathParam } from "../components/Router";
 
-const paramRegex = new RegExp(/:([a-zA-Z-\d]+)/g);
+type PathParamResult<P extends SitePath> =
+  SitePathParam<P> extends never
+    ? undefined
+    : Record<SitePathParam<P>, string> | undefined;
 
-const isParam = <P extends SitePath>(
-  value: string,
+export const usePathParams = <P extends SitePath>(
   path: P,
-): value is SitePathParam<P> => new RegExp(`/:${value}/?`).test(path);
+): PathParamResult<P> => {
+  const context = useContext(PathParamContext);
+  const paramKeyMatch = path.match(/:([a-zA-Z-]+)/);
 
-const generateRecord = <K extends string, V>(key: K, value: V) =>
-  ({ [key]: value }) as Record<K, V>;
-
-export const usePathParams = <P extends SitePath>({
-  path,
-}: {
-  path: P;
-}): Record<SitePathParam<P>, string> | undefined => {
-  const paramMatch = paramRegex.exec(path);
-  const paramKey = paramMatch?.[1];
-
-  if (!paramKey || !isParam(paramKey, path) || typeof window === "undefined") {
-    return;
+  if (!paramKeyMatch?.[1] || !context?.pathParam.length) {
+    return undefined as PathParamResult<P>;
   }
 
-  const url = new URL(window.location.href);
-  const paramValue = new RegExp(
-    path.replace(paramRegex, "([a-zA-Z-\\d]+)"),
-  ).exec(url.pathname)?.[1];
-
-  if (!paramValue) {
-    return;
+  const param = context.pathParam.find((p) => p.key === paramKeyMatch[1]);
+  if (!param) {
+    return undefined as PathParamResult<P>;
   }
 
-  return generateRecord(paramKey, paramValue);
+  return { [param.key]: param.value } as PathParamResult<P>;
 };
