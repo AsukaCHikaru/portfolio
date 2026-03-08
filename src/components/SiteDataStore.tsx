@@ -7,7 +7,12 @@ import {
 } from "react";
 import type { ReactNode } from "react";
 import type { BlogArchiveData, SiteData } from "../types";
-import type { SitePath, SitePathParam, SitePathToData } from "./Router";
+import type {
+  SitePath,
+  SitePathParam,
+  SitePathToData,
+  SiteSearchParamKeys,
+} from "./Router";
 
 type SiteDataStore = {
   cache: Map<string, SiteData>;
@@ -86,35 +91,57 @@ export const fetchData = async (url: URL) => {
   return url.search ? filterData(data, url.searchParams) : data;
 };
 
+type UseSiteDataArgs<P extends SitePath> =
+  SitePathParam<P> extends never
+    ? SiteSearchParamKeys<P> extends never
+      ? { path: P }
+      : {
+          path: P;
+          searchParams: Record<SiteSearchParamKeys<P>, string> | undefined;
+        }
+    : SiteSearchParamKeys<P> extends never
+      ? {
+          path: P;
+          pathParams: Record<SitePathParam<P>, string> | undefined;
+        }
+      : {
+          path: P;
+          pathParams: Record<SitePathParam<P>, string> | undefined;
+          searchParams: Record<SiteSearchParamKeys<P>, string> | undefined;
+        };
+
 const resolvePath = (path: string, params: Record<string, string>): string =>
   Object.entries(params).reduce(
     (resolved, [key, value]) => resolved.replace(`:${key}`, value),
     path,
   );
+const resolveSearch = (params: Record<string, string>): string => {
+  const s = new URLSearchParams(params).toString();
+  return s ? `?${s}` : "";
+};
 
 export const useSiteData = <P extends SitePath>(
-  args: SitePathParam<P> extends never
-    ? { path: P }
-    : { path: P; params: Record<SitePathParam<P>, string> | undefined },
+  args: UseSiteDataArgs<P>,
 ): SitePathToData<P> | null => {
   const { cache, set } = useContext(SiteDataStoreContext);
-  const params = "params" in args ? args.params : undefined;
+  const pathParams = "pathParams" in args ? args.pathParams : undefined;
+  const searchParams = "searchParams" in args ? args.searchParams : undefined;
   const pathname =
-    params !== undefined ? resolvePath(args.path, params) : args.path;
-  const search = typeof window !== "undefined" ? window.location.search : "";
+    pathParams !== undefined ? resolvePath(args.path, pathParams) : args.path;
+  const search = searchParams ? resolveSearch(searchParams) : "";
   const key = pathname + search;
   const cached = cache.get(key) as SitePathToData<P> | undefined;
 
   useEffect(() => {
-    if (cached || ("params" in args && !params)) {
+    if (cached || ("pathParams" in args && !pathParams)) {
       return;
     }
     fetchData(new URL(key, window.location.origin)).then((json) =>
       set(key, json),
     );
-  }, [cached, key, set, args, params]);
+  }, [cached, key, set, args, pathParams]);
 
-  if ("params" in args && !params) {
+  if ("pathParams" in args && !pathParams) {
     return null;
   }
 
