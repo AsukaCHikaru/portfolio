@@ -1,5 +1,4 @@
-import { useState, useEffect, type ReactNode } from "react";
-import { ParamContext } from "./ParamContext";
+import { useState, useEffect } from "react";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ArchivePage } from "../pages/blog/ArchivePage";
 import { PostPage } from "../pages/blog/PostPage";
@@ -9,116 +8,13 @@ import { ListPage } from "../pages/list/ListPage";
 import { MusicAwardsListPage } from "../pages/list/MusicAwardsListPage";
 import { VideoGameIndexListPage } from "../pages/list/VideoGameIndexListPage";
 import { BucketListPage } from "../pages/list/BucketListPage";
-import type {
-  FrontPageData,
-  BlogArchiveData,
-  BlogData,
-  ListData,
-  MusicAwardsData,
-  VideoGameIndexData,
-  BucketListData,
-  AboutData,
-} from "../types";
-
-type SiteDataMap = {
-  "/": FrontPageData;
-  "/blog": BlogArchiveData;
-  "/blog/:postId": BlogData;
-  "/list": ListData;
-  "/list/music-awards": MusicAwardsData;
-  "/list/video-game-index": VideoGameIndexData;
-  "/list/bucket-list": BucketListData;
-  "/about": AboutData;
-  "/resume": never;
-};
-
-export type SitePath = keyof SiteDataMap;
-export type SitePathToData<P extends SitePath> = SiteDataMap[P];
-export type SitePathParam<PATH extends SitePath> =
-  PATH extends `/${string}/:${infer PARAM}`
-    ? PARAM extends string
-      ? PARAM
-      : never
-    : never;
-
-const routes = [
-  { path: "/", component: <FrontPage /> },
-  { path: "/blog", component: <ArchivePage />, searchParamKeys: ["category"] },
-  { path: "/blog/:postId", component: <PostPage /> },
-  { path: "/list", component: <ListPage /> },
-  { path: "/list/music-awards", component: <MusicAwardsListPage /> },
-  { path: "/list/video-game-index", component: <VideoGameIndexListPage /> },
-  { path: "/list/bucket-list", component: <BucketListPage /> },
-  { path: "/about", component: <AboutPage /> },
-  { path: "/resume", component: <ResumePage /> },
-] as const satisfies readonly {
-  path: SitePath;
-  component: ReactNode;
-  searchParamKeys?: readonly string[];
-}[];
-
-export type SiteSearchParamKeys<P extends SitePath> =
-  Extract<
-    (typeof routes)[number],
-    { path: P; searchParamKeys: readonly string[] }
-  > extends {
-    searchParamKeys: readonly (infer K)[];
-  }
-    ? K extends string
-      ? K
-      : never
-    : never;
-
-const narrowSearchParams = (input: URLSearchParams, keys: readonly string[]) =>
-  Object.fromEntries(input.entries().filter(([key]) => keys.includes(key)));
-
-export const Route = ({
-  path,
-  searchParamKeys = [],
-  children,
-}: {
-  path: string;
-  searchParamKeys?: readonly string[];
-  children: ReactNode;
-}) => {
-  const { pathname, searchParams } = new URL(window.location.href);
-  const pathPattern = new RegExp(
-    `${path.replace(/:([a-zA-Z-\d]+)/, "([a-zA-Z-\\d]+)")}$`,
-  );
-  const match = pathPattern.exec(pathname);
-  if (!match) {
-    return null;
-  }
-
-  const search =
-    searchParams.size > 0
-      ? narrowSearchParams(searchParams, searchParamKeys)
-      : null;
-
-  const paramKeyMatch = path.match(/:([a-zA-Z\d-]+)/);
-  const pathParam =
-    match?.[1] && paramKeyMatch?.[1]
-      ? [{ key: paramKeyMatch[1], value: match[1] }]
-      : [];
-
-  return (
-    <ParamContext.Provider
-      value={{
-        pathParam,
-        searchParam: search,
-      }}
-    >
-      {children}
-    </ParamContext.Provider>
-  );
-};
 
 export const Router = () => {
-  const [, setRenderVersion] = useState(0);
+  const [path, setPath] = useState(window.location.pathname);
 
   useEffect(() => {
     const handleLocationChange = () => {
-      setRenderVersion((prev) => prev + 1);
+      setPath(window.location.pathname);
       window.scrollTo(0, 0);
     };
 
@@ -129,15 +25,40 @@ export const Router = () => {
     };
   }, []);
 
-  return routes.map((route) => (
-    <Route
-      path={route.path}
-      key={route.path}
-      searchParamKeys={
-        "searchParamKeys" in route ? route.searchParamKeys : undefined
-      }
-    >
-      {route.component}
-    </Route>
-  ));
+  return (() => {
+    if (/^\/$/.test(path)) {
+      return <FrontPage />;
+    }
+    if (/\.xml$/.test(path)) {
+      // TODO: fix this eslint error
+      // eslint-disable-next-line react-hooks/immutability
+      window.location.href = path;
+      return null;
+    }
+    if (/^\/blog\/[^/]+\/?$/.test(path)) {
+      return <PostPage />;
+    }
+    if (/^\/blog\/?$/.test(path)) {
+      return <ArchivePage />;
+    }
+    if (/^\/about\/?$/.test(path)) {
+      return <AboutPage />;
+    }
+    if (/^\/resume\/?$/.test(path)) {
+      return <ResumePage />;
+    }
+    if (/^\/list\/music-awards\/?$/.test(path)) {
+      return <MusicAwardsListPage />;
+    }
+    if (/^\/list\/video-game-index\/?$/.test(path)) {
+      return <VideoGameIndexListPage />;
+    }
+    if (/^\/list\/bucket-list\/?$/.test(path)) {
+      return <BucketListPage />;
+    }
+    if (/^\/list\/?$/.test(path)) {
+      return <ListPage />;
+    }
+    return <div>404</div>;
+  })();
 };

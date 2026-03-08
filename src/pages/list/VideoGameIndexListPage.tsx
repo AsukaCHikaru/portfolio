@@ -1,29 +1,35 @@
+import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
-import type { List, VideoGameIndexList } from "../../types";
+import type { List, VideoGameIndexData, VideoGameIndexList } from "../../types";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
 
-const groupByFinished = (list: List<VideoGameIndexList>["list"]) => {
-  const map = new Map<string, VideoGameIndexList>();
-  list.forEach((game) => {
-    if (map.has(game.played)) {
-      map.set(game.played, [...(map.get(game.played) || []), game]);
-    } else {
-      map.set(game.played, [game]);
-    }
-  });
-  return map;
+export const VideoGameIndexListPage = () => {
+  const siteData = useSiteData<VideoGameIndexData>();
+  if (!siteData) return null;
+  return (
+    <VideoGameIndexListPageContent
+      videoGameIndex={siteData.data.videoGameIndex}
+    />
+  );
 };
 
-export const VideoGameIndexListPage = () => {
-  const siteData = useSiteData({ path: "/list/video-game-index" });
-  if (!siteData) {
-    return null;
-  }
+interface Props {
+  videoGameIndex: List<VideoGameIndexList>;
+}
 
-  const { videoGameIndex } = siteData.data;
-
-  const grouped = groupByFinished(videoGameIndex.list);
+export const VideoGameIndexListPageContent = ({ videoGameIndex }: Props) => {
+  const groupByFinished = useMemo(() => {
+    const map = new Map<string, VideoGameIndexList>();
+    videoGameIndex.list.forEach((game) => {
+      if (map.has(game.played)) {
+        map.set(game.played, [...(map.get(game.played) || []), game]);
+      } else {
+        map.set(game.played, [game]);
+      }
+    });
+    return map;
+  }, [videoGameIndex]);
 
   return (
     <>
@@ -37,13 +43,13 @@ export const VideoGameIndexListPage = () => {
           <h2>{videoGameIndex.description}</h2>
         </div>
         <article className="list list-video-game-index">
-          {Array.from(grouped.keys())
+          {Array.from(groupByFinished.keys())
             .sort((prev, next) => Number(next) - Number(prev))
             .map((year) => (
               <div key={year}>
                 <h3>{year}</h3>
                 <ul>
-                  {grouped.get(year)?.map((game) => (
+                  {groupByFinished.get(year)?.map((game) => (
                     <li key={`${game.title}-${game.released}`}>
                       <h4>{game.title}</h4>
                       <p>

@@ -1,17 +1,10 @@
-import { Layout } from "../../components/Layout";
-import { ContentBlock } from "../../components/ContentBlock";
-import { formatDate } from "../../utils/dateTimeUtil";
-import { Link } from "../../components/Link";
+import { PostPageContent } from "../../components/PostPageContent";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
-import { usePathParams } from "../../hooks/usePathParams";
+import type { BlogData } from "../../types";
 
 export const PostPage = () => {
-  const pathParams = usePathParams("/blog/:postId");
-  const siteData = useSiteData({
-    path: "/blog/:postId",
-    pathParams,
-  });
+  const siteData = useSiteData<BlogData>();
 
   if (!siteData) {
     return null;
@@ -22,21 +15,7 @@ export const PostPage = () => {
   return (
     <>
       <Helmet title={metadata.title} description={metadata.description} />
-      <Layout>
-        <div className="post-page-header_container">
-          <Link to={`/blog?category=${metadata.category}`}>
-            {metadata.category}
-          </Link>
-          <h1>{metadata.title}</h1>
-          <h2>{metadata.description}</h2>
-          <p>{formatDate(metadata.publishedAt)}</p>
-        </div>
-        <article className="post-page-content grid">
-          {content.map((block, i) => (
-            <ContentBlock block={block} key={i} />
-          ))}
-        </article>
-      </Layout>
+      <PostPageContent metadata={metadata} content={content} />
     </>
   );
 };
