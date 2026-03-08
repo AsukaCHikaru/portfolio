@@ -1,6 +1,12 @@
 import { Helmet } from "../../components/Helmet";
 import { Layout } from "../../components/Layout";
-import type { MusicAwardNominee, RecordNominee } from "../../types";
+import type {
+  List,
+  MusicAwardList,
+  MusicAwardNominee,
+  MusicAwardsData,
+  RecordNominee,
+} from "../../types";
 import { useSiteData } from "../../components/SiteDataStore";
 
 const isRecordNominee = (
@@ -8,13 +14,15 @@ const isRecordNominee = (
 ): nominee is RecordNominee => "title" in nominee;
 
 export const MusicAwardsListPage = () => {
-  const siteData = useSiteData({ path: "/list/music-awards" });
-  if (!siteData) {
-    return null;
-  }
+  const siteData = useSiteData<MusicAwardsData>();
+  if (!siteData) return null;
+  return <MusicAwardsListPageContent musicAwards={siteData.data.musicAwards} />;
+};
 
-  const { musicAwards } = siteData.data;
-
+interface Props {
+  musicAwards: List<MusicAwardList>;
+}
+export const MusicAwardsListPageContent = ({ musicAwards }: Props) => {
   return (
     <>
       <Helmet title={musicAwards.name} description={musicAwards.description} />
@@ -53,7 +61,7 @@ export const MusicAwardsListPage = () => {
 };
 
 const Nominee = ({ nominee }: { nominee: MusicAwardNominee }) => {
-  if (nominee.isWinner) {
+  if (nominee.isWinner)
     return isRecordNominee(nominee) ? (
       <div className="list-music-awards-winner">
         <p>
@@ -71,7 +79,6 @@ const Nominee = ({ nominee }: { nominee: MusicAwardNominee }) => {
         <p>{nominee.artist}</p>
       </div>
     );
-  }
 
   return isRecordNominee(nominee) ? (
     <div className="list-music-awards-nominee">
