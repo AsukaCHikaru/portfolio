@@ -7,10 +7,13 @@
     "eslint": "eslint .",
     "build": "PHASE=prod bun run tools/build.tsx",
     "deploy": "bun run build && touch ./dist/.nojekyll",
-    "copy:content": "bun run tools/copyContent.ts"
+    "copy:content": "bun run tools/copyContent.ts",
+    "test": "playwright test",
+    "test:update-snapshots": "playwright test --update-snapshots"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
+    "@playwright/test": "1.56.1",
     "@shikijs/langs": "^3.4.2",
     "@shikijs/themes": "^3.4.2",
     "@types/bun": "latest",
@@ -20,6 +23,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "prettier": "^3.5.3",
+    "serve": "^14.2.6",
     "shiki": "^3.4.2",
     "subfont": "^7.2.1",
     "typescript-eslint": "^8.46.2"
