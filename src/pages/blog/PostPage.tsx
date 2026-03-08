@@ -7,10 +7,10 @@ import { useSiteData } from "../../components/SiteDataStore";
 import { usePathParams } from "../../hooks/usePathParams";
 
 export const PostPage = () => {
-  const params = usePathParams("/blog/:postId");
+  const pathParams = usePathParams("/blog/:postId");
   const siteData = useSiteData({
     path: "/blog/:postId",
-    params,
+    pathParams,
   });
 
   if (!siteData) {

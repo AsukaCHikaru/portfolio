@@ -4,10 +4,13 @@ import { generateArchiveTileList } from "../../utils/blogUtil";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
+import { useSearchParams } from "../../hooks/useSearchParams";
 
 export const ArchivePage = () => {
+  const searchParams = useSearchParams("/blog");
   const siteData = useSiteData({
     path: "/blog",
+    searchParams,
   });
 
   if (!siteData) {
