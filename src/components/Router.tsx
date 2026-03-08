@@ -51,13 +51,25 @@ const routes = [
   { path: "/list/bucket-list", component: <BucketListPage /> },
   { path: "/about", component: <AboutPage /> },
   { path: "/resume", component: <ResumePage /> },
-] satisfies {
+] as const satisfies readonly {
   path: SitePath;
   component: ReactNode;
-  searchParamKeys?: string[];
+  searchParamKeys?: readonly string[];
 }[];
 
-const narrowSearchParams = (input: URLSearchParams, keys: string[]) =>
+export type SiteSearchParamKeys<P extends SitePath> =
+  Extract<
+    (typeof routes)[number],
+    { path: P; searchParamKeys: readonly string[] }
+  > extends {
+    searchParamKeys: readonly (infer K)[];
+  }
+    ? K extends string
+      ? K
+      : never
+    : never;
+
+const narrowSearchParams = (input: URLSearchParams, keys: readonly string[]) =>
   Object.fromEntries(input.entries().filter(([key]) => keys.includes(key)));
 
 export const Route = ({
@@ -66,7 +78,7 @@ export const Route = ({
   children,
 }: {
   path: string;
-  searchParamKeys?: string[];
+  searchParamKeys?: readonly string[];
   children: ReactNode;
 }) => {
   const { pathname, searchParams } = new URL(window.location.href);
@@ -121,7 +133,9 @@ export const Router = () => {
     <Route
       path={route.path}
       key={route.path}
-      searchParamKeys={route.searchParamKeys}
+      searchParamKeys={
+        "searchParamKeys" in route ? route.searchParamKeys : undefined
+      }
     >
       {route.component}
     </Route>
