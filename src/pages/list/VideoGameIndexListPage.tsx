@@ -1,8 +1,19 @@
-import { useMemo } from "react";
 import { Layout } from "../../components/Layout";
-import type { VideoGameIndexList } from "../../types";
+import type { List, VideoGameIndexList } from "../../types";
 import { Helmet } from "../../components/Helmet";
 import { useSiteData } from "../../components/SiteDataStore";
+
+const groupByFinished = (list: List<VideoGameIndexList>["list"]) => {
+  const map = new Map<string, VideoGameIndexList>();
+  list.forEach((game) => {
+    if (map.has(game.played)) {
+      map.set(game.played, [...(map.get(game.played) || []), game]);
+    } else {
+      map.set(game.played, [game]);
+    }
+  });
+  return map;
+};
 
 export const VideoGameIndexListPage = () => {
   const siteData = useSiteData({ path: "/list/video-game-index" });
@@ -12,17 +23,7 @@ export const VideoGameIndexListPage = () => {
 
   const { videoGameIndex } = siteData.data;
 
-  const groupByFinished = useMemo(() => {
-    const map = new Map<string, VideoGameIndexList>();
-    videoGameIndex.list.forEach((game) => {
-      if (map.has(game.played)) {
-        map.set(game.played, [...(map.get(game.played) || []), game]);
-      } else {
-        map.set(game.played, [game]);
-      }
-    });
-    return map;
-  }, [videoGameIndex]);
+  const grouped = groupByFinished(videoGameIndex.list);
 
   return (
     <>
@@ -36,13 +37,13 @@ export const VideoGameIndexListPage = () => {
           <h2>{videoGameIndex.description}</h2>
         </div>
         <article className="list list-video-game-index">
-          {Array.from(groupByFinished.keys())
+          {Array.from(grouped.keys())
             .sort((prev, next) => Number(next) - Number(prev))
             .map((year) => (
               <div key={year}>
                 <h3>{year}</h3>
                 <ul>
-                  {groupByFinished.get(year)?.map((game) => (
+                  {grouped.get(year)?.map((game) => (
                     <li key={`${game.title}-${game.released}`}>
                       <h4>{game.title}</h4>
                       <p>
