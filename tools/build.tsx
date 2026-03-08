@@ -16,7 +16,7 @@ import { VideoGameIndexListPage } from "../src/pages/list/VideoGameIndexListPage
 import { BucketListPage } from "../src/pages/list/BucketListPage";
 import { SiteDataStoreProvider } from "../src/components/SiteDataStore";
 import { PostPage } from "../src/pages/blog/PostPage";
-import { PathParamContext } from "../src/components/PathParamContext";
+import { ParamContext } from "../src/components/ParamContext";
 
 const writeFile = (
   element: ReactNode,
@@ -144,7 +144,7 @@ const buildBlog = async () => {
             ])
           }
         >
-          <PathParamContext
+          <ParamContext
             value={{
               pathParam: [
                 {
@@ -152,10 +152,11 @@ const buildBlog = async () => {
                   value: post.metadata.pathname,
                 },
               ],
+              searchParam: null,
             }}
           >
             <PostPage />
-          </PathParamContext>
+          </ParamContext>
         </SiteDataStoreProvider>,
         path,
         generateMetadata(

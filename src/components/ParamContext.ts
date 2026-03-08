@@ -1,8 +1,11 @@
 import { createContext } from "react";
 
-export const PathParamContext = createContext<{
+export const ParamContext = createContext<{
   pathParam: {
     key: string;
     value: string;
   }[];
+  searchParam: {
+    [key: string]: string;
+  } | null;
 } | null>(null);

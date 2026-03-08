@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PathParamContext } from "../components/PathParamContext";
+import { ParamContext } from "../components/ParamContext";
 import type { SitePath, SitePathParam } from "../components/Router";
 
 type PathParamResult<P extends SitePath> =
@@ -10,7 +10,7 @@ type PathParamResult<P extends SitePath> =
 export const usePathParams = <P extends SitePath>(
   path: P,
 ): PathParamResult<P> => {
-  const context = useContext(PathParamContext);
+  const context = useContext(ParamContext);
   const paramKeyMatch = path.match(/:([a-zA-Z\d-]+)/);
 
   if (!paramKeyMatch?.[1] || !context?.pathParam.length) {

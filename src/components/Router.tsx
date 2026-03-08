@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactNode } from "react";
-import { PathParamContext } from "./PathParamContext";
+import { ParamContext } from "./ParamContext";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ArchivePage } from "../pages/blog/ArchivePage";
 import { PostPage } from "../pages/blog/PostPage";
@@ -43,7 +43,7 @@ export type SitePathParam<PATH extends SitePath> =
 
 const routes = [
   { path: "/", component: <FrontPage /> },
-  { path: "/blog", component: <ArchivePage /> },
+  { path: "/blog", component: <ArchivePage />, searchParamKeys: ["category"] },
   { path: "/blog/:postId", component: <PostPage /> },
   { path: "/list", component: <ListPage /> },
   { path: "/list/music-awards", component: <MusicAwardsListPage /> },
@@ -54,34 +54,51 @@ const routes = [
 ] satisfies {
   path: SitePath;
   component: ReactNode;
+  searchParamKeys?: string[];
 }[];
+
+const narrowSearchParams = (input: URLSearchParams, keys: string[]) =>
+  Object.fromEntries(input.entries().filter(([key]) => keys.includes(key)));
 
 export const Route = ({
   path,
+  searchParamKeys = [],
   children,
 }: {
   path: string;
+  searchParamKeys?: string[];
   children: ReactNode;
 }) => {
-  const url = new URL(window.location.href);
+  const { pathname, searchParams } = new URL(window.location.href);
   const pathPattern = new RegExp(
     `${path.replace(/:([a-zA-Z-\d]+)/, "([a-zA-Z-\\d]+)")}$`,
   );
-  const match = pathPattern.exec(url.pathname);
+  const match = pathPattern.exec(pathname);
   if (!match) {
     return null;
   }
+
+  const search =
+    searchParams.size > 0
+      ? narrowSearchParams(searchParams, searchParamKeys)
+      : null;
+
   const paramKeyMatch = path.match(/:([a-zA-Z\d-]+)/);
-  if (match?.[1] && paramKeyMatch?.[1]) {
-    return (
-      <PathParamContext.Provider
-        value={{ pathParam: [{ key: paramKeyMatch[1], value: match[1] }] }}
-      >
-        {children}
-      </PathParamContext.Provider>
-    );
-  }
-  return children;
+  const pathParam =
+    match?.[1] && paramKeyMatch?.[1]
+      ? [{ key: paramKeyMatch[1], value: match[1] }]
+      : [];
+
+  return (
+    <ParamContext.Provider
+      value={{
+        pathParam,
+        searchParam: search,
+      }}
+    >
+      {children}
+    </ParamContext.Provider>
+  );
 };
 
 export const Router = () => {
@@ -101,7 +118,11 @@ export const Router = () => {
   }, []);
 
   return routes.map((route) => (
-    <Route path={route.path} key={route.path}>
+    <Route
+      path={route.path}
+      key={route.path}
+      searchParamKeys={route.searchParamKeys}
+    >
       {route.component}
     </Route>
   ));
