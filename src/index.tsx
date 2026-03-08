@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Router } from "./components/Router";
 import { SiteDataStoreProvider } from "./components/SiteDataStore";
+import { Router } from "./components/Router";
 
 ReactDOM.hydrateRoot(
   document.getElementById("root")!,
