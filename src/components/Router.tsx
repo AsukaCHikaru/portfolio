@@ -83,7 +83,7 @@ export const Route = ({
 }) => {
   const { pathname, searchParams } = new URL(window.location.href);
   const pathPattern = new RegExp(
-    `${path.replace(/:([a-zA-Z-\d]+)/, "([a-zA-Z-\\d]+)")}$`,
+    `^${path.replace(/:([a-zA-Z-\d]+)/, "([a-zA-Z-\\d]+)")}$`,
   );
   const match = pathPattern.exec(pathname);
   if (!match) {
