@@ -257,24 +257,6 @@ const writeFontCss = async () => {
   Bun.write("./dist/fonts.css", replaced);
 };
 
-const runSubfont = async () => {
-  const postList = await getBlogPostList();
-  const cjkPosts = postList.filter(
-    (post) => post.metadata.language !== "en-US",
-  );
-  for (const post of cjkPosts) {
-    const filePath = resolve(
-      import.meta.dir,
-      "..",
-      "dist",
-      "blog",
-      post.metadata.pathname,
-      "index.html",
-    );
-    await Bun.$`subfont ${filePath} -i --root ./dist`;
-  }
-};
-
 const getLastCommitDate = async () => {
   const output = await Bun.$`git log -1 --format=%cd --date=short`.text();
   return output.trim();
@@ -309,10 +291,6 @@ export const build = async () => {
     });
   } catch (error) {
     console.error("Build failed:", error);
-  }
-
-  if (process.env.PHASE === "prod") {
-    await runSubfont();
   }
 };
 

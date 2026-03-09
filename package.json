@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "PHASE=dev bun run tools/dev.ts",
     "eslint": "eslint .",
-    "build": "PHASE=prod bun run tools/build.tsx",
+    "build:dev": "PHASE=prod bun run tools/build.tsx",
+    "build": "PHASE=prod bun run tools/build.tsx && bun run tools/optimizeFont.ts",
     "deploy": "bun run build && touch ./dist/.nojekyll",
     "copy:content": "bun run tools/copyContent.ts",
     "test": "playwright test",
