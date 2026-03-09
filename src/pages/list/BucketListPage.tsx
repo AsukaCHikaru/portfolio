@@ -1,19 +1,16 @@
 import { ContentBlock } from "../../components/ContentBlock";
 import { Helmet } from "../../components/Helmet";
 import { Layout } from "../../components/Layout";
-import type { BucketList, BucketListData, List } from "../../types";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const BucketListPage = () => {
-  const siteData = useSiteData<BucketListData>();
-  if (!siteData) return null;
-  return <BucketListPageContent bucketList={siteData.data.bucketList} />;
-};
+  const siteData = useSiteData({ path: "/list/bucket-list" });
+  if (!siteData) {
+    return null;
+  }
 
-interface Props {
-  bucketList: List<BucketList>;
-}
-export const BucketListPageContent = ({ bucketList }: Props) => {
+  const { bucketList } = siteData.data;
+
   return (
     <>
       <Helmet

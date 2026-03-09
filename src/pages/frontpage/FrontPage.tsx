@@ -1,13 +1,15 @@
 import { Link } from "../../components/Link";
 import { ContentBlock } from "../../components/ContentBlock";
-import type { FrontPageData, FurtherReading, Post } from "../../types";
+import type { FurtherReading, Post } from "../../types";
 import { formatDate } from "../../utils/dateTimeUtil";
 import { Helmet } from "../../components/Helmet";
 import { FrontPageHeader } from "../../components/SiteHeader";
 import { useSiteData } from "../../components/SiteDataStore";
 
 export const FrontPage = () => {
-  const siteData = useSiteData<FrontPageData>();
+  const siteData = useSiteData({
+    path: "/",
+  });
 
   if (!siteData) {
     return null;
@@ -24,44 +26,20 @@ export const FrontPage = () => {
   return (
     <>
       <Helmet title="Asuka Wang" description="Asuka Wang's personal website" />
-      <FrontPageContent
-        leadStory={leadStory}
-        furtherReading={furtherReading}
-        lastUpdated={lastUpdated}
-        categories={categories}
-        featuredReading={featuredReading}
-      />
+      <div className="site_container">
+        <FrontPageHeader lastUpdated={lastUpdated} />
+        <main className="grid">
+          <LeadStory leadStory={leadStory} />
+          <SideColumn furtherReading={furtherReading} categories={categories} />
+          {featuredReading ? (
+            <FeaturedReading featuredReading={featuredReading} />
+          ) : null}
+        </main>
+        <Footer />
+      </div>
     </>
   );
 };
-
-interface Props {
-  leadStory: Post;
-  lastUpdated: string;
-  furtherReading: FurtherReading;
-  categories: { name: string; count: number }[];
-  featuredReading?: Post;
-}
-
-export const FrontPageContent = ({
-  leadStory,
-  lastUpdated,
-  furtherReading,
-  categories,
-  featuredReading,
-}: Props) => (
-  <div className="site_container">
-    <FrontPageHeader lastUpdated={lastUpdated} />
-    <main className="grid">
-      <LeadStory leadStory={leadStory} />
-      <SideColumn furtherReading={furtherReading} categories={categories} />
-      {featuredReading ? (
-        <FeaturedReading featuredReading={featuredReading} />
-      ) : null}
-    </main>
-    <Footer />
-  </div>
-);
 
 const LeadStory = ({ leadStory }: { leadStory: Post }) => (
   <div className="frontpage-lead-story_story">
