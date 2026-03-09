@@ -25,7 +25,10 @@ interface Props {
 export const MusicAwardsListPageContent = ({ musicAwards }: Props) => {
   return (
     <>
-      <Helmet title={musicAwards.name} description={musicAwards.description} />
+      <Helmet
+        title={`${musicAwards.name} | Asuka Wang`}
+        description={musicAwards.description}
+      />
       <Layout>
         <div className="list post-page-header_container">
           <h1>{musicAwards.name}</h1>
