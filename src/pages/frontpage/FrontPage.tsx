@@ -13,8 +13,13 @@ export const FrontPage = () => {
     return null;
   }
 
-  const { leadStory, lastUpdated, furtherReading, categories, featuredReading } =
-    siteData.data;
+  const {
+    leadStory,
+    lastUpdated,
+    furtherReading,
+    categories,
+    featuredReading,
+  } = siteData.data;
 
   return (
     <>

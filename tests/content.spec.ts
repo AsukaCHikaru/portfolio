@@ -44,7 +44,9 @@ test.describe("Blog post pages", () => {
   test("blog archive lists all posts", async ({ page }) => {
     await page.goto("/blog");
     // Each post appears as a link in the archive (excluding feed.xml)
-    const postLinks = page.locator('a[href^="/blog/"]:not([href="/blog/feed.xml"])');
+    const postLinks = page.locator(
+      'a[href^="/blog/"]:not([href="/blog/feed.xml"])',
+    );
     const count = await postLinks.count();
     expect(count).toBeGreaterThanOrEqual(blogPosts.length);
   });
@@ -72,7 +74,9 @@ test.describe("List pages", () => {
 test.describe("Static pages", () => {
   test("about page has content", async ({ page }) => {
     await page.goto("/about");
-    await expect(page.locator("article, main, .post-content").first()).toBeVisible();
+    await expect(
+      page.locator("article, main, .post-content").first(),
+    ).toBeVisible();
   });
 
   test("resume page has content", async ({ page }) => {
