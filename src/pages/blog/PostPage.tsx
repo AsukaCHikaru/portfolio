@@ -14,7 +14,10 @@ export const PostPage = () => {
 
   return (
     <>
-      <Helmet title={metadata.title} description={metadata.description} />
+      <Helmet
+        title={`${metadata.title} | Asuka Wang`}
+        description={metadata.description}
+      />
       <PostPageContent metadata={metadata} content={content} />
     </>
   );

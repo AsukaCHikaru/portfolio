@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 // All main routes defined in Router.tsx
-// Titles reflect post-hydration state: Helmet overrides document.title on list subpages
 // hasLayout: false for pages that intentionally omit the site header/footer (e.g. print-friendly resume)
 const ROUTES = [
   { path: "/", titlePattern: /Asuka Wang/, hasLayout: true },
@@ -10,7 +9,11 @@ const ROUTES = [
   { path: "/resume", titlePattern: /Resume/, hasLayout: false },
   { path: "/list", titlePattern: /List/, hasLayout: true },
   { path: "/list/music-awards", titlePattern: /Music Awards/, hasLayout: true },
-  { path: "/list/video-game-index", titlePattern: /Video Game Index/, hasLayout: true },
+  {
+    path: "/list/video-game-index",
+    titlePattern: /Video Game Index/,
+    hasLayout: true,
+  },
   { path: "/list/bucket-list", titlePattern: /Bucket List/, hasLayout: true },
 ];
 

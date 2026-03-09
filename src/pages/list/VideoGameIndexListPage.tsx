@@ -34,7 +34,7 @@ export const VideoGameIndexListPageContent = ({ videoGameIndex }: Props) => {
   return (
     <>
       <Helmet
-        title={videoGameIndex.name}
+        title={`${videoGameIndex.name} | Asuka Wang`}
         description={videoGameIndex.description}
       />
       <Layout>

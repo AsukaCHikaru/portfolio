@@ -16,7 +16,10 @@ interface Props {
 export const BucketListPageContent = ({ bucketList }: Props) => {
   return (
     <>
-      <Helmet title={bucketList.name} description={bucketList.description} />
+      <Helmet
+        title={`${bucketList.name} | Asuka Wang`}
+        description={bucketList.description}
+      />
       <Layout>
         <div className="post-page-header_container">
           <h1>{bucketList.name}</h1>
