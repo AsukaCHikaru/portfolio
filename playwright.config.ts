@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: "./tests",
   outputDir: "./tests/test-results",
   snapshotPathTemplate:
-    "./tests/snapshots/{testFilePath}/{arg}{ext}",
+    "./tests/snapshots/{testFilePath}/{projectName}/{arg}{ext}",
   use: {
     baseURL: "http://localhost:3333",
   },
@@ -15,8 +15,12 @@ export default defineConfig({
   },
   projects: [
     {
-      name: "chromium",
+      name: "desktop-chromium",
       use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "mobile-chromium",
+      use: { ...devices["Pixel 5"] },
     },
   ],
 });

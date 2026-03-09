@@ -51,6 +51,9 @@ test.describe("Header navigation", () => {
     // Wait for React to hydrate
     await page.waitForLoadState("networkidle");
 
+    if (test.info().project.name.includes("mobile")) {
+      await page.click("button.frontpage-header-menu-button");
+    }
     await page.click('nav a[href="/blog"]');
     await expect(page).toHaveURL("/blog");
     await expect(page).toHaveTitle(/Blog/);
@@ -68,6 +71,9 @@ test.describe("Header navigation", () => {
     await page.goto("/");
     await page.waitForLoadState("networkidle");
 
+    if (test.info().project.name.includes("mobile")) {
+      await page.click("button.frontpage-header-menu-button");
+    }
     await page.click('nav a[href="/list"]');
     await expect(page).toHaveURL("/list");
     await expect(page).toHaveTitle(/List/);
@@ -77,8 +83,66 @@ test.describe("Header navigation", () => {
     await page.goto("/");
     await page.waitForLoadState("networkidle");
 
+    if (test.info().project.name.includes("mobile")) {
+      await page.click("button.frontpage-header-menu-button");
+    }
     await page.click('nav a[href="/about"]');
     await expect(page).toHaveURL("/about");
+  });
+});
+
+test.describe("Mobile nav menu button", () => {
+  test.use({ viewport: { width: 375, height: 667 } });
+
+  const LAYOUT_ROUTES = ROUTES.filter((r) => r.hasLayout);
+
+  for (const { path } of LAYOUT_ROUTES) {
+    test(`menu button toggles nav menu on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      await page.waitForLoadState("networkidle");
+
+      const menuButton = page.locator("button.frontpage-header-menu-button");
+
+      // Button is visible with "menu" text, nav menu is hidden
+      await expect(menuButton).toBeVisible();
+      await expect(menuButton).toHaveText("menu");
+      await expect(page.locator(".mobile-nav-menu")).not.toBeVisible();
+
+      // Click to open
+      await menuButton.click();
+      await expect(menuButton).toHaveText("close");
+      await expect(page.locator(".mobile-nav-menu")).toBeVisible();
+      await expect(page.locator(".mobile-nav-menu-backdrop")).toBeVisible();
+
+      // Click to close
+      await menuButton.click();
+      await expect(menuButton).toHaveText("menu");
+      await expect(page.locator(".mobile-nav-menu")).not.toBeVisible();
+    });
+  }
+
+  test("mobile nav links navigate correctly", async ({ page }) => {
+    await page.goto("/blog");
+    await page.waitForLoadState("networkidle");
+
+    const menuButton = page.locator("button.frontpage-header-menu-button");
+    await menuButton.click();
+
+    await page.click('.mobile-nav-menu a[href="/about"]');
+    await expect(page).toHaveURL("/about");
+  });
+
+  test("backdrop click closes menu", async ({ page }) => {
+    await page.goto("/blog");
+    await page.waitForLoadState("networkidle");
+
+    const menuButton = page.locator("button.frontpage-header-menu-button");
+    await menuButton.click();
+    await expect(page.locator(".mobile-nav-menu")).toBeVisible();
+
+    await page.locator(".mobile-nav-menu-backdrop").click();
+    await expect(page.locator(".mobile-nav-menu")).not.toBeVisible();
+    await expect(menuButton).toHaveText("menu");
   });
 });
 
