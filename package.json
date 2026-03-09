@@ -11,7 +11,8 @@
     "deploy": "bun run build && touch ./dist/.nojekyll",
     "copy:content": "bun run tools/copyContent.ts",
     "test": "playwright test",
-    "test:update-snapshots": "playwright test --update-snapshots"
+    "test:docker": "bash scripts/test.sh",
+    "test:update-snapshots": "bash scripts/test.sh --update-snapshots"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
