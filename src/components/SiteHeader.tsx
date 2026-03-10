@@ -10,7 +10,9 @@ export const SiteHeader = () => (
           <Link to="/blog">blog</Link>
           <Link to="/list">list</Link>
           <Link to="/about">about</Link>
-          <Link to="/blog/feed.xml">rss</Link>
+          <a href="/blog/feed.xml" target="_blank">
+            rss
+          </a>
         </nav>
         <MobileNavMenuButton />
       </div>
@@ -44,7 +46,9 @@ export const FrontPageHeader = ({ lastUpdated }: { lastUpdated: string }) => (
       <Link to="/blog">blog</Link>
       <Link to="/list">list</Link>
       <Link to="/about">about</Link>
-      <Link to="/blog/feed.xml">rss</Link>
+      <a href="/blog/feed.xml" target="_blank">
+        rss
+      </a>
     </nav>
     <div className="frontpage-header-divider" />
   </header>
@@ -68,7 +72,9 @@ const MobileNavMenuButton = () => {
               <Link to="/blog">blog</Link>
               <Link to="/list">list</Link>
               <Link to="/about">about</Link>
-              <Link to="/blog/feed.xml">rss</Link>
+              <a href="/blog/feed.xml" target="_blank">
+                rss
+              </a>
             </nav>
           </div>
           <div
