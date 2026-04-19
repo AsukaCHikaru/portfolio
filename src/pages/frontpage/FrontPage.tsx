@@ -31,7 +31,8 @@ export const FrontPage = () => {
         <main className="grid">
           <LeadStory leadStory={leadStory} />
           <SideColumn furtherReading={furtherReading} categories={categories} />
-          {featuredReading ? (
+          {featuredReading &&
+          featuredReading.metadata.pathname !== leadStory.metadata.pathname ? (
             <FeaturedReading featuredReading={featuredReading} />
           ) : null}
         </main>
