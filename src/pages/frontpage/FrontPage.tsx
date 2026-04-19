@@ -118,7 +118,11 @@ const FeaturedReading = ({ featuredReading }: { featuredReading: Post }) => (
         <p>{featuredReading.metadata.description}</p>
         <p>{formatDate(featuredReading.metadata.publishedAt)}</p>
       </div>
-      <img src={`/public/images/blog/${featuredReading.metadata.thumbnail}`} />
+      {featuredReading.metadata.thumbnail ? (
+        <img
+          src={`/public/images/blog/${featuredReading.metadata.thumbnail}`}
+        />
+      ) : null}
     </Link>
   </div>
 );
