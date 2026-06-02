@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs";
-
 import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -9,6 +8,8 @@ import { AboutPage } from "../src/pages/about/AboutPage";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPage } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
+import { buildOpg } from "./build_opg";
+import { formatDate } from "../src/utils/dateTimeUtil";
 import type { FurtherReading, SiteData } from "../src/types";
 import { ListPage } from "../src/pages/list/ListPage";
 import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
@@ -67,7 +68,7 @@ const writeFile = (
   ws.onerror = (error) => {
     console.error("Hot reload WebSocket error:", error);
   };
-      
+
   ws.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
@@ -91,13 +92,23 @@ const writeFile = (
   }
 };
 
-const generateMetadata = (title: string, description: string) => {
+const SITE_URL = "https://asukawang.com";
+
+const generateMetadata = (
+  title: string,
+  description: string,
+  opgSlug?: string,
+) => {
+  const ogImage = opgSlug
+    ? `<meta property="og:image" content="${SITE_URL}/opg/${opgSlug}.png">`
+    : "";
   return `
     <title>${title}</title>
     <meta name="description" content="${description}">
     <meta name="author" content="Asuka Wang">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
+    ${ogImage}
   `;
 };
 
@@ -129,8 +140,13 @@ const buildBlog = async () => {
         },
       },
     );
-    postList.forEach((post) => {
+    for (const post of postList) {
       const path = `/blog/${post.metadata.pathname}`;
+      await buildOpg(
+        post.metadata.title,
+        `blog/${post.metadata.pathname}`,
+        formatDate(post.metadata.publishedAt),
+      );
       writeFile(
         <SiteDataStoreProvider
           context={
@@ -162,12 +178,13 @@ const buildBlog = async () => {
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
+          `blog/${post.metadata.pathname}`,
         ),
         {
           data: { metadata: post.metadata, content: post.content },
         },
       );
-    });
+    }
   } catch (error) {
     console.error("Error building blog:", error);
   }
@@ -278,6 +295,10 @@ const buildFrontPage = async () => {
 const buildList = async () => {
   const { musicAwards, videoGameIndex, bucketList } = await getList();
 
+  await buildOpg(musicAwards.name, "list/music-awards");
+  await buildOpg(videoGameIndex.name, "list/video-game-index");
+  await buildOpg(bucketList.name, "list/bucket-list");
+
   writeFile(
     <SiteDataStoreProvider
       context={
@@ -317,6 +338,7 @@ const buildList = async () => {
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
+      "list/music-awards",
     ),
     { data: { musicAwards } },
   );
@@ -340,6 +362,7 @@ const buildList = async () => {
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
+      "list/video-game-index",
     ),
     { data: { videoGameIndex } },
   );
@@ -360,7 +383,11 @@ const buildList = async () => {
       <BucketListPage />
     </SiteDataStoreProvider>,
     "/list/bucket-list",
-    generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
+    generateMetadata(
+      `${bucketList.name} | Asuka Wang`,
+      bucketList.description,
+      "list/bucket-list",
+    ),
     { data: { bucketList } },
   );
 };
