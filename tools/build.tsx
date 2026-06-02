@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs";
-
 import { resolve } from "path";
 import type { ReactNode } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -9,6 +8,8 @@ import { AboutPage } from "../src/pages/about/AboutPage";
 import { ResumePage } from "../src/pages/resume/ResumePage";
 import { FrontPage } from "../src/pages/frontpage/FrontPage";
 import { buildRssFeed } from "./rss";
+import { buildOpg } from "./build_opg";
+import { formatDate } from "../src/utils/dateTimeUtil";
 import type { FurtherReading, SiteData } from "../src/types";
 import { ListPage } from "../src/pages/list/ListPage";
 import { MusicAwardsListPage } from "../src/pages/list/MusicAwardsListPage";
@@ -67,7 +68,7 @@ const writeFile = (
   ws.onerror = (error) => {
     console.error("Hot reload WebSocket error:", error);
   };
-      
+
   ws.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
@@ -129,8 +130,13 @@ const buildBlog = async () => {
         },
       },
     );
-    postList.forEach((post) => {
+    for (const post of postList) {
       const path = `/blog/${post.metadata.pathname}`;
+      await buildOpg(
+        post.metadata.title,
+        `blog/${post.metadata.pathname}`,
+        formatDate(post.metadata.publishedAt),
+      );
       writeFile(
         <SiteDataStoreProvider
           context={
@@ -167,7 +173,7 @@ const buildBlog = async () => {
           data: { metadata: post.metadata, content: post.content },
         },
       );
-    });
+    }
   } catch (error) {
     console.error("Error building blog:", error);
   }
@@ -277,6 +283,10 @@ const buildFrontPage = async () => {
 
 const buildList = async () => {
   const { musicAwards, videoGameIndex, bucketList } = await getList();
+
+  await buildOpg(musicAwards.name, "list/music-awards");
+  await buildOpg(videoGameIndex.name, "list/video-game-index");
+  await buildOpg(bucketList.name, "list/bucket-list");
 
   writeFile(
     <SiteDataStoreProvider
