@@ -3,6 +3,8 @@ import * as fontkit from "fontkit";
 import sharp from "sharp";
 
 const TITLE_FONT_PATH = "./public/fonts/NotoSerifJP_Bold.woff2";
+const CJK_TITLE_FONT_PATH =
+  "./public/fonts/subset_cjk_NotoSerifJP_Regular.woff2";
 const TEMPLATE_PATH = "./tools/opg_template.svg";
 const OUTPUT_DIR = "./dist/opg";
 
@@ -14,24 +16,34 @@ const CONTENT_MAX_WIDTH = WIDTH - PADDING * 2;
 const FIRST_BASELINE_Y = PADDING + TITLE_FONT_SIZE;
 const FONT_COLOR = "#27221F";
 
-const font = fontkit.openSync(TITLE_FONT_PATH) as fontkit.Font;
-const scale = TITLE_FONT_SIZE / font.unitsPerEm;
+const latinFont = fontkit.openSync(TITLE_FONT_PATH) as fontkit.Font;
+const cjkFont = fontkit.openSync(CJK_TITLE_FONT_PATH) as fontkit.Font;
 
-const isWiderThanContainer = (input: string) =>
+const hasCjk = (text: string) =>
+  /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text);
+
+const scaleOf = (font: fontkit.Font) => TITLE_FONT_SIZE / font.unitsPerEm;
+
+const isWiderThanContainer = (font: fontkit.Font, input: string) =>
   font.layout(input).positions.reduce((sum, pos) => sum + pos.xAdvance, 0) *
-    scale >
+    scaleOf(font) >
   CONTENT_MAX_WIDTH;
 
-const wrapTitle = (text: string) =>
-  text.split(" ").reduce((lines, word) => {
-    const last = lines.at(-1);
-    const newLine = last ? `${last} ${word}` : word;
-    return last && isWiderThanContainer(newLine)
-      ? [...lines, word]
-      : [...lines.slice(0, -1), newLine];
-  }, [] as string[]);
+const segmenter = new Intl.Segmenter("ja", { granularity: "word" });
 
-const renderLine = (line: string, baselineY: number) => {
+const wrapTitle = (font: fontkit.Font, text: string) =>
+  [...segmenter.segment(text)]
+    .map((s) => s.segment)
+    .reduce((lines, unit) => {
+      const last = lines.at(-1) ?? "";
+      const candidate = last + unit;
+      return last && isWiderThanContainer(font, candidate.trimEnd())
+        ? [...lines, unit.trimStart()]
+        : [...lines.slice(0, -1), candidate];
+    }, [] as string[]);
+
+const renderLine = (font: fontkit.Font, line: string, baselineY: number) => {
+  const scale = scaleOf(font);
   const run = font.layout(line);
   const paths: string[] = [];
   let penX = 0;
@@ -49,14 +61,17 @@ const renderLine = (line: string, baselineY: number) => {
   return paths.join("");
 };
 
-const renderTitle = (text: string) =>
-  wrapTitle(text)
-    .map((line, i) => renderLine(line, FIRST_BASELINE_Y + i * LINE_HEIGHT))
+const renderTitle = (font: fontkit.Font, text: string) =>
+  wrapTitle(font, text)
+    .map((line, i) =>
+      renderLine(font, line.trimEnd(), FIRST_BASELINE_Y + i * LINE_HEIGHT),
+    )
     .join("");
 
 export const buildOpg = async (title: string, slug: string) => {
+  const font = hasCjk(title) ? cjkFont : latinFont;
   const template = readFileSync(TEMPLATE_PATH, "utf-8");
-  const svg = template.replace("//{title}", renderTitle(title));
+  const svg = template.replace("//{title}", renderTitle(font, title));
 
   mkdirSync(OUTPUT_DIR, { recursive: true });
   await sharp(Buffer.from(svg)).png().toFile(`${OUTPUT_DIR}/${slug}.png`);
