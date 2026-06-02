@@ -92,13 +92,23 @@ const writeFile = (
   }
 };
 
-const generateMetadata = (title: string, description: string) => {
+const SITE_URL = "https://asukawang.com";
+
+const generateMetadata = (
+  title: string,
+  description: string,
+  opgSlug?: string,
+) => {
+  const ogImage = opgSlug
+    ? `<meta property="og:image" content="${SITE_URL}/opg/${opgSlug}.png">`
+    : "";
   return `
     <title>${title}</title>
     <meta name="description" content="${description}">
     <meta name="author" content="Asuka Wang">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
+    ${ogImage}
   `;
 };
 
@@ -168,6 +178,7 @@ const buildBlog = async () => {
         generateMetadata(
           `${post.metadata.title} | Asuka Wang`,
           post.metadata.description,
+          `blog/${post.metadata.pathname}`,
         ),
         {
           data: { metadata: post.metadata, content: post.content },
@@ -327,6 +338,7 @@ const buildList = async () => {
     generateMetadata(
       `${musicAwards.name} | Asuka Wang`,
       musicAwards.description,
+      "list/music-awards",
     ),
     { data: { musicAwards } },
   );
@@ -350,6 +362,7 @@ const buildList = async () => {
     generateMetadata(
       `${videoGameIndex.name} | Asuka Wang`,
       videoGameIndex.description,
+      "list/video-game-index",
     ),
     { data: { videoGameIndex } },
   );
@@ -370,7 +383,11 @@ const buildList = async () => {
       <BucketListPage />
     </SiteDataStoreProvider>,
     "/list/bucket-list",
-    generateMetadata(`${bucketList.name} | Asuka Wang`, bucketList.description),
+    generateMetadata(
+      `${bucketList.name} | Asuka Wang`,
+      bucketList.description,
+      "list/bucket-list",
+    ),
     { data: { bucketList } },
   );
 };
