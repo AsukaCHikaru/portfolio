@@ -118,7 +118,8 @@ export const buildOpg = async (title: string, slug: string, date?: string) => {
     )
     .join("");
 
-  const lastTitleBaselineY = FIRST_BASELINE_Y + (lines.length - 1) * LINE_HEIGHT;
+  const lastTitleBaselineY =
+    FIRST_BASELINE_Y + (lines.length - 1) * LINE_HEIGHT;
   const dateBaselineY = lastTitleBaselineY + DATE_PAD_TOP + DATE_FONT_SIZE;
   const dateSvg = date
     ? renderLine([dateFont], DATE_FONT_SIZE, date, dateBaselineY)
