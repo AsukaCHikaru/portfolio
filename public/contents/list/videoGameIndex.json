@@ -13,6 +13,15 @@
       "rating": "8"
     },
     {
+      "title": "Diablo IV: Lord of Hatred",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2025",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
       "title": "Monster Hunter Wilds",
       "developer": "Capcom",
       "publisher": "Capcom",
@@ -20,6 +29,15 @@
       "played": "2025",
       "platform": "PlayStation 5",
       "rating": "7"
+    },
+    {
+      "title": "BALL X PIT",
+      "developer": "Kenny Sun and Friends",
+      "publisher": "Devolver Digital",
+      "released": "2025",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "6"
     },
     {
       "title": "Clair Obscur: Expedition 33",
@@ -42,6 +60,15 @@
       "rating": "8"
     },
     {
+      "title": "Diablo IV: Vessel of Hatred",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2024",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
       "title": "Hades II",
       "developer": "Supergiant Games",
       "publisher": "Supergiant Games",
@@ -49,6 +76,15 @@
       "played": "2025",
       "platform": "PC",
       "rating": "9"
+    },
+    {
+      "title": "Lorelei and the Laser Eyes",
+      "developer": "Simogo",
+      "publisher": "Annapurna Interactive",
+      "released": "2024",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "7"
     },
     {
       "title": "20 Small Mazes",
@@ -97,13 +133,22 @@
       "rating": "9"
     },
     {
+      "title": "Diablo IV",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "released": "2023",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "6"
+    },
+    {
       "title": "Hogwarts Legacy",
       "developer": "Avalanche Software",
       "publisher": "Warner Bros. Games",
       "released": "2023",
       "played": "2025",
       "platform": "PlayStation 5",
-      "rating": "4"
+      "rating": "3"
     },
     {
       "title": "The Legend of Zelda: Tears of the Kingdom",
