@@ -1,4 +1,5 @@
 import { mkdirSync, readFileSync } from "node:fs";
+import { dirname } from "node:path";
 import * as fontkit from "fontkit";
 import sharp from "sharp";
 
@@ -101,7 +102,7 @@ const renderLine = (
   return paths.join("");
 };
 
-export const buildOpg = async (title: string, date: string, slug: string) => {
+export const buildOpg = async (title: string, slug: string, date?: string) => {
   const titleStack: FontStack = hasCjk(title)
     ? [cjkFont, boldFont]
     : [boldFont];
@@ -119,13 +120,16 @@ export const buildOpg = async (title: string, date: string, slug: string) => {
 
   const lastTitleBaselineY = FIRST_BASELINE_Y + (lines.length - 1) * LINE_HEIGHT;
   const dateBaselineY = lastTitleBaselineY + DATE_PAD_TOP + DATE_FONT_SIZE;
-  const dateSvg = renderLine([dateFont], DATE_FONT_SIZE, date, dateBaselineY);
+  const dateSvg = date
+    ? renderLine([dateFont], DATE_FONT_SIZE, date, dateBaselineY)
+    : "";
 
   const template = readFileSync(TEMPLATE_PATH, "utf-8");
   const svg = template
     .replace("//{title}", titleSvg)
     .replace("//{date}", dateSvg);
 
-  mkdirSync(OUTPUT_DIR, { recursive: true });
-  await sharp(Buffer.from(svg)).png().toFile(`${OUTPUT_DIR}/${slug}.png`);
+  const outputPath = `${OUTPUT_DIR}/${slug}.png`;
+  mkdirSync(dirname(outputPath), { recursive: true });
+  await sharp(Buffer.from(svg)).png().toFile(outputPath);
 };
