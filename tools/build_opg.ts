@@ -19,65 +19,97 @@ const CONTENT_MAX_WIDTH = WIDTH - PADDING * 2;
 const FIRST_BASELINE_Y = PADDING + TITLE_FONT_SIZE;
 const FONT_COLOR = "#27221F";
 
-const latinFont = fontkit.openSync(TITLE_FONT_PATH) as fontkit.Font;
+const boldFont = fontkit.openSync(TITLE_FONT_PATH) as fontkit.Font;
 const cjkFont = fontkit.openSync(CJK_TITLE_FONT_PATH) as fontkit.Font;
 const dateFont = fontkit.openSync(DATE_FONT_PATH) as fontkit.Font;
+
+// A font stack resolves each character against its fonts in order, falling
+// back to the last font when none cover the glyph. This lets a CJK title use
+// the Regular CJK font while borrowing Latin/punctuation from the Bold font.
+type FontStack = fontkit.Font[];
 
 const hasCjk = (text: string) =>
   /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text);
 
-const scaleOf = (font: fontkit.Font, fontSize: number) =>
-  fontSize / font.unitsPerEm;
+const fontForChar = (stack: FontStack, char: string) =>
+  stack.find((font) => font.hasGlyphForCodePoint(char.codePointAt(0)!)) ??
+  stack[stack.length - 1];
 
-const isWiderThanContainer = (font: fontkit.Font, input: string) =>
-  font.layout(input).positions.reduce((sum, pos) => sum + pos.xAdvance, 0) *
-    scaleOf(font, TITLE_FONT_SIZE) >
-  CONTENT_MAX_WIDTH;
+type FontRun = { font: fontkit.Font; text: string };
+
+const splitRuns = (stack: FontStack, text: string) =>
+  [...text].reduce((runs, char) => {
+    const font = fontForChar(stack, char);
+    const last = runs.at(-1);
+    if (last?.font === font) {
+      last.text += char;
+    } else {
+      runs.push({ font, text: char });
+    }
+    return runs;
+  }, [] as FontRun[]);
+
+const measureLine = (stack: FontStack, fontSize: number, text: string) =>
+  splitRuns(stack, text).reduce((width, { font, text }) => {
+    const scale = fontSize / font.unitsPerEm;
+    const advance = font
+      .layout(text)
+      .positions.reduce((sum, pos) => sum + pos.xAdvance, 0);
+    return width + advance * scale;
+  }, 0);
+
+const isWiderThanContainer = (stack: FontStack, text: string) =>
+  measureLine(stack, TITLE_FONT_SIZE, text) > CONTENT_MAX_WIDTH;
 
 const segmenter = new Intl.Segmenter("ja", { granularity: "word" });
 
-const wrapTitle = (font: fontkit.Font, text: string) =>
+const wrapTitle = (stack: FontStack, text: string) =>
   [...segmenter.segment(text)]
     .map((s) => s.segment)
     .reduce((lines, unit) => {
       const last = lines.at(-1) ?? "";
       const candidate = last + unit;
-      return last && isWiderThanContainer(font, candidate.trimEnd())
+      return last && isWiderThanContainer(stack, candidate.trimEnd())
         ? [...lines, unit.trimStart()]
         : [...lines.slice(0, -1), candidate];
     }, [] as string[]);
 
 const renderLine = (
-  font: fontkit.Font,
+  stack: FontStack,
   fontSize: number,
   line: string,
   baselineY: number,
 ) => {
-  const scale = scaleOf(font, fontSize);
-  const run = font.layout(line);
   const paths: string[] = [];
-  let penX = 0;
+  let penX = PADDING;
 
-  run.glyphs.forEach((glyph, i) => {
-    const pos = run.positions[i];
-    const x = PADDING + (penX + pos.xOffset) * scale;
-    const y = baselineY - pos.yOffset * scale;
-    paths.push(
-      `<path d="${glyph.path.toSVG()}" transform="translate(${x} ${y}) scale(${scale} ${-scale})" fill="${FONT_COLOR}"/>`,
-    );
-    penX += pos.xAdvance;
-  });
+  for (const { font, text } of splitRuns(stack, line)) {
+    const scale = fontSize / font.unitsPerEm;
+    const run = font.layout(text);
+
+    run.glyphs.forEach((glyph, i) => {
+      const pos = run.positions[i];
+      const x = penX + pos.xOffset * scale;
+      const y = baselineY - pos.yOffset * scale;
+      paths.push(
+        `<path d="${glyph.path.toSVG()}" transform="translate(${x} ${y}) scale(${scale} ${-scale})" fill="${FONT_COLOR}"/>`,
+      );
+      penX += pos.xAdvance * scale;
+    });
+  }
 
   return paths.join("");
 };
 
 export const buildOpg = async (title: string, date: string, slug: string) => {
-  const titleFont = hasCjk(title) ? cjkFont : latinFont;
-  const lines = wrapTitle(titleFont, title);
+  const titleStack: FontStack = hasCjk(title)
+    ? [cjkFont, boldFont]
+    : [boldFont];
+  const lines = wrapTitle(titleStack, title);
   const titleSvg = lines
     .map((line, i) =>
       renderLine(
-        titleFont,
+        titleStack,
         TITLE_FONT_SIZE,
         line.trimEnd(),
         FIRST_BASELINE_Y + i * LINE_HEIGHT,
@@ -87,7 +119,7 @@ export const buildOpg = async (title: string, date: string, slug: string) => {
 
   const lastTitleBaselineY = FIRST_BASELINE_Y + (lines.length - 1) * LINE_HEIGHT;
   const dateBaselineY = lastTitleBaselineY + DATE_PAD_TOP + DATE_FONT_SIZE;
-  const dateSvg = renderLine(dateFont, DATE_FONT_SIZE, date, dateBaselineY);
+  const dateSvg = renderLine([dateFont], DATE_FONT_SIZE, date, dateBaselineY);
 
   const template = readFileSync(TEMPLATE_PATH, "utf-8");
   const svg = template
