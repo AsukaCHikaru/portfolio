@@ -1,0 +1,23 @@
+---
+created: 2026/06/06 10:56
+title: Love Letter to the Mansion
+description: I played Lorelei and the Laser Eyes because my wife binged Gilmore Girls. They have nothing in common.
+published: 2026-06-12
+updated: 2026-06-12
+language: en-US
+category: review
+topic: gaming
+pathname: love-letter-to-the-mansion
+thumbnail:
+thumbnail-direction:
+featured:
+---
+I remember playing *Resident Evil* (or, *Biohazard* since my sister and I played the Japanese version) in 2000: a labyrinth of enigma; every step was a foray because we didn’t know what was hiding behind the corner and fixed-angle cameras. Even without the zombies or any moving things in sight my heart was already pumping all the same just by wandering in the mansion, for layers of mysterious puzzles concealed everything behind.
+
+*Lorelei and the Laser Eyes* is a love letter to the mansion in the Arklay Mountains, an answer for those who love the uncanny atmosphere but not the hustle of fighting zombies; a survival-horror without the survival part. During part of the gameplay the developer even added the traditional tank-style control and door-open animation; the nods to the ancestor can't be more obvious. And that's one reason I love indie games: you can clearly see exactly what game DNA inspired them; the terminals as save points, hints in documents and of course, fixed-angle cameras all screamed love for the survival-horror classic.
+
+Without combat, the puzzle gameplay has to carry through the whole playthrough–about 20 hours at that, but not all of them are on the same quality. A big portion of the puzzles are simply easy math, and while the answers have recurring references to the story, the calculation–the actual quiz solving part, does not. Another portion of the puzzles have the answers written on documents, which are often placed very close to the puzzles, like when somebody sets a password then writes it down on a post-it and paste it on the keyboard. I found it hard to call them puzzles, as the deduction work required for these puzzles are way lower than my expectation. That being said, this game has many puzzles that forced me to take notes with pen and paper, which is an experience I have not had for years, and I *loved* it.
+
+Puzzle games often suffer from spoilers, either about the actual answers, or just the catch. Lorelei and the Laser Eyes counters the curse of knowing by making puzzles random, in two ways: 1. putting similar or related puzzles in a pool and randomize the order, and 2. simply prepare a huge pool of patterns for a single quiz. The latter is mostly used for the critical main story puzzles which have no puzzle group to rotate. Even if a player looks up the catch, they still have to do the calculation themselves.
+
+Lorelei and the Laser Eyes fulfills the fantasy of a huge escape room. While I prefer a more straightforward story, it does, with a great volume, scratch an itch even the Resident Evil series itself couldn't reach.
