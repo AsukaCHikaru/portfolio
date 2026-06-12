@@ -3,7 +3,7 @@ created: 2025/11/04 00:13
 title: Leap of Faith
 description: To take a leap forward, I had to leave a few things behind.
 published: 2026-04-20
-updated: 2026-04-19
+updated: 2026-06-12
 language: en-US
 category: essay
 topic: life
@@ -40,7 +40,7 @@ Before rewriting amp I released a minor patch on my game project, and after that
 
 ---
 
-When the days of fatherhood started I instinctively looked for inspirations from all the familiar stories–which are mostly games–with a signature father figure. The first few candidates were all inappropriate. It's a little bummer that I can't yell "boy" at her, mostly because her mother is alive and well and I'm not bold and muscular, but even if I could, building essentially no bond with her until she’s about eleven years old is far from the father-child relationship I want. I would absolutely hold her while running from spore-infected zombies, but I refuse to even just thinking about how the story went because it's a bad omen. Lose her in a parallel universe while cutting her pinky off in the process is a bad omen too. Apparently they hate to write a happy ending for a father and a daughter. It's probably a blessing I have not, yet, encountered these sorrowful journeys alongside her, but I'm still mildly disappointed that my drastic transition of role has not unfolded opportunities to experience tales in a new perspective.
+When the days of fatherhood started I instinctively looked for inspirations from all the familiar stories–which are mostly games–with a signature father figure. The first few candidates were all inappropriate. It's a little bummer that I can't yell "boy" at her, mostly because her mother is alive and well and I'm not bald and muscular, but even if I could, building essentially no bond with her until she’s about eleven years old is far from the father-child relationship I want. I would absolutely hold her while running from spore-infected zombies, but I refuse to even just thinking about how the story went because it's a bad omen. Lose her in a parallel universe while cutting her pinky off in the process is a bad omen too. Apparently they hate to write a happy ending for a father and a daughter. It's probably a blessing I have not, yet, encountered these sorrowful journeys alongside her, but I'm still mildly disappointed that my drastic transition of role has not unfolded opportunities to experience tales in a new perspective.
 
 I then recalled Professor Sol Weintraub, Rachel in a swaddling blanket, and Abraham's choice. If I hoist her up, offering her to god to showcase my obedience and loyalty, she would, like she always does, look at me with her big black eyes, which hasn’t seen any of the evil deeds done by human beings. She might even smile at me. This notion suddenly immensely saddened me. It was at that moment had I for the first time truly understood Sol's answer: no parent should be forced to surrender their child, whether over god or some greater good crap. I recalled the kids in Sandy Hook, in Minab, in Kyiv. News with children casualty hits different now. I have yet experience the happiness of gain but already terrified by the grief of loss.
 
