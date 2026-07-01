@@ -35,3 +35,5 @@ To be fair, this game still has content that worth more than 50 hours of playtim
 But this game certainly made me appreciate God of War 2018 more. Narrative-wise, it has one of the best execution I’ve ever experienced.
 
 It is a shame the aftertaste of God of War Ragnarök for me is a bit bitter, but the memory of God of War 2018 definitely becomes sweeter. I wouldn't say it’s the worst outcome for its successor.
+
+::review-game-card

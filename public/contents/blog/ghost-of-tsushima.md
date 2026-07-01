@@ -38,3 +38,5 @@ It became a dilemma whether to play in English for more fluency or to play in Ja
 ---
 
 Overall, a great game. Looking forward to 100% completion.
+
+::review-game-card

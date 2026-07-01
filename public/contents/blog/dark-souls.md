@@ -41,3 +41,5 @@ There are a lot of obstacles in the game, be it finding the next bonfire, platfo
 I guess it really depends on if the player gets the catch or not.
 
 The biggest takeaway for me from Dark Souls, is how this game teaches particular concepts or mechanics to players: by punishing those who do not understand yet, again and again, until they either get good enough or quit.
+
+::review-game-card

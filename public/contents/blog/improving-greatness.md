@@ -46,3 +46,5 @@ With these connections and organic guidances, players have the tools to form the
 These two feedback loops are the backbone of Tears of the Kingdom's open world gameplay.
 
 Nintendo found the answer to the open world feedback loop issue in BOTW. I think they nailed it in this game, and for that, TOTK is a better game to me. It is an improved version of an already exceptional foundation. An improved greatness.
+
+::review-game-card

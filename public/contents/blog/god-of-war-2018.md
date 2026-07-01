@@ -34,3 +34,5 @@ Unfortunately, the gameplay did not impress me. To maintain the game’s flow, m
 Overall, a fantastic game. Best narrative in a game I’ve ever seen.
 
 If I ever have kids or pets, I’ll definitely call them boys.
+
+::review-game-card

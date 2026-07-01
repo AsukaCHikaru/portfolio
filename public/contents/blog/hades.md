@@ -140,3 +140,5 @@ And I was deeply impressed by the game when playing this game from the beginning
 I’ve been recommending Hades to folks whenever we’re talking about games for the past six months. This game is so well-polished, it’s almost flawless. To me, it is the one and only Game of the Year.
 
 Hades is the best game I’ve played in years, and I believe it will stay there for a long time.
+
+::review-game-card

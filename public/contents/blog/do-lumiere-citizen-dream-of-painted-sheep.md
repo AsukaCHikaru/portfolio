@@ -23,3 +23,5 @@ They know how to hate. They know how to love. They are real humans with souls an
 Life outside of the canvas for Maelle is painful. Every day she awakes to face the fact that her mistake killed her brother. There is no escape from it. Her everlasting wounds remind her of that. Her *families* remind her of that. The whole Dessendres are consumed by grief, the girl who lived gets no support but negligence. She then happens to live another life, in which while she has to face death early and frequently, she has families that care about her, support her, love her. A life in which she doesn't have to blame herself.
 
 An escape from the Dessendres' reality, maybe. But that doesn't make Lumière less real. Staying in Lumière may take her life in both realities, but the decision is hers to make, and no one's to judge.
+
+::review-game-card

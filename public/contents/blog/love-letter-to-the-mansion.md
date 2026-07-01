@@ -21,3 +21,5 @@ Without combat, the puzzle gameplay has to carry through the whole playthroughâ€
 Puzzle games often suffer from spoilers, either about the actual answers, or just the catch. Lorelei and the Laser Eyes counters the curse of knowing by making puzzles random, in two ways: 1. putting similar or related puzzles in a pool and randomize the order, and 2. simply prepare a huge pool of patterns for a single quiz. The latter is mostly used for the critical main story puzzles which have no puzzle group to rotate. Even if a player looks up the catch, they still have to do the calculation themselves.
 
 Lorelei and the Laser Eyes fulfills the fantasy of a huge escape room. While I prefer a more straightforward story, it does, with a great volume, scratch an itch even the Resident Evil series itself couldn't reach.
+
+::review-game-card

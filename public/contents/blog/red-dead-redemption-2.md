@@ -64,3 +64,5 @@ Abigail 剛提到貸款買地時，John 的第一個反應是質疑。但 Abigai
 Arthur 與 John 的故事，沒有哪一幕讓我感到極端的情緒（也許只有求婚那一段），但 van der Linde 幫步向無可避免的敗亡，Arthur 緩慢卻穩定地走向犧牲自己拯救別人的路線，以及 John 終於為家人帶來幸福生活，這每一幕的感動以及無奈，一筆一筆為這個故事添上重量。
 
 Red Dead Redemption。
+
+::review-game-card

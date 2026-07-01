@@ -21,3 +21,5 @@ The other huge part of Elden Ring gameplay is the boss encounters, my favorite p
 I could not say the same for the multiple-foes boss encounters. The Valiant Gargoyles didn't make me nostalgic but very annoyed, and the Godskin Duo completely killed my remaining patience for this game. I found *zero fun* in the gank bosses. I still think there are skills in them, and all these won't be a problem if I _git gud_ enough. But it was NOT FUN. After finally beat the Godskin Duo with my +10 mimic tear (which I never leveled until this boss), I had absolutely no sense of achievement but a bad taste in my mouth, and the thought of wanting to get this game over with.
 
 Later I found that many people share the same feeling with me, which I don't know if I should be happy about it. I believe many of them enjoyed the game until they didn't. It was truly a shame, because I appreciate all the efforts put into this game and I want to love it, but after my first playthrough, all left for this masterpiece was a bitter memory.
+
+::review-game-card
