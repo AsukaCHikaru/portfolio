@@ -29,5 +29,18 @@ const youtubeParser = (input: string): YoutubeBlock => {
   };
 };
 
-export const amp = new Amp().extend([youtubeRegexp, youtubeParser]);
+const gameCardRegexp = new RegExp(/^::review-game-card$/);
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export type GameCardBlock = CustomBlock<"gameCard", {}>;
+const gameCardParser = (input: string): GameCardBlock => {
+  const match = input.match(gameCardRegexp);
+  if (!match) {
+    throw new Error("Invalid match");
+  }
+  return { type: "custom", customType: "gameCard" };
+};
+
+export const amp = new Amp()
+  .extend([youtubeRegexp, youtubeParser])
+  .extend([gameCardRegexp, gameCardParser]);
 export type Block = ReturnType<typeof amp.parse>["blocks"][number];
