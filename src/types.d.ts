@@ -57,6 +57,7 @@ export type VideoGameIndexList = {
   platform: string;
   rating: string;
   reviewUrl?: string;
+  id?: string;
 }[];
 
 export type BucketList = {

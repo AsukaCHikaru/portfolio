@@ -2,6 +2,7 @@ import type { TextBody, Link } from "@asukawang/amp";
 import type { Block } from "../../tools/markdownParser";
 import { Code } from "./CodeBlock";
 import { D2FigureBlock } from "./D2FigureBlock";
+import { GameCardBlock } from "./GameCardBlock";
 
 export const ContentBlock = ({ block }: { block: Block }) => {
   switch (block.type) {
@@ -108,6 +109,8 @@ export const ContentBlock = ({ block }: { block: Block }) => {
       switch (block.customType) {
         case "youtube":
           return <YoutubeBlock id={block.id} start={block.start} />;
+        case "gameCard":
+          return <GameCardBlock />;
         default:
           return null;
       }

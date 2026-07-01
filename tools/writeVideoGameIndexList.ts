@@ -33,6 +33,7 @@ const run = () => {
         platform: frontmatter.portfolio_list_play_platform,
         reviewUrl: frontmatter.portfolio_list_game_review_url,
         rating: frontmatter.rating,
+        id: frontmatter.portfolio_blog_review_game_id,
       } satisfies VideoGameIndexList[number];
     })
     .filter((frontmatter) => frontmatter.rating !== undefined)

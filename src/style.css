@@ -1938,3 +1938,72 @@ article.list {
     }
   }
 }
+
+.post-page-review-game-card_container {
+  display: flex;
+  margin: 32px 0;
+  padding: 8px;
+  border: double 3px var(--dark);
+  width: fit-content;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  > img {
+    width: 160px;
+    height: 160px;
+  }
+
+  > div {
+    padding: 0 24px 0 8px;
+
+    @media (max-width: 768px) {
+      padding: 8px 24px 0 0;
+    }
+
+    h5 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    h6 {
+      margin: 8px 0 12px;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--dark-second);
+      font-family: "Gentium Plus";
+      font-weight: 200;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      display: flex;
+      margin: 0;
+      font-size: 22px;
+      line-height: 1;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+
+    span {
+      margin: 0 8px;
+      font-size: 12px;
+      color: var(--dark-third);
+      @media (max-width: 768px) {
+        margin: 0 6px;
+      }
+    }
+  }
+}
