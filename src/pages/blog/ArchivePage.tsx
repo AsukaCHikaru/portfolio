@@ -35,7 +35,7 @@ export const ArchivePage = () => {
           {categoryFilter || "Blog"}
         </h1>
         {tileList.map((row, i) => (
-          <div key={i} className="post-archive-row grid">
+          <div key={i} className="post-archive-row">
             {row.map(({ post, size, position }) => (
               <Link
                 key={post.pathname}

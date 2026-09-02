@@ -26,7 +26,7 @@ export const AboutPage = () => {
             {formatDate(post.metadata.updatedAt || post.metadata.publishedAt)}
           </p>
         </div>
-        <article className="post-page-content grid">
+        <article className="post-page-content">
           {post.content.map((block, i) => (
             <ContentBlock key={i} block={block} />
           ))}

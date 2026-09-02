@@ -28,7 +28,7 @@ export const FrontPage = () => {
       <Helmet title="Asuka Wang" description="Asuka Wang's personal website" />
       <div className="site_container">
         <FrontPageHeader lastUpdated={lastUpdated} />
-        <main className="grid">
+        <main>
           <LeadStory leadStory={leadStory} />
           <SideColumn furtherReading={furtherReading} categories={categories} />
           {featuredReading &&

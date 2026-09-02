@@ -34,7 +34,7 @@ export const PostPage = () => {
           <h2>{metadata.description}</h2>
           <p>{formatDate(metadata.publishedAt)}</p>
         </div>
-        <article className="post-page-content grid">
+        <article className="post-page-content">
           {content.map((block, i) => (
             <ContentBlock block={block} key={i} />
           ))}
