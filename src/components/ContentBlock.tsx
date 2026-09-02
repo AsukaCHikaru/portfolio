@@ -2,6 +2,7 @@ import type { FootnoteBlock, InlineContent } from "@asukawang/amp";
 import type { Block } from "../../tools/markdownParser";
 import { Code } from "./CodeBlock";
 import { D2FigureBlock } from "./D2FigureBlock";
+import { FootnoteReference } from "./FootnoteReference";
 import { GameCardBlock } from "./GameCardBlock";
 
 export const ContentBlock = ({ block }: { block: Block }) => {
@@ -153,7 +154,7 @@ export const TextBodyBlock = ({ body }: { body: InlineContent }) => {
         </a>
       );
     case "footnoteReference":
-      return <NoteReference label={body.label} />;
+      return <FootnoteReference label={body.label} />;
   }
 };
 
@@ -180,10 +181,6 @@ const YoutubeBlock = ({ id, start }: { id: string; start?: string }) => {
       />
     </div>
   );
-};
-
-const NoteReference = ({ label }: { label: string }) => {
-  return <sup>{label}</sup>;
 };
 
 const Footnote = ({ note }: { note: FootnoteBlock }) => (
