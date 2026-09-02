@@ -1,4 +1,4 @@
-import type { TextBody, Link } from "@asukawang/amp";
+import type { FootnoteBlock, InlineContent } from "@asukawang/amp";
 import type { Block } from "../../tools/markdownParser";
 import { Code } from "./CodeBlock";
 import { D2FigureBlock } from "./D2FigureBlock";
@@ -105,6 +105,8 @@ export const ContentBlock = ({ block }: { block: Block }) => {
       return <Code block={block} />;
     case "thematicBreak":
       return <hr />;
+    case "footnote":
+      return <Footnote note={block} />;
     case "custom":
       switch (block.customType) {
         case "youtube":
@@ -119,10 +121,10 @@ export const ContentBlock = ({ block }: { block: Block }) => {
   }
 };
 
-const BodyBlocks = ({ body }: { body: (TextBody | Link)[] }) =>
+const BodyBlocks = ({ body }: { body: InlineContent[] }) =>
   body.map((item, i) => <TextBodyBlock body={item} key={i} />);
 
-const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
+export const TextBodyBlock = ({ body }: { body: InlineContent }) => {
   switch (body.type) {
     case "textBody":
       switch (body.style) {
@@ -150,6 +152,8 @@ const TextBodyBlock = ({ body }: { body: TextBody | Link }) => {
           ))}
         </a>
       );
+    case "footnoteReference":
+      return <NoteReference label={body.label} />;
   }
 };
 
@@ -177,3 +181,20 @@ const YoutubeBlock = ({ id, start }: { id: string; start?: string }) => {
     </div>
   );
 };
+
+const NoteReference = ({ label }: { label: string }) => {
+  return <sup>{label}</sup>;
+};
+
+const Footnote = ({ note }: { note: FootnoteBlock }) => (
+  <ol className="footnote">
+    {note.items.map((n, i) => (
+      <li key={i}>
+        <sup>{n.label}</sup>
+        {n.body.map((b, bi) => (
+          <TextBodyBlock body={b} key={bi} />
+        ))}
+      </li>
+    ))}
+  </ol>
+);

@@ -944,6 +944,10 @@ article {
   & > p {
     margin: 16px 0;
     hyphens: auto;
+
+    > sup {
+      font-size: 14px;
+    }
   }
 
   & > ul,
@@ -1075,10 +1079,27 @@ article {
     margin: 60px auto;
     border-top: solid 1px var(--dark-third);
   }
+
+  .footnote {
+    & sup {
+      margin: 0 4px 0 0;
+    }
+
+    margin: 40px 0 0;
+    padding: 10px 20px 0;
+    border-top: solid 1px var(--dark-third);
+    list-style: none;
+    font-size: 16px;
+    color: var(--dark-second);
+  }
 }
 
 article.post-page-content {
   grid-column: 1 / span 16;
+
+  & .footnote {
+    display: none;
+  }
 
   > *:not(figure) {
     grid-column: 3 / span 10;
