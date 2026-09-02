@@ -29,7 +29,7 @@ const youtubeParser = (input: string): YoutubeBlock => {
   };
 };
 
-const gameCardRegexp = new RegExp(/^::review-game-card$/);
+const gameCardRegexp = new RegExp(/^::review-game-card(?:\n|$)/);
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export type GameCardBlock = CustomBlock<"gameCard", {}>;
 const gameCardParser = (input: string): GameCardBlock => {
