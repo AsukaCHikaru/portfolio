@@ -185,6 +185,15 @@
       "rating": "7"
     },
     {
+      "title": "Citizen Sleeper",
+      "developer": "Jump Over The Age",
+      "publisher": "Fellow Traveller",
+      "released": "2022",
+      "played": "2026",
+      "platform": "PC",
+      "rating": "7"
+    },
+    {
       "title": "The Case of the Golden Idol",
       "developer": "Color Gray Games",
       "publisher": "Playstack",
@@ -350,7 +359,9 @@
       "released": "2019",
       "played": "2022",
       "platform": "PlayStation 5",
-      "rating": "9"
+      "reviewUrl": "https://asukawang.com/blog/hesitation-is-defeat",
+      "rating": "10",
+      "id": "sekiro_shadows_die_twice"
     },
     {
       "title": "Dota Underlords",
@@ -790,6 +801,15 @@
       "played": "2012",
       "platform": "PC",
       "rating": "8"
+    },
+    {
+      "title": "Max Payne 3",
+      "developer": "Rockstar Studios",
+      "publisher": "Rockstart Games",
+      "released": "2012",
+      "played": "2012",
+      "platform": "PC",
+      "rating": "7"
     },
     {
       "title": "Assassin's Creed III",
